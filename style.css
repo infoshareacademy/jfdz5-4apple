@@ -5,38 +5,135 @@ body {
 !important;
     font-family: 'Lato', sans-serif;
     font-size: 18px;
-    line-height:1.2;
+    line-height: 1.2;
     width: 100%;
 }
 
-p{
-    text-indent:15px;
+p {
+    text-indent: 15px;
 }
+
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.main-menu-container {
     width: 100%;
     min-height: 70px;
     background-color: #ffffff;
-    box-shadow: 0 4px 1px #0a5994;
+    box-shadow: 0 2px 0 #0a5994;
     z-index: 9999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
 }
 
-.logo {
-    padding: 3px 0 0 3%;
-    float: left;
-}
-@media (max-width: 640px) {
+@media (max-width: 682px) {
     .logo {
         display: none;
+    }
+
+    .main-menu {
+        width: 100% !important;
+    }
+
+    nav {
+        font-size: 14px;
     }
 }
 
 .main-menu {
-    clear: both;
+    /* 100% - 3% padding of .logo - width of logo.svg */
+    width: calc(97% - 291px);
+    min-width: 300px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 70px;
+}
+
+.theme {
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-image: url("img/layer1.png");
+}
+
+.about-product-container {
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-color: indigo;
+}
+
+.feature {
+    height: calc(25vh - 17.5px);
+}
+
+.feature1 {
+    background-color: blue;
+}
+
+.feature2 {
+    background-color: lightseagreen;
+}
+
+.feature3 {
+    background-color: darkblue;
+}
+
+.feature4 {
+    background-color: darkslategrey;
+}
+
+.time-saving-container {
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tile {
+    width: 33.3vw;
+}
+
+.tile5 {
+    background-color: red;
+}
+
+.tile6 {
+    background-color: mediumvioletred;
+}
+
+.tile7 {
+    background-color: darkred;
+}
+
+.about_us-container {
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-color: chartreuse;
+}
+
+.contact-container {
+    /* making footer visible in contact section*/
+    height: calc(100vh - 60px);
+    background-color: darkorange;
+
 }
 
 .board {
-    text-align: justify;
-    min-height: 700px;
+    /*  IF NOT USED - DELETE
+        IF NOT USED - DELETE
+        IF NOT USED - DELETE
+      */
 }
 
 footer {
@@ -49,7 +146,7 @@ footer {
     max-width: 900px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: auto;
 }
