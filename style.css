@@ -68,7 +68,7 @@ nav {
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
-    background-color: indigo;
+
 }
 
 .feature {
@@ -76,25 +76,24 @@ nav {
 }
 
 .feature1 {
-    background-color: blue;
+    background-color: #0a5994;
 }
 
 .feature2 {
-    background-color: lightseagreen;
+    background-color: #fff;
 }
 
 .feature3 {
-    background-color: darkblue;
+    background-color: #0a5994;
 }
 
 .feature4 {
-    background-color: darkslategrey;
+    background-color: #fff;
 }
 
 .time-saving-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
-    background-color: purple;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -105,27 +104,27 @@ nav {
 }
 
 .tile5 {
-    background-color: red;
+    background-color: #fff ;
 }
 
 .tile6 {
-    background-color: mediumvioletred;
+    background-color: #afddf7;
 }
 
 .tile7 {
-    background-color: darkred;
+    background-color: #fff;
 }
 
 .about_us-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
-    background-color: chartreuse;
+    background-color: #083772;
 }
 
 .contact-container {
     /* making footer visible in contact section*/
     height: calc(100vh - 60px);
-    background-color: darkorange;
+    background-color: #2c7bb6;
 
 }
 
