@@ -64,7 +64,11 @@ nav {
     padding-top: 70px;
     background-image: url("img/layer1.png");
 }
-
+.list{
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-color: #18a3fa;
+}
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
