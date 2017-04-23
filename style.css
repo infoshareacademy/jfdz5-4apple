@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 body {
     background-color: #fff;
     color: #000;
@@ -8,6 +14,75 @@ body {
     line-height: 1.2;
     width: 100%;
 }
+
+/*navigation*/
+
+header {
+    width: 100%;
+    height: 85px;
+    line-height: 85px;
+}
+
+.main-menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: rgba(230, 238, 230, 0.24);
+    position: fixed;
+    width: 100%;
+
+}
+
+.logo {
+    width: 250px;
+    height: 65px;
+    background: url("img/logo.svg");
+    background-size: 100% 100%;
+}
+
+
+#menu-icon {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: url("img/nav.png") center;
+}
+
+a:hover#menu-icon {
+    border-radius: 4px 0 4px 4px;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    line-height: 65px;
+
+}
+
+nav ul li {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 130%;
+    padding: 0 15px;
+    font-family: ,'Alegreya Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border: 2px solid #053178;
+    border-radius: 10px;
+    padding: 6px;
+    background-color: #053178;
+    color: white;
+}
+
+
+/*end of navigation*/
 
 p {
     text-indent: 15px;
@@ -20,17 +95,7 @@ p {
     text-align: center;
 }
 
-.main-menu-container {
-    width: 100%;
-    min-height: 70px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 0 #0a5994;
-    z-index: 9999;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    position: fixed;
-}
+
 
 @media (max-width: 682px) {
     .logo {
@@ -46,29 +111,22 @@ p {
     }
 }
 
-.main-menu {
-    /* 100% - 3% padding of .logo - width of logo.svg */
-    width: calc(97% - 291px);
-    min-width: 300px;
-}
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    line-height: 70px;
-}
+
+
 
 .theme {
     height: calc(100vh - 70px);
     padding-top: 70px;
     background-image: url("img/layer1.png");
 }
-.list{
+
+.list {
     height: calc(100vh - 70px);
     padding-top: 70px;
     background-color: #18a3fa;
 }
+
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
@@ -108,7 +166,7 @@ nav {
 }
 
 .tile5 {
-    background-color: #fff ;
+    background-color: #fff;
 }
 
 .tile6 {
