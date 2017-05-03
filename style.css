@@ -63,41 +63,68 @@ body {
 }
 
 
+
+
+/* nowe */
+
 .blok2 {
-    color: black;
+    height: 100vh ;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
-    margin: 0 50px;
-    width: calc(100% - 2 * 50px);
+    width: 100%;
 }
 
-.contener2{
-    width: 400px;
+figure img {
+    display: block;
+    width: 240px;
+    height: 240px;
 }
-.contener2:hover {
 
-    background-color: black;
-
+.container3 {
+    width: 240px;
+    margin: 20px;
 }
-.contener2:hover img{
+
+/* początek kodu pod miniatury */
+figure {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
+    color: #fff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.6s ease-out 0s;
     opacity: 0;
+    /* wyśrodkowanie w pionie i poziomie */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* poprawione, bo nie działo wcześniej */
 }
 
-.contener2 div {
-    width: 200px;
-    height: 200px;
-    text-align: center;
+/* overlay hover, czyli pokazujemy wszystko */
+figure:hover .overlay {
+    opacity: 1;
 }
 
-
-.blok2 img {
-    width: 200px;
-    height: 200px;
-}
 
 
 @media screen and ( max-width: 960px) {
