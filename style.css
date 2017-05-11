@@ -32,7 +32,7 @@ body {
     text-transform: uppercase;
 }
 
-.element2{
+.element2 {
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -41,34 +41,23 @@ body {
     text-transform: uppercase;
     width: calc(100% - 2 * 50px);
 }
+
 .contener div {
     float: right;
     width: 150px;
     height: 150px;
     margin: 0 15px;
 }
-.contener .element2 div {
-    float: right;
-    width: 150px;
-    height: 150px;
-    margin: 0 15px;
-}
-.contener div h3 {
+
+.contener .element2 div h3 {
     text-align: center;
     font-size: 16px;
 }
-.contener .element2 div h3{
-    text-align: center;
-    font-size: 16px;
-}
-
-
-
 
 /* nowe */
 
 .blok2 {
-    height: 100vh ;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -76,48 +65,50 @@ body {
     width: 100%;
 }
 
-figure img {
-    display: block;
-    width: 240px;
-    height: 240px;
+.blok2 .contener3 {
+    width: 30%;
+    margin: 3.3333%;
+    transition: all 0.6s ease-out 0s;
 }
 
-.container3 {
-    width: 240px;
-    margin: 20px;
+figure img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+
 }
 
 /* początek kodu pod miniatury */
 figure {
     position: relative;
+    margin: 0;
 }
 
+.overlay-info {
+    width: 100%;
+    padding: 0 7%;
+}
 
-
-
-
-
-
-
-.overlay {
+.contener3 .overlay {
+    box-sizing: border-box;
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 20%;
     left: 0;
-    width: 200px;
-    height: 200px;
+    width: 100%;
     z-index: 100;
     color: #fff;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
     transition: all 0.6s ease-out 0s;
     opacity: 0;
     /* wyśrodkowanie w pionie i poziomie */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center; /* poprawione, bo nie działo wcześniej */
+    text-align: center;
+   border: solid 11px #313233;
+    border-radius: 5%;
 }
 
 /* overlay hover, czyli pokazujemy wszystko */
@@ -125,7 +116,15 @@ figure:hover .overlay {
     opacity: 1;
 }
 
+.blok2 .contener3:hover {
+    width: 40%;
 
+}
+figure img:hover{
+    width: 40%;
+
+
+}
 
 @media screen and ( max-width: 960px) {
     .blok {
@@ -145,10 +144,53 @@ figure:hover .overlay {
         flex-direction: column;
         height: 100%;
     }
-    .element2{
+
+    .element2 {
         display: flex;
         flex-direction: column;
         height: 100%;
+    }
+}
+    /*do zmiany !!! */
+@media screen and ( min-width: 960px ) and (max-width: 1200px) {
+
+    figure img {
+        max-width: 100%;
+    }
+    .blok2 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+
+    .element2 {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .blok2 .contener3 {
+        width: 50%;
+        margin: 5%;
+
+    }
+
+    .blok2 .contener3:hover {
+        width: 50%
+    }
+
+    .contener3 .overlay {
+        width: 100%;
+        border-bottom: solid 17px #313233;
+        border-left: solid 10px #313233;
+        border-right: solid 10px #313233;
+        border-top: solid 12px #313233;
+        position: absolute;
+        top: 0;
+        bottom: 18%;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 5%;
     }
 
 }
