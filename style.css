@@ -57,12 +57,14 @@ body {
 /* nowe */
 
 .blok2 {
+    box-sizing: border-box;
     height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    padding: 0 5% 0 5%;
 }
 
 .blok2 .contener3 {
@@ -85,8 +87,8 @@ figure {
 }
 
 .overlay-info {
-    width: 100%;
-    padding: 0 7%;
+    max-width: 100%;
+    padding: 7% 7%;
 }
 
 .contener3 .overlay {
@@ -107,6 +109,7 @@ figure {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-items: center;
    border: solid 11px #313233;
     border-radius: 5%;
 }
@@ -127,6 +130,7 @@ figure img:hover{
 }
 
 @media screen and ( max-width: 960px) {
+
     .blok {
         display: flex;
         flex-direction: column;
@@ -151,6 +155,7 @@ figure img:hover{
         height: 100%;
     }
 }
+
     /*do zmiany !!! */
 @media screen and ( min-width: 960px ) and (max-width: 1200px) {
 
@@ -171,9 +176,8 @@ figure img:hover{
     }
 
     .blok2 .contener3 {
-        width: 50%;
+        width: 40%;
         margin: 5%;
-
     }
 
     .blok2 .contener3:hover {
@@ -189,7 +193,7 @@ figure img:hover{
         position: absolute;
         top: 0;
         bottom: 18%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.8);
         border-radius: 5%;
     }
 
