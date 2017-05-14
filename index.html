@@ -8,24 +8,33 @@
     <title>price.less.pl</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/mini-icon1.png">
 </head>
 <body>
+<div class="header">
+
+    <h1 class="header">Zapraszamy do naszego serwisu...</h1>
+<h2 class="header">Price<span>Less</span></h2>
+</div>
+
 <div class="container">
     <header>
         <div class="main-menu-container">
-            <div class="logo"><a href="#home"><img src="img/logo1.svg" height="65px" alt="logo"></a></div>
-            <div class="main-menu">
-                <nav>
-                    <a href="#about-product">Zalety</a>
-                    <a href="#list">O produkcie</a>
-                    <a href="#time-saving">Oszczędność czasu</a>
-                    <a href="#about-us">O nas</a>
-                    <a href="#contact">Kontakt</a>
-                </nav>
-            </div>
-        </div>
+            <div class="logo"><a href="index.html"><img src="img/logo.svg"></a></div>
+            <nav class="main-menu">
+                <input type="checkbox" id="open-menu-input" class="menu-input-checkbox">
+                <label for="open-menu-input" class="menu-input-label"></label>
 
+                <ul class="menu-list">
+                    <li class="menu-item"><a href="#about-product">Zalety</a></li>
+                    <li class="menu-item"><a href="#list">O produkcie</a></li>
+                    <li class="menu-item"><a href="#time-saving">Oszczędność czasu</a></li>
+                    <li class="menu-item"><a href="#about-us">O nas</a></li>
+                    <li class="menu-item"><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <div class="board">
@@ -43,28 +52,8 @@
                 <div class="tile tile7">prywatna lista zakupow</div>
             </div>
             <div id="about-us" class="about_us-container"></div>
-
-
-            <!--section contact/newsleter-->
-            <section id="contact" class="contact-container">
-                <div class="subscribe-info">
-                    <figure><img src="img/newsletter.svg" alt="Newsletter" class="section-image"></figure>
-                    <h2 class="subscribe-title text-with-uppercase">Zapisz się już dziś!</h2>
-                    <p>Chcesz być na bierząco? Podaj maila, a my poinformujemy Ciebie o wszystkim w tylko
-                        <span class="text-with-uppercase">jednej</span> wiadomości!</p>
-                </div>
-                <div class="subscribe-form">
-                    <form action="" method="post" class="newsletter-form">
-                        <input type="email" name="mail" placeholder="Email">
-                        <input type="submit" value="Zapisz się!">
-                    </form>
-                    <div class="subscribe-warning-text">
-                        <p>Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres e-mail
-                            informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z dnia 18
-                            lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z siedzibą w Gdańsku.</p>
-                    </div>
-                </div>
-            </section>
+            <div id="contact" class="contact-container"></div>
+            <div class="button"><a href="#home"><img src="img/arrow-up.png"></a></div>
         </div>
     </main>
     <footer>
