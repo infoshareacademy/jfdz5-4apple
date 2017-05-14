@@ -74,7 +74,7 @@ body {
     position: relative;
 }
 
-.blok2 .contener3:before{
+.blok2 .contener3:not(:last-child):before{
     position: absolute;
     top:5%;
     bottom: 5%;
@@ -82,9 +82,6 @@ body {
     width: 2px;
     content: "";
     background: linear-gradient(#FFFFFF, #000000 50%, #FFFFFF);
-}
-.blok2 .contener3:nth-last-child(1):before{
-    display: none;
 }
 
 figure img {
