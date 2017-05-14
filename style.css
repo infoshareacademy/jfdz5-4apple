@@ -120,15 +120,9 @@ figure:hover .overlay {
 }
 
 .blok2 .contener3:hover {
-    width: 40%;
+    width: 50%;
 
 }
-figure img:hover{
-    width: 40%;
-
-
-}
-
 @media screen and ( max-width: 960px) {
 
     .blok {
