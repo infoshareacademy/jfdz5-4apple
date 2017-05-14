@@ -4,13 +4,15 @@
     font-family: Helvetica, sans-serif;
     background-color: white;
 }
-.blok1{
+
+.blok1 {
     height: 100vh;
     width: 100%;
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .container11 {
     width: 200px;
     height: 200px;
@@ -57,82 +59,145 @@
     backface-visibility: hidden;
 }
 
-
-#cube .back   {
-    background: url("img/chris.jpg");
+#cube .back {
+    background: url("img/checklist-2077024_960_720.jpg");
 
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
-#cube .right  {
-    background: url("img/chris.jpg") ;
+
+#cube .right {
+    background: url("img/teddy-kelley-98551.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 
 }
-#cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
-#cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
-#cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
 
-#cube .back:hover{
+#cube .left {
+    transition: all 0.6s ease-out 0s;
+    background: url("img/philatelist-1844081.jpg");
+    background-size: auto 100%;
+}
+
+#cube .top {
+    background: url("img/josh-felise-79105.jpg");
+    transition: all 0.6s ease-out 0s;
+    background-size: auto 100%;
+}
+
+#cube .bottom {
+    background: url("img/assortment-1868297.jpg");
+    transition: all 0.6s ease-out 0s;
+    background-size: auto 100%;
+}
+
+#cube .back:hover {
     transform: translateZ(100px);
     background: url("img/chris.jpg");
     background-size: auto 100%;
-
 }
+
 #cube .right:hover {
-    transform: rotateY( 180deg) translateZ( -100px );
+    transform: rotateY(180deg) translateZ(-100px);
     transform-origin: 50% 100%;
 }
-#cube .right:after{
+
+#cube .left:hover {
+    transform: rotateY(-180deg) translateZ(-100px);
+    transform-origin: 100px 0;
+}
+
+#cube .top:hover {
+    transform: rotateX(0deg) translateZ(100px);
+    transform-origin: 100px 0;
+}
+
+#cube .bottom:hover {
+    transform: rotateX(0deg) translateZ(100px);
+    transform-origin: 0 100px;
+
+}
+
+#cube .right:after {
     opacity: 0;
     content: "as";
-    position:relative;
-    top:0;
+    position: relative;
+    top: 0;
     bottom: 0;
     right: 100px;
-    width: 100px;
     background-color: black;
 }
 
+#cube .left:before {
+    opacity: 0;
+    content: "as";
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    background-color: black;
+}
 
-#cube .back   {
-    -webkit-transform:  translateZ( -100px );
-    -moz-transform:  translateZ( -100px );
-    -o-transform:  translateZ( -100px );
-    transform:   translateZ( -100px );
+#cube .top:after {
+    opacity: 0;
+    content: "ass";
+    position: relative;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    background-color: black;
 
 }
+#cube .bottom:after {
+    opacity: 0;
+    content: "ass";
+    position: relative;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: black;
+}
+
+#cube .back {
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -o-transform: translateZ(-100px);
+    transform: translateZ(-100px);
+
+}
+
 #cube .right {
-    transform: rotateY(90deg ) translateZ( 100px );
+    transform: rotateY(90deg) translateZ(100px);
 
 }
+
 #cube .left {
-    -webkit-transform: rotateY(  -90deg ) translateZ( 100px );
-    -moz-transform: rotateY(  -90deg ) translateZ( 100px );
-    -o-transform: rotateY(  -90deg ) translateZ( 100px );
-    transform: rotateY(  -90deg ) scale(-1,1) translateZ( 100px ) ;
+    -webkit-transform: rotateY(-90deg) translateZ(100px);
+    -moz-transform: rotateY(-90deg) translateZ(100px);
+    -o-transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(100px);
 }
+
 #cube .top {
-    -webkit-transform: rotateX(   90deg ) translateZ( 100px );
-    -moz-transform: rotateX(   90deg ) translateZ( 100px );
-    -o-transform: rotateX(   90deg ) translateZ( 100px );
-    transform: rotateX(   90deg ) scale(1,-1) translateZ( 100px );
+    -webkit-transform: rotateX(90deg) translateZ(100px);
+    -moz-transform: rotateX(90deg) translateZ(100px);
+    -o-transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(-90deg) translateZ(-100px);
 }
+
 #cube .bottom {
-    -webkit-transform: rotateX(  -90deg ) translateZ( 100px );
-    -moz-transform: rotateX(  -90deg ) translateZ( 100px );
-    -o-transform: rotateX(  -90deg ) translateZ( 100px );
-    transform: rotateX(  -90deg ) scale(1,-1) translateZ( 100px );
+    -webkit-transform: rotateX(-90deg) translateZ(100px);
+    -moz-transform: rotateX(-90deg) translateZ(100px);
+    -o-transform: rotateX(-90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(-100px);
 }
 
 #cube.show-front {
-    -webkit-transform: translateZ( -100px );
-    -moz-transform: translateZ( -100px );
-    -o-transform: translateZ( -100px );
-    transform: translateZ( 600px );
+    -webkit-transform: translateZ(-100px);
+    -moz-transform: translateZ(-100px);
+    -o-transform: translateZ(-100px);
+    transform: translateZ(400px);
 }
-
 
 /* nowe */
 .selektory {
@@ -159,7 +224,8 @@
 h1.naglowek {
     font-size: 70px;
 }
-.naglowek{
+
+.naglowek {
     color: black;
     width: 100%;
     height: 25%;
