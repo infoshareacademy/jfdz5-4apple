@@ -39,6 +39,7 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
+    z-index:99999;
 
 }
 
@@ -87,6 +88,30 @@ a:hover#menu-icon {
 
 /*end of navigation*/
 
+h1.header {
+    font-family: Raleway, cursive;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    color: white;
+    z-index: 40;
+    text-shadow: 1px 1px 1px gray;
+    font-weight: 300;
+}
+h2.header {
+    font-family: Raleway, cursive;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    color: white;
+    z-index: 40;
+    text-shadow: 1px 1px 1px gray;
+    font-weight: 800;
+    font-size: 50px;
+}
+
+
+
 p {
     text-indent: 15px;
 }
@@ -100,6 +125,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    max-width:1200px;
+    margin:0 auto;
 
 }
 
@@ -203,12 +230,16 @@ p {
 }
 
 .theme {
+    margin: 0;
+    background-image: url("img/t5.jpg");
     height: calc(100vh - 70px);
     padding-top: 70px;
-    background-color: white;
     position: relative;
     z-index: 2;
+    width: 100%;
 }
+
+
 
 .button {
     z-index: 1;
