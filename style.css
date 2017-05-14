@@ -168,6 +168,14 @@ p {
     .menu-item {
         font-size: 80%;
     }
+
+    h1.header {
+        font-size: 25px;
+    }
+    h2.header {
+        bottom: 20%;
+        font-size: 50px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -230,6 +238,15 @@ p {
         list-style-type: none;
         padding: 10px 0;
         font-size: 85%;
+    }
+
+
+    h1.header {
+        font-size: 25px;
+    }
+    h2.header {
+        bottom: 20%;
+        font-size: 40px;
     }
 }
 
