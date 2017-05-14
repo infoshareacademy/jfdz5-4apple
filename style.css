@@ -71,6 +71,20 @@ body {
     width: 30%;
     margin: 3.3333%;
     transition: all 0.6s ease-out 0s;
+    position: relative;
+}
+
+.blok2 .contener3:before{
+    position: absolute;
+    top:5%;
+    bottom: 5%;
+    right: -13%;
+    width: 2px;
+    content: "";
+    background: linear-gradient(#FFFFFF, #000000 50%, #FFFFFF);
+}
+.blok2 .contener3:nth-last-child(1):before{
+    display: none;
 }
 
 figure img {
