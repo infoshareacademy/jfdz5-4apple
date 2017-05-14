@@ -36,6 +36,7 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
+    z-index:99999;
 
 }
 
@@ -123,6 +124,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    max-width:1200px;
+    margin:0 auto;
 
 }
 
