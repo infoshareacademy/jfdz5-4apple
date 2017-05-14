@@ -59,13 +59,13 @@
 
 
 #cube .back   {
-    background: url("img/compass-1753659_1920.jpg");
+    background: url("img/chris.jpg");
 
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
 #cube .right  {
-    background: url("img/compass-1753659_1920.jpg") ;
+    background: url("img/chris.jpg") ;
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 
@@ -76,7 +76,7 @@
 
 #cube .back:hover{
     transform: translateZ(100px);
-    background: url("img/compass-1753659_1920.jpg");
+    background: url("img/chris.jpg");
     background-size: auto 100%;
 
 }
@@ -84,6 +84,18 @@
     transform: rotateY( 180deg) translateZ( -100px );
     transform-origin: 50% 100%;
 }
+#cube .right:after{
+    opacity: 0;
+    content: "as";
+    position:relative;
+    top:0;
+    bottom: 0;
+    right: 100px;
+    width: 100px;
+    background-color: black;
+}
+
+
 #cube .back   {
     -webkit-transform:  translateZ( -100px );
     -moz-transform:  translateZ( -100px );
