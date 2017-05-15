@@ -54,7 +54,6 @@
 }
 
 #cube .back {
-    background: url("img/checklist-2077024_960_720.jpg");
 
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
@@ -85,12 +84,11 @@
     background-size: auto 100%;
 }
 
-#cube .back:hover {
+/*#cube .back:hover {
     transform: translateZ(100px);
-    background: url("img/chris.jpg");
     background-size: auto 100%;
 }
-
+*/
 #cube .right:hover {
     transform: rotateY(180deg) translateZ(-100px);
     transform-origin: 50% 100%;
