@@ -7,15 +7,14 @@
 }
 
 .container11 {
-    width: 200px;
-    height: 200px;
+    width: 15%;
+    height: 15%;
     position: relative;
     margin: 0 auto 40px;
-    border: 1px solid #CCC;
-    -webkit-perspective: 1000px;
+    -webkit-perspective:500px;
     -moz-perspective: 1000px;
     -o-perspective: 1000px;
-    perspective: 1000px;
+    perspective: 500px;
 }
 
 #cube {
@@ -37,7 +36,7 @@
     position: absolute;
     width: 196px;
     height: 196px;
-    border: 2px solid black;
+    border: 2px solid #b6864d;
     line-height: 196px;
     font-size: 180px;
     font-weight: bold;
@@ -54,32 +53,32 @@
 }
 
 #cube .back {
-
+    background: url("img/brown-fabric-texture_1154-619.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
 
 #cube .right {
-    background: url("img/teddy-kelley-98551.jpg");
-    transition: all 0.6s ease-out 0s;
+    background: url("img/cardboard-wallpaper-template_1194-6785.jpg");
+    transition: transform 0.6s ease-out 0s;
     background-size: auto 100%;
 
 }
 
 #cube .left {
     transition: all 0.6s ease-out 0s;
-    background: url("img/philatelist-1844081.jpg");
+    background: url("img/cardboard-wallpaper-template_1194-6785.jpg");
     background-size: auto 100%;
 }
 
 #cube .top {
-    background: url("img/josh-felise-79105.jpg");
+    background: url("img/cardboard-wallpaper-template_1194-6785.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
 
 #cube .bottom {
-    background: url("img/assortment-1868297.jpg");
+    background: url("img/cardboard-wallpaper-template_1194-6785.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
@@ -89,7 +88,7 @@
     background-size: auto 100%;
 }
 */
-#cube .right:hover {
+/*#cube .right:hover {
     transform: rotateY(180deg) translateZ(-100px);
     transform-origin: 50% 100%;
 }
@@ -111,7 +110,7 @@
 }
 
 #cube .right:after {
-    opacity: 1;
+    opacity: 0;
     content: "as";
     position: relative;
     top: 0;
@@ -149,7 +148,7 @@
     right: 0;
     background-color: black;
 }
-
+*/
 #cube .back {
     -webkit-transform: translateZ(-100px);
     -moz-transform: translateZ(-100px);
@@ -159,15 +158,15 @@
 }
 
 #cube .right {
-    transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(90deg) rotate(-90deg) translateZ(100px);
 
 }
 
 #cube .left {
-    -webkit-transform: rotateY(-90deg) translateZ(100px);
-    -moz-transform: rotateY(-90deg) translateZ(100px);
-    -o-transform: rotateY(-90deg) translateZ(100px);
-    transform: rotateY(-90deg) translateZ(100px);
+    -webkit-transform: rotateY(-90deg) rotate(-90deg) translateZ(100px);
+    -moz-transform: rotateY(-90deg) rotate(-90deg) translateZ(100px);
+    -o-transform: rotateY(-90deg) rotate(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) rotate(-90deg) translateZ(100px);
 }
 
 #cube .top {
@@ -188,6 +187,26 @@
     -webkit-transform: translateZ(-100px);
     -moz-transform: translateZ(-100px);
     -o-transform: translateZ(-100px);
-    transform: translateZ(400px);
+    transform: translateZ(00px);
 }
 
+#cube .bottom-wing{
+    background: url("img/heidi-sandstrom-120382.jpg");
+    transform: translateY(200px) translateZ(100px) rotateX(-180deg);
+    background-size: auto 100%;
+}
+#cube .top-wing{
+    background: url("img/heidi-sandstrom-120382.jpg");
+    transform: translateY(-200px) translateZ(100px) rotateX(-180deg);
+    background-size: auto 100%;
+}
+#cube .left-wing{
+    background: url("img/heidi-sandstrom-120382.jpg");
+    transform: translateX(-200px) translateZ(100px) rotateX(-180deg);
+    background-size: auto 100%;
+}
+#cube .right-wing{
+    background: url("img/heidi-sandstrom-120382.jpg");
+    transform: translateX(200px) translateZ(100px) rotateX(-180deg);
+    background-size: auto 100%;
+}
