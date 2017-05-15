@@ -39,7 +39,7 @@
     height: 196px;
     border: 2px solid black;
     line-height: 196px;
-    font-size: 120px;
+    font-size: 180px;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -111,7 +111,7 @@
 }
 
 #cube .right:after {
-    opacity: 0;
+    opacity: 1;
     content: "as";
     position: relative;
     top: 0;
