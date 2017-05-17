@@ -37,12 +37,21 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
-    z-index:99999;
+    z-index: 99999;
 }
 
 .logo img {
     width: 230px;
 }
+/*  other version of logo type
+.logo a {
+    padding: 10px;
+    font-family: Lobster, cursive;
+    text-decoration: none;
+    color: rgba(6, 16, 55, 0.7);
+    font-size: 40px;
+} */
+
 
 .menu-input-checkbox, .menu-input-label {
     display: none;
@@ -76,7 +85,7 @@ a:hover#menu-icon {
 
 .menu-item a {
     text-decoration: none;
-    color: #053178;
+    color: #023850;
 }
 
 .menu-item a:hover {
@@ -99,6 +108,7 @@ h1.header {
     font-weight: 300;
     font-size: 50px;
 }
+
 h2.header {
     /*font-family: Raleway, cursive;*/
     font-family: Lobster, cursive;
@@ -113,10 +123,8 @@ h2.header {
 
 h2 span {
     font-weight: 800;
-    color:  white;
+    color: white;
 }
-
-
 
 p {
     text-indent: 15px;
@@ -172,6 +180,7 @@ p {
     h1.header {
         font-size: 25px;
     }
+
     h2.header {
         bottom: 20%;
         font-size: 50px;
@@ -240,10 +249,10 @@ p {
         font-size: 85%;
     }
 
-
     h1.header {
         font-size: 25px;
     }
+
     h2.header {
         bottom: 20%;
         font-size: 40px;
@@ -252,15 +261,15 @@ p {
 
 .theme {
     margin: 0;
-    background-image: url("img/t5.jpg");
+    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
+    ), url("img/t5.jpg");
+    /*background-image: url("img/t5.jpg");*/
+    background-size: cover;
     height: calc(100vh - 70px);
     padding-top: 70px;
     position: relative;
     z-index: 2;
-    width: 100%;
 }
-
-
 
 .button {
     z-index: 1;
@@ -284,15 +293,67 @@ p {
 
 .list {
     height: calc(100vh - 70px);
-    padding-top: 70px;
-    background-color: #18a3fa;
+    /*padding-top: 70px;*/
+    background-color: #002D40;
+    display: flex;
+
+}
+
+.list div {
+    padding-top: 130px;
+    font-family: Raleway, cursive;
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 2px 5px black;
+    font-weight: 300;
+}
+
+.list :first-child {
+    background-color: lightsalmon;
+    width: 25%;
+    background-image: url("img/tag.svg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+
+}
+
+.list :nth-child(3) {
+    justify-items:;
+    background-color: #E9D0A5;
+    width: 25%;
+    background-image: url("img/open-box.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+.list :nth-child(2) {
+    align-content: space-between;
+    background-color: #618E94;
+    width: 25%;
+    background-image: url("img/shopping-.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+
+}
+
+.list :nth-child(4) {
+    align-content: space-around;
+    background-color: lightseagreen;
+    width: 25%;
+    background-image: url("img/transaction.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
 
 }
 
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
-
+    background-color: #e99db9;
 }
 
 .feature {
@@ -300,7 +361,7 @@ p {
 }
 
 .feature1 {
-    background-color: #0a5994;
+    background-color: #2b3844;
 }
 
 .feature2 {
