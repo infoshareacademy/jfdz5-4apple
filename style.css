@@ -37,7 +37,7 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
-    z-index:99999;
+    z-index: 99999;
 }
 
 .logo img {
@@ -99,6 +99,7 @@ h1.header {
     font-weight: 300;
     font-size: 50px;
 }
+
 h2.header {
     /*font-family: Raleway, cursive;*/
     font-family: Lobster, cursive;
@@ -113,10 +114,8 @@ h2.header {
 
 h2 span {
     font-weight: 800;
-    color:  white;
+    color: white;
 }
-
-
 
 p {
     text-indent: 15px;
@@ -243,8 +242,6 @@ p {
     width: 100%;
 }
 
-
-
 .button {
     z-index: 1;
     width: 60px;
@@ -332,12 +329,84 @@ p {
 .contact-container {
     /* making footer visible in contact section*/
     height: calc(100vh - 60px);
-    background-color: #00152d;
-    color: white;
+    color: #00152d;
+    background-color: white;
 }
-.section-image{
-    height: 50px;
-    width: 50px;
+
+.subscribe-info {
+    padding-top: 27px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.subscribe-info-left-box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 20px 30px;
+}
+
+.subscribe-info-right-box {
+    text-align: left;
+}
+
+.section-image {
+    height: 85px;
+    width: 85px;
+}
+
+.subscribe-title {
+    font-family: 'Audiowide', Verdana, sans-serif;
+}
+
+.text-with-uppercase {
+    text-transform: uppercase;
+}
+
+.text-input {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    font-size: 1.378rem;
+    line-height: 39px;
+    border: 0;
+    border-bottom: 2px solid #bdbdbd;
+    margin: 5px auto;
+    display: block;
+}
+
+.parallelogram {
+    margin: 10px;
+    width: 48%;
+    height: 40px;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    letter-spacing: 2px;
+    border: 2px solid white;
+    color: white;
+    background: #001122;
+    font-family: 'Audiowide', Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.subscribe-warning-text {
+    width: 45%;
+    margin: 0 auto;
+    font-size: 10px;
+    font-style: italic;
 }
 
 footer {
