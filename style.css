@@ -87,7 +87,7 @@ a:hover#menu-icon {
     color: #000;
 }
 
-/*end of navigation*/
+
 
 h1.header {
     font-family: Raleway, cursive;
@@ -231,6 +231,8 @@ p {
         font-size: 85%;
     }
 }
+/*end of navigation*/
+
 
 .theme {
     margin: 0;
@@ -328,7 +330,7 @@ p {
 /*section contact*/
 .contact-container {
     /* making footer visible in contact section*/
-    height: calc(100vh - 60px);
+    /*height: calc(100vh - 60px);*/
     color: #00152d;
     background-color: white;
 }
@@ -387,7 +389,7 @@ p {
     display: block;
 }
 
-.parallelogram {
+.button-parallelogram {
     margin: 10px;
     width: 48%;
     height: 40px;
@@ -407,7 +409,47 @@ p {
     margin: 0 auto;
     font-size: 10px;
     font-style: italic;
+    padding-bottom: 15px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .subscribe-info {
+        width: 70%;
+    }
+    .text-input {
+        width: 70%;
+    }
+    .button-parallelogram {
+        width: 64%;
+    }
+    .subscribe-warning-text {
+        width: 60%;
+    }
+}
+
+@media (max-width: 767px) {
+    .subscribe-info {
+        flex-direction: column;
+        width: 90%;
+    }
+    .subscribe-info-right-box {
+        text-align: center;
+    }
+    .subscribe-title {
+        padding-bottom: 15px;
+    }
+    .text-input {
+        width: 90%;
+    }
+    .button-parallelogram {
+        width: 85%;
+    }
+    .subscribe-warning-text {
+        width: 80%;
+    }
+}
+/*end of contact - section*/
+
 
 footer {
     width: 100%;
