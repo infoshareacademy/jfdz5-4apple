@@ -330,7 +330,7 @@ p {
 /*section contact*/
 .contact-container {
     /* making footer visible in contact section*/
-    /*height: calc(100vh - 60px);*/
+    height: calc(100vh - 60px);
     color: #00152d;
     background-color: white;
 }
