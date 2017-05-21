@@ -21,7 +21,6 @@ body {
 
 header {
     width: 100%;
-
     margin: 0 auto;
 }
 
@@ -37,7 +36,7 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
-    z-index:99999;
+    z-index: 99999;
 }
 
 .logo img {
@@ -77,17 +76,16 @@ a:hover#menu-icon {
 .menu-item a {
     text-decoration: none;
     color: #053178;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 6px;
 }
 
 .menu-item a:hover {
-    border: 2px solid #053178;
-    border-radius: 10px;
-    padding: 6px;
+    border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
     color: #000;
 }
-
-/*end of navigation*/
 
 h1.header {
     font-family: Raleway, cursive;
@@ -99,6 +97,7 @@ h1.header {
     font-weight: 300;
     font-size: 50px;
 }
+
 h2.header {
     /*font-family: Raleway, cursive;*/
     font-family: Lobster, cursive;
@@ -113,10 +112,8 @@ h2.header {
 
 h2 span {
     font-weight: 800;
-    color:  white;
+    color: white;
 }
-
-
 
 p {
     text-indent: 15px;
@@ -140,7 +137,7 @@ p {
     }
 
     .logo img {
-        width: 100%;
+        width: 95%;
     }
 
     .main-menu {
@@ -171,12 +168,16 @@ p {
 }
 
 @media (max-width: 767px) {
+    .main-menu-container {
+        height: 63px;
+    }
     .logo {
         width: 60%;
     }
 
     .logo img {
         width: 80%;
+        max-height: 63px;
     }
 
     .main-menu {
@@ -187,17 +188,15 @@ p {
         display: -webkit-flex;
         display: flex;
         justify-content: flex-end;
-        margin-right: 5%;
+        /*margin-right: 5%;*/
         margin-top: 0;
     }
 
     .menu-input-label {
+        margin-right: 5%;
         display: block;
         width: 48px;
         height: 48px;
-        /*
-        background: url("img/nav.png");
-        */
         cursor: pointer;
     }
 
@@ -206,17 +205,19 @@ p {
         z-index: 1000;
         position: absolute;
         margin: 55px auto;
+        background: rgba(230, 238, 230, 0.7);
+
     }
 
     .menu-input-checkbox:checked + .menu-input-label {
-        margin-right: -15px;
+        margin-right: -5px;
         transform: rotate(90deg) scale(0.8);
         transition: all 0.5s ease;
 
     }
 
     .menu-input-checkbox:checked ~ .menu-list {
-        width: 85%;
+        width: 100%;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -231,7 +232,11 @@ p {
         padding: 10px 0;
         font-size: 85%;
     }
+
+
 }
+
+/*end of navigation*/
 
 .theme {
     margin: 0;
@@ -242,8 +247,6 @@ p {
     z-index: 2;
     width: 100%;
 }
-
-
 
 .button {
     z-index: 1;
