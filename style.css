@@ -171,6 +171,7 @@ p {
     .main-menu-container {
         height: 63px;
     }
+
     .logo {
         width: 60%;
     }
@@ -213,7 +214,6 @@ p {
         margin-right: -5px;
         transform: rotate(90deg) scale(0.8);
         transition: all 0.5s ease;
-
     }
 
     .menu-input-checkbox:checked ~ .menu-list {
@@ -226,14 +226,49 @@ p {
     }
 
     .menu-item {
-        width: 100%;
-        text-align: right;
         list-style-type: none;
         padding: 10px 0;
         font-size: 85%;
+        -webkit-animation: move-to-center;
+        animation: move-to-center;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
     }
 
+    .menu-item:first-child, .menu-item:nth-child(2) {
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
+    }
 
+    .menu-item:nth-child(3) {
+        -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+    }
+
+    .menu-item:nth-child(4), .menu-item:nth-child(5) {
+        -webkit-animation-duration: 2.5s;
+        animation-duration: 2.5s;
+    }
+
+    /*animation menu-item*/
+    @-webkit-keyframes move-to-center {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    @keyframes move-to-center {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
 }
 
 /*end of navigation*/
