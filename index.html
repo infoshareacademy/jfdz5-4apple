@@ -1,37 +1,96 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>price.less.pl</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/mini-icon1.png">
 </head>
 <body>
-<main>
-    <section class="blok1">
-        <section class="container11">
-            <div id="cube" class="cube" class="show-front">
-                <figure class="back">
-                </figure>
-                <figure class="right"></figure>
-                <figure class="left"></figure>
-                <figure class="top"></figure>
-                <figure class="bottom"></figure>
-                <figure class="logo_3d"></figure>
-                <input type="checkbox" id="open-right-wing" class="open-right-wing-checkbox open-wing-checkbox">
-                <label for="open-right-wing" class="right-wing wing"><h1>Adresat: Piotr</h1><h4>Zadowolenie z zakupów!</h4> <p>Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</p></label>
-                <input type="checkbox" id="open-left-wing" class="open-left-wing-checkbox open-wing-checkbox">
-                <label for="open-left-wing" class="left-wing wing"><h4>Trafne wyszukiwanie!</h4><p>Zawsze znajdziesz to czego szukasz. Nasza wyszukiwarka zawsze znajdzie Twój produkt, jeśli tylko taki istnieje.</p></label>
-                <input type="checkbox" id="open-top-wing" class="open-top-wing-checkbox open-wing-checkbox">
-                <label for="open-top-wing" class="top-wing wing"><h4>Gwarancja najniższych cen!</h4><p>Kupując u nasz masz pewność, że wybrałeś lajlepszą ofertę. Znajdziemy dla Ciebie wszystkie oferty, ale przede wszystkim te najbardziej korzystne.</p></label>
-                <input type="checkbox" id="open-bottom-wing" class="open-bottom-wing-checkbox open-wing-checkbox">
-                <label for="open-bottom-wing" class="bottom-wing wing"><h4>Bezpieczne zakupy!</h4><p>Współpracujemy tylko z zaufanymi przedawcami. Kupując u nas masz gwarancję, że nie trafisz na oszusta.</p></label>
-            </div>
-        </section>
-    </section>
+<div class="header">
 
-</main>
+    <h1 class="header">Zapraszamy do naszego serwisu...</h1>
+    <h2 class="header">Price<span>Less</span></h2>
+</div>
+
+<div class="container">
+    <header>
+        <div class="main-menu-container">
+            <div class="logo"><a href="index.html"><img src="img/logo.svg"></a></div>
+            <nav class="main-menu">
+                <input type="checkbox" id="open-menu-input" class="menu-input-checkbox">
+                <label for="open-menu-input" class="menu-input-label"></label>
+
+                <ul class="menu-list">
+                    <li class="menu-item"><a href="#about-product">Zalety</a></li>
+                    <li class="menu-item"><a href="#list">O produkcie</a></li>
+                    <li class="menu-item"><a href="#time-saving">Oszczędność czasu</a></li>
+                    <li class="menu-item"><a href="#about-us">O nas</a></li>
+                    <li class="menu-item"><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="board">
+            <div id="home" class="theme"></div>
+            <div id="list" class="list"></div>
+            <div id="about-product" class="about-product-container">
+                <section class="blok1">
+                    <section class="container11">
+                        <div id="cube" class="cube" class="show-front">
+                            <figure class="back">
+                            </figure>
+                            <figure class="right"></figure>
+                            <figure class="left"></figure>
+                            <figure class="top"></figure>
+                            <figure class="bottom"></figure>
+                            <figure class="logo_3d"></figure>
+                            <input type="checkbox" id="open-right-wing"
+                                   class="open-right-wing-checkbox open-wing-checkbox">
+                            <label for="open-right-wing" class="right-wing wing"><h1>Adresat: Piotr</h1><h4>Zadowolenie
+                                z zakupów!</h4>
+                                <p>Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</p></label>
+                            <input type="checkbox" id="open-left-wing"
+                                   class="open-left-wing-checkbox open-wing-checkbox">
+                            <label for="open-left-wing" class="left-wing wing"><h4>Trafne wyszukiwanie!</h4>
+                                <p>Zawsze znajdziesz to czego szukasz. Nasza wyszukiwarka zawsze znajdzie Twój produkt,
+                                    jeśli tylko taki istnieje.</p></label>
+                            <input type="checkbox" id="open-top-wing" class="open-top-wing-checkbox open-wing-checkbox">
+                            <label for="open-top-wing" class="top-wing wing"><h4>Gwarancja najniższych cen!</h4>
+                                <p>Kupując u nasz masz pewność, że wybrałeś lajlepszą ofertę. Znajdziemy dla Ciebie
+                                    wszystkie produkty, ale przede wszystkim te w najlepszej cenie.</p></label>
+                            <input type="checkbox" id="open-bottom-wing"
+                                   class="open-bottom-wing-checkbox open-wing-checkbox">
+                            <label for="open-bottom-wing" class="bottom-wing wing"><h4>Bezpieczne zakupy!</h4>
+                                <p>Współpracujemy tylko z zaufanymi przedawcami. Kupując u nas masz gwarancję, że nie
+                                    trafisz na oszusta.</p></label>
+                        </div>
+                    </section>
+                </section>
+            </div>
+            <div id="time-saving" class="time-saving-container">
+                <div class="tile tile5">wiele kategorii produktow</div>
+                <div class="tile tile6">sortowanie ofert wg. potrzeb</div>
+                <div class="tile tile7">prywatna lista zakupow</div>
+            </div>
+            <div id="about-us" class="about_us-container"></div>
+            <div id="contact" class="contact-container"></div>
+            <div class="button"><a href="#home"><img src="img/arrow-up.png"></a></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div> 2017 4Apple &copy; All rights reserved</div>
+            <div><img src="img/4Apple-logo-napis(3).png" alt="4apple"></div>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
