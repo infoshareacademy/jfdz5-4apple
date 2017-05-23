@@ -238,18 +238,18 @@ p {
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
-        -webkit-animation-duration: 1.5s;
-        animation-duration: 1.5s;
+        -webkit-animation-duration: 2.0s;
+        animation-duration: 2.0s;
     }
 
     .menu-item:nth-child(3) {
-        -webkit-animation-duration: 2s;
-        animation-duration: 2s;
+        -webkit-animation-duration: 2.5s;
+        animation-duration: 2.5s;
     }
 
     .menu-item:nth-child(4), .menu-item:nth-child(5) {
-        -webkit-animation-duration: 2.5s;
-        animation-duration: 2.5s;
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
     }
 
     /*animation menu-item*/
