@@ -37,7 +37,7 @@ header {
     background: rgba(230, 238, 230, 0.7);
     position: fixed;
     width: 100%;
-    z-index:99999;
+    z-index: 99999;
 }
 
 .logo img {
@@ -99,6 +99,7 @@ h1.header {
     font-weight: 300;
     font-size: 50px;
 }
+
 h2.header {
     /*font-family: Raleway, cursive;*/
     font-family: Lobster, cursive;
@@ -113,10 +114,8 @@ h2.header {
 
 h2 span {
     font-weight: 800;
-    color:  white;
+    color: white;
 }
-
-
 
 p {
     text-indent: 15px;
@@ -243,8 +242,6 @@ p {
     width: 100%;
 }
 
-
-
 .button {
     z-index: 1;
     width: 60px;
@@ -271,31 +268,29 @@ p {
     background-color: #18a3fa;
 
 }
-         /*ABOUT PRODUCT*/
+        /*   !!!!!!!!!                ABOUT PRODUCT      !!!!!!!!         */
+
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
-
-}
-
-.feature {
-    height: calc(25vh - 17.5px);
-}
-.blok1 {
-    height: 100vh;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container11 {
-    width: 15%;
-    height: 15%;
+.feature {
+    height: calc(25vh - 17.5px);
+}
+
+
+.container-box {
+    width: 5%;
+    height: 5%;
     position: relative;
     -webkit-perspective: 500px;
     -moz-perspective: 500px;
     perspective: 500px;
+
 }
 
 .cube {
@@ -380,7 +375,7 @@ p {
     background-size: auto 100%;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 /*rotating vertical wings image*/
@@ -400,7 +395,7 @@ p {
     display: block;
     background: url("img/cardboard-wallpaper-template_1194-6785(1).jpg");
     cursor: pointer;
-    z-index: 4;
+    z-index: 3;
 
 }
 
@@ -408,14 +403,14 @@ p {
     display: block;
     background: url("img/cardboard-wallpaper-template_1194-6785(1).jpg");
     cursor: pointer;
-    z-index: 3;
+    z-index: 1;
 }
 
 .top-wing {
     display: block;
     background: url("img/cardboard-wallpaper-template_1194-6785(1).jpg");
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
 
 }
 
@@ -423,8 +418,9 @@ p {
     display: block;
     background: url("img/cardboard-wallpaper-template_1194-6785(1).jpg");
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
 }
+
 /*.wing{*/
 /*-webkit-transition: all .4s ease;*/
 /*-moz-transition: all .4s ease;*/
@@ -444,9 +440,9 @@ p {
 .wing h1 {
     font-size: 18px;
     color: black;
-    transform: translateX(60px) rotate(-90deg);
+    transform: translateY(60px);
     line-height: normal;
-    background-color: #fff;
+    background-color: #0a5994
 }
 
 .open-wing-checkbox:checked + .wing h1 {
@@ -466,32 +462,32 @@ p {
     font-size: 20px;
     text-transform: uppercase;
     color: black;
-    line-height: 1;
+
     margin: 0;
     background: rgba(255, 255, 255, 0.7);
 }
 
 .open-right-wing-checkbox:checked + .right-wing {
     transform: translateX(200px) translateZ(100px);
-    background: url("img/happy-blue.jpg");
+    background: url("img/happy.jpg");
     background-size: auto 100%;
 }
 
 .open-left-wing-checkbox:checked + .left-wing {
     transform: translateX(-200px) translateZ(100px);
-    background: url("img/search-blue.jpg");
+    background: url("img/search.jpg");
     background-size: auto 100%;
 }
 
 .open-top-wing-checkbox:checked + .top-wing {
     transform: translateY(-200px) translateZ(100px);
-    background: url("img/money-blue.jpg");
+    background: url("img/money.jpg");
     background-size: auto 100%;
 }
 
 .open-bottom-wing-checkbox:checked + .bottom-wing {
     transform: translateY(200px) translateZ(100px);
-    background: url("img/secure-blue.jpg");
+    background: url("img/secure.jpg");
     background-size: auto 100%;
 }
 
@@ -500,7 +496,7 @@ p {
 }
 
 .open-left-wing-checkbox:checked + .left-wing:hover {
-    transform: translateX(-208px) translateZ(100px) rotateY(12deg) scale(1.06) translateY(2px);
+    transform: translateX(-204px) translateZ(100px) rotateY(12deg) scale(1.06) translateY(2px);
 }
 
 .open-top-wing-checkbox:checked + .top-wing:hover {
@@ -511,6 +507,34 @@ p {
     transform: translateZ(100px) rotateX(8deg) translateY(196px);
 }
 
+@media (min-width: 768px) and (max-width: 1023px){
+    .about-product-container {
+        padding: 5% 20% 20% 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-height: 700px) {
+    .container-box {
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .container-box {
+        display: none;
+    }
+}
+@media (max-height: 800px) {
+    .about-product-container {
+        padding: 5% 20% 20% 0;
+        box-sizing: border-box;
+    }
+}
+.about-product-image{
+    height:20%;
+    width: 60%;
+    background-color: #053178;
+}
 
 .time-saving-container {
     height: calc(100vh - 70px);
