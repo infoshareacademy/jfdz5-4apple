@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    /*border: 0;*/
 }
 
 body {
@@ -131,134 +131,6 @@ p {
 
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .logo {
-        width: 30%;
-    }
-
-    .logo img {
-        width: 100%;
-    }
-
-    .main-menu {
-        width: 70%;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .menu-list {
-        flex-wrap: nowrap;
-        align-items: center;
-    }
-
-    .menu-item a:hover {
-        border: none;
-        padding: 6px;
-        background-color: transparent;
-        color: #fff;
-    }
-
-    .menu-item {
-        font-size: 80%;
-    }
-
-    h1.header {
-        font-size: 35px;
-    }
-
-    h2.header {
-        bottom: 20%;
-        font-size: 30px;
-    }
-
-    .list div {
-        font-size: 20px;
-    }
-
-}
-
-@media (max-width: 767px) {
-    .logo {
-        width: 60%;
-    }
-
-    .logo img {
-        width: 80%;
-    }
-
-    .main-menu {
-        width: 40%;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 5%;
-        margin-top: 0;
-    }
-
-    .menu-input-label {
-        display: block;
-        width: 48px;
-        height: 48px;
-        /*
-        background: url("img/nav.png");
-        */
-        cursor: pointer;
-    }
-
-    .menu-list {
-        display: none;
-        z-index: 1000;
-        position: absolute;
-        margin: 55px auto;
-    }
-
-    .menu-input-checkbox:checked + .menu-input-label {
-        margin-right: -15px;
-        transform: rotate(90deg) scale(0.8);
-        transition: all 0.5s ease;
-
-    }
-
-    .menu-input-checkbox:checked ~ .menu-list {
-        width: 85%;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-    }
-
-    .menu-item {
-        width: 100%;
-        text-align: right;
-        list-style-type: none;
-        padding: 10px 0;
-        font-size: 85%;
-    }
-
-    h1.header {
-        font-size: 25px;
-    }
-
-    h2.header {
-        bottom: 20%;
-        font-size: 20px;
-    }
-
-    div#list.list div {
-        font-size: 18px;
-        font-weight: 300;
-    }
-
-}
-
 .theme {
     margin: 0;
     background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
@@ -295,40 +167,29 @@ p {
 .list {
     height: calc(100vh - 70px);
     display: flex;
-
+    align-items: center;
 }
 
 .list div {
-    padding-top: 130px;
     font-family: Raleway, cursive;
-    font-size: 30px;
+    font-size: 28px;
     color: black;
-    text-shadow: 1px 2px 5px black;
+    text-shadow: 1px 2px 5px #023850;
     font-weight: 300;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 60%;
     width: 25%;
-}
-
-.list :first-child {
-    background-image: url("img/tag.svg");
-}
-
-.list :nth-child(2) {
-    background-image: url("img/shopping-.svg");
-    background-color: rgba(249, 255, 249, 0.7);
-}
-
-.list :nth-child(3) {
-    background-image: url("img/open-box.svg");
 
 }
 
-.list :nth-child(4) {
-    background-image: url("img/transaction.svg");
-    background-color: rgba(249, 255, 249, 0.7);
+.list div img {
+    width: 60%;
+    padding: 25% 0;
+
 }
+
+.list div img:last-child {
+    padding: 25% 33px;
+}
+
 
 .about-product-container {
     height: calc(100vh - 70px);
@@ -566,6 +427,147 @@ figure:hover .overlay {
     .selektory {
         display: flex;
         flex-direction: column;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .logo {
+        width: 30%;
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .main-menu {
+        width: 70%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu-list {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .menu-item a:hover {
+        border: none;
+        padding: 6px;
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .menu-item {
+        font-size: 80%;
+    }
+
+    h1.header {
+        font-size: 35px;
+    }
+
+    h2.header {
+        bottom: 20%;
+        font-size: 30px;
+    }
+
+    .list div {
+        font-size: 21px;
+
+    }
+
+    .list div img {
+        width: 75%;
+        padding: 50% 0;
+
+    }
+
+}
+
+@media (max-width: 767px) {
+    .logo {
+        width: 60%;
+    }
+
+    .logo img {
+        width: 80%;
+    }
+
+    .main-menu {
+        width: 40%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 5%;
+        margin-top: 0;
+    }
+
+    .menu-input-label {
+        display: block;
+        width: 48px;
+        height: 48px;
+        /*
+        background: url("img/nav.png");
+        */
+        cursor: pointer;
+    }
+
+    .menu-list {
+        display: none;
+        z-index: 1000;
+        position: absolute;
+        margin: 55px auto;
+    }
+
+    .menu-input-checkbox:checked + .menu-input-label {
+        margin-right: -15px;
+        transform: rotate(90deg) scale(0.8);
+        transition: all 0.5s ease;
+
+    }
+
+    .menu-input-checkbox:checked ~ .menu-list {
+        width: 85%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: right;
+        list-style-type: none;
+        padding: 10px 0;
+        font-size: 85%;
+    }
+
+    h1.header {
+        font-size: 25px;
+    }
+
+    h2.header {
+        bottom: 20%;
+        font-size: 20px;
+    }
+
+    div#list.list div {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .list div img {
+        width: 75%;
+        padding: 50% 0;
+
     }
 
 }
