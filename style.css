@@ -78,7 +78,7 @@ a:hover#menu-icon {
     color: #053178;
     border: 2px solid transparent;
     border-radius: 10px;
-    padding: 6px;
+    padding: 6px 1px;
 }
 
 .menu-item a:hover {
@@ -391,33 +391,6 @@ footer {
 }
 
 @media (max-width: 767px) {
-    /*section contact*/
-    .subscribe-info {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .subscribe-info-right-box {
-        text-align: center;
-    }
-
-    .subscribe-title {
-        padding-bottom: 15px;
-    }
-
-    .text-input {
-        width: 90%;
-    }
-
-    .button-parallelogram {
-        width: 85%;
-    }
-
-    .subscribe-warning-text {
-        width: 80%;
-    }
-
-    /*end of contact - section*/
     /*navigation*/
     .main-menu-container {
         height: 63px;
@@ -521,4 +494,31 @@ footer {
         }
     }
     /*end of navigation*/
+    /*section contact*/
+    .subscribe-info {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .subscribe-info-right-box {
+        text-align: center;
+    }
+
+    .subscribe-title {
+        padding-bottom: 15px;
+    }
+
+    .text-input {
+        width: 90%;
+    }
+
+    .button-parallelogram {
+        width: 85%;
+    }
+
+    .subscribe-warning-text {
+        width: 80%;
+    }
+
+    /*end of contact - section*/
 }
