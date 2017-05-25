@@ -70,18 +70,19 @@ a:hover#menu-icon {
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .menu-item a {
     text-decoration: none;
-    color: #023850;
+    color: #053178;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 6px 1px;
 }
 
 .menu-item a:hover {
-    border: 2px solid #053178;
-    border-radius: 10px;
-    padding: 6px;
+    border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
     color: #000;
 }
@@ -247,12 +248,92 @@ p {
     background-color: #083772;
 }
 
+/*section contact*/
 .contact-container {
     /* making footer visible in contact section*/
     height: calc(100vh - 60px);
-    background-color: #2c7bb6;
-
+    color: #00152d;
+    background-color: white;
 }
+
+.subscribe-info {
+    padding-top: 27px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.subscribe-info-left-box {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 20px 30px;
+}
+
+.subscribe-info-right-box {
+    text-align: left;
+}
+
+.section-image {
+    height: 85px;
+    width: 85px;
+}
+
+.subscribe-title {
+    font-family: 'Audiowide', Verdana, sans-serif;
+}
+
+.text-with-uppercase {
+    text-transform: uppercase;
+}
+
+.text-input {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    font-size: 1.378rem;
+    line-height: 39px;
+    border: 0;
+    border-bottom: 2px solid #bdbdbd;
+    margin: 5px auto;
+    display: block;
+}
+
+.button-parallelogram {
+    margin: 10px;
+    width: 48%;
+    height: 40px;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    letter-spacing: 2px;
+    border: 2px solid white;
+    color: white;
+    background: #001122;
+    font-family: 'Audiowide', Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.subscribe-warning-text {
+    width: 45%;
+    margin: 0 auto;
+    font-size: 10px;
+    font-style: italic;
+    padding-bottom: 15px;
+}
+
+/*end of contact - section*/
 
 .blok2 {
     box-sizing: border-box;
@@ -432,12 +513,13 @@ figure:hover .overlay {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+    /*navigation*/
     .logo {
         width: 30%;
     }
 
     .logo img {
-        width: 100%;
+        width: 90%;
     }
 
     .main-menu {
@@ -455,16 +537,23 @@ figure:hover .overlay {
         align-items: center;
     }
 
+    .menu-item a {
+        padding: 0;
+        border: none;
+    }
+
     .menu-item a:hover {
         border: none;
-        padding: 6px;
+        padding: 0;
         background-color: transparent;
         color: #fff;
     }
 
     .menu-item {
-        font-size: 80%;
+        font-size: 83%;
     }
+
+    /*end of navigation*/
 
     h1.header {
         font-size: 35px;
@@ -483,18 +572,41 @@ figure:hover .overlay {
     .list div img {
         width: 75%;
         padding: 50% 0;
-
     }
+    /*section contact*/
+    .subscribe-info {
+        width: 70%;
+    }
+
+    .text-input {
+        width: 70%;
+    }
+
+    .button-parallelogram {
+        width: 64%;
+    }
+
+    .subscribe-warning-text {
+        width: 60%;
+    }
+
+    /*end of contact - section*/
 
 }
 
 @media (max-width: 767px) {
+    /*navigation*/
+    .main-menu-container {
+        height: 63px;
+    }
+
     .logo {
         width: 60%;
     }
 
     .logo img {
         width: 80%;
+        max-height: 63px;
     }
 
     .main-menu {
@@ -505,17 +617,15 @@ figure:hover .overlay {
         display: -webkit-flex;
         display: flex;
         justify-content: flex-end;
-        margin-right: 5%;
+        /*margin-right: 5%;*/
         margin-top: 0;
     }
 
     .menu-input-label {
+        margin-right: 5%;
         display: block;
         width: 48px;
         height: 48px;
-        /*
-        background: url("img/nav.png");
-        */
         cursor: pointer;
     }
 
@@ -524,17 +634,18 @@ figure:hover .overlay {
         z-index: 1000;
         position: absolute;
         margin: 55px auto;
+        background: rgba(230, 238, 230, 0.7);
+
     }
 
     .menu-input-checkbox:checked + .menu-input-label {
-        margin-right: -15px;
+        margin-right: -5px;
         transform: rotate(90deg) scale(0.8);
         transition: all 0.5s ease;
-
     }
 
     .menu-input-checkbox:checked ~ .menu-list {
-        width: 85%;
+        width: 100%;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -543,12 +654,50 @@ figure:hover .overlay {
     }
 
     .menu-item {
-        width: 100%;
-        text-align: right;
         list-style-type: none;
         padding: 10px 0;
         font-size: 85%;
+        -webkit-animation: move-to-center;
+        animation: move-to-center;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
     }
+
+    .menu-item:first-child, .menu-item:nth-child(2) {
+        -webkit-animation-duration: 2.0s;
+        animation-duration: 2.0s;
+    }
+
+    .menu-item:nth-child(3) {
+        -webkit-animation-duration: 2.5s;
+        animation-duration: 2.5s;
+    }
+
+    .menu-item:nth-child(4), .menu-item:nth-child(5) {
+        -webkit-animation-duration: 3s;
+        animation-duration: 3s;
+    }
+
+    /*animation menu-item*/
+    @-webkit-keyframes move-to-center {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    @keyframes move-to-center {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    /*end of navigation*/
 
     h1.header {
         font-size: 25px;
@@ -569,5 +718,31 @@ figure:hover .overlay {
         padding: 50% 0;
 
     }
+    /*section contact*/
+    .subscribe-info {
+        flex-direction: column;
+        width: 90%;
+    }
 
+    .subscribe-info-right-box {
+        text-align: center;
+    }
+
+    .subscribe-title {
+        padding-bottom: 15px;
+    }
+
+    .text-input {
+        width: 90%;
+    }
+
+    .button-parallelogram {
+        width: 85%;
+    }
+
+    .subscribe-warning-text {
+        width: 80%;
+    }
+
+    /*end of contact - section*/
 }
