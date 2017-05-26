@@ -955,3 +955,236 @@ footer {
     -o-transform: translateZ(-100px);
     transform: translateZ(400px);
 }
+
+
+/*alek*/
+.selektory {
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.blok2 {
+    box-sizing: border-box;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 5% 0 5%;
+}
+
+h1.naglowek {
+    font-size: 70px;
+}
+
+.naglowek {
+    color: black;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    margin-top: 5%;
+    text-shadow: 1px 2px 3px #666;
+}
+
+.blok2 .contener3 {
+    width: 30%;
+    margin: 3.3333%;
+    transition: all 0.6s ease-out 0s;
+    position: relative;
+}
+
+.blok2 .contener3:not(:last-child):before {
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    right: -13%;
+    width: 2px;
+    content: "";
+    background: linear-gradient(#FFFFFF, #000000 50%, #FFFFFF);
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+/* początek kodu pod miniatury */
+figure {
+    position: relative;
+    margin: 0;
+}
+
+.overlay-info {
+    max-width: 100%;
+    padding: 7% 7%;
+}
+
+.contener3 .overlay {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 20%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    color: #fff;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.6s ease-out 0s;
+    opacity: 0;
+    /* wyśrodkowanie w pionie i poziomie */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border: solid 11px #313233;
+    border-radius: 5%;
+}
+
+/* overlay hover, czyli pokazujemy wszystko */
+figure:hover .overlay {
+    opacity: 1;
+}
+
+.blok2 .contener3:hover {
+    width: 50%;
+
+}
+
+
+
+@media screen and (min-width: 461px) and ( max-width: 960px) {
+    .selektory {
+        height: 100%;
+        margin: 22% 0;
+    }
+
+    .blok2 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+    }
+
+    h1.naglowek {
+        font-size: 40px;
+        margin: 10% 0;
+    }
+
+    .blok2 .contener3 {
+        width: 50%;
+        margin: 3.3333%;
+    }
+
+    .blok2 .contener3:not(:last-child):before {
+        display: none;
+    }
+
+    /* overlay hover, czyli pokazujemy wszystko */
+    .blok2 .contener3:active {
+        width: 80%;
+
+    }
+
+    figure:active .overlay {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .overlay-info h1 {
+        font-size: 18px;
+    }
+
+    .overlay-info p {
+        font-size: 16px;
+    }
+
+}
+
+/*do zmiany !!! */
+@media screen and ( min-width: 960px) and (max-width: 1200px) {
+    .blok2 .contener3 {
+        width: 30%;
+
+    }
+
+    figure:active .overlay {
+        opacity: 1;
+    }
+
+    .overlay-info h1 {
+        font-size: 20px;
+    }
+
+    .overlay-info p {
+        font-size: 16px;
+    }
+
+    .blok2 .contener3:active {
+        width: 60%;
+
+    }
+
+}
+@media all and (max-width: 609px) {
+    h1.naglowek {
+        font-size: 30px;
+        margin: 12% 0;
+    }
+    .selektory {
+        height: 100%;
+        margin: 22% 0;
+    }
+
+    .blok2 {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+    }
+    .blok2 .contener3 {
+        width: 90%;
+        transition: all 0.4s ease-out 0s;
+    }
+
+    figure:active .overlay {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .overlay-info h1 {
+        font-size:18px;
+    }
+
+    .overlay-info p {
+        font-size: 14px;
+    }
+
+    .blok2 .contener3:active{
+        width: 100%;
+
+    }
+    figure:hover .overlay {
+        opacity: 1;
+        width: 100%;
+    }
+
+    .blok2 .contener3:hover{
+        width: 100%;
+
+    }
+
+}
+
+/*Alek End*/
