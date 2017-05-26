@@ -191,7 +191,6 @@ p {
     padding: 25% 33px;
 }
 
-
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
@@ -554,7 +553,6 @@ figure:hover .overlay {
     }
 
     /*end of navigation*/
-
     h1.header {
         font-size: 35px;
     }
@@ -573,6 +571,7 @@ figure:hover .overlay {
         width: 75%;
         padding: 50% 0;
     }
+
     /*section contact*/
     .subscribe-info {
         width: 70%;
@@ -698,7 +697,6 @@ figure:hover .overlay {
         }
     }
     /*end of navigation*/
-
     h1.header {
         font-size: 25px;
     }
@@ -718,6 +716,7 @@ figure:hover .overlay {
         padding: 50% 0;
 
     }
+
     /*section contact*/
     .subscribe-info {
         flex-direction: column;
@@ -746,6 +745,7 @@ figure:hover .overlay {
 
     /*end of contact - section*/
 }
+
 footer {
     width: 100%;
     background-color: #0a5994;
@@ -772,15 +772,15 @@ footer {
 }
 
 .container11 {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     position: relative;
-    margin: 0 auto 40px;
-    border: 1px solid #CCC;
+    margin-top: 12%;
+
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
     -o-perspective: 1000px;
-    perspective: 1000px;
+    perspective: 5000px;
 }
 
 #cube {
@@ -800,11 +800,11 @@ footer {
 #cube figure {
     display: block;
     position: absolute;
-    width: 196px;
-    height: 196px;
-    border: 2px solid black;
-    line-height: 196px;
-    font-size: 180px;
+    width: 320px;
+    height: 320px;
+    border: solid saddlebrown 5px;
+    line-height: 300px;
+    font-size: 250px;
     font-weight: bold;
     color: white;
     text-align: center;
@@ -821,11 +821,12 @@ footer {
 #cube .back {
 
     transition: all 0.6s ease-out 0s;
+    background: url("img/karton.jpg");
     background-size: auto 100%;
 }
 
 #cube .right {
-    /*   background: url("img/teddy-kelley-98551.jpg");*/
+    background: url("img/happy.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 
@@ -833,18 +834,18 @@ footer {
 
 #cube .left {
     transition: all 0.6s ease-out 0s;
-    /*  background: url("img/philatelist-1844081.jpg");*/
+    background: url("img/secure.jpg");
     background-size: auto 100%;
 }
 
 #cube .top {
-    /*  background: url("img/josh-felise-79105.jpg");*/
+    background: url("img/search.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
 
 #cube .bottom {
-    /*  background: url("img/assortment-1868297.jpg");*/
+    background: url("img/money.jpg");
     transition: all 0.6s ease-out 0s;
     background-size: auto 100%;
 }
@@ -861,7 +862,7 @@ footer {
 
 #cube .left:hover {
     transform: rotateY(-180deg) translateZ(-100px);
-    transform-origin: 100px 0;
+    transform-origin: 50% 0;
 }
 
 #cube .top:hover {
@@ -877,76 +878,69 @@ footer {
 
 #cube .right:after {
     opacity: 0;
-    content: "as";
+    content: "assd";
     position: relative;
     top: 0;
     bottom: 0;
-    right: 100px;
+    right: 250px;
     background-color: black;
 }
 
 #cube .left:before {
     opacity: 0;
-    content: "as";
+    content: "assd";
     position: relative;
     top: 0;
     bottom: 0;
-    left: 100px;
+    left: 250px;
     background-color: black;
 }
 
 #cube .top:after {
     opacity: 0;
-    content: "ass";
+    content: "assd";
     position: relative;
-    bottom: 100px;
+    bottom: 250px;
     left: 0;
     right: 0;
     background-color: black;
 
 }
+
 #cube .bottom:after {
     opacity: 0;
     content: "ass";
     position: relative;
-    top: 100px;
+    top: 250px;
     left: 0;
     right: 0;
     background-color: black;
 }
 
 #cube .back {
-    -webkit-transform: translateZ(-100px);
-    -moz-transform: translateZ(-100px);
-    -o-transform: translateZ(-100px);
-    transform: translateZ(-100px);
+
+    transform: translateZ(-265px);
 
 }
 
 #cube .right {
-    transform: rotateY(90deg) translateZ(100px);
+    transform: rotateY(118deg) translateZ(270px);
 
 }
 
 #cube .left {
-    -webkit-transform: rotateY(-90deg) translateZ(100px);
-    -moz-transform: rotateY(-90deg) translateZ(100px);
-    -o-transform: rotateY(-90deg) translateZ(100px);
-    transform: rotateY(-90deg) translateZ(100px);
+
+    transform: rotateY(-118deg) translateZ(270px);
 }
 
 #cube .top {
-    -webkit-transform: rotateX(90deg) translateZ(100px);
-    -moz-transform: rotateX(90deg) translateZ(100px);
-    -o-transform: rotateX(90deg) translateZ(100px);
-    transform: rotateX(-90deg) translateZ(-100px);
+
+    transform: rotateX(-74deg) translateZ(-210px);
 }
 
 #cube .bottom {
-    -webkit-transform: rotateX(-90deg) translateZ(100px);
-    -moz-transform: rotateX(-90deg) translateZ(100px);
-    -o-transform: rotateX(-90deg) translateZ(100px);
-    transform: rotateX(90deg) translateZ(-100px);
+
+    transform: rotateX(74deg) translateZ(-210px);
 }
 
 #cube.show-front {
@@ -955,7 +949,6 @@ footer {
     -o-transform: translateZ(-100px);
     transform: translateZ(400px);
 }
-
 
 /*alek*/
 .selektory {
@@ -1060,8 +1053,6 @@ figure:hover .overlay {
 
 }
 
-
-
 @media screen and (min-width: 461px) and ( max-width: 960px) {
     .selektory {
         height: 100%;
@@ -1136,11 +1127,13 @@ figure:hover .overlay {
     }
 
 }
+
 @media all and (max-width: 609px) {
     h1.naglowek {
         font-size: 30px;
         margin: 12% 0;
     }
+
     .selektory {
         height: 100%;
         margin: 22% 0;
@@ -1153,6 +1146,7 @@ figure:hover .overlay {
         margin: 0 auto;
 
     }
+
     .blok2 .contener3 {
         width: 90%;
         transition: all 0.4s ease-out 0s;
@@ -1164,23 +1158,24 @@ figure:hover .overlay {
     }
 
     .overlay-info h1 {
-        font-size:18px;
+        font-size: 18px;
     }
 
     .overlay-info p {
         font-size: 14px;
     }
 
-    .blok2 .contener3:active{
+    .blok2 .contener3:active {
         width: 100%;
 
     }
+
     figure:hover .overlay {
         opacity: 1;
         width: 100%;
     }
 
-    .blok2 .contener3:hover{
+    .blok2 .contener3:hover {
         width: 100%;
 
     }
@@ -1200,7 +1195,7 @@ figure:hover .overlay {
     width: 100%;
     height: 100%;
     text-align: center;
-    font-family: "Arabic Typesetting" , sans-serif;
+    font-family: "Arabic Typesetting", sans-serif;
     position: relative;
 }
 
@@ -1219,13 +1214,13 @@ figure:hover .overlay {
     color: #000;
 }
 
-
-.team-profile a{
+.team-profile a {
     position: relative;
     min-width: 100%;
 }
+
 .team-profile a img {
-    width:180px;
+    width: 180px;
     height: 260px;
     margin: 5% 1%;
     border-radius: 2%;
@@ -1287,76 +1282,110 @@ figure:hover .overlay {
     background-color: white;
     color: black;
     width: 50%;
-    height: 75%;
+    height: auto;
     margin-top: 5%;
     position: relative;
     border-radius: 2%;
 
 }
-.Window a{
+
+.Window a {
     position: absolute;
     width: 20px;
     height: 20px;
-    top:2%;
+    top: 2%;
     right: 1%;
     background: url("img/x.png");
     background-size: cover;
 
 }
-.Window img{
+
+.Window img {
     position: absolute;
-    top:5%;
+    top: 5%;
     left: 3%;
     height: 150px;
     border-radius: 2%;
 }
-.Window h2{
-    margin: 8% 0 0 20%;
+
+.Window h2 {
+    margin: 8% 0 0 0;
 }
-.Window h3{
-    margin-left: 20%;
+
+.Window h3 {
+    margin-left: 0;
     font-weight: 500;
 }
 
 .close-window:hover {
     display: block;
 }
-.Window p{
+
+.Window p {
     margin: 10% 20%;
     line-height: 2em;
     letter-spacing: 1px;
 }
+
 .Window .face {
-    height:25px;
+    height: 25px;
     width: 25px;
     background: url("img/facebook.png");
     background-size: cover;
     position: absolute;
-    top:40%;
+    top: 40%;
     left: 5%;
 }
-.team-profile a img:hover{
+
+.team-profile a img:hover {
     filter: sepia(100%);
 }
-
-
 
 @media all and (max-width: 960px) {
     .team-profile a img {
         margin: 12% 5%;
     }
-    .Window{
 
-        height: 90%;
+    .Window {
+
+        height: auto;
         width: 90%;
     }
+
     .container-team {
         width: 100%;
         height: 100%;
     }
 
+    .Window p {
+        margin-left: 35%;
+        line-height: 1.4;
+    }
+
+    .Window h2 {
+        font-size: 16px;
+        margin: 4% 5% 2%;
+    }
+
+    .Window h3 {
+        font-size: 16px;
+        margin: 2% 5% 5%;
+    }
+
+    .Window img {
+        position: absolute;
+        top: 33%;
+        left: 3%;
+    }
+
+    .Window .face {
+        position: absolute;
+        top: 30%;
+        left: 5%;
+    }
 }
-@media all and (min-width: 1000px)and (max-width: 1355px){
+
+@media all and (min-width: 1000px)and (max-width: 1355px) {
 
     .team-profile a img {
         margin: 10% 7%;
@@ -1366,6 +1395,5 @@ figure:hover .overlay {
         width: 100%;
         height: 100%;
     }
-
 
 }
