@@ -191,7 +191,6 @@ p {
     padding: 25% 33px;
 }
 
-
 .about-product-container {
     height: calc(100vh - 70px);
     padding-top: 70px;
@@ -254,6 +253,19 @@ p {
     height: calc(100vh - 60px);
     color: #00152d;
     background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .subscribe-info {
@@ -554,7 +566,6 @@ figure:hover .overlay {
     }
 
     /*end of navigation*/
-
     h1.header {
         font-size: 35px;
     }
@@ -573,6 +584,7 @@ figure:hover .overlay {
         width: 75%;
         padding: 50% 0;
     }
+
     /*section contact*/
     .subscribe-info {
         width: 70%;
@@ -617,7 +629,6 @@ figure:hover .overlay {
         display: -webkit-flex;
         display: flex;
         justify-content: flex-end;
-        /*margin-right: 5%;*/
         margin-top: 0;
     }
 
@@ -698,7 +709,6 @@ figure:hover .overlay {
         }
     }
     /*end of navigation*/
-
     h1.header {
         font-size: 25px;
     }
@@ -716,8 +726,8 @@ figure:hover .overlay {
     .list div img {
         width: 75%;
         padding: 50% 0;
-
     }
+
     /*section contact*/
     .subscribe-info {
         flex-direction: column;
