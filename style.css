@@ -9,9 +9,7 @@
 body {
     background-color: #fff;
     color: #000;
-    margin: 0;
-!important;
-    font-family: 'Lato', sans-serif;
+    font-family: Raleway, 'Audiowide', cursive;
     font-size: 18px;
     line-height: 1.2;
     width: 100%;
@@ -129,7 +127,6 @@ p {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-
 }
 
 .theme {
@@ -166,10 +163,11 @@ p {
 }
 
 .list {
-    height: calc(100vh - 70px);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-top: 63px;
+    padding-bottom: 63px;
 }
 
 .list div {
@@ -188,69 +186,42 @@ p {
 
 .list div img {
     width: 60%;
-    padding: 25% 0;
+    padding: 15% 0 0;
+    max-width: 200px;
+}
+/*img line */
+.line {
+    max-width: 100%;
+}
+.img-line-padding-top {
+    padding-top: 63px;
 }
 
 .about-product-container {
-    height: calc(100vh - 70px);
-    padding-top: 70px;
+    padding-top: 63px;
+    padding-bottom: 63px;
+
     background-color: #fff;
 }
 
-.feature {
-    height: calc(25vh - 17.5px);
-}
-
-.feature1 {
-    background-color: ghostwhite;
-}
-
-.feature2 {
-    background-color: floralwhite;
-}
-
-.feature3 {
-    background-color: navajowhite;
-}
-
-.feature4 {
-    background-color: whitesmoke;
-}
-
 .time-saving-container {
-    height: calc(100vh - 70px);
-    padding-top: 70px;
+    padding-top: 63px;
+    padding-bottom: 63px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.tile {
-    width: 33.3vw;
-}
-
-.tile5 {
-    background-color: #fff;
-}
-
-.tile6 {
-    background-color: #afddf7;
-}
-
-.tile7 {
-    background-color: #fff;
-}
-
 .about_us-container {
-    height: calc(100vh - 70px);
     padding-top: 70px;
     background-color: #083772;
 }
 
 /*section contact*/
 .contact-container {
-    /* making footer visible in contact section*/
-    height: calc(100vh - 60px);
+    padding-bottom: 63px;
+
     color: #00152d;
     background-color: white;
     display: -webkit-box;
@@ -333,7 +304,8 @@ p {
     border: 2px solid white;
     color: white;
     background: #001122;
-    font-family: 'Audiowide', Verdana, sans-serif;
+    font-family: Raleway, 'Audiowide', cursive;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -360,7 +332,6 @@ p {
 
 .selektory {
     box-sizing: border-box;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -377,12 +348,14 @@ h1.naglowek {
     width: 100%;
     height: 25%;
     text-align: center;
+    /*
     margin-top: 5%;
+    */
     text-shadow: 1px 2px 3px #666;
 }
 
 .blok2 .contener3 {
-    width: 30%;
+    width: 30%;1
     margin: 3.3333%;
     transition: all 0.6s ease-out 0s;
     position: relative;
@@ -775,7 +748,9 @@ footer {
 /*cube*/
 
 .blokcube {
+    /*
     height: 100vh;
+    */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -970,7 +945,9 @@ footer {
 /*alek*/
 .selektory {
     box-sizing: border-box;
+    /*
     height: 100vh;
+    */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1204,10 +1181,12 @@ figure:hover .overlay {
 /*team*/
 .container-team {
     width: 100%;
+    /*
     height: 100vh;
+    */
     position: relative;
     box-sizing: border-box;
-    padding: 7% 0;
+    padding: 63px 0 0;
 }
 
 .team {
@@ -1215,14 +1194,14 @@ figure:hover .overlay {
     width: 100%;
     height: 100%;
     text-align: center;
-    font-family: "Arabic Typesetting", sans-serif;
+    font-family: Raleway, 'Audiowide', cursive;
     position: relative;
 }
 
 .team .team-profile {
     width: 80%;
     height: auto;
-    background-color: lightgrey;
+    background-color: #f9f9f9;
     margin: auto;
     padding: 5% 10%;
     box-sizing: border-box;
@@ -1421,6 +1400,8 @@ figure:hover .overlay {
 }
 /*target cube */
 .modal-container {
+    padding-top: 63px;
+    padding-bottom: 63px;
     position: absolute;
     top: -50%;
     left: -120%;
