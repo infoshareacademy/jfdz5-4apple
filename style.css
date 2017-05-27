@@ -295,9 +295,12 @@ p {
     font-size: 1.378rem;
     line-height: 39px;
     border: 0;
-    border-bottom: 2px solid #cbcbcb;
+    border-bottom: 2px solid #001122;
     margin: 5px auto;
     display: block;
+}
+.text-input::placeholder {
+    color: rgba(0, 17, 34, 0.6);
 }
 
 .button-parallelogram {
@@ -308,7 +311,7 @@ p {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     letter-spacing: 2px;
-    border: 2px solid rgba(255, 255,255, 0.5);
+    border: 2px solid #001122;
     color: white;
     background: #001122;
     font-family: Raleway, 'Audiowide', cursive;
@@ -1208,7 +1211,7 @@ figure:hover .overlay {
 .team .team-profile {
     height: auto;
     margin: auto;
-    padding: 5% 10%;
+    padding: 0 10% 3%;
     box-sizing: border-box;
     position: relative;
 }
