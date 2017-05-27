@@ -13,8 +13,16 @@ body {
     font-size: 18px;
     line-height: 1.2;
     width: 100%;
+    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
+    ), url("img/t5.jpg");
+    background-attachment:fixed;
+    background-size: cover;
 }
-
+.board{
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+}
 /*navigation*/
 
 header {
@@ -131,8 +139,8 @@ p {
 
 .theme {
     margin: 0;
-    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
-    ), url("img/t5.jpg");
+    /*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
+    ), url("img/t5.jpg");*/
     /*background-image: url("img/t5.jpg");*/
     background-size: cover;
     height: calc(100vh - 70px);
@@ -1199,9 +1207,7 @@ figure:hover .overlay {
 }
 
 .team .team-profile {
-    width: 80%;
     height: auto;
-    background-color: #f9f9f9;
     margin: auto;
     padding: 5% 10%;
     box-sizing: border-box;
