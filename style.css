@@ -169,6 +169,7 @@ p {
     height: calc(100vh - 70px);
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 .list div {
@@ -178,17 +179,16 @@ p {
     text-shadow: 1px 2px 5px #023850;
     font-weight: 300;
     width: 25%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .list div img {
     width: 60%;
     padding: 25% 0;
-
-}
-
-.list div img:last-child {
-    padding: 25% 33px;
 }
 
 .about-product-container {
