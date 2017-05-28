@@ -15,14 +15,16 @@ body {
     width: 100%;
     background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
     ), url("img/t5.jpg");
-    background-attachment:fixed;
+    background-attachment: fixed;
     background-size: cover;
 }
-.board{
+
+.board {
     max-width: 1200px;
     background-color: rgba(255, 255, 255, 0.5);
     margin: 0 auto;
 }
+
 /*navigation*/
 
 header {
@@ -197,14 +199,17 @@ p {
     padding: 15% 0 0;
     max-width: 200px;
 }
+
 /*img line */
 .line {
     max-width: 100%;
 }
-.line-top{
+
+.line-top {
     max-width: 100%;
-    margin-top:4%;
+    margin-top: 4%;
 }
+
 .img-line-padding-top {
     padding-top: 63px;
 }
@@ -303,6 +308,7 @@ p {
     margin: 5px auto;
     display: block;
 }
+
 .text-input::placeholder {
     color: rgba(0, 17, 34, 0.6);
 }
@@ -341,7 +347,6 @@ p {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 0 5% 0 5%;
 }
 
 .selektory {
@@ -771,6 +776,48 @@ footer {
     justify-content: center;
     align-items: center;
 }
+.for-media-about-product{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.for-media-about-product-tiles{
+    margin: 10px 0;
+}
+.search{
+    background: url("img/search.jpg");
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+}
+.media-input-label, .media-input-checkbox{
+    display:none;
+}
+.media-input-checkbox-search:checked + .media-input-label-search{
+    display:block;
+}
+
+/*menu-input-checkbox:checked + .menu-input-label*/
+.happy{
+    background: url("img/happy.jpg") ;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+
+}
+.money{
+    background: url("img/money.jpg");
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+}
+.secure{
+    background: url("img/secure.jpg");
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+}
 
 .container11 {
     width: 400px;
@@ -779,9 +826,8 @@ footer {
     margin-top: 12%;
     margin-left: 5%;
 
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    -o-perspective: 1000px;
+    -webkit-perspective: 5000px;
+    -moz-perspective: 5000px;
     perspective: 5000px;
 }
 
@@ -790,8 +836,6 @@ footer {
     height: 100%;
     position: absolute;
     -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
@@ -816,7 +860,6 @@ footer {
 .cube.panels-backface-invisible figure {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -878,6 +921,7 @@ footer {
     transform-origin: 0 100px;
 
 }
+
 .cube .right:after {
     opacity: 0;
     content: "assd";
@@ -954,9 +998,8 @@ footer {
 
 @media all and (max-width: 800px) {
 
-
-
 }
+
 /*alek*/
 .selektory {
     box-sizing: border-box;
@@ -978,7 +1021,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 0 5% 0 5%;
+
 }
 
 h1.naglowek {
@@ -1065,7 +1108,6 @@ figure:hover .overlay {
 @media screen and (min-width: 461px) and ( max-width: 960px) {
     .selektory {
         height: 100%;
-        margin: 22% 0;
     }
 
     .blok2 {
@@ -1145,7 +1187,6 @@ figure:hover .overlay {
 
     .selektory {
         height: 100%;
-        margin: 22% 0;
     }
 
     .blok2 {
@@ -1204,16 +1245,17 @@ figure:hover .overlay {
     padding: 63px 0 0;
 }
 
-.team-description-plus-logo{
+.team-description-plus-logo {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.team-description-plus-logo img{
+.team-description-plus-logo img {
     padding: 0 10px;
 }
+
 .team {
 
     width: 100%;
@@ -1398,13 +1440,13 @@ figure:hover .overlay {
 
     .Window img {
         position: absolute;
-        top: 33%;
+
         left: 3%;
     }
 
     .Window .face {
         position: absolute;
-        top: 30%;
+
         left: 5%;
     }
 }
@@ -1421,6 +1463,7 @@ figure:hover .overlay {
     }
 
 }
+
 /*target cube */
 .modal-container {
     padding-top: 63px;
@@ -1435,12 +1478,12 @@ figure:hover .overlay {
     justify-content: center;
     align-items: center;
 
-
 }
 
 .modal-container:target {
     opacity: 1;
-    z-index: 99; }
+    z-index: 99;
+}
 
 .modal {
     margin-left: 0.5%;
@@ -1449,25 +1492,30 @@ figure:hover .overlay {
     width: 340px;
     height: 330px;
     position: relative;
-   background-color: rgba(0, 0, 0, 0.8);
-   /* background: url("img/karton.jpg"); */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* background: url("img/karton.jpg"); */
 
 }
-.close-modal{
+
+.close-modal {
     background: url("img/x.png");
     background-size: cover;
     height: 20px;
     width: 20px;
     position: absolute;
-    top:2%;
+    top: 2%;
     right: 1%;
 }
+
 .close-modal:hover {
-    display: block; }
-.modal h2{
+    display: block;
+}
+
+.modal h2 {
     margin: 10%;
 }
-.modal p{
+
+.modal p {
     margin: 5% 10%;
 }
 
@@ -1480,6 +1528,7 @@ figure:hover .overlay {
         bottom: 17%;
     }
 }
+
 @media all and (min-width: 370px) and (max-width: 385px) {
     .modal-container {
         position: absolute;
@@ -1489,6 +1538,7 @@ figure:hover .overlay {
         bottom: 17%;
     }
 }
+
 @media all and (min-width: 385px) and (max-width: 400px) {
     .modal-container {
         position: absolute;
@@ -1513,10 +1563,12 @@ figure:hover .overlay {
     justify-content: center;
     align-items: center;
 }
-.cube .right:hover .modal-container-hover  {
+
+.cube .right:hover .modal-container-hover {
     opacity: 10;
     z-index: 1199;
 }
+
 /*end target cube */
 .overshow {
     box-sizing: border-box;
@@ -1530,7 +1582,7 @@ figure:hover .overlay {
     color: #fff;
     margin: 0 auto;
     transition: all 0.3s ease-out 0s;
-    opacity:0;
+    opacity: 0;
     /* wyśrodkowanie w pionie i poziomie */
     display: flex;
     justify-content: center;
@@ -1538,25 +1590,32 @@ figure:hover .overlay {
     align-items: center;
     transform: rotateY(180deg);
 }
-.bottom .overshow{
+
+.bottom .overshow {
     transform: rotateY(0deg);
 }
-.top .overshow{
+
+.top .overshow {
     transform: rotateY(0deg);
 }
+
 /* overlay hover, czyli pokazujemy wszystko */
 .right:hover .overshow {
     opacity: 1;
 }
+
 .left:hover .overshow {
     opacity: 1;
 }
+
 .bottom:hover .overshow {
     opacity: 1;
 }
+
 .top:hover .overshow {
     opacity: 1;
 }
+
 .overshow-info {
     max-width: 100%;
     padding: 7% 7%;
@@ -1564,36 +1623,51 @@ figure:hover .overlay {
     line-height: 1.2;
     color: #000;
     text-shadow: -1px 0 white, 0 1px white,
-    1px 0 white, 0 -1px white}
+    1px 0 white, 0 -1px white
+}
 
-@media (max-width: 1200px){
-    .list{
-        height:calc(100vh - 270px);
+@media (min-width: 768px) and (max-width: 1200px) {
+    .list {
+        height: calc(100vh - 270px);
     }
-    .selektory{
-        height:100vh;
+
+    .blokcube {
+        height: calc(100vh - 270px);
     }
-    .blokcube{
-        height:calc(100vh - 270px);
-    }
+
     .team .team-profile {
-        height:100vh ;
+        height: 100vh;
     }
-    .contact-container{
-        height:calc(100vh - 300px);
+
+    .contact-container {
+        height: calc(100vh - 300px);
     }
 }
 
-@media (max-width:1356px){
-    .team-profile img{
+@media (max-width: 1356px) {
+    .team-profile img {
         padding: 0 3%;
     }
 }
-@media (min-width:960px) and (max-width:1000px){
-    .team-profile img{
-        padding: 0 10%;
+
+/*@media (min-width:950px) and (max-width:1000px){*/
+/*.team-profile img{*/
+/*padding: 0 10%;*/
+/*}*/
+/*}*/
+@media (max-width: 768px) {
+    .container11 {
+        display: none;
     }
 }
-@media (max-width: 768px){
-    
+
+@media (min-width: 960px) and (max-width: 1200px) {
+    .selektory {
+        height: 100vh;
+    }
+}
+@media (min-width: 768px){
+    .for-media-about-product{
+        display:none;
+    }
 }
