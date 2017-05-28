@@ -669,8 +669,8 @@ figure:hover .overlay {
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
-        -webkit-animation-duration: 2.0s;
-        animation-duration: 2.0s;
+        -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
     }
 
     .menu-item:nth-child(3) {
@@ -1386,6 +1386,9 @@ figure:hover .overlay {
     text-align: center;
 
 }
+.social-media{
+    padding:2%;
+}
 
 .Window a.close-window {
     position: absolute;
@@ -1399,21 +1402,19 @@ figure:hover .overlay {
 }
 
 .Window img {
-    position: absolute;
+
     top: 5%;
     left: 3%;
     height: 300px;
     border-radius: 2%;
-    display: flex;
-    align-items: center;
 }
 
 .Window h2 {
-    margin: 8% 0 0 15%;
+    padding:2%;
 }
 
 .Window h3 {
-    margin-left: 15%;
+    padding:2%;
     font-weight: 500;
 }
 
@@ -1422,8 +1423,7 @@ figure:hover .overlay {
 }
 
 .Window p {
-    margin: 10% 20%;
-    margin-left: 35%;
+    padding:2%;
     line-height: 2em;
     letter-spacing: 1px;
 }
@@ -1456,7 +1456,9 @@ figure:hover .overlay {
     }
 
     .Window {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: auto;
         width: 90%;
     }
@@ -1467,29 +1469,26 @@ figure:hover .overlay {
     }
 
     .Window p {
-        margin-left: 35%;
         line-height: 1.4;
     }
 
     .Window h2 {
         font-size: 16px;
-        margin: 4% 5% 2%;
+
     }
 
     .Window h3 {
         font-size: 16px;
-        margin: 2% 5% 5%;
+
     }
 
     .Window img {
-        position: absolute;
 
         left: 3%;
     }
 
     .Window .face {
         position: absolute;
-
         left: 5%;
     }
 }
