@@ -1698,7 +1698,7 @@ figure:hover .overlay {
 /*padding: 0 10%;*/
 /*}*/
 /*}*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .container11 {
         display: none;
     }
