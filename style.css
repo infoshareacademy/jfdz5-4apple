@@ -1093,7 +1093,7 @@ h1.naglowek {
     right: -13%;
     width: 2px;
     content: "";
-    background: linear-gradient(#FFFFFF, #000000 50%, #FFFFFF);
+    background: linear-gradient(transparent, #000000 50%, transparent);
 }
 
 figure img {
