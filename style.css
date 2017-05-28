@@ -151,7 +151,7 @@ p {
 }
 
 .button {
-    z-index: 1;
+    z-index: 0;
     width: 60px;
     height: 60px;
     background-color: rgba(24, 163, 250, 0.4);
@@ -742,7 +742,8 @@ figure:hover .overlay {
 
 footer {
     width: 100%;
-    background-color: #0a5994;
+    background-color: rgba(0, 17, 34, 0.76);
+    color: white;
 }
 
 .footer {
