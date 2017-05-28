@@ -1366,7 +1366,7 @@ figure:hover .overlay {
 .Window {
     background-color: white;
     color: black;
-    width: 50%;
+    width: 90%;
     height: auto;
     margin-top: 5%;
     position: relative;
@@ -1375,7 +1375,7 @@ figure:hover .overlay {
 
 }
 
-.Window a {
+.Window a.close-window {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -1390,16 +1390,18 @@ figure:hover .overlay {
     position: absolute;
     top: 5%;
     left: 3%;
-    height: 150px;
+    height: 300px;
     border-radius: 2%;
+    display:flex;
+    align-items: center;
 }
 
 .Window h2 {
-    margin: 8% 0 0 0;
+    margin: 8% 0 0 15%;
 }
 
 .Window h3 {
-    margin-left: 0;
+    margin-left: 15%;
     font-weight: 500;
 }
 
@@ -1409,6 +1411,7 @@ figure:hover .overlay {
 
 .Window p {
     margin: 10% 20%;
+    margin-left: 35%;
     line-height: 2em;
     letter-spacing: 1px;
 }
@@ -1434,9 +1437,9 @@ figure:hover .overlay {
 
     .Window {
 
-        height: auto;
-        width: 90%;
-    }
+    height: auto;
+    width: 90%;
+}
 
     .container-team {
         width: 100%;
@@ -1699,9 +1702,12 @@ figure:hover .overlay {
     .list div img{
         padding: 20% 0;
     }
-}
-@media (max-width: 768px){
     .button{
         display:none;
     }
+    .Window img {
+        height: 150px;
+
+    }
 }
+
