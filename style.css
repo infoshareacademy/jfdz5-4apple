@@ -776,68 +776,80 @@ footer {
     justify-content: center;
     align-items: center;
 }
-.for-media-about-product{
-    display:flex;
+
+.for-media-about-product {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
-.for-media-about-product-tiles{
+
+.for-media-about-product-tiles {
     margin: 10px 0;
 }
-.search{
+
+.search {
     background: url("img/search.jpg");
     background-size: contain;
     width: 300px;
     height: 300px;
 }
-.happy{
+
+.happy {
     background: url("img/happy.jpg");
     background-size: contain;
     width: 300px;
     height: 300px;
 }
-.money{
+
+.money {
     background: url("img/money.jpg");
     background-size: contain;
     width: 300px;
     height: 300px;
 }
-.secure{
+
+.secure {
     background: url("img/secure.jpg");
     background-size: contain;
     width: 300px;
     height: 300px;
 }
-.media-input-checkbox{
-    display:none;
+
+.media-input-checkbox {
+    display: none;
 }
-.media-input-label{
+
+.media-input-label {
     display: block;
     width: 300px;
     height: 300px;
 }
-.media-input-label p{
-    display:none;
+
+.media-input-label p {
+    display: none;
 }
-.media-input-label h4{
-    display:none;
+
+.media-input-label h4 {
+    display: none;
 }
-.search-checkbox:checked + .search-label,.happy-checkbox:checked + .happy-label, .money-checkbox:checked + .money-label, .secure-checkbox:checked + .secure-label {
-    display:flex;
+
+.search-checkbox:checked + .search-label, .happy-checkbox:checked + .happy-label, .money-checkbox:checked + .money-label, .secure-checkbox:checked + .secure-label {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgba(5, 49, 120, 0.49);
     z-index: 5;
-    color:#fff;
-}
-.search-checkbox:checked + .search-label p, .happy-checkbox:checked + .happy-label p, .money-checkbox:checked + .money-label p, .secure-checkbox:checked + .secure-label p{
-    display:block;
-}
-.search-checkbox:checked + .search-label h4, .happy-checkbox:checked + .happy-label h4, .money-checkbox:checked + .money-label h4, .secure-checkbox:checked + .secure-label h4{
-    display:block;
+    color: #fff;
 }
 
+.search-checkbox:checked + .search-label p, .happy-checkbox:checked + .happy-label p, .money-checkbox:checked + .money-label p, .secure-checkbox:checked + .secure-label p {
+    display: block;
+}
+
+.search-checkbox:checked + .search-label h4, .happy-checkbox:checked + .happy-label h4, .money-checkbox:checked + .money-label h4, .secure-checkbox:checked + .secure-label h4 {
+    display: block;
+}
 
 .container11 {
     width: 400px;
@@ -1366,7 +1378,7 @@ figure:hover .overlay {
 .Window {
     background-color: white;
     color: black;
-    width: 90%;
+    width: 70%;
     height: auto;
     margin-top: 5%;
     position: relative;
@@ -1392,7 +1404,7 @@ figure:hover .overlay {
     left: 3%;
     height: 300px;
     border-radius: 2%;
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
@@ -1416,14 +1428,22 @@ figure:hover .overlay {
     letter-spacing: 1px;
 }
 
-.Window .face {
-    height: 25px;
-    width: 25px;
-    background: url("img/facebook.png");
-    background-size: cover;
-    position: absolute;
-    top: 40%;
-    left: 5%;
+.Window i {
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px;
+}
+
+.Window .fa-facebook-square:hover {
+    color: #4267b2;
+}
+
+.Window .fa-github:hover {
+    color: #353a3f;
+}
+
+.Window .fa-linkedin-square:hover {
+    color: #0077b5;
 }
 
 .team-profile a img:hover {
@@ -1437,9 +1457,9 @@ figure:hover .overlay {
 
     .Window {
 
-    height: auto;
-    width: 90%;
-}
+        height: auto;
+        width: 90%;
+    }
 
     .container-team {
         width: 100%;
@@ -1689,25 +1709,35 @@ figure:hover .overlay {
         height: 100vh;
     }
 }
-@media (min-width: 768px){
-    .for-media-about-product{
-        display:none;
+
+@media (min-width: 768px) {
+    .for-media-about-product {
+        display: none;
     }
 }
-@media (max-width: 768px){
-    .list{
-        display:flex;
-        flex-direction:column;
+
+@media (max-width: 768px) {
+    .list {
+        display: flex;
+        flex-direction: column;
     }
-    .list div img{
+
+    .list div img {
         padding: 20% 0;
     }
-    .button{
-        display:none;
+
+    .button {
+        display: none;
     }
+
     .Window img {
         height: 150px;
 
     }
 }
 
+@media (max-width: 1200px) {
+    .team .team-profile {
+        height: auto;
+    }
+}
