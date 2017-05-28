@@ -970,7 +970,7 @@ footer {
     position: relative;
     top: 0;
     bottom: 0;
-    right: 250px;
+    right: 150px;
     background-color: black;
 }
 
@@ -1761,6 +1761,11 @@ figure:hover .overlay {
     .Window img {
         height: 100px;
         font-size: 12px;
+    }
+}
+@media (min-width:768px)and (max-width:835px){
+    top:after {
+        content: "aaa";
     }
 }
 
