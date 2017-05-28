@@ -1730,6 +1730,7 @@ figure:hover .overlay {
     .list {
         display: flex;
         flex-direction: column;
+        height:100%;
     }
 
     .list div img {
