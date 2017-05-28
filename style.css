@@ -1204,6 +1204,16 @@ figure:hover .overlay {
     padding: 63px 0 0;
 }
 
+.team-description-plus-logo{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-description-plus-logo img{
+    padding: 0 10px;
+}
 .team {
 
     width: 100%;
@@ -1352,7 +1362,7 @@ figure:hover .overlay {
 }
 
 .team-profile a img:hover {
-    filter: sepia(100%);
+    filter: sepia(50%);
 }
 
 @media all and (max-width: 960px) {
@@ -1563,12 +1573,14 @@ figure:hover .overlay {
     .selektory{
         height:100vh;
     }
-
+    .blokcube{
+        height:calc(100vh - 270px);
+    }
     .team .team-profile {
         height:100vh ;
     }
     .contact-container{
-        height:calc(100vh - 170px);
+        height:calc(100vh - 300px);
     }
 }
 
