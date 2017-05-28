@@ -866,7 +866,7 @@ footer {
 .cube .back {
 
     transition: all 0.6s ease-out 0s;
-    background: url("img/karton.jpg");
+    background: url("img/carboard-box.jpg");
     background-size: auto 100%;
 }
 
@@ -1669,5 +1669,14 @@ figure:hover .overlay {
 @media (min-width: 768px){
     .for-media-about-product{
         display:none;
+    }
+}
+@media (max-width: 768px){
+    .list{
+        display:flex;
+        flex-direction:column;
+    }
+    .list div img{
+        padding: 20% 0;
     }
 }
