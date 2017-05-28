@@ -666,6 +666,7 @@ figure:hover .overlay {
         animation-fill-mode: forwards;
         -webkit-animation-direction: alternate;
         animation-direction: alternate;
+        text-align: center;
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
@@ -1384,10 +1385,12 @@ figure:hover .overlay {
     position: relative;
     border-radius: 2%;
     text-align: center;
-
+    padding: 3%;
+    display: flex
 }
-.social-media{
-    padding:2%;
+
+.social-media {
+    padding: 2%;
 }
 
 .Window a.close-window {
@@ -1406,15 +1409,15 @@ figure:hover .overlay {
     top: 5%;
     left: 3%;
     height: 300px;
-    border-radius: 2%;
+    border-radius: 5%;
 }
 
 .Window h2 {
-    padding:2%;
+    padding: 2%;
 }
 
 .Window h3 {
-    padding:2%;
+    padding: 2%;
     font-weight: 500;
 }
 
@@ -1423,7 +1426,7 @@ figure:hover .overlay {
 }
 
 .Window p {
-    padding:2%;
+    padding: 2%;
     line-height: 2em;
     letter-spacing: 1px;
 }
@@ -1456,11 +1459,11 @@ figure:hover .overlay {
     }
 
     .Window {
-        display: flex;
         justify-content: center;
         align-items: center;
         height: auto;
         width: 90%;
+        display: inline;
     }
 
     .container-team {
@@ -1730,11 +1733,12 @@ figure:hover .overlay {
     }
 
     .Window img {
-        height: 150px;
+        height: 300px;
 
     }
-    .blok2 .contener3:not(:last-child):before{
-        display :none;
+
+    .blok2 .contener3:not(:last-child):before {
+        display: none;
     }
 }
 
