@@ -309,9 +309,6 @@ p {
     display: block;
 }
 
-.text-input::placeholder {
-    color: rgba(0, 17, 34, 0.6);
-}
 
 .button-parallelogram {
     margin: 10px;
@@ -1714,6 +1711,7 @@ figure:hover .overlay {
     .container11 {
         display: none;
     }
+    .
 }
 
 @media (min-width: 961px) and (max-width: 1200px) {
@@ -1728,7 +1726,7 @@ figure:hover .overlay {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .list {
         display: flex;
         flex-direction: column;
@@ -1768,4 +1766,5 @@ figure:hover .overlay {
         content: "aaa";
     }
 }
+
 
