@@ -1734,6 +1734,9 @@ figure:hover .overlay {
         height: 150px;
 
     }
+    .blok2 .contener3:not(:last-child):before{
+        display :none;
+    }
 }
 
 @media (max-width: 1200px) {
