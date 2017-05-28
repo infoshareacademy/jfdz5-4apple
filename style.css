@@ -666,7 +666,9 @@ figure:hover .overlay {
         animation-fill-mode: forwards;
         -webkit-animation-direction: alternate;
         animation-direction: alternate;
+        position: relative;
         text-align: center;
+        width: 100%;
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
@@ -687,18 +689,22 @@ figure:hover .overlay {
     /*animation menu-item*/
     @-webkit-keyframes move-to-center {
         0% {
-            width: 0;
+            right: -200px;
         }
         100% {
-            width: 100%;
+            left: 50%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
         }
     }
     @keyframes move-to-center {
         0% {
-            width: 0;
+            right: -200px;
         }
         100% {
-            width: 100%;
+            left: 50%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
         }
     }
     /*end of navigation*/
