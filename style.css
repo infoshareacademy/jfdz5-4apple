@@ -309,9 +309,6 @@ p {
     display: block;
 }
 
-.text-input::placeholder {
-    color: rgba(0, 17, 34, 0.6);
-}
 
 .button-parallelogram {
     margin: 10px;
@@ -1093,7 +1090,7 @@ h1.naglowek {
     right: -13%;
     width: 2px;
     content: "";
-    background: linear-gradient(#FFFFFF, #000000 50%, #FFFFFF);
+    background: linear-gradient(transparent, #000000 50%, transparent);
 }
 
 figure img {
@@ -1714,6 +1711,7 @@ figure:hover .overlay {
     .container11 {
         display: none;
     }
+    .
 }
 
 @media (min-width: 961px) and (max-width: 1200px) {
@@ -1728,10 +1726,11 @@ figure:hover .overlay {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .list {
         display: flex;
         flex-direction: column;
+        height:100%;
     }
 
     .list div img {
@@ -1768,4 +1767,5 @@ figure:hover .overlay {
         content: "aaa";
     }
 }
+
 
