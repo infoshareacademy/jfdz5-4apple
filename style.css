@@ -1147,15 +1147,6 @@ footer {
     }
 
     /*------ SNEAK PEEK  --------*/
-    h1.header {
-        font-size: 25px;
-    }
-
-    h2.header {
-        bottom: 20%;
-        font-size: 20px;
-    }
-
     div#list.list div {
         font-size: 20px;
         font-weight: 400;
@@ -1164,6 +1155,15 @@ footer {
     .list div img {
         width: 75%;
         padding: 50% 0;
+    }
+
+    h1.header {
+        font-size: 35px;
+    }
+
+    h2.header {
+        bottom: 20%;
+        font-size: 30px;
     }
 
     /*------ CONTACT/NEWSLETTER  --------*/
@@ -1394,6 +1394,16 @@ footer {
             transform: translate(-50%);
         }
     }
+    /*------ SNEAK PEEK  --------*/
+    h1.header {
+        font-size: 25px;
+    }
+
+    h2.header {
+        bottom: 20%;
+        font-size: 20px;
+    }
+
     /*------ ICONS LIST --------*/
     .list {
         display: flex;
