@@ -223,14 +223,14 @@ p {
 
 /* VISIBLE ONLY AT WIDTH 768px AND LESS */
 
-.for-media-about-product {
+.container-cube__cube-show-media {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
 
-.for-media-about-product-tiles {
+.container-cube__cube-show-media__titles {
     margin: 10px 0;
 }
 
@@ -291,7 +291,7 @@ p {
 
 /* VISIBLE ONLY AT WIDTH MORE THEN 768px */
 
-.container-cube__cube-LG {
+.container-cube__cube-show-LG {
     width: 400px;
     height: 400px;
     position: relative;
@@ -1099,7 +1099,7 @@ footer {
 @media (min-width: 768px) {
 
     /*------ ABOUT PRODUCT --------*/
-    .for-media-about-product {
+    .container-cube__cube-show-media {
         display: none;
     }
 }
@@ -1417,7 +1417,7 @@ footer {
     }
 
     /*------ ABOUT PRODUCT --------*/
-    .container-cube__cube-LG {
+    .container-cube__cube-show-LG {
         display: none;
     }
 
