@@ -710,13 +710,19 @@ figure {
 
 .team .team-profile {
     height: auto;
-    margin: auto;
-    padding: 0 3%;
+    margin: 2% auto;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+.team .team-profile h4{
+    margin-top: 5%;
 }
 
-.team-profile a {
+.team-profile div a {
     position: relative;
     min-width: 100%;
 }
@@ -724,41 +730,13 @@ figure {
 .team-profile a img {
     width: 180px;
     height: 260px;
-    margin: 5% 1%;
     border-radius: 2%;
 
 }
 
-.team-profile a:after {
-    content: "Pawel Sajenko";
-    font-size: 20px;
-    font-weight: 600;
-    position: absolute;
-    bottom: 20%;
-    right: 17%;
-    color: black;
-
-}
-
-#Piotrek:after {
-    content: "Piotr Stefanowicz";
-}
-
-#Aleksander:after {
-    content: "Aleksander Zych";
-}
-
-#Paweł:after {
-    content: "Pawel Sajenko";
-}
-
-#Dawid:after {
-    content: "Dawid Ceynowa";
-}
-
 .window-container {
     position: absolute;
-    top: 10%;
+    top: -46%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1283,6 +1261,16 @@ footer {
     .Window .face {
         position: absolute;
         left: 5%;
+    }
+    .team .team-profile {
+        height: auto;
+        margin: auto;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+
     }
 }
 
