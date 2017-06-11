@@ -213,7 +213,7 @@ p {
 /*                                                                             */
 /*******************************************************************************/
 
-.blokcube {
+.container-cube {
     padding: 70px 0 0 0;
     width: 100%;
     display: flex;
@@ -291,7 +291,7 @@ p {
 
 /* VISIBLE ONLY AT WIDTH MORE THEN 768px */
 
-.container11 {
+.container-cube__cube-LG {
     width: 400px;
     height: 400px;
     position: relative;
@@ -441,7 +441,7 @@ p {
 }
 
 /*target cube */
-.modal-container {
+.container-cube__cube-LG__modal-container {
     padding-top: 63px;
     padding-bottom: 63px;
     position: absolute;
@@ -455,7 +455,7 @@ p {
     align-items: center;
 }
 
-.modal-container:target {
+.container-cube__cube-LG__modal-container:target {
     opacity: 1;
     z-index: 99;
 }
@@ -570,7 +570,7 @@ p {
 /*                                                                             */
 /*******************************************************************************/
 
-.blok2 {
+.container-about-function__blok-screen {
     box-sizing: border-box;
     height: 50%;
     display: flex;
@@ -580,7 +580,7 @@ p {
     width: 100%;
 }
 
-.selektory {
+.container-about-function {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -598,14 +598,14 @@ p {
     text-shadow: 1px 2px 3px #666;
 }
 
-.blok2 .contener3 {
+.container-about-function__blok-screen .container-about-function__blok-screen__screen {
     width: 30%;
     margin: 3.3333%;
     transition: all 0.6s ease-out 0s;
     position: relative;
 }
 
-.blok2 .contener3:not(:last-child):before {
+.container-about-function__blok-screen .container-about-function__blok-screen__screen:not(:last-child):before {
     position: absolute;
     top: 5%;
     bottom: 5%;
@@ -633,7 +633,7 @@ figure {
     padding: 7% 7%;
 }
 
-.contener3 .overlay {
+.container-about-function__blok-screen__screen .overlay {
     box-sizing: border-box;
     position: absolute;
     top: 0;
@@ -661,7 +661,7 @@ figure:hover .overlay {
     opacity: 1;
 }
 
-.blok2 .contener3:hover {
+.container-about-function__blok-screen .container-about-function__blok-screen__screen:hover {
     width: 50%;
 
 }
@@ -672,7 +672,7 @@ figure {
     margin: 0;
 }
 
-.blok2 .contener3:hover {
+.container-about-function__blok-screen .container-about-function__blok-screen__screen:hover {
     width: 50%;
 }
 
@@ -1048,7 +1048,7 @@ footer {
 
     /*------ TIME SAVING --------*/
     /*making gradient border invisible*/
-    .blok2 .contener3:not(:last-child):before {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:not(:last-child):before {
         display: none;
     }
 
@@ -1056,7 +1056,7 @@ footer {
         height: calc(90vh - 70px);
     }
 
-    .blok2 {
+    .container-about-function__blok-screen {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -1068,16 +1068,16 @@ footer {
         height: 100%;
     }
 
-    .blok2 .contener3 {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen {
         width: 40%;
         margin: 5%;
     }
 
-    .blok2 .contener3:hover {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:hover {
         width: 50%
     }
 
-    .contener3 .overlay {
+    .container-about-function__blok-screen__screen .overlay {
         width: 100%;
         border-bottom: solid 17px #313233;
         border-left: solid 10px #313233;
@@ -1090,7 +1090,7 @@ footer {
         border-radius: 5%;
     }
 
-    .selektory {
+    .container-about-function {
         display: flex;
         flex-direction: column;
     }
@@ -1187,28 +1187,28 @@ footer {
 @media screen and ( max-width: 960px) {
 
     /*------ ABOUT PRODUCT --------*/
-    .selektory {
+    .container-about-function {
         height: 100%;
     }
 
-    .blok2 {
+    .container-about-function__blok-screen {
         height: 100%;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
     }
 
-    .blok2 .contener3 {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen {
         width: 50%;
         margin: 3.3333%;
     }
 
-    .blok2 .contener3:not(:last-child):before {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:not(:last-child):before {
         display: none;
     }
 
     /* overlay hover, czyli pokazujemy wszystko */
-    .blok2 .contener3:active {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:active {
         width: 80%;
     }
 
@@ -1232,7 +1232,7 @@ footer {
         height: 100%;
     }
 
-    .blok2 {
+    .container-about-function__blok-screen {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -1417,16 +1417,16 @@ footer {
     }
 
     /*------ ABOUT PRODUCT --------*/
-    .container11 {
+    .container-cube__cube-LG {
         display: none;
     }
 
     /*------ TIME SAVING --------*/
-    .blok2 .contener3:not(:last-child):before {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:not(:last-child):before {
         display: none;
     }
 
-    .blok2 .contener3 {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen {
         width: 80%;
         transition: all 0.4s ease-out 0s;
     }
@@ -1444,7 +1444,7 @@ footer {
         font-size: 18px;
     }
 
-    .blok2 .contener3:active {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:active {
         width: 80%;
     }
 
@@ -1453,7 +1453,7 @@ footer {
         width: 100%;
     }
 
-    .blok2 .contener3:hover {
+    .container-about-function__blok-screen .container-about-function__blok-screen__screen:hover {
         width: 90%;
     }
 
