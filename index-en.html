@@ -1,10 +1,432 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>price.less.pl</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/mini-icon1.png">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-$END$
+<div class="header">
+    <h1 class="header">Welcome to our page...</h1>
+    <h2 class="header"><em>If you want to be up to date,<a href="#contact"> click here.</a></em></h2>
+</div>
+
+
+<header>
+    <div class="main-menu-container">
+        <div class="logo"><a href="index.html"><img src="img/logo.svg" alt="logo"></a></div>
+        <nav class="main-menu">
+            <input type="checkbox" id="open-menu-input" class="menu-input-checkbox">
+            <label for="open-menu-input" class="menu-input-label"></label>
+
+            <ul class="menu-list">
+                <li class="menu-item"><a href="#list">Pros</a></li>
+                <li class="menu-item"><a href="#about-product">About the product</a></li>
+                <li class="menu-item"><a href="#time-saving">Time saving</a></li>
+                <li class="menu-item"><a href="#about-us">About us</a></li>
+                <li class="menu-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <main>
+
+        <div id="home" class="theme"></div>
+        <div class="board">
+            <div id="list"><img src="img/line.png" alt="Line" class="line-top">
+                <h2>#What can we offer to you?</h2>
+                <img src="img/line.png" alt="Line" class="line">
+                <div class="list">
+                    <div>The best offers<img src="img/tag.svg" alt="the best offers"></div>
+                    <div>Safe shopping<img src="img/shopping-.svg" alt="safe shopping"></div>
+                    <div>Quick delivery<img src="img/open-box.svg" alt="quick delivery"></div>
+                    <div>Sales<img src="img/transaction.svg" alt="sales"></div>
+                </div>
+                <div id="about-product"><img src="img/line.png" alt="Line" class="line-top">
+                    <h2>#What can you expect from us?</h2>
+                    <img src="img/line.png" alt="Line" class="line">
+                    <div class="container-cube">
+                        <div class="container-cube__cube-show-media">
+                            <div class="search container-cube__cube-show-media__titles">
+                                <input type="checkbox" id="open-search-input"
+                                       class="media-input-checkbox search-checkbox">
+                                <label for="open-search-input" class="media-input-label search-label"><span
+                                        class="media-label__text"><span
+                                        class="media-label--bold">Accurate searching!</span>
+                                   <span>Here you can find everything you look for. Our search will quickly track your product, if only exists one. </span></span>
+                                </label></div>
+                            <div class="happy container-cube__cube-show-media__titles">
+                                <input type="checkbox" id="open-happy-input"
+                                       class="media-input-checkbox happy-checkbox">
+                                <label for="open-happy-input" class="media-input-label happy-label"><span
+                                        class="media-label__text"><span class="media-label--bold">Satisfaction guaranteed!</span>
+                                    <span>Thanks to many facilitations, shopping with us is pure pleasure.</span></span>
+                                </label></div>
+                            <div class="money container-cube__cube-show-media__titles">
+                                <input type="checkbox" id="open-money-input"
+                                       class="media-input-checkbox money-checkbox">
+                                <label for="open-money-input" class="media-input-label money-label"><span
+                                        class="media-label__text"><span class="media-label--bold">The lowest price guarantee</span>
+                                   <span>Our offers are certainly the best. We will find everything you need, with the lowest price.</span></span></label>
+                            </div>
+                            <div class="secure container-cube__cube-show-media__titles">
+                                <input type="checkbox" id="open-secure-input"
+                                       class="media-input-checkbox secure-checkbox">
+                                <label for="open-secure-input" class="media-input-label secure-label"><span
+                                        class="media-label__text"><span class="media-label--bold">Safe shopping!</span>
+                                    <span>We cooperate only with the most trustworthy companies. Buying here you are sure you will not meet fraud.</span></span></label>
+
+                            </div>
+                        </div>
+
+                        <section class="container-cube__cube-show-LG">
+                            <div id="cube" class="show-front cube">
+                                <a>
+                                    <figure class="back"></figure>
+                                </a>
+                                <a href="#boxright">
+                                    <figure class="right">
+                                        <div class="overshow">
+                                            <div class="overshow-info">
+                                                <h2>Satisfaction guaranteed!</h2>
+                                            </div>
+                                        </div>
+                                    </figure>
+
+                                </a>
+                                <a href="#boxleft">
+                                    <figure class="left">
+                                        <div class="overshow">
+                                            <div class="overshow-info">
+                                                <h2>Safe shopping!</h2>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="#boxtop">
+                                    <figure class="top">
+                                        <div class="overshow">
+                                            <div class="overshow-info">
+                                                <h2>Accurate searching!</h2>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </a>
+                                <a href="#boxbottom">
+                                    <figure class="bottom">
+                                        <div class="overshow">
+                                            <div class="overshow-info">
+                                                <h2>The lowest price guarantee!</h2>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </a>
+                            </div>
+
+                            <div id="boxtop" class="container-cube__cube-LG__modal-container">
+                                <div class="modal">
+                                    <h2>Accurate searching!</h2>
+                                    <p>You can find everything you look for. Our search will quickly find your product,
+                                        if only exists one. </p>
+                                    <a href="#about-product" class="close-modal"></a>
+                                </div>
+                            </div>
+
+                            <div id="boxright" class="container-cube__cube-LG__modal-container">
+                                <div class="modal">
+                                    <h2>Satisfaction guaranteed!</h2>
+                                    <p>Thanks to many facilitations, shopping with us is pure pleasure.</p>
+                                    <a href="#about-product" class="close-modal"></a>
+                                </div>
+                            </div>
+
+                            <div id="boxbottom" class="container-cube__cube-LG__modal-container">
+                                <div class="modal">
+                                    <h2>The lowest price guarantee!</h2>
+                                    <p>Our offers are certainly the best. We will find everything you need, with the
+                                        lowest price.</p>
+                                    <a href="#about-product" class="close-modal"></a>
+                                </div>
+                            </div>
+
+                            <div id="boxleft" class="container-cube__cube-LG__modal-container">
+                                <div class="modal">
+                                    <h2>Safe shopping!</h2>
+                                    <p>We cooperate only with the most trustworthy companies. Buying here you are sure
+                                        you will not meet fraud.</p>
+                                    <a href="#about-product" class="close-modal"></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+
+                <div class="container-about-function" id="time-saving">
+                    <img src="img/line.png" alt="Line" class="line img-line-padding-top">
+                    <h2>#How can you save time?</h2>
+                    <img src="img/line.png" alt="Line" class="line">
+                    <section class="container-about-function__blok-screen">
+                        <div class="container-about-function__blok-screen__screen">
+
+                            <a>
+                                <figure>
+                                    <img src="img/kategorie.png" alt="categories">
+                                    <figcaption class="overlay">
+                                        <div class="overlay-info">
+                                            <h2>Categories</h2>
+                                            <p>Thanks to instinctive division into categories, you can find without any
+                                                problem exactly what you are looking for. Only one click and you will
+                                                see all products you are interested in.
+                                            </p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+
+                        </div>
+
+                        <div class="container-about-function__blok-screen__screen">
+                            <a>
+                                <figure>
+                                    <img src="img/sortowanie.png" alt="sorting" rel="ship">
+                                    <figcaption class="overlay">
+                                        <div class="overlay-info">
+                                            <h2>Sorting according to needs</h2>
+                                            <p>With help of our sorting option you dont have to worry about tedious
+                                                watching every offer. Using filters will help you easily find right
+                                                price, size or color.</p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                        <div class="container-about-function__blok-screen__screen">
+                            <a>
+                                <figure>
+                                    <img src="img/lista-zakupow.png" alt="shopping list" rel="lista">
+                                    <figcaption class="overlay">
+                                        <div class="overlay-info">
+                                            <h2>Shopping list</h2>
+                                            <p> We don't force you to buy instantly. Use our shopping list to add
+                                                products you are interested in or just simply write your ideas down and
+                                                come back to it when you have some time.</p>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+
+                    </section>
+                    <p class="naglowek">We know how important time is, that's why we prevent you from wasting it.</p>
+                </div>
+                <div id="about-us" class="container-team">
+                    <section class="team"><img src="img/line.png" alt="Line" class="line">
+                        <div class="team-description-plus-logo"><h2>#Team 4Apple</h2> <img
+                                src="img/4Apple-logo-napis(3).png" alt="logo"></div>
+                        <img src="img/line.png" alt="Line" class="line">
+
+                        <div class="team-profile">
+                            <div><a id="Piotrek" href="#WindowPiotr"><img src="img/4apple-piotr.jpg" alt="piotrek"></a>
+                                <h4>Piotr Stefanowicz</h4>
+                            </div>
+                            <div>
+                                <a id="Aleksander" href="#WindowAleksander"><img src="img/4apple-alek.jpg"
+                                                                                 alt="aleksander"></a>
+                                <h4>Aleksander Zych</h4>
+                            </div>
+                            <div>
+                                <a id="Pawel" href="#WindowPawel"><img src="img/4apple-pawel.jpg" alt="pawel"></a>
+                                <h4>Paweł Sejanko</h4>
+                            </div>
+                            <div>
+                                <a id="Dawid" href="#WindowDawid"><img src="img/4apple-dawid.jpg" alt="dawid"></a>
+                                <h4>Dawid Ceynowa</h4>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div id="WindowPiotr" class="window-container">
+                        <div class="Window">
+
+                            <img src="img/4apple-piotr.jpg" alt="piotrek">
+                            <div class="window-bottom">
+                                <h2>Piotr Stefanowicz</h2>
+                                <h3>Junior Front-end Developer</h3>
+                                <p>I have been fascinated with programing since I was a child, however i was under impression
+                                    that it is not a profession for ordinary people. Not that long ago i decided i will
+                                    give it
+                                    a try and that is how i have ended up here.
+                                </p>
+                                <div class="social-media">
+                                    <a href="https://www.facebook.com/piotr.stefanowicz.733"><i
+                                            class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href="https://github.com/stefan835"><i class="fa fa-github"
+                                                                              aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/in/piotr-stefanowicz-7406a8140/"><i
+                                            class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#about-us" class="close-window"></a>
+                        </div>
+
+
+                    </div>
+                    <div id="WindowAleksander" class="window-container">
+                        <div class="Window">
+
+                            <img src="img/4apple-alek.jpg" alt="aleksander">
+                            <div class="window-bottom">
+                                <h2>Aleksander Zych</h2>
+                                <h3>Junior Front-end Developer</h3>
+
+                                <div></div>
+
+
+                                <div>
+                                    <p>Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
+                                        tellus.
+                                        Phasellus
+                                        dapibus
+                                        sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
+                                        Vestibulum
+                                        turpis metus,
+                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</p>
+                                </div>
+                                <div class="social-media">
+                                    <a href="https://www.facebook.com/profile.php?id=100002293674751"><i
+                                            class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href="https://github.com/alekz29"><i class="fa fa-github"
+                                                                            aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/in/aleksander-zych-b5b249144/"><i
+                                            class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <a href="#about-us" class="close-window"></a>
+                        </div>
+                    </div>
+                    <div id="WindowPawel" class="window-container">
+                        <div class="Window">
+
+                            <img src="img/4apple-pawel.jpg" alt="pawel">
+                            <div class="window-bottom">
+                                <h2>Pawel Sajenko</h2>
+
+                                <div></div>
+
+                                <h3>Junior Front-end Developer</h3>
+                                <div>
+                                    <p>Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
+                                        tellus.
+                                        Phasellus
+                                        dapibus
+                                        sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
+                                        Vestibulum
+                                        turpis metus,
+                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</p>
+                                </div>
+                                <div class="social-media">
+                                    <a href=""><i
+                                            class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                    <a href=""><i class="fa fa-github"
+                                                  aria-hidden="true"></i></a>
+                                    <a href=""><i
+                                            class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+
+                            <a href="#about-us" class="close-window"></a>
+                        </div>
+
+                    </div>
+                    <div id="WindowDawid" class="window-container">
+                        <div class="Window">
+
+                            <img src="img/4apple-dawid.jpg" alt="dawid">
+
+                            <div class="window-bottom">
+                                <h2>Dawid Ceynowa</h2>
+
+
+                                <h3>Junior Front-end Developer</h3>
+                                <div>
+                                    <p>My name is Dawid Ceynowa. I have been fascinated with web developing for last the
+                                        year.
+                                        Since then I have started to create websites on my own and it provided me lot of
+                                        fun.
+
+                                        I am graduate of undergraduate studies in direction: Physic and Medical physic
+                                        at the Faculty of Mathematics, Physics and Computer Science of the University of
+                                        Gdansk.</p>
+                                </div>
+                                <a href="#about-us" class="close-window"></a>
+                                <div class="social-media">
+                                    <a href="https://www.facebook.com/dawid.ceynowa.5"><i class="fa fa-facebook-square"
+                                                                                          aria-hidden="true"></i></a>
+                                    <a href="https://github.com/dceynowa"><i class="fa fa-github"
+                                                                             aria-hidden="true"></i></a>
+                                    <a href="https://pl.linkedin.com/in/dawid-ceynowa"><i class="fa fa-linkedin-square"
+                                                                                          aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--section contact/newsleter-->
+                    <div id="contact"><img src="img/line.png" alt="Line" class="line-top">
+                        <h2>#What can you do to know more about us?</h2>
+                        <img src="img/line.png" alt="Line" class="line">
+                        <section class="contact-container">
+                            <div class="subscribe-info">
+                                <div class="subscribe-info-left-box">
+                                    <img src="img/newsletter.svg" alt="Newsletter" class="section-image">
+                                </div>
+                                <div class="subscribe-info-right-box">
+                                    <h2 class="subscribe-title subscribe-text text-with-uppercase">sing up today!</h2>
+                                    <h5 class="subscribe-text">You want to be up to date? Give us your email address and
+                                        we will inform you about everything in only
+                                        <span class="text-with-uppercase">one</span> message!</h5>
+                                </div>
+                            </div>
+                            <div class="subscribe-form">
+                                <form method="post" class="newsletter-form"
+                                      onsubmit="alert('Carefully watch your email. In the near future you will receive message about opening our service.')">
+                                    <input type="text" name="firstname" placeholder="Name" class="text-input">
+                                    <input type="email" name="mail" placeholder="Email" class="text-input" required>
+                                    <input type="submit" value="sing up!"
+                                           class="button-parallelogram text-with-uppercase">
+                                </form>
+                                <div class="subscribe-warning-text">
+                                    <p>I agree to receive the e-mail at the address indicated by me commercial
+                                        information within the meaning of art. 10 sec. 1 Act of 18 July 2002 on the
+                                        provision of
+                                        electronic services from 4Aplle based in Gdansk.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="button"><a href="#home"><img src="img/arrow-up.png" alt="arrow"></a></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <div> 2017 4Apple &copy; All rights reserved</div>
+            <div><img src="img/4Apple-logo-napis(3).png" alt="4apple"></div>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
