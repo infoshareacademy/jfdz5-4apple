@@ -17,6 +17,7 @@ body {
     ), url("img/t5.jpg");
     background-attachment: fixed;
     background-size: cover;
+    overflow-x:hidden;
 }
 
 h2 {
@@ -1494,3 +1495,21 @@ footer {
         flex-direction: column;
     }
 }
+
+
+.animation-team{
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+    from {
+        margin-right: -400%;
+    }
+
+    to {
+        margin-right: 0;
+    }
+}
+
