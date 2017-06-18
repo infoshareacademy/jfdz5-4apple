@@ -85,7 +85,7 @@ a:hover#menu-icon {
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .menu-item a {
@@ -97,9 +97,17 @@ a:hover#menu-icon {
 }
 
 .menu-item a:hover {
+    color: #fff;
     border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
-    color: #000;
+
+}
+.menu-list li.active a {
+    border-top: solid 2px ;
+    border-bottom: solid 2px;
+}
+.menu-list li.active a:hover {
+    border-color: #053178;
 }
 
 /*******************************************************************************/
