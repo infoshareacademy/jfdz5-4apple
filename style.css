@@ -111,23 +111,35 @@ a:hover#menu-icon {
 h1.header {
     font-family: Raleway, cursive;
     position: absolute;
-    left: 10%;
-    top: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
     color: white;
     z-index: 40;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 60px;
+    white-space: nowrap;
 }
 
 h2.header {
     font-family: Raleway, cursive;
     position: absolute;
-    left: 10%;
-    top: 80%;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
     color: white;
     z-index: 40;
     font-weight: 100;
     font-size: 30px;
+}
+
+.button-top{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h2.header a {
@@ -159,6 +171,8 @@ p {
     z-index: 2;
     width: 100%;
 }
+
+
 
 /*******************************************************************************/
 /*                                                                             */
@@ -1135,12 +1149,24 @@ footer {
     }
 
     h1.header {
-        font-size: 35px;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 300;
     }
 
     h2.header {
+        text-align: center;
         bottom: 20%;
         font-size: 30px;
+        font-weight: 200;
+    }
+    .button-top{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /*------ CONTACT/NEWSLETTER  --------*/
@@ -1383,12 +1409,27 @@ footer {
     }
     /*------ SNEAK PEEK  --------*/
     h1.header {
-        font-size: 25px;
+        font-size: 29px;
+        top: 35%;
+        white-space: normal;
+        text-align: center;
     }
 
     h2.header {
-        bottom: 20%;
         font-size: 20px;
+        top: 50%;
+        text-align: center;
+        font-weight: 300;
+
+    }
+
+    .button-top{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 160%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /*------ ICONS LIST --------*/
