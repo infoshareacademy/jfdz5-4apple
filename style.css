@@ -1505,11 +1505,11 @@ footer {
 
 @keyframes slidein {
     from {
-        margin-right: -400%;
+        margin-left: -800%;
     }
 
     to {
-        margin-right: 0;
+        margin-left: 0;
     }
 }
 
