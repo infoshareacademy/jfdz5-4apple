@@ -102,6 +102,19 @@ a:hover#menu-icon {
     color: #000;
 }
 
+.menu-list--language {
+    display: inline;
+}
+
+.language {
+    min-width: 64px;
+    height: 40px;
+    margin: 0 1%;
+    background: url('img/en.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
 /*******************************************************************************/
 /*                                                                             */
 /*                                SNEAK-PEEK - PAWEL                           */
@@ -269,13 +282,13 @@ p {
 }
 
 .media-label--bold {
-    font-weight:800;
+    font-weight: 800;
     font-size: 20px;
     padding: 0 0 10px 0;
-    display:block;
+    display: block;
 }
 
-.media-input-checkbox:checked + .media-input-label{
+.media-input-checkbox:checked + .media-input-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,7 +297,7 @@ p {
     color: #fff;
 }
 
-.media-input-checkbox:checked + .media-input-label .media-label__text{
+.media-input-checkbox:checked + .media-input-label .media-label__text {
     display: block;
 }
 
@@ -717,7 +730,8 @@ figure {
     flex-direction: row;
 
 }
-.team .team-profile h4{
+
+.team .team-profile h4 {
     margin-top: 5%;
 }
 
@@ -1079,6 +1093,10 @@ footer {
     .container-cube__cube-show-media {
         display: none;
     }
+
+    .menu-list--language {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1121,6 +1139,11 @@ footer {
 
     .menu-item {
         font-size: 83%;
+    }
+
+    .language {
+        min-width: 40px;
+        height: 25px;
     }
 
     /*------ SNEAK PEEK  --------*/
@@ -1261,6 +1284,7 @@ footer {
         position: absolute;
         left: 5%;
     }
+
     .team .team-profile {
         height: auto;
         margin: auto;
@@ -1350,14 +1374,18 @@ footer {
         animation-duration: 1.5s;
     }
 
-    .menu-item:nth-child(3) {
+    .menu-item:nth-child(3), .menu-item:nth-child(4) {
         -webkit-animation-duration: 2.5s;
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(4), .menu-item:nth-child(5) {
+    .menu-item:nth-child(5), .menu-item:nth-child(6) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
+    }
+
+    .language {
+        display: none;
     }
 
     /*------ ANIMATION MENU-ITEM --------*/
