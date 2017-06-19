@@ -104,15 +104,22 @@ a:hover#menu-icon {
 
 .menu-list--language {
     display: inline;
+    cursor: pointer;
 }
 
 .language {
     min-width: 64px;
     height: 40px;
     margin: 0 1%;
+    cursor: pointer;
+}
+.flag-en{
     background: url('img/en.png');
     background-size: cover;
-    cursor: pointer;
+}
+.flag-pl{
+    background: url('img/pl.png');
+    background-size: cover;
 }
 
 /*******************************************************************************/
@@ -822,10 +829,11 @@ figure {
     font-size: 15px;
 }
 
-.Window i {
+.fa {
     text-decoration: none;
     color: black;
     padding: 10px 10px;
+    font-size: 50px;
 }
 
 .Window .fa-facebook-square:hover {
