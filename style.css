@@ -706,6 +706,12 @@ figure {
     box-sizing: border-box;
     padding: 63px 0 0;
 }
+.team-profile__part-of-team1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
 
 .team-description-plus-logo {
     display: flex;
@@ -736,6 +742,9 @@ figure {
     justify-content: space-around;
     flex-direction: row;
 
+}
+.team .team-profile h4{
+    margin-top: 5%;
 }
 
 .team-profile div a {
@@ -1006,30 +1015,6 @@ footer {
 /*                                                                             */
 /*******************************************************************************/
 
-/*-*-*-*-*-*-*-*-*-*-**-*-*POMAGA ZAPOBIEDC ZAŁAMYWANU SIĘ ZDJĘĆ ALE NIE DZIAŁA ZAWSZE-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-**/
-
-@media (max-width: 1356px) {
-    /*------ ABOUT US --------*/
-    .team-profile img {
-        padding: 0 3%;
-    }
-}
-
-@media all and (min-width: 1000px)and (max-width: 1355px) {
-
-    /*------ ABOUT US --------*/
-    .team-profile a img {
-        margin: 10% 7%;
-    }
-
-    .container-team {
-        width: 100%;
-        height: 100%;
-    }
-}
-
-/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**/
-
 @media (max-height: 600px) {
     /*------ ABOUT US--------*/
     /* to avoid menu covering "X" closing img */
@@ -1250,7 +1235,17 @@ footer {
 
     /*------ ABOUT US --------*/
     .team-profile a img {
-        margin: 12% 5%;
+        padding: 7% 0 0 3%;
+    }
+    .team .team-profile {
+        height: auto;
+        margin: auto;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .Window {
@@ -1287,17 +1282,6 @@ footer {
     .Window .face {
         position: absolute;
         left: 5%;
-    }
-
-    .team .team-profile {
-        height: auto;
-        margin: auto;
-        box-sizing: border-box;
-        position: relative;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-
     }
 }
 
@@ -1528,5 +1512,12 @@ footer {
     .Window img {
         height: 100px;
         font-size: 12px;
+    }
+}
+ @media all and (max-width: 460px) {
+    .team-profile__part-of-team1{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
     }
 }
