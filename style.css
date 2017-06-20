@@ -108,8 +108,8 @@ a:hover#menu-icon {
 }
 
 .language {
-    min-width: 64px;
-    height: 40px;
+    min-width: 40px;
+    height: 25px;
     margin: 0 1%;
     cursor: pointer;
 }
@@ -1130,10 +1130,6 @@ footer {
         font-size: 83%;
     }
 
-    .language {
-        min-width: 40px;
-        height: 25px;
-    }
 
     /*------ SNEAK PEEK  --------*/
     div#list.list div {
