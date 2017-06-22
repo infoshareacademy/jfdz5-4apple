@@ -988,6 +988,7 @@ button-invisible {
     transform: translate(0, -10px);
     transition: all 0.3s ease-in;
     background-color: #0a5994;
+    cursor: pointer;
 }
 
 /*******************************************************************************/
