@@ -15,4 +15,6 @@
             elArrow.setAttribute('class', 'button-invisible');
         }
     }
+
 })();
+
