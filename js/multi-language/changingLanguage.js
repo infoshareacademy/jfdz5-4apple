@@ -25,16 +25,18 @@
             elNamePlaceholder.setAttribute('placeholder', 'Imię');
             elButton.setAttribute('value', 'zapisz się!');
             elSubmitAlert[0].setAttribute('onsubmit', "alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu.')");
-            isPolish = true;
             elCookiesInfoAccept[0].setAttribute('value', 'Akceptuję');
+            isPolish = true;
+
         }
         else {
             elLanguage.setAttribute('class', 'language flag-pl');
             elNamePlaceholder.setAttribute('placeholder', 'Name');
             elButton.setAttribute('value', 'sign up!');
-            elSubmitAlert[0].setAttribute('onsubmit',"alert('Carefully watch your email. In the near future you will receive message about opening our service.')");
-            isPolish = false;
+            elSubmitAlert[0].setAttribute('onsubmit', "alert('Carefully watch your email. In the near future you will receive message about opening our service.')");
             elCookiesInfoAccept[0].setAttribute('value', 'I agree');
+            isPolish = false;
+
         }
     }
 })();

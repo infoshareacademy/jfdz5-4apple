@@ -113,11 +113,13 @@ a:hover#menu-icon {
     margin: 0 1%;
     cursor: pointer;
 }
-.flag-en{
+
+.flag-en {
     background: url('img/en.png');
     background-size: cover;
 }
-.flag-pl{
+
+.flag-pl {
     background: url('img/pl.png');
     background-size: cover;
 }
@@ -706,7 +708,8 @@ figure {
     box-sizing: border-box;
     padding: 63px 0 0;
 }
-.team-profile__part-of-team1{
+
+.team-profile__part-of-team1 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -743,7 +746,8 @@ figure {
     flex-direction: row;
 
 }
-.team .team-profile h4{
+
+.team .team-profile h4 {
     margin-top: 5%;
 }
 
@@ -1015,37 +1019,41 @@ footer {
 /*                                                                             */
 /*******************************************************************************/
 
-.cookies-info--display{
+.cookies-info--display {
     z-index: 99999;
     position: fixed;
     /*top:60px;*/
-    bottom:0;
-    left:0;
-    right:0;
-    padding:15px 6%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 6%;
     background-color: rgba(0, 17, 34, 0.76);
-    font-size:16px;
-    color:#fff;
+    font-size: 16px;
+    color: #fff;
 }
-.cookies-info--hide{
+
+.cookies-info--hide {
     display: none;
 }
-.cookies-info-message{
-    padding:20px;
+
+.cookies-info-message {
+    padding: 20px;
 }
-.cookies-info__closure{
+
+.cookies-info__closure {
     position: absolute;
-    top:10px;
-    right:10px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     font-weight: 800;
-    font-size:20px;
+    font-size: 20px;
 }
-.accept-cookies__button{
+
+.accept-cookies__button {
     border-radius: 10px;
     border: 1px solid #fff;
-    font-size:18px;
-    padding:5px;
+    font-size: 18px;
+    padding: 5px;
     background-color: transparent;
     color: #fff;
     cursor: pointer;
@@ -1279,6 +1287,7 @@ footer {
     .team-profile a img {
         padding: 7% 0 0 3%;
     }
+
     .team .team-profile {
         height: auto;
         margin: auto;
@@ -1556,8 +1565,9 @@ footer {
         font-size: 12px;
     }
 }
- @media all and (max-width: 460px) {
-    .team-profile__part-of-team1{
+
+@media all and (max-width: 460px) {
+    .team-profile__part-of-team1 {
         display: flex;
         justify-content: space-around;
         flex-direction: column;
