@@ -455,7 +455,8 @@
                             <div class="subscribe-form">
                                 <form method="post" class="newsletter-form"
                                       onsubmit="alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu.')">
-                                    <input id="form-name" type="text" name="firstName" placeholder="Imię" class="text-input">
+                                    <input id="form-name" type="text" name="firstName" placeholder="Imię"
+                                           class="text-input">
                                     <input type="email" name="mail" placeholder="Email" class="text-input" required>
                                     <input id="sign-in" type="submit" value="Zapisz się!"
                                            class="button-parallelogram text-with-uppercase">
@@ -482,9 +483,17 @@
             <div><img src="img/4Apple-logo-napis(3).png" alt="4apple"></div>
         </div>
     </footer>
+    <div class="cookies-info--display">
+        <div class="cookies-info-message"><span
+                data-lang="This website uses cookies.">Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki.</span>
+            <div class="cookies-info__closure">x</div>
+        </div>
+        <div class="accept-cookies"><input class="accept-cookies__button" type="submit" value="Akceptuję"></div>
+    </div>
 </div>
 <!-- SCRIPTS -->
 <script src="js/multi-language/changingLanguage.js"></script>
+<script src="js/cookies-info/cookies-info-display.js"></script>
 
 </body>
 </html>
