@@ -1,6 +1,7 @@
-(function () {
+//defining EventListener for scroll
+var windowPosition = window.scrollY;
 
-    var windowPosition;
+(function () {
     var elArrow = document.getElementById('button');
     var sectionHeight = (window.innerHeight - 70);
 
@@ -17,4 +18,5 @@
         }
     }
 })();
+
 
