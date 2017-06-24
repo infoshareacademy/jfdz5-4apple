@@ -16,13 +16,13 @@
 
     function accept() {
         elCookiesInfoContainer.setAttribute('class', 'cookies-info--hide');
-        if (cookiesAgreement !== true) {
-            localStorage.setItem('agreement', true);
+        if (cookiesAgreement !== 'true') {
+            localStorage.setItem('agreement', 'true');
         }
     }
 
     function checkAgreement() {
-        if (cookiesAgreement === true) {
+        if (cookiesAgreement === 'true') {
             elCookiesInfoContainer.setAttribute('class', 'cookies-info--hide');
         }
     }
