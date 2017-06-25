@@ -102,6 +102,26 @@ a:hover#menu-icon {
     color: #000;
 }
 
+.menu-list--language {
+    display: inline;
+    cursor: pointer;
+}
+
+.language {
+    min-width: 24px;
+    height: 15px;
+    margin: 0 1%;
+    cursor: pointer;
+}
+.flag-en{
+    background: url('img/en.png');
+    background-size: cover;
+}
+.flag-pl{
+    background: url('img/pl.png');
+    background-size: cover;
+}
+
 /*******************************************************************************/
 /*                                                                             */
 /*                                SNEAK-PEEK - PAWEL                           */
@@ -283,13 +303,13 @@ p {
 }
 
 .media-label--bold {
-    font-weight:800;
+    font-weight: 800;
     font-size: 20px;
     padding: 0 0 10px 0;
-    display:block;
+    display: block;
 }
 
-.media-input-checkbox:checked + .media-input-label{
+.media-input-checkbox:checked + .media-input-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -298,7 +318,7 @@ p {
     color: #fff;
 }
 
-.media-input-checkbox:checked + .media-input-label .media-label__text{
+.media-input-checkbox:checked + .media-input-label .media-label__text {
     display: block;
 }
 
@@ -712,7 +732,6 @@ figure {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .team-description-plus-logo img {
@@ -833,10 +852,11 @@ figure {
     font-size: 15px;
 }
 
-.Window i {
+.fa {
     text-decoration: none;
     color: black;
     padding: 10px 10px;
+    font-size: 50px;
 }
 
 .Window .fa-facebook-square:hover {
@@ -1009,12 +1029,6 @@ footer {
 /*                                                                             */
 /*******************************************************************************/
 
-/*-*-*-*-*-*-*-*-*-*-**-*-*POMAGA ZAPOBIEDC ZAŁAMYWANU SIĘ ZDJĘĆ ALE NIE DZIAŁA ZAWSZE-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-**/
-
-
-
-/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**/
-
 @media (max-height: 600px) {
     /*------ ABOUT US--------*/
     /* to avoid menu covering "X" closing img */
@@ -1082,6 +1096,10 @@ footer {
     .container-cube__cube-show-media {
         display: none;
     }
+
+    .menu-list--language {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1124,6 +1142,11 @@ footer {
 
     .menu-item {
         font-size: 83%;
+    }
+
+    .language {
+        min-width: 16px;
+        height: 10px;
     }
 
     /*------ SNEAK PEEK  --------*/
@@ -1365,14 +1388,18 @@ footer {
         animation-duration: 1.5s;
     }
 
-    .menu-item:nth-child(3) {
+    .menu-item:nth-child(3), .menu-item:nth-child(4) {
         -webkit-animation-duration: 2.5s;
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(4), .menu-item:nth-child(5) {
+    .menu-item:nth-child(5), .menu-item:nth-child(6) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
+    }
+
+    .language {
+        display: none;
     }
 
     /*------ ANIMATION MENU-ITEM --------*/
