@@ -1496,24 +1496,24 @@ footer {
     }
 }
 .animation-second{
-    opacity:1;
+    display:flex;
 }
 .animation-first{
-    opacity: 0;
+    display:none;
 }
 .animation {
-    opacity: 0;
+    display:none;
 }
 .animation-team{
-    animation-duration: 2s;
+    animation-duration: 1.7s;
     animation-name: slidein;
     animation-direction: alternate;
-    opacity: 1;
+    display:flex;
 }
 
 @keyframes slidein {
     from {
-        margin-left: -800%;
+        margin-left: -500%;
     }
 
     to {
