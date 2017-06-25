@@ -26,6 +26,10 @@
         var cookiesAgreement = localStorage.getItem('agreement');
         cookiesAgreement = JSON.parse(cookiesAgreement);
 
+        if (cookiesAgreement === null) {
+            return;
+        }
+
         var now = Date.now();
         var agreementDate = cookiesAgreement.date;
         var monthInMilliseconds = 1000 * 60 * 60 * 24 * 30;
