@@ -114,6 +114,11 @@ a:hover#menu-icon {
     margin: 0 1%;
     cursor: pointer;
 }
+.flag{
+    width: 16px;
+    height: 10px;
+    display: inline-block;
+}
 
 .flag-en {
     background: url('img/en.png');
