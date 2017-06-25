@@ -1495,12 +1495,20 @@ footer {
         flex-direction: column;
     }
 }
-
-
+.animation-second{
+    opacity:1;
+}
+.animation-first{
+    opacity: 0;
+}
+.animation {
+    opacity: 0;
+}
 .animation-team{
     animation-duration: 2s;
     animation-name: slidein;
     animation-direction: alternate;
+    opacity: 1;
 }
 
 @keyframes slidein {
