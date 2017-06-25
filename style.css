@@ -1619,22 +1619,27 @@ footer {
         flex-direction: column;
     }
 }
-.animation-second{
-    display:flex;
-}
-.animation-first{
-    display:none;
-}
-.animation {
-    display:none;
-}
-.animation-team{
-    animation-duration: 1.7s;
-    animation-name: slidein;
-    animation-direction: alternate;
-    display:flex;
-}
+@media all and (min-width: 961px) {
 
+    .animation-second {
+        display: flex;
+    }
+
+    .animation-first {
+        display: none;
+    }
+
+    .animation {
+        display: none;
+    }
+
+    .animation-team {
+        animation-duration: 1.7s;
+        animation-name: slidein;
+        animation-direction: alternate;
+        display: flex;
+    }
+}
 @keyframes slidein {
     from {
         margin-left: -500%;
