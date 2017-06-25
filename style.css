@@ -103,6 +103,28 @@ a:hover#menu-icon {
     color: #000;
 }
 
+.menu-list--language {
+    display: inline;
+    cursor: pointer;
+}
+
+.language {
+    min-width: 24px;
+    height: 15px;
+    margin: 0 1%;
+    cursor: pointer;
+}
+
+.flag-en {
+    background: url('img/en.png');
+    background-size: cover;
+}
+
+.flag-pl {
+    background: url('img/pl.png');
+    background-size: cover;
+}
+
 /*******************************************************************************/
 /*                                                                             */
 /*                                SNEAK-PEEK - PAWEL                           */
@@ -112,23 +134,35 @@ a:hover#menu-icon {
 h1.header {
     font-family: Raleway, cursive;
     position: absolute;
-    left: 10%;
-    top: 70%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
     color: white;
     z-index: 40;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 60px;
+    white-space: nowrap;
 }
 
 h2.header {
     font-family: Raleway, cursive;
     position: absolute;
-    left: 10%;
-    top: 80%;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
     color: white;
     z-index: 40;
     font-weight: 100;
     font-size: 30px;
+}
+
+.button-top{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 160%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h2.header a {
@@ -160,6 +194,8 @@ p {
     z-index: 2;
     width: 100%;
 }
+
+
 
 /*******************************************************************************/
 /*                                                                             */
@@ -270,13 +306,13 @@ p {
 }
 
 .media-label--bold {
-    font-weight:800;
+    font-weight: 800;
     font-size: 20px;
     padding: 0 0 10px 0;
-    display:block;
+    display: block;
 }
 
-.media-input-checkbox:checked + .media-input-label{
+.media-input-checkbox:checked + .media-input-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -285,7 +321,7 @@ p {
     color: #fff;
 }
 
-.media-input-checkbox:checked + .media-input-label .media-label__text{
+.media-input-checkbox:checked + .media-input-label .media-label__text {
     display: block;
 }
 
@@ -687,7 +723,8 @@ figure {
     box-sizing: border-box;
     padding: 63px 0 0;
 }
-.team-profile__part-of-team1{
+
+.team-profile__part-of-team1 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -699,7 +736,6 @@ figure {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .team-description-plus-logo img {
@@ -725,7 +761,8 @@ figure {
     flex-direction: row;
 
 }
-.team .team-profile h4{
+
+.team .team-profile h4 {
     margin-top: 5%;
 }
 
@@ -820,10 +857,11 @@ figure {
     font-size: 15px;
 }
 
-.Window i {
+.fa {
     text-decoration: none;
     color: black;
     padding: 10px 10px;
+    font-size: 50px;
 }
 
 .Window .fa-facebook-square:hover {
@@ -949,7 +987,7 @@ figure {
 /*                                                                             */
 /*******************************************************************************/
 
-.button {
+.button-visible {
     z-index: 0;
     width: 60px;
     height: 60px;
@@ -961,11 +999,15 @@ figure {
     transform: translate(0, 0);
     transition: all 0.3s ease-in;
 }
+button-invisible {
+    display: none;
+}
 
-.button:hover {
+.button-visible:hover {
     transform: translate(0, -10px);
     transition: all 0.3s ease-in;
     background-color: #0a5994;
+    cursor: pointer;
 }
 
 /*******************************************************************************/
@@ -992,15 +1034,55 @@ footer {
 
 /*******************************************************************************/
 /*                                                                             */
-/*                              MEDIA-QUERIES                                  */
+/*                                  COOKIES                                    */
 /*                                                                             */
 /*******************************************************************************/
 
-/*-*-*-*-*-*-*-*-*-*-**-*-*POMAGA ZAPOBIEDC ZAŁAMYWANU SIĘ ZDJĘĆ ALE NIE DZIAŁA ZAWSZE-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-**/
+.cookies-info--display {
+    z-index: 99999;
+    position: fixed;
+    /*top:60px;*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 6%;
+    background-color: rgba(0, 17, 34, 0.76);
+    font-size: 16px;
+    color: #fff;
+}
 
+.cookies-info--hide {
+    display: none;
+}
 
+.cookies-info-message {
+    padding: 20px;
+}
 
-/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-**/
+.cookies-info__closure {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.accept-cookies__button {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    padding: 5px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*******************************************************************************/
+/*                                                                             */
+/*                              MEDIA-QUERIES                                  */
+/*                                                                             */
+/*******************************************************************************/
 
 @media (max-height: 600px) {
     /*------ ABOUT US--------*/
@@ -1069,6 +1151,10 @@ footer {
     .container-cube__cube-show-media {
         display: none;
     }
+
+    .menu-list--language {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1113,6 +1199,11 @@ footer {
         font-size: 83%;
     }
 
+    .language {
+        min-width: 16px;
+        height: 10px;
+    }
+
     /*------ SNEAK PEEK  --------*/
     div#list.list div {
         font-size: 20px;
@@ -1125,12 +1216,24 @@ footer {
     }
 
     h1.header {
-        font-size: 35px;
+        text-align: center;
+        font-size: 45px;
+        font-weight: 300;
     }
 
     h2.header {
+        text-align: center;
         bottom: 20%;
         font-size: 30px;
+        font-weight: 200;
+    }
+    .button-top{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /*------ CONTACT/NEWSLETTER  --------*/
@@ -1215,6 +1318,7 @@ footer {
     .team-profile a img {
         padding: 7% 0 0 3%;
     }
+
     .team .team-profile {
         height: auto;
         margin: auto;
@@ -1340,14 +1444,18 @@ footer {
         animation-duration: 1.5s;
     }
 
-    .menu-item:nth-child(3) {
+    .menu-item:nth-child(3), .menu-item:nth-child(4) {
         -webkit-animation-duration: 2.5s;
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(4), .menu-item:nth-child(5) {
+    .menu-item:nth-child(5), .menu-item:nth-child(6) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
+    }
+
+    .language {
+        display: none;
     }
 
     /*------ ANIMATION MENU-ITEM --------*/
@@ -1373,12 +1481,27 @@ footer {
     }
     /*------ SNEAK PEEK  --------*/
     h1.header {
-        font-size: 25px;
+        font-size: 29px;
+        top: 35%;
+        white-space: normal;
+        text-align: center;
     }
 
     h2.header {
-        bottom: 20%;
         font-size: 20px;
+        top: 50%;
+        text-align: center;
+        font-weight: 300;
+
+    }
+
+    .button-top{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 160%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /*------ ICONS LIST --------*/
@@ -1467,7 +1590,7 @@ footer {
     }
 
     /*------ ARROW UP --------*/
-    .button {
+    .button-visible {
         display: none;
     }
 }
@@ -1488,8 +1611,9 @@ footer {
         font-size: 12px;
     }
 }
- @media all and (max-width: 460px) {
-    .team-profile__part-of-team1{
+
+@media all and (max-width: 460px) {
+    .team-profile__part-of-team1 {
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -1520,4 +1644,5 @@ footer {
         margin-left: 0;
     }
 }
+
 
