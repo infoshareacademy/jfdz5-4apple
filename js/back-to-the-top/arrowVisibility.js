@@ -1,11 +1,11 @@
 //defining EventListener for scroll
-var windowPosition = window.scrollY;
+var windowPosition;
 
 (function () {
     var elArrow = document.getElementById('button');
     var sectionHeight = (window.innerHeight - 70);
 
-    addEventListener('scroll', checkHeight);
+    window.addEventListener('scroll', checkHeight);
 
     function checkHeight() {
         windowPosition = window.scrollY;

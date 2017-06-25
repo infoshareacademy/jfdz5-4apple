@@ -9,6 +9,6 @@
             if (windowPosition === 0) {
                 clearInterval(scrolling);
             }
-        }, 1)
+        }, 22)
     }
 })();
