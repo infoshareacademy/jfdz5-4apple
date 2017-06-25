@@ -986,7 +986,7 @@ figure {
 /*                                                                             */
 /*******************************************************************************/
 
-.button {
+.button-visible {
     z-index: 0;
     width: 60px;
     height: 60px;
@@ -998,11 +998,15 @@ figure {
     transform: translate(0, 0);
     transition: all 0.3s ease-in;
 }
+button-invisible {
+    display: none;
+}
 
-.button:hover {
+.button-visible:hover {
     transform: translate(0, -10px);
     transition: all 0.3s ease-in;
     background-color: #0a5994;
+    cursor: pointer;
 }
 
 /*******************************************************************************/
@@ -1585,7 +1589,7 @@ footer {
     }
 
     /*------ ARROW UP --------*/
-    .button {
+    .button-visible {
         display: none;
     }
 }
