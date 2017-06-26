@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+}
+
+.game-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    height: 700px;
+    width: 600px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.character {
+    height: 50px;
+    width: 50px;
+    background: url('ludzik-z-workiem.png');
+}
