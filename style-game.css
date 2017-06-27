@@ -16,7 +16,7 @@
 
 .game {
     height: 700px;
-    width: 600px;
+    width: 580px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -24,7 +24,8 @@
 }
 
 .character {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     background: url('ludzik-z-workiem.png');
+    background-size: cover;
 }
