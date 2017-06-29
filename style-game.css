@@ -17,7 +17,17 @@
 .game {
     height: 700px;
     width: 580px;
-    background-color: #fff;
+    background-color: #9df4ff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ground{
+    background-color: dimgray;
+    height: 150px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -26,6 +36,63 @@
 .character {
     height: 70px;
     width: 70px;
-    background: url('ludzik-z-workiem.png');
+    background: url('img/ludzik-z-workiem.png');
     background-size: cover;
+    position: relative;
+}
+.cardboard-box{
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box.png');
+    background-size: cover;
+    position: relative;
+}
+
+.cloud-first{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left: 55px;
+    top: -50px;
+}
+.cloud-second{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left:-150px;
+    top: -110px;
+}
+.cloud-third{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left:-20px;
+    top: -200px;
+}
+.cloud-fourth{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left: 200px;
+    top: -300px;
+}
+.cloud-fifth{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left: -215px;
+    top: -300px;
+}
+.cloud-sixth{
+    background: url('img/cloud.png');
+    height: 39px;
+    width: 50px;
+    position: relative;
+    left: 150px;
+    top: -400px;
 }

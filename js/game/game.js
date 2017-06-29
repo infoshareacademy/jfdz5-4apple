@@ -1,4 +1,5 @@
 var position = 0;
+var height = 0;
 
 $(window).keydown(function (e) {
     $character = $('.character');
@@ -14,7 +15,7 @@ $(window).keydown(function (e) {
         position -= 15;
         $character.css({
             'transform': 'translateX(' + position + 'px)',
-            'background': 'url("ludzik-z-workiem-lewo.png")',
+            'background': 'url("img/ludzik-z-workiem-lewo.png")',
             'background-size': 'cover'
         });
     }
@@ -22,9 +23,19 @@ $(window).keydown(function (e) {
         position += 15;
         $character.css({
             'transform': 'translateX(' + position + 'px)',
-            'background': 'url("ludzik-z-workiem.png")',
+            'background': 'url("img/ludzik-z-workiem.png")',
             'background-size': 'cover'
         });
     }
 
 });
+
+var cardboardBoxFall = setInterval(function () {
+    height += 10;
+    $('.cardboard-box').css({
+        'transform': 'translateY(' + height + 'px)'
+    });
+    if (height >= 680) {
+        clearInterval(cardboardBoxFall);
+    }
+}, 100);
