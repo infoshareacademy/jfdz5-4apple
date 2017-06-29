@@ -31,15 +31,6 @@
     height: 580px;
 }
 
-.ground {
-    background-color: #4caf50;
-    height: 120px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
 .character {
     height: 70px;
     width: 70px;
