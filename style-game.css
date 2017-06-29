@@ -66,10 +66,10 @@
 }
 
 .cloud {
-    background: url('img/cloud.png');
+    background: url('img/cloud1.png');
     position: relative;
-    height: 48px;
-    width: 62px;
+    height: 53px;
+    width: 100px;
 }
 
 .cloud-first {
@@ -89,7 +89,7 @@
 
 .cloud-fourth {
     left: 200px;
-    top: -300px;
+    top: -270px;
 }
 
 .cloud-fifth {
