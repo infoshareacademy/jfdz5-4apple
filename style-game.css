@@ -21,8 +21,6 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
 }
 
 .board {
@@ -58,39 +56,48 @@
     position: relative;
 }
 
+.plane {
+    background: url('img/plane2.png');
+    height: 40px;
+    width: 55px;
+    position: relative;
+    top: 5px;
+    left: 260px;
+}
+
 .cloud {
     background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
     position: relative;
+    height: 48px;
+    width: 62px;
 }
 
 .cloud-first {
     left: 55px;
-    top: 130px;
+    top: -50px;
 }
 
 .cloud-second {
     left: -150px;
-    top: -30px;
+    top: -110px;
 }
 
 .cloud-third {
     left: -20px;
-    top: -120px;
+    top: -130px;
 }
 
 .cloud-fourth {
     left: 200px;
-    top: -220px;
+    top: -300px;
 }
 
 .cloud-fifth {
     left: -215px;
-    top: -120px;
+    top: -200px;
 }
 
 .cloud-sixth {
     left: 150px;
-    top: -220px;
+    top: -300px;
 }
