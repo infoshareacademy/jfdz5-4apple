@@ -35,7 +35,7 @@ var cardboardBoxFall = setInterval(function () {
     $('.cardboard-box').css({
         'transform': 'translateY(' + height + 'px)'
     });
-    if (height >= 500) {
+    if (height >= 480) {
         clearInterval(cardboardBoxFall);
     }
 }, 100);
