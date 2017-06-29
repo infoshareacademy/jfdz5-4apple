@@ -17,16 +17,25 @@
 .game {
     height: 700px;
     width: 580px;
-    background-color: #9df4ff;
+    background: url('img/board-backround.png');
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+
 }
-.ground{
-    background-color: dimgray;
-    height: 150px;
+
+.board {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 580px;
+}
+
+.ground {
+    background-color: #4caf50;
+    height: 120px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -40,7 +49,8 @@
     background-size: cover;
     position: relative;
 }
-.cardboard-box{
+
+.cardboard-box {
     height: 20px;
     width: 20px;
     background: url('img/pixel-cardboard-box.png');
@@ -48,51 +58,39 @@
     position: relative;
 }
 
-.cloud-first{
+.cloud {
     background: url('img/cloud.png');
     height: 39px;
     width: 50px;
     position: relative;
+}
+
+.cloud-first {
     left: 55px;
-    top: -50px;
+    top: 130px;
 }
-.cloud-second{
-    background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
-    position: relative;
-    left:-150px;
-    top: -110px;
+
+.cloud-second {
+    left: -150px;
+    top: -30px;
 }
-.cloud-third{
-    background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
-    position: relative;
-    left:-20px;
-    top: -200px;
+
+.cloud-third {
+    left: -20px;
+    top: -120px;
 }
-.cloud-fourth{
-    background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
-    position: relative;
+
+.cloud-fourth {
     left: 200px;
-    top: -300px;
+    top: -220px;
 }
-.cloud-fifth{
-    background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
-    position: relative;
+
+.cloud-fifth {
     left: -215px;
-    top: -300px;
+    top: -120px;
 }
-.cloud-sixth{
-    background: url('img/cloud.png');
-    height: 39px;
-    width: 50px;
-    position: relative;
+
+.cloud-sixth {
     left: 150px;
-    top: -400px;
+    top: -220px;
 }
