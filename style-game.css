@@ -17,7 +17,7 @@
 .game-menu--container{
     height: 700px;
     width: 580px;
-    background: url('img/background-with-clouds.png');
+    background: url('img/background-with-clouds1.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
