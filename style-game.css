@@ -12,6 +12,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'VT323', monospace;
+}
+.game-menu--container{
+    height: 700px;
+    width: 580px;
+    background: url('img/background-with-clouds.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    list-style: none;
+    text-align: center;
+}
+.game-menu--item{
+    cursor: pointer;
+    line-height: 1.4;
+}
+.game-menu--item:hover{
+    font-weight: 800;
+}
+.truck{
+    background: url('img/truck.png');
+    width: 200px;
+    height: 171px;
+    position: relative;
+    bottom:-100px;
 }
 
 .game {
@@ -19,8 +47,9 @@
     width: 580px;
     background: url('img/board-backround.png');
     position: absolute;
-    display: flex;
     flex-direction: column;
+    /*display: flex;*/
+    display: none;
 }
 
 .board {
