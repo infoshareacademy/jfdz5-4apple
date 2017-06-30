@@ -34,7 +34,7 @@
 .character {
     height: 70px;
     width: 70px;
-    background: url('img/ludzik-z-workiem.png');
+    background: url('img/ludzik-z-workiem-prawo.png');
     background-size: cover;
     position: relative;
 }

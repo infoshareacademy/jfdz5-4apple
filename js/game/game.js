@@ -23,7 +23,7 @@ $(window).keydown(function (e) {
         position += 15;
         $character.css({
             'transform': 'translateX(' + position + 'px)',
-            'background': 'url("img/ludzik-z-workiem.png")',
+            'background': 'url("img/ludzik-z-workiem-prawo.png")',
             'background-size': 'cover'
         });
     }
