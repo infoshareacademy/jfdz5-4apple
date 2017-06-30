@@ -14,7 +14,8 @@
     justify-content: center;
     font-family: 'VT323', monospace;
 }
-.game-menu--container{
+
+.game-menu--container {
     height: 700px;
     width: 580px;
     background: url('img/background-with-clouds1.png');
@@ -25,21 +26,30 @@
     font-size: 40px;
     text-transform: uppercase;
     text-align: center;
+    position: absolute;
 }
-.game-menu--item{
+
+.game-menu {
+    position: absolute;
+    top: 150px;
+}
+
+.game-menu--item {
     cursor: pointer;
     list-style: none;
     line-height: 1.4;
 }
-.game-menu--item:hover{
+
+.game-menu--item:hover {
     font-weight: 800;
 }
-.truck{
+
+.truck {
     background: url('img/truck.png');
     width: 200px;
     height: 171px;
-    position: relative;
-    bottom:-100px;
+    position: absolute;
+    bottom: 50px;
 }
 
 .game {
