@@ -101,7 +101,7 @@ a:hover#menu-icon {
 .menu-item a:hover {
     border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
-    color: #000;
+    color: #fff;
 }
 
 .menu-list--language {
