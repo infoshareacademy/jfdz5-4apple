@@ -907,6 +907,8 @@ figure {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
 }
 
 .subscribe-info {
@@ -979,8 +981,9 @@ figure {
     cursor: pointer;
 }
 
-.subscribe-warning-text {
+.subscribe-warning-input {
     width: 45%;
+    padding-top: 10px;
     margin: 0 auto;
     font-size: 10px;
     font-style: italic;
