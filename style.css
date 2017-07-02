@@ -56,7 +56,7 @@ header {
 }
 
 .logo img {
-    width: 230px;
+    width: 190px;
 }
 
 .menu-input-checkbox, .menu-input-label {
@@ -79,6 +79,7 @@ a:hover#menu-icon {
     flex-direction: row;
     list-style-type: none;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .menu-item {
@@ -86,7 +87,7 @@ a:hover#menu-icon {
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
 .menu-item a {
@@ -109,9 +110,9 @@ a:hover#menu-icon {
 }
 
 .language {
-    min-width: 24px;
-    height: 15px;
-    margin: 0 1%;
+    max-width: 24px;
+    height: 17px;
+    margin: 0 10px;
     cursor: pointer;
 }
 .flag{
@@ -1150,7 +1151,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 
     /*------ ABOUT PRODUCT --------*/
     .container-cube__cube-show-media {
@@ -1165,16 +1166,11 @@ footer {
 @media (min-width: 768px) and (max-width: 1023px) {
 
     /*------ NAVIGATION --------*/
-    .logo {
-        width: 30%;
-    }
-
     .logo img {
-        width: 90%;
+        width: 150px;
     }
 
     .main-menu {
-        width: 70%;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -1201,12 +1197,13 @@ footer {
     }
 
     .menu-item {
-        font-size: 83%;
+        font-size: 75%;
+        letter-spacing: 0;
+
     }
 
     .language {
-        min-width: 16px;
-        height: 10px;
+        max-width: 16px;
     }
 
     /*------ SNEAK PEEK  --------*/
@@ -1454,7 +1451,7 @@ footer {
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(5), .menu-item:nth-child(6) {
+    .menu-item:nth-child(5), .menu-item:nth-child(7) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
     }
