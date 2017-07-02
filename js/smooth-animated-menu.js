@@ -1,8 +1,7 @@
 var menuList = $(".menu-list"),
-    menuHeight = menuList.outerHeight(),
-    menuItems = menuList.find("a");
+    menuHeight = menuList.outerHeight();
 
-menuItems.click(function () {
+$('.logo a, .menu-list a').click(function () {
     var href = $(this).attr("href"),
         offsetTop = href === "#" ? 0 : $(href).offset().top - menuHeight;
     $('html, body').stop().animate({
