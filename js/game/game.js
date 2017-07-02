@@ -3,16 +3,10 @@ var height = 0;
 
 $(window).keydown(function (e) {
     $character = $('.character');
-    if (position <= (-255)) {
-        position += 15;
-        $character.css({'transform': 'translateX(' + position + 'px)'});
-    }
-    else if (position >= 255) {
-        position -= 15;
-        $character.css({'transform': 'translateX(' + position + 'px)'});
-    }
-    else if (e.keyCode === 37) {
-        position -= 15;
+    if (e.keyCode === 37) {
+        if (position > -255)
+            position -= 15;
+
         $character.css({
             'transform': 'translateX(' + position + 'px)',
             'background': 'url("img/ludzik-z-workiem-lewo.png")',
@@ -20,7 +14,9 @@ $(window).keydown(function (e) {
         });
     }
     else if (e.keyCode === 39) {
-        position += 15;
+        if (position < 255)
+            position += 15;
+
         $character.css({
             'transform': 'translateX(' + position + 'px)',
             'background': 'url("img/ludzik-z-workiem-prawo.png")',
