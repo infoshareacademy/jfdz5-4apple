@@ -1,6 +1,10 @@
 var position = 0;
 var height = 0;
 var planePosition = 0;
+var roundTimeInSeconds = 60;
+var planesPathLength = $('.board').width() - $('.plane').width();
+var intervalTime = parseInt((roundTimeInSeconds / planesPathLength) * 1000);
+
 
 $(window).keydown(function (e) {
     $character = $('.character');
@@ -25,25 +29,20 @@ $(window).keydown(function (e) {
         });
     }
 });
-var czas = new Date();
-console.log(czas);
-var roundTime = function () {
-    planePosition -= 10;
-    if (planePosition <= -525) {
-        clearInterval(gameTiming);
-        clearInterval(cardboardBoxFall);
-        czas = new Date();
-        console.log(czas);
-    }
-    else {
+
+var roundTiming = setInterval(function () {
+
+    if (planePosition > -525) {
+        planePosition -= 1;
         $('.plane').css({
             'transform': 'translateX(' + planePosition + 'px)'
         });
     }
-};
-var gameTiming = setInterval(function () {
-    roundTime()
-}, 112);
+    else {
+        clearInterval(roundTiming);
+        clearInterval(cardboardBoxFall);
+    }
+}, intervalTime);
 
 var cardboardBoxFall = setInterval(function () {
     var $cardboardBox = $('.cardboard-box');
