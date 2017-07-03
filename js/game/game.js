@@ -25,10 +25,15 @@ $(window).keydown(function (e) {
         });
     }
 });
+var czas = new Date();
+console.log(czas);
 var roundTime = function () {
-    planePosition -= 2;
+    planePosition -= 10;
     if (planePosition <= -525) {
+        clearInterval(gameTiming);
         clearInterval(cardboardBoxFall);
+        czas = new Date();
+        console.log(czas);
     }
     else {
         $('.plane').css({
@@ -36,10 +41,11 @@ var roundTime = function () {
         });
     }
 };
+var gameTiming = setInterval(function () {
+    roundTime()
+}, 112);
 
 var cardboardBoxFall = setInterval(function () {
-    roundTime();
-
     var $cardboardBox = $('.cardboard-box');
     height += 15;
     $cardboardBox.css({
@@ -48,4 +54,4 @@ var cardboardBoxFall = setInterval(function () {
     if (height >= 480) {
         $cardboardBox.hide();
     }
-}, 225);
+}, 100);
