@@ -24,7 +24,6 @@ $(window).keydown(function (e) {
             'background-size': 'cover'
         });
     }
-
 });
 
 var cardboardBoxFall = setInterval(function () {
@@ -37,12 +36,12 @@ var cardboardBoxFall = setInterval(function () {
             'transform': 'translateX(' + planePosition + 'px)'
         });
     }
-    console.log(planePosition);
-    height += 10;
-    $('.cardboard-box').css({
+    var $cardboardBox =  $('.cardboard-box');
+    height += 15;
+    $cardboardBox.css({
         'transform': 'translateY(' + height + 'px)'
     });
     if (height >= 480) {
-        $('.cardboard-box').hide();
+        $cardboardBox.hide();
     }
 }, 225);
