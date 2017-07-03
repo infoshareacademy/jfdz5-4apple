@@ -1,5 +1,6 @@
 var position = 0;
 var height = 0;
+var planePosition = 0;
 
 $(window).keydown(function (e) {
     $character = $('.character');
@@ -27,11 +28,21 @@ $(window).keydown(function (e) {
 });
 
 var cardboardBoxFall = setInterval(function () {
+    planePosition -= 2;
+    if (planePosition <= -525) {
+        clearInterval(cardboardBoxFall);
+    }
+    else {
+        $('.plane').css({
+            'transform': 'translateX(' + planePosition + 'px)'
+        });
+    }
+    console.log(planePosition);
     height += 10;
     $('.cardboard-box').css({
         'transform': 'translateY(' + height + 'px)'
     });
     if (height >= 480) {
-        clearInterval(cardboardBoxFall);
+        $('.cardboard-box').hide();
     }
-}, 100);
+}, 225);
