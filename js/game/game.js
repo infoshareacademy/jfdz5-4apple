@@ -25,8 +25,7 @@ $(window).keydown(function (e) {
         });
     }
 });
-
-var cardboardBoxFall = setInterval(function () {
+var roundTime = function () {
     planePosition -= 2;
     if (planePosition <= -525) {
         clearInterval(cardboardBoxFall);
@@ -36,7 +35,12 @@ var cardboardBoxFall = setInterval(function () {
             'transform': 'translateX(' + planePosition + 'px)'
         });
     }
-    var $cardboardBox =  $('.cardboard-box');
+};
+
+var cardboardBoxFall = setInterval(function () {
+    roundTime();
+
+    var $cardboardBox = $('.cardboard-box');
     height += 15;
     $cardboardBox.css({
         'transform': 'translateY(' + height + 'px)'
