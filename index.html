@@ -6,16 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>price.less.pl</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <link rel="icon" type="image/png" href="img/mini-icon1.png">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 <div class="header">
-    <h1 class="header">Zapraszamy do naszego serwisu...</h1>
-    <h2 class="header"><em>Chcesz być na bieżąco,<a href="#contact"> kliknij tu.</a></em></h2>
+    <h1 class="header"><span data-lang="Welcome to our page...">Zapraszamy do naszego serwisu...</span></h1>
+    <h2 class="header"><em><span data-lang="If you want to be up to date, click below">Chcesz być na bieżąco, kliknij niżej </span></em><a
+            href="#contact"><img class="button-top" src="img/click.svg"></a></h2>
+
 </div>
 
 
@@ -27,11 +30,17 @@
             <label for="open-menu-input" class="menu-input-label"></label>
 
             <ul class="menu-list">
-                <li class="menu-item"><a href="#list">Zalety</a></li>
-                <li class="menu-item"><a href="#about-product">O produkcie</a></li>
-                <li class="menu-item"><a href="#time-saving">Oszczędność czasu</a></li>
-                <li class="menu-item"><a href="#about-us">O nas</a></li>
-                <li class="menu-item"><a href="#contact">Kontakt</a></li>
+                <li class="menu-item"><a href="#list"><span data-lang="Pros">Zalety</span></a></li>
+                <li class="menu-item"><a href="#about-product"><span
+                        data-lang="About the product">O produkcie</span></a></li>
+                <li class="menu-item"><a href="#time-saving"><span data-lang="Time saving">Oszczędność czasu</span></a>
+                </li>
+                <li class="menu-item"><a href="#about-us"><span data-lang="About us">O nas</span></a></li>
+                <li class="menu-item last-active-item"><a href="#contact"><span data-lang="Contact">Kontakt</span></a>
+                </li>
+                <li class="menu-item language flag-en" id="language"></li>
+                <li class="menu-item menu-list--language"><a><span><span
+                        data-lang="Polski ">English </span><span class="flag flag-en"></span></span></a></li>
             </ul>
         </nav>
     </div>
@@ -42,16 +51,20 @@
         <div id="home" class="theme"></div>
         <div class="board">
             <div id="list"><img src="img/line.png" alt="Line" class="line-top">
-                <h2>#Co możemy Ci zaoferować?</h2>
+                <h2>#<span data-lang="What can we offer to you?">Co możemy Ci zaoferować?</span></h2>
                 <img src="img/line.png" alt="Line" class="line">
                 <div class="list">
-                    <div>Najlepsze oferty<img src="img/tag.svg" alt="najlepsze oferty"></div>
-                    <div>Bezpieczne zakupy<img src="img/shopping-.svg" alt="bezpieczne zakupy"></div>
-                    <div>Szybka wysyłka<img src="img/open-box.svg" alt="szybka wysyłka"></div>
-                    <div>Promocje<img src="img/transaction.svg" alt="promocje"></div>
+                    <div><span data-lang="The best offers">Najlepsze oferty</span><img src="img/tag.svg"
+                                                                                       alt="the best offers"></div>
+                    <div><span data-lang="Safe shopping">Bezpieczne zakupy</span><img src="img/shopping-.svg"
+                                                                                      alt="safe shopping"></div>
+                    <div><span data-lang="Quick delivery">Szybka wysyłka</span><img src="img/open-box.svg"
+                                                                                    alt="quick delivery"></div>
+                    <div><span data-lang="Sales">Promocje</span><img src="img/transaction.svg" alt="sales">
+                    </div>
                 </div>
                 <div id="about-product"><img src="img/line.png" alt="Line" class="line-top">
-                    <h2>#Czego możesz od nas oczekiwać?</h2>
+                    <h2>#<span data-lang="What can you expect from us?">Czego możesz od nas oczekiwać?</span></h2>
                     <img src="img/line.png" alt="Line" class="line">
                     <div class="container-cube">
                         <div class="container-cube__cube-show-media">
@@ -59,39 +72,42 @@
                                 <input type="checkbox" id="open-search-input"
                                        class="media-input-checkbox search-checkbox">
                                 <label for="open-search-input" class="media-input-label search-label"><span
-                                        class="media-label__text"><span class="media-label--bold">Trafne
+                                        class="media-label__text"><span data-lang="Accurate searching!"
+                                                                        class="media-label--bold">Trafne
                                     wyszukiwanie!</span>
-                                   <span> Zawsze dostaniesz to czego szukasz. Nasza wyszukiwarka szybko znajdzie Twój
+                                   <span data-lang="Here you can find everything you look for. Our search will quickly track your product, if only exists one."> Zawsze dostaniesz to czego szukasz. Nasza wyszukiwarka szybko znajdzie Twój
                                         produkt,
                                         jeśli tylko taki istnieje.</span></span>
                                 </label></div>
                             <div class="happy container-cube__cube-show-media__titles">
                                 <input type="checkbox" id="open-happy-input"
                                        class="media-input-checkbox happy-checkbox">
-                                <label for="open-happy-input" class="media-input-label happy-label"><span
-                                        class="media-label__text"><span class="media-label--bold">Zadowolenie z
+                                <label for="open-happy-input" class="media-input-label happy-label">
+                                     <span class="media-label__text"><span data-lang="Satisfaction guaranteed!"
+                                                                           class="media-label--bold">Zadowolenie z
                                     zakupów!</span>
-                                    <span>Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</span></span>
+                                    <span data-lang="Thanks to many facilitations, shopping with us is pure pleasure.">Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</span></span>
                                 </label></div>
                             <div class="money container-cube__cube-show-media__titles">
                                 <input type="checkbox" id="open-money-input"
                                        class="media-input-checkbox money-checkbox">
                                 <label for="open-money-input" class="media-input-label money-label"><span
-                                        class="media-label__text"><span class="media-label--bold">Gwarancja
+                                        class="media-label__text"><span data-lang="The lowest price guarantee!"
+                                                                        class="media-label--bold">Gwarancja
                                     najniższych cen!</span>
-                                   <span> Współpracujemy tylko z zaufanymi przedawcami. Kupując u nas masz gwarancję, że
-                                        nie
-                                        trafisz na oszusta.</span></span></label>
+                                   <span data-lang="Our offers are certainly the best. We will find everything you need, with the lowest price."> Kupując u nasz masz pewność, że wybrałeś najlepszą ofertę. Znajdziemy dla Ciebie
+                                        wszystkie produkty, ale przede wszystkim te w najlepszej cenie.</span></span></label>
                             </div>
                             <div class="secure container-cube__cube-show-media__titles">
                                 <input type="checkbox" id="open-secure-input"
                                        class="media-input-checkbox secure-checkbox">
                                 <label for="open-secure-input" class="media-input-label secure-label"><span
-                                        class="media-label__text"><span class="media-label--bold">Bezpieczne
+                                        class="media-label__text"><span data-lang="Safe shopping!"
+                                                                        class="media-label--bold">Bezpieczne
                                     zakupy!</span>
-                                    <span> Tylko z zaufanymi przedawcami. Kupując u nas masz gwarancję, że
+                                    <span data-lang="We cooperate only with the most trustworthy companies. Buying here you are sure you will not meet fraud."> Współpracujemy tylko z zaufanymi sprzedawcami. Kupując u nas masz gwarancję, że
                                         nie
-                                    trafisz na oszusta.</span></span></label>
+                                        trafisz na oszusta.</span></span></label>
 
                             </div>
                         </div>
@@ -105,8 +121,8 @@
                                     <figure class="right">
                                         <div class="overshow">
                                             <div class="overshow-info">
-                                                <h2>Zadowolenie z
-                                                    zakupów!</h2>
+                                                <h2> <span data-lang="Satisfaction guaranteed!">Zadowolenie z
+                                                    zakupów!</span></h2>
                                             </div>
                                         </div>
                                     </figure>
@@ -116,7 +132,7 @@
                                     <figure class="left">
                                         <div class="overshow">
                                             <div class="overshow-info">
-                                                <h2>Bezpieczne zakupy!</h2>
+                                                <h2><span data-lang="Safe shopping!">Bezpieczne zakupy!</span></h2>
                                             </div>
                                         </div>
                                     </figure>
@@ -125,7 +141,8 @@
                                     <figure class="top">
                                         <div class="overshow">
                                             <div class="overshow-info">
-                                                <h2>Trafne wyszukiwanie!</h2>
+                                                <h2><span data-lang="Accurate searching!">Trafne wyszukiwanie!</span>
+                                                </h2>
                                             </div>
                                         </div>
                                     </figure>
@@ -134,7 +151,8 @@
                                     <figure class="bottom">
                                         <div class="overshow">
                                             <div class="overshow-info">
-                                                <h2>Gwarancja najniższych cen!</h2>
+                                                <h2><span data-lang="The lowest price guarantee!">Gwarancja najniższych cen!</span>
+                                                </h2>
                                             </div>
                                         </div>
                                     </figure>
@@ -143,38 +161,44 @@
 
                             <div id="boxtop" class="container-cube__cube-LG__modal-container">
                                 <div class="modal">
-                                    <h2>Trafne wyszukiwanie!</h2>
-                                    <p>Zawsze dostaniesz to czego szukasz. Nasza wyszukiwarka szybko znajdzie Twój
+                                    <h2><span data-lang="Accurate searching!">Trafne wyszukiwanie!</span></h2>
+                                    <p> <span
+                                            data-lang="Here you can find everything you look for. Our search will quickly track your product, if only exists one.">Zawsze dostaniesz to czego szukasz. Nasza wyszukiwarka szybko znajdzie Twój
                                         produkt,
-                                        jeśli tylko taki istnieje.</p>
+                                        jeśli tylko taki istnieje.</span></p>
                                     <a href="#about-product" class="close-modal"></a>
                                 </div>
                             </div>
 
                             <div id="boxright" class="container-cube__cube-LG__modal-container">
                                 <div class="modal">
-                                    <h2>Zadowolenie z
-                                        zakupów!</h2>
-                                    <p>Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</p>
+                                    <h2> <span data-lang="Satisfaction guaranteed!">Zadowolenie z
+                                        zakupów!</span></h2>
+                                    <p><span
+                                            data-lang="Thanks to many facilitations, shopping with us is pure pleasure.">Dzięki licznym udogodnieniom zakupy u nas to sama przyjemność.</span>
+                                    </p>
                                     <a href="#about-product" class="close-modal"></a>
                                 </div>
                             </div>
 
                             <div id="boxbottom" class="container-cube__cube-LG__modal-container">
                                 <div class="modal">
-                                    <h2>Gwarancja najniższych cen!</h2>
-                                    <p>Kupując u nasz masz pewność, że wybrałeś lajlepszą ofertę. Znajdziemy dla Ciebie
-                                        wszystkie produkty, ale przede wszystkim te w najlepszej cenie.</p>
+                                    <h2><span data-lang="The lowest price guarantee!">Gwarancja najniższych cen!</span>
+                                    </h2>
+                                    <p> <span
+                                            data-lang="Our offers are certainly the best. We will find everything you need, at the lowest price.">Kupując u nasz masz pewność, że wybrałeś najlepszą ofertę. Znajdziemy dla Ciebie
+                                        wszystkie produkty, ale przede wszystkim te w najlepszej cenie.</span></p>
                                     <a href="#about-product" class="close-modal"></a>
                                 </div>
                             </div>
 
                             <div id="boxleft" class="container-cube__cube-LG__modal-container">
                                 <div class="modal">
-                                    <h2>Bezpieczne zakupy!</h2>
-                                    <p>Współpracujemy tylko z zaufanymi przedawcami. Kupując u nas masz gwarancję, że
+                                    <h2><span data-lang="Safe shopping!">Bezpieczne zakupy!</span></h2>
+                                    <p> <span
+                                            data-lang="We cooperate only with the most trustworthy companies. While buying here you are sure you will not meet fraud.">Współpracujemy tylko z zaufanymi sprzedawcami. Kupując u nas masz gwarancję, że
                                         nie
-                                        trafisz na oszusta.</p>
+                                        trafisz na oszusta.</span></p>
                                     <a href="#about-product" class="close-modal"></a>
                                 </div>
                             </div>
@@ -185,20 +209,21 @@
 
                 <div class="container-about-function" id="time-saving">
                     <img src="img/line.png" alt="Line" class="line img-line-padding-top">
-                    <h2>#Jak możesz zaoszczędzić czas?</h2>
+                    <h2>#<span data-lang="How can you save time?">Jak możesz zaoszczędzić czas?</span></h2>
                     <img src="img/line.png" alt="Line" class="line">
                     <section class="container-about-function__blok-screen">
                         <div class="container-about-function__blok-screen__screen">
 
                             <a>
                                 <figure>
-                                    <img src="img/kategorie.png" alt="kategorie">
+                                    <img src="img/kategorie.png" alt="categories">
                                     <figcaption class="overlay">
                                         <div class="overlay-info">
-                                            <h2>Kategorie</h2>
-                                            <p>Dzięki instynktownemu podziałowi produktów na kategorie, bez problemu
+                                            <h2><span data-lang="Categories">Kategorie</span></h2>
+                                            <p><span
+                                                    data-lang="Thanks to instinctive division into categories, you can find exactly what you are looking for without any problem. Only one click required, to see every product you are interested in.">Dzięki instynktownemu podziałowi produktów na kategorie, bez problemu
                                                 znajdziesz to czego szukasz. Wystarczy jedno kliknięcie i zobaczysz
-                                                wszystkie produkty, które Cię interesują.</p>
+                                                wszystkie produkty, które Cię interesują.</span></p>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -209,13 +234,16 @@
                         <div class="container-about-function__blok-screen__screen">
                             <a>
                                 <figure>
-                                    <img src="img/sortowanie.png" alt="sortowanie" rel="ship">
+                                    <img src="img/sortowanie.png" alt="sorting" rel="ship">
                                     <figcaption class="overlay">
                                         <div class="overlay-info">
-                                            <h2>Sortowanie wg.potrzeb</h2>
-                                            <p>Z naszą opcją sorotowania produktów nie musisz martwić się o żmudne
+                                            <h2><span
+                                                    data-lang="Sorting according to needs">Sortowanie wg.potrzeb</span>
+                                            </h2>
+                                            <p><span
+                                                    data-lang="With help of our sorting option you don't have to worry about tedious watching every offer. Using filters will help you easily find right price, size or color.">Z naszą opcją sorotowania produktów nie musisz martwić się o żmudne
                                                 przeglądanie wszystkich ofert. Z pomocą filtrów, z łatwością wybierzesz
-                                                odpowiedzią cenę, rozmiar, czy kolor. </p>
+                                                odpowiedzią cenę, rozmiar, czy kolor. </span></p>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -225,15 +253,16 @@
                         <div class="container-about-function__blok-screen__screen">
                             <a>
                                 <figure>
-                                    <img src="img/lista-zakupow.png" alt="lista zakupów" rel="lista">
+                                    <img src="img/lista-zakupow.png" alt="lista zakupów" rel="shopping list">
                                     <figcaption class="overlay">
                                         <div class="overlay-info">
-                                            <h2>Lista zakupow</h2>
-                                            <p>U nas nie musisz kupować od razu! Skorzystaj z listy zakupów i dodaj do
+                                            <h2><span data-lang="Shopping list">Lista zakupow</span></h2>
+                                            <p><span
+                                                    data-lang="We don't force you to buy instantly. Use our shopping list to add products you are interested in or just simply write your ideas down and come back to it when you have some time.">U nas nie musisz kupować od razu! Skorzystaj z listy zakupów i dodaj do
                                                 niej
                                                 interesujące Cię produkty, lub po prostu zapisz swoje pomysły i wróć do
                                                 nich
-                                                kiedy znajdziesz chwilę.</p>
+                                                kiedy znajdziesz chwilę.</span></p>
                                         </div>
                                     </figcaption>
                                 </figure>
@@ -241,8 +270,9 @@
                         </div>
 
                     </section>
-                    <p class="naglowek">Wiemy jak ważny jest czas, dlatego dbamy o to, żebyście nie musieli go
-                        marnować. </p>
+                    <p class="naglowek"><span
+                            data-lang="We know how important time is, that's why we prevent you from wasting it.">Wiemy jak ważny jest czas, dlatego dbamy o to, żebyście nie musieli go
+                        marnować. </span></p>
                 </div>
                 <div id="about-us" class="container-team">
                     <section class="team"><img src="img/line.png" alt="Line" class="line">
@@ -251,21 +281,25 @@
                         <img src="img/line.png" alt="Line" class="line">
 
                         <div class="team-profile">
-                            <div><a id="Piotrek" href="#WindowPiotr"><img src="img/4apple-piotr.jpg" alt="piotrek"></a>
-                                <h4>Piotr Stefanowicz</h4>
+                            <div class="team-profile__part-of-team1 animation-first">
+                                <div><a id="Piotrek" href="#WindowPiotr"><img src="img/4apple-piotr.jpg" alt="piotrek"></a>
+                                    <h4>Piotr Stefanowicz</h4>
+                                </div>
+                                <div>
+                                    <a id="Aleksander" href="#WindowAleksander"><img src="img/4apple-alek.jpg"
+                                                                                     alt="aleksander"></a>
+                                    <h4>Aleksander Zych</h4>
+                                </div>
                             </div>
-                            <div>
-                                <a id="Aleksander" href="#WindowAleksander"><img src="img/4apple-alek.jpg"
-                                                                                 alt="aleksander"></a>
-                                <h4>Aleksander Zych</h4>
-                            </div>
-                            <div>
-                                <a id="Pawel" href="#WindowPawel"><img src="img/4apple-pawel.jpg" alt="pawel"></a>
-                                <h4>Paweł Sejanko</h4>
-                            </div>
-                            <div>
-                                <a id="Dawid" href="#WindowDawid"><img src="img/4apple-dawid.jpg" alt="dawid"></a>
-                                <h4>Dawid Ceynowa</h4>
+                            <div class="team-profile__part-of-team1 animation " id="animation">
+                                <div>
+                                    <a id="Pawel" href="#WindowPawel"><img src="img/4apple-pawel.jpg" alt="pawel"></a>
+                                    <h4>Paweł Sajenko</h4>
+                                </div>
+                                <div>
+                                    <a id="Dawid" href="#WindowDawid"><img src="img/4apple-dawid.jpg" alt="dawid"></a>
+                                    <h4>Dawid Ceynowa</h4>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -277,11 +311,12 @@
                             <div class="window-bottom">
                                 <h2>Piotr Stefanowicz</h2>
                                 <h3>Junior Front-end Developer</h3>
-                                <p>Od dziecka fascynowało mnie programowanie, jednak zawsze wydawało mi się, że
+                                <p><span
+                                        data-lang="I have been fascinated with programing since I was a child. However i was under impression that it is not a profession for ordinary people. Not that long ago i decided that I will give it a try and that is how i have ended up here.">Od dziecka fascynowało mnie programowanie, jednak zawsze wydawało mi się, że
                                     nie
                                     jest to zajęcie dla zwykłych ludzi. Jakiś czas temu postanowiłem spróbować i
                                     tak
-                                    trafiłem tutaj.
+                                    trafiłem tutaj.</span>
                                 </p>
                                 <div class="social-media">
                                     <a href="https://www.facebook.com/piotr.stefanowicz.733"><i
@@ -307,16 +342,16 @@
 
                                 <div></div>
 
-
                                 <div>
-                                    <p>Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
+                                    <p><span
+                                            data-lang="Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum tellus. Phasellus dapibus sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra. Vestibulum turpis metus, suscipit sit amet tellus interdum, vulputate dictum arcu.">Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
                                         tellus.
                                         Phasellus
                                         dapibus
                                         sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
                                         Vestibulum
                                         turpis metus,
-                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</p>
+                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</span></p>
                                 </div>
                                 <div class="social-media">
                                     <a href="https://www.facebook.com/profile.php?id=100002293674751"><i
@@ -341,14 +376,11 @@
 
                                 <h3>Junior Front-end Developer</h3>
                                 <div>
-                                    <p>Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
-                                        tellus.
-                                        Phasellus
-                                        dapibus
-                                        sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
-                                        Vestibulum
-                                        turpis metus,
-                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</p>
+                                    <p><span
+                                            data-lang="Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum tellus. Phasellus dapibus sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra. Vestibulum turpis metus, suscipit sit amet tellus interdum, vulputate dictum arcu.">Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
+                                        tellus. Phasellus dapibus sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
+                                        Vestibulum turpis metus, suscipit sit amet tellus interdum, vulputate dictum arcu.</span>
+                                    </p>
                                 </div>
                                 <div class="social-media">
                                     <a href=""><i
@@ -375,11 +407,12 @@
 
                                 <h3>Junior Front-end Developer</h3>
                                 <div>
-                                    <p>Nazywam się Dawid Ceynowa i od roku fascynuję się i zajmuję tworzeniem stron
+                                    <p><span
+                                            data-lang="My name is Dawid Ceynowa. I have been fascinated with web developing for the last year. Since then I have started to create websites on my own and it provided me lot of fun. I am graduate of undergraduate studies in direction: Physic and Medical physic at the Faculty of Mathematics, Physics and Computer Science of the University of Gdansk.">Nazywam się Dawid Ceynowa i od roku fascynuję się i zajmuję tworzeniem stron
                                         internetowych.
 
                                         Jestem absolwentem studiów licencjackich kierunków: Fizyka oraz Fizyka medyczna
-                                        na Wydziale Matematyki, Fizyki i Informatyki Uniwersytetu Gdańskiego.</p>
+                                        na Wydziale Matematyki, Fizyki i Informatyki Uniwersytetu Gdańskiego.</span></p>
                                 </div>
                                 <a href="#about-us" class="close-window"></a>
                                 <div class="social-media">
@@ -397,7 +430,8 @@
 
                     <!--section contact/newsleter-->
                     <div id="contact"><img src="img/line.png" alt="Line" class="line-top">
-                        <h2>#Co możesz zrobić, aby wiedzieć więcej?</h2>
+                        <h2>#<span data-lang="What can you do to know more about us?">Co możesz zrobić, aby wiedzieć więcej?</span>
+                        </h2>
                         <img src="img/line.png" alt="Line" class="line">
                         <section class="contact-container">
                             <div class="subscribe-info">
@@ -405,34 +439,41 @@
                                     <img src="img/newsletter.svg" alt="Newsletter" class="section-image">
                                 </div>
                                 <div class="subscribe-info-right-box">
-                                    <h2 class="subscribe-title subscribe-text text-with-uppercase">Zapisz się już
-                                        dziś!</h2>
-                                    <h5 class="subscribe-text">Chcesz być na bierząco? Podaj maila, a my poinformujemy
-                                        Ciebie o
-                                        wszystkim w tylko
-                                        <span class="text-with-uppercase">jednej</span> wiadomości!</h5>
+                                    <h2 class="subscribe-title subscribe-text text-with-uppercase"><span
+                                            data-lang="sing up today!">Zapisz się już
+                                        dziś!</span></h2>
+                                    <h5 class="subscribe-text"><span
+                                            data-lang="You want to be up to date? Give us your email address and we will inform you about everything in only">Chcesz być na bierząco? Podaj maila, a my poinformujemy
+                                        Ciebie o                                         wszystkim w tylko</span>
+                                        <span data-lang="one" class="text-with-uppercase">jednej</span> <span
+                                                data-lang="message!">wiadomości!</span></h5>
                                 </div>
                             </div>
                             <div class="subscribe-form">
                                 <form method="post" class="newsletter-form"
                                       onsubmit="alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu.')">
-                                    <input type="text" name="firstname" placeholder="Imię" class="text-input">
+                                    <input id="form-name" type="text" name="firstName" placeholder="Imię"
+                                           class="text-input">
                                     <input type="email" name="mail" placeholder="Email" class="text-input" required>
-                                    <input type="submit" value="Zapisz się!"
+                                    <div class="subscribe-warning-input">
+                                        <input type="checkbox" id="warning" required>
+                                        <label for="warning"
+                                               data-lang="I agree to receive the e-mail at the address indicated by me commercial information within the meaning of art. 10 sec. 1 Act of 18 July 2002 on the provision of electronic services from 4Aplle based in Gdansk.">
+                                            Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie
+                                            adres e-mail informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z dnia
+                                            18 lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z
+                                            siedzibą w Gdańsku.
+                                        </label>
+                                    </div>
+                                    <input id="sign-in" type="submit" value="Zapisz się!"
                                            class="button-parallelogram text-with-uppercase">
                                 </form>
-                                <div class="subscribe-warning-text">
-                                    <p>Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres
-                                        e-mail
-                                        informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z dnia 18
-                                        lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z siedzibą w
-                                        Gdańsku.</p>
-                                </div>
+
                             </div>
                         </section>
                     </div>
                 </div>
-                <div class="button"><a href="#home"><img src="img/arrow-up.png" alt="arrow"></a></div>
+                <div id="button" class="button-invisible"><img src="img/arrow-up.png" alt="arrow"></div>
             </div>
         </div>
     </main>
@@ -442,9 +483,24 @@
             <div><img src="img/4Apple-logo-napis(3).png" alt="4apple"></div>
         </div>
     </footer>
+    <div class="cookies-info--display">
+        <div class="cookies-info-message"><span
+                data-lang="We use cookies to make using our service easier for you, and also for statistical purposes. If you do not block those files, it means you agree on their usage and storage in your device. Remember that you can administrate cookies on your own by changing your browser settings.">Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki.</span>
+            <div class="cookies-info__closure">x</div>
+        </div>
+        <div class="accept-cookies"><input class="accept-cookies__button" type="submit" value="Akceptuję"></div>
+    </div>
     <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="js/smooth-animated-menu.js" type="text/javascript"></script>
 
 </div>
+<!-- SCRIPTS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/multi-language/changingLanguage.js"></script>
+<script src="js/back-to-the-top/arrowVisibility.js"></script>
+<script src="js/back-to-the-top/smoothScroll.js"></script>
+<script src="js/cookies-info/cookies-info-display.js"></script>
+<script src="js/scrolling_menu.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
