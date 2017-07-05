@@ -1014,7 +1014,7 @@ figure {
     transform: translate(0, 0);
     transition: all 0.3s ease-in;
 }
-button-invisible {
+.button-invisible {
     display: none;
 }
 
@@ -1194,13 +1194,14 @@ footer {
     }
 
     .menu-item a {
-        padding: 0;
+        padding: 4px 0;
+
         border: none;
     }
 
     .menu-item a:hover {
         border: none;
-        padding: 0;
+        padding: 4px 0;
         background-color: transparent;
         color: #fff;
     }
@@ -1208,12 +1209,18 @@ footer {
     .menu-item {
         font-size: 75%;
         letter-spacing: 0;
+    }
 
+    .menu-list li.active a {
+        border-top: solid 2px ;
+        border-bottom: solid 2px;
+        border-radius: 4px;
     }
 
     .language {
         max-width: 16px;
     }
+
 
     /*------ SNEAK PEEK  --------*/
     div#list.list div {
