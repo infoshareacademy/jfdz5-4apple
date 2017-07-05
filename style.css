@@ -1116,9 +1116,9 @@ footer {
         display: none;
     }
 
-    .contact-container {
-        height: calc(90vh - 70px);
-    }
+    /*.contact-container {*/
+        /*height: calc(90vh - 70px);*/
+    /*}*/
 
     .container-about-function__blok-screen {
         display: flex;
@@ -1582,6 +1582,9 @@ footer {
 
     /*------ CONTACT/NEWSLETTER --------*/
     /*section contact*/
+    .contact-container {
+        border-radius: 0;
+    }
     .subscribe-info {
         flex-direction: column;
         width: 90%;
@@ -1603,7 +1606,7 @@ footer {
         width: 85%;
     }
 
-    .subscribe-warning-text {
+    .subscribe-warning-input {
         width: 80%;
     }
 
