@@ -43,14 +43,26 @@ var roundTiming = setInterval(function () {
         clearInterval(cardboardBoxFall);
     }
 }, intervalTime);
-
 var cardboardBoxFall = setInterval(function () {
-    var $cardboardBox = $('.cardboard-box');
-    height += 15;
-    $cardboardBox.css({
+    var mario = $(".character");
+    var box = $('.cardboard-box');
+
+    var marioPosition = mario.position().left + mario.width() / 2;
+    var boxPosition = box.position().left + box.width() / 2;
+    height += 10;
+    // console.log(height);
+    $('.cardboard-box').css({
         'transform': 'translateY(' + height + 'px)'
     });
-    if (height >= 480) {
-        $cardboardBox.hide();
+
+    console.log(boxPosition - marioPosition);
+
+    if(height >= 480 && height <=540  && Math.abs( boxPosition - marioPosition) < 35){
+        $('.cardboard-box').hide();
+        clearInterval(cardboardBoxFall);
+    }
+    else if (height >=560 ){
+        clearInterval(cardboardBoxFall);
     }
 }, 100);
+
