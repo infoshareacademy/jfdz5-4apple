@@ -1,40 +1,48 @@
 var position = 0;
 var height = 0;
+var planePosition = 0;
+var roundTimeInSeconds = 60;
+var planesPathLength = $('.board').width() - $('.plane').width();
+var intervalTime = parseInt((roundTimeInSeconds / planesPathLength) * 1000);
+
 
 $(window).keydown(function (e) {
     $character = $('.character');
-    if (position <= (-255)) {
-        position += 15;
-        $character.css({'transform': 'translateX(' + position + 'px)'});
-        // console.log(position)
-    }
-    else if (position >= 255) {
-        position -= 15;
-        $character.css({'transform': 'translateX(' + position + 'px)'});
-        // console.log(position)
-    }
-    else if (e.keyCode === 37) {
-        position -= 15;
+    if (e.keyCode === 37) {
+        if (position > -255)
+            position -= 15;
+
         $character.css({
             'transform': 'translateX(' + position + 'px)',
             'background': 'url("img/ludzik-z-workiem-lewo.png")',
             'background-size': 'cover'
         });
-        // console.log(position)
     }
     else if (e.keyCode === 39) {
-        position += 15;
+        if (position < 255)
+            position += 15;
+
         $character.css({
             'transform': 'translateX(' + position + 'px)',
             'background': 'url("img/ludzik-z-workiem-prawo.png")',
             'background-size': 'cover'
         });
-        // console.log(position)
     }
-
 });
 
+var roundTiming = setInterval(function () {
 
+    if (planePosition > -525) {
+        planePosition -= 1;
+        $('.plane').css({
+            'transform': 'translateX(' + planePosition + 'px)'
+        });
+    }
+    else {
+        clearInterval(roundTiming);
+        clearInterval(cardboardBoxFall);
+    }
+}, intervalTime);
 var cardboardBoxFall = setInterval(function () {
     var mario = $(".character");
     var box = $('.cardboard-box');
@@ -57,5 +65,4 @@ var cardboardBoxFall = setInterval(function () {
         clearInterval(cardboardBoxFall);
     }
 }, 100);
-
 
