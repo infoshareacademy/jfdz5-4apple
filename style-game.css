@@ -15,7 +15,7 @@
 }
 
 .game {
-    height: 700px;
+    height: 100%;
     width: 580px;
     background: url('img/board-backround.png');
     position: absolute;
