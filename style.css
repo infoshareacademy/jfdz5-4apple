@@ -21,11 +21,11 @@ body {
 
 .carousel-inner > .item > img {
     height: 100vh;
-    width: 200vh;
+    width: 100vw;
     object-fit: cover;
 }
 
-.chuj {
+.layout {
     /*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)*/
     /*);*/
     filter: brightness(50%);
@@ -41,15 +41,6 @@ h2 {
     background-color: rgba(255, 255, 255, 0.5);
     margin: 0 auto;
 }
-
-/*.tapeta {*/
-/*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)*/
-/*), url("img/taps/tt");*/
-/*background-attachment: fixed;*/
-/*background-size: cover;*/
-/*overflow-x:hidden;*/
-
-/*}*/
 
 /*******************************************************************************/
 /*                                                                             */
@@ -1024,6 +1015,7 @@ figure {
     transform: translate(0, 0);
     transition: all 0.3s ease-in;
 }
+
 button-invisible {
     display: none;
 }
@@ -1252,7 +1244,8 @@ footer {
         font-size: 30px;
         font-weight: 200;
     }
-    .button-top{
+
+    .button-top {
         width: 60px;
         height: 60px;
         position: absolute;
@@ -1520,7 +1513,7 @@ footer {
 
     }
 
-    .button-top{
+    .button-top {
         width: 40px;
         height: 40px;
         position: absolute;
@@ -1644,6 +1637,7 @@ footer {
         flex-direction: column;
     }
 }
+
 @media all and (min-width: 961px) {
 
     .animation-second {
@@ -1665,6 +1659,7 @@ footer {
         display: flex;
     }
 }
+
 @keyframes slidein {
     from {
         margin-left: -500%;
