@@ -7,41 +7,33 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #272727;
     color: #000;
     font-family: Raleway, 'Audiowide', cursive;
     font-size: 18px;
     line-height: 1.2;
     width: 100%;
-    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
-    ), url("img/t5.jpg");
+    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)), url("img/taps/tt1.jpg");
     background-attachment: fixed;
     background-size: cover;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-.carousel-inner>.item>img{
-    /*margin: 0 auto;*/
-    /*width: 100%;*/
-    /*left:0;*/
-    object-fit: scale-down;
+.carousel-inner > .item > img {
     height: 100vh;
-
-
-}
-.carousel-control.right {
-    /*right:0;*/
-    /*right: 0;*/
+    width: 200vh;
+    object-fit: cover;
 }
 
-.carousel-control.left {
-    /*left:0;*/
-    /*right: 0;*/
+.chuj {
+    /*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)*/
+    /*);*/
+    filter: brightness(50%);
 }
-
 
 h2 {
     font-size: 30px;
+    text-shadow: 1px 2px 5px #023850;
 }
 
 .board {
@@ -49,6 +41,15 @@ h2 {
     background-color: rgba(255, 255, 255, 0.5);
     margin: 0 auto;
 }
+
+/*.tapeta {*/
+/*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)*/
+/*), url("img/taps/tt");*/
+/*background-attachment: fixed;*/
+/*background-size: cover;*/
+/*overflow-x:hidden;*/
+
+/*}*/
 
 /*******************************************************************************/
 /*                                                                             */
@@ -134,7 +135,8 @@ a:hover#menu-icon {
     margin: 0 1%;
     cursor: pointer;
 }
-.flag{
+
+.flag {
     width: 16px;
     height: 10px;
     display: inline-block;
@@ -181,9 +183,9 @@ h2.header {
     font-size: 30px;
 }
 
-.button-top{
-    width: 100px;
-    height: 100px;
+.button-top {
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 160%;
     left: 50%;
@@ -219,8 +221,6 @@ p {
     z-index: 2;
     width: 100%;
 }
-
-
 
 /*******************************************************************************/
 /*                                                                             */
