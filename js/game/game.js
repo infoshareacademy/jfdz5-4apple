@@ -4,6 +4,7 @@ var planePosition = 0;
 var roundTimeInSeconds = 60;
 var planesPathLength = $('.board').width() - $('.plane').width();
 var intervalTime = parseInt((roundTimeInSeconds / planesPathLength) * 1000);
+var scoredPoints = 0;
 
 
 $(window).keydown(function (e) {
@@ -60,6 +61,9 @@ var cardboardBoxFall = setInterval(function () {
     if(height >= 480 && height <=540  && Math.abs( boxPosition - marioPosition) < 35){
         $('.cardboard-box').hide();
         clearInterval(cardboardBoxFall);
+        //point counter
+        scoredPoints = scoredPoints + 1;
+        $('.scoredPoints').text(scoredPoints);
     }
     else if (height >=560 ){
         clearInterval(cardboardBoxFall);

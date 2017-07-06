@@ -100,3 +100,7 @@
     left: -240px;
     top: 30px;
 }
+
+.points {
+    position: absolute;
+}
