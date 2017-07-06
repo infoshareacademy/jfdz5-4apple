@@ -19,17 +19,16 @@ body {
     overflow-x: hidden;
 }
 
-.carousel-inner > .item > img {
+.img-fluid {
     height: 100vh;
     width: 100vw;
     object-fit: cover;
 }
 
 .layout {
-    /*background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)*/
-    /*);*/
     filter: brightness(50%);
 }
+
 
 h2 {
     font-size: 30px;
@@ -156,8 +155,9 @@ h1.header {
     top: 50%;
     transform: translateX(-50%);
     color: white;
+    text-shadow: 1px 2px 4px gray;
     z-index: 40;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 60px;
     white-space: nowrap;
 }
@@ -170,7 +170,7 @@ h2.header {
     transform: translateX(-50%);
     color: white;
     z-index: 40;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 30px;
 }
 
@@ -201,16 +201,6 @@ p {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-}
-
-.theme {
-    margin: 0;
-    background-size: cover;
-    height: calc(100vh - 70px);
-    padding-top: 70px;
-    position: relative;
-    z-index: 2;
-    width: 100%;
 }
 
 /*******************************************************************************/
