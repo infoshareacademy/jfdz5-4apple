@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>price.less.pl</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -37,12 +38,13 @@
                 <li class="menu-item"><a href="#time-saving"><span data-lang="Time saving">Oszczędność czasu</span></a>
                 </li>
                 <li class="menu-item"><a href="#about-us"><span data-lang="About us">O nas</span></a></li>
-                <li class="menu-item"><a href="#contact"><span data-lang="Contact">Kontakt</span></a></li>
+                <li class="menu-item last-active-item"><a href="#contact"><span data-lang="Contact">Kontakt</span></a>
+                </li>
+                <li class="menu-item language flag-en" id="language"></li>
                 <li class="menu-item menu-list--language"><a><span><span
                         data-lang="Polski ">English </span><span class="flag flag-en"></span></span></a></li>
             </ul>
         </nav>
-        <div id="language" class="language flag-en"></div>
     </div>
 </header>
 
@@ -80,6 +82,7 @@
     <div class="container tapeta">
         <main>
 
+            <!--<div id="home" class="theme"></div>-->
             <div class="board">
                 <div id="list"><img src="img/line.png" alt="Line" class="line-top">
                     <h2>#<span data-lang="What can we offer to you?">Co możemy Ci zaoferować?</span></h2>
@@ -172,7 +175,8 @@
                                         <figure class="top">
                                             <div class="overshow">
                                                 <div class="overshow-info">
-                                                <h2><span data-lang="Accurate searching!">Trafne wyszukiwanie!</span>
+                                                    <h2><span
+                                                            data-lang="Accurate searching!">Trafne wyszukiwanie!</span>
                                                     </h2>
                                                 </div>
                                             </div>
@@ -214,7 +218,8 @@
 
                                 <div id="boxbottom" class="container-cube__cube-LG__modal-container">
                                     <div class="modal">
-                                    <h2><span data-lang="The lowest price guarantee!">Gwarancja najniższych cen!</span>
+                                        <h2><span
+                                                data-lang="The lowest price guarantee!">Gwarancja najniższych cen!</span>
                                         </h2>
                                         <p> <span
                                                 data-lang="Our offers are certainly the best. We will find everything you need, at the lowest price.">Kupując u nasz masz pewność, że wybrałeś najlepszą ofertę. Znajdziemy dla Ciebie
@@ -412,13 +417,9 @@
                                     <div>
                                         <p><span
                                                 data-lang="Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum tellus. Phasellus dapibus sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra. Vestibulum turpis metus, suscipit sit amet tellus interdum, vulputate dictum arcu.">Aenean ac pretium sem, eu varius nunc. Sed vel lobortis elit, sed bibendum
-                                        tellus.
-                                        Phasellus
-                                        dapibus
-                                        sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
-                                        Vestibulum
-                                        turpis metus,
-                                        suscipit sit amet tellus interdum, vulputate dictum arcu.</span></p>
+                                        tellus. Phasellus dapibus sit amet erat nec iaculis. Vivamus a ex sit amet neque viverra viverra.
+                                        Vestibulum turpis metus, suscipit sit amet tellus interdum, vulputate dictum arcu.</span>
+                                        </p>
                                     </div>
                                     <div class="social-media">
                                         <a href=""><i
@@ -484,8 +485,7 @@
                                         dziś!</span></h2>
                                         <h5 class="subscribe-text"><span
                                                 data-lang="You want to be up to date? Give us your email address and we will inform you about everything in only">Chcesz być na bierząco? Podaj maila, a my poinformujemy
-                                        Ciebie o
-                                        wszystkim w tylko</span>
+                                        Ciebie o                                         wszystkim w tylko</span>
                                             <span data-lang="one" class="text-with-uppercase">jednej</span> <span
                                                     data-lang="message!">wiadomości!</span></h5>
                                     </div>
@@ -496,27 +496,22 @@
                                         <input id="form-name" type="text" name="firstName" placeholder="Imię"
                                                class="text-input">
                                         <input type="email" name="mail" placeholder="Email" class="text-input" required>
-                                    <div class="subscribe-warning-input">
-                                        <input type="checkbox" id="warning" required>
-                                        <label for="warning"
-                                               data-lang="I agree to receive the e-mail at the address indicated by me commercial information within the meaning of art. 10 sec. 1 Act of 18 July 2002 on the provision of electronic services from 4Aplle based in Gdansk.">
-                                            Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie
-                                            adres e-mail informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z dnia
-                                            18 lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z
-                                            siedzibą w Gdańsku.
-                                        </label>
-                                    </div>
+                                        <div class="subscribe-warning-input">
+                                            <input type="checkbox" id="warning" required>
+                                            <label for="warning"
+                                                   data-lang="I agree to receive the e-mail at the address indicated by me commercial information within the meaning of art. 10 sec. 1 Act of 18 July 2002 on the provision of electronic services from 4Aplle based in Gdansk.">
+                                                Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze
+                                                mnie
+                                                adres e-mail informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z
+                                                dnia
+                                                18 lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z
+                                                siedzibą w Gdańsku.
+                                            </label>
+                                        </div>
                                         <input id="sign-in" type="submit" value="Zapisz się!"
                                                class="button-parallelogram text-with-uppercase">
                                     </form>
-                                    <div class="subscribe-warning-text">
-                                        <p><span
-                                                data-lang="I agree to receive the e-mail at the address indicated by me commercial information within the meaning of art. 10 sec. 1 Act of 18 July 2002 on the provision of electronic services from 4Aplle based in Gdansk.">Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres
-                                        e-mail
-                                        informacji handlowej w rozumieniu art. 10 ust. 1 ustawy z dnia 18
-                                        lipca 2002 roku o świadczeniu usług drogą elektroniczną od 4Aplle z siedzibą w
-                                        Gdańsku.</span></p>
-                                    </div>
+
                                 </div>
                             </section>
                         </div>
@@ -532,25 +527,34 @@
             </div>
         </footer>
         <div class="cookies-info--display">
-            <div class="cookies-info-message"><span>
+            <div class="cookies-info-message"><span
                     data-lang="We use cookies to make using our service easier for you, and also for statistical purposes. If you do not block those files, it means you agree on their usage and storage in your device. Remember that you can administrate cookies on your own by changing your browser settings.">Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki.</span>
                 <div class="cookies-info__closure">x</div>
             </div>
             <div class="accept-cookies"><input class="accept-cookies__button" type="submit" value="Akceptuję"></div>
         </div>
-    </div>
-</div>
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/smooth-animated-menu.js" type="text/javascript"></script>
+
+    </div></div>
+<!--</div>-->
     <!-- SCRIPTS -->
     <script src="js/smooth-animated-menu.js" type="text/javascript"></script>
     <script src="js/multi-language/changingLanguage.js"></script>
     <script src="js/back-to-the-top/arrowVisibility.js"></script>
     <script src="js/back-to-the-top/smoothScroll.js"></script>
     <script src="js/cookies-info/cookies-info-display.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<script src="js/scrolling_menu.js"></script>
-<script src="js/shrinked-menu.js"></script>
-<script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="js/scrolling_menu.js"></script>
+    <script src="js/shrinked-menu.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

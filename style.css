@@ -16,7 +16,7 @@ body {
     background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)), url("img/taps/tt1.jpg");
     background-attachment: fixed;
     background-size: cover;
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
 
 .img-fluid {
@@ -64,10 +64,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 99999;
+    padding: 14px 0;
+    transition: all 1s;
 }
 
 .logo img {
-    width: 230px;
+    width: 190px;
 }
 
 .menu-input-checkbox, .menu-input-label {
@@ -90,6 +92,7 @@ a:hover#menu-icon {
     flex-direction: row;
     list-style-type: none;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .menu-item {
@@ -97,7 +100,7 @@ a:hover#menu-icon {
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
 .menu-item a {
@@ -111,7 +114,7 @@ a:hover#menu-icon {
 .menu-item a:hover {
     border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
-    color: #000;
+    color: #fff;
 }
 
 .menu-list--language {
@@ -120,9 +123,9 @@ a:hover#menu-icon {
 }
 
 .language {
-    min-width: 24px;
-    height: 15px;
-    margin: 0 1%;
+    max-width: 24px;
+    height: 17px;
+    margin: 0 10px;
     cursor: pointer;
 }
 
@@ -140,6 +143,20 @@ a:hover#menu-icon {
 .flag-pl {
     background: url('img/pl.png');
     background-size: cover;
+
+}
+
+.menu-list li.active a {
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+}
+
+.menu-list li.active a:hover {
+    border-color: #053178;
+}
+
+.shrinked {
+    padding: 0;
 }
 
 /*******************************************************************************/
@@ -907,6 +924,8 @@ figure {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
 }
 
 .subscribe-info {
@@ -979,8 +998,9 @@ figure {
     cursor: pointer;
 }
 
-.subscribe-warning-text {
+.subscribe-warning-input {
     width: 45%;
+    padding-top: 10px;
     margin: 0 auto;
     font-size: 10px;
     font-style: italic;
@@ -1006,7 +1026,7 @@ figure {
     transition: all 0.3s ease-in;
 }
 
-button-invisible {
+.button-invisible {
     display: none;
 }
 
@@ -1108,10 +1128,9 @@ footer {
         display: none;
     }
 
-    .contact-container {
-        height: calc(90vh - 70px);
-    }
-
+    /*.contact-container {*/
+    /*height: calc(90vh - 70px);*/
+    /*}*/
     .container-about-function__blok-screen {
         display: flex;
         flex-direction: column;
@@ -1152,7 +1171,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 
     /*------ ABOUT PRODUCT --------*/
     .container-cube__cube-show-media {
@@ -1167,16 +1186,11 @@ footer {
 @media (min-width: 768px) and (max-width: 1023px) {
 
     /*------ NAVIGATION --------*/
-    .logo {
-        width: 30%;
-    }
-
     .logo img {
-        width: 90%;
+        width: 150px;
     }
 
     .main-menu {
-        width: 70%;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -1191,24 +1205,31 @@ footer {
     }
 
     .menu-item a {
-        padding: 0;
+        padding: 4px 0;
+
         border: none;
     }
 
     .menu-item a:hover {
         border: none;
-        padding: 0;
+        padding: 4px 0;
         background-color: transparent;
         color: #fff;
     }
 
     .menu-item {
-        font-size: 83%;
+        font-size: 75%;
+        letter-spacing: 0;
+    }
+
+    .menu-list li.active a {
+        border-top: solid 2px;
+        border-bottom: solid 2px;
+        border-radius: 4px;
     }
 
     .language {
-        min-width: 16px;
-        height: 10px;
+        max-width: 16px;
     }
 
     /*------ SNEAK PEEK  --------*/
@@ -1379,6 +1400,7 @@ footer {
     /*------ NAVIGATION --------*/
     .main-menu-container {
         height: 63px;
+        padding: 3px 0;
     }
 
     .logo {
@@ -1413,7 +1435,7 @@ footer {
         display: none;
         z-index: 1000;
         position: absolute;
-        margin: 55px auto;
+        margin: 58px auto;
         background: rgba(230, 238, 230, 0.7);
     }
 
@@ -1457,7 +1479,7 @@ footer {
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(5), .menu-item:nth-child(6) {
+    .menu-item:nth-child(5), .menu-item:nth-child(7) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
     }
@@ -1572,6 +1594,10 @@ footer {
 
     /*------ CONTACT/NEWSLETTER --------*/
     /*section contact*/
+    .contact-container {
+        border-radius: 0;
+    }
+
     .subscribe-info {
         flex-direction: column;
         width: 90%;
@@ -1593,7 +1619,7 @@ footer {
         width: 85%;
     }
 
-    .subscribe-warning-text {
+    .subscribe-warning-input {
         width: 80%;
     }
 
