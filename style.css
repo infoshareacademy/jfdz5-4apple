@@ -51,6 +51,10 @@ header {
     margin: 0 auto;
 }
 
+.main-menu {
+    padding-top: 14px;
+}
+
 .main-menu-container {
     display: -webkit-box;
     display: -moz-box;
