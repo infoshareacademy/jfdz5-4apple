@@ -64,5 +64,7 @@ var cardboardBoxFall = setInterval(function () {
     else if (height >=560 ){
         clearInterval(cardboardBoxFall);
     }
+
+    fallingBombs();
 }, 100);
 

@@ -49,6 +49,13 @@
     background-size: cover;
     position: relative;
 }
+.bomb {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    position: absolute;
+}
 
 .plane {
     background: url('img/plane2.png');
