@@ -79,6 +79,10 @@ header {
     background: url("img/nav.png");
 }
 
+/*.main-menu {*/
+    /*padding-top: 14px;*/
+/*}*/
+
 a:hover#menu-icon {
     border-radius: 4px 0 4px 4px;
 }
@@ -172,7 +176,7 @@ h1.header {
     top: 50%;
     transform: translateX(-50%);
     color: white;
-    text-shadow: 1px 2px 4px gray;
+    text-shadow: 1px 2px 5px #023850;
     z-index: 40;
     font-weight: 400;
     font-size: 60px;
