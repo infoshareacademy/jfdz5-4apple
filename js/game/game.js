@@ -41,7 +41,7 @@ var cardboardBoxFall = setInterval(function () {
     var $box = $('.cardboard-box');
 
     var marioPosition = $character.position().left + $character.width() / 2;
-    var boxPosition = box.position().left + box.width() / 2;
+    var boxPosition = $box.position().left + $box.width() / 2;
     height += 10;
     $box.css({
         'transform': 'translateY(' + height + 'px)'
