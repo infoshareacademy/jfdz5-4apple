@@ -56,7 +56,9 @@
     background-size: cover;
     position: absolute;
 }
-
+.bombs-container {
+    position: absolute;
+}
 .plane {
     background: url('img/plane2.png');
     height: 40px;

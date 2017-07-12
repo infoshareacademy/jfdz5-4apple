@@ -43,6 +43,8 @@ var roundTiming = setInterval(function () {
         clearInterval(cardboardBoxFall);
     }
 }, intervalTime);
+
+
 var cardboardBoxFall = setInterval(function () {
     var mario = $(".character");
     var box = $('.cardboard-box');
@@ -64,7 +66,5 @@ var cardboardBoxFall = setInterval(function () {
     else if (height >=560 ){
         clearInterval(cardboardBoxFall);
     }
-
-    fallingBombs();
 }, 100);
 
