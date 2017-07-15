@@ -1,7 +1,7 @@
 var position = 0;
 var height = 0;
 var planePosition = 0;
-var roundTimeInSeconds = 60;
+var roundTimeInSeconds = 10;
 var planesPathLength = $('.board').width() - $('.plane').width();
 var intervalTime = parseInt((roundTimeInSeconds / planesPathLength) * 1000);
 var $character = $('.character');
@@ -34,25 +34,47 @@ var roundTiming = setInterval(function () {
     }
     else {
         clearInterval(roundTiming);
+        clearInterval(fallingObjects);
         clearInterval(cardboardBoxFall);
     }
+
 }, intervalTime);
+
+var timeBetweenObjects = 2000;
+var cardboardBox = [];
+
+
+for (var i = 1; i >= 10; i++) {
+    cardboardBox[i] = document.createElement('style');
+    cardboardBox[i].type = 'text/css';
+    cardboardBox[i].innerHTML = '.cssClass { top:0; }';
+}
+var indexClasses = 1;
 var cardboardBoxFall = setInterval(function () {
     var $box = $('.cardboard-box');
-
+    var $boxIteration = $('.cardboardBox[indexClasses]');
+    console.log('boxiteration', $boxIteration);
     var marioPosition = $character.position().left + $character.width() / 2;
     var boxPosition = $box.position().left + $box.width() / 2;
     height += 10;
     $box.css({
         'transform': 'translateY(' + height + 'px)'
     });
-
-    if(height >= 480 && height <=540  && Math.abs( boxPosition - marioPosition) < 35){
+    if (height >= 480 && height <= 540 && Math.abs(boxPosition - marioPosition) < 35) {
         $box.hide();
-        clearInterval(cardboardBoxFall);
     }
-    else if (height >=560 ){
-        clearInterval(cardboardBoxFall);
-    }
-}, 100);
+    indexClasses = indexClasses + 1;
+}, 500);
+
+var index = 1;
+var fallingObjects = setInterval(function () {
+
+    var objectRandVerticalPosition = parseInt(Math.random() * 550);
+    $('.board').prepend($('<div>').addClass(' cardboardBox' + index + ' cardboard-box').css({
+        'left': objectRandVerticalPosition,
+        'top': 0
+    }));
+    index = index + 1;
+
+}, timeBetweenObjects);
 
