@@ -2,11 +2,18 @@
  * Created by Piotrek on 15.07.2017.
  */
 var $character = $('.character');
+var $board = $('.board');
+
+var board = {
+    reference: $board,
+    height: $board.height(),
+    width: $board.width()
+};
 
 var character = {
     reference: $character,
-    height: $character.height,
-    width: $character.width,
+    height: $character.height(),
+    width: $character.width(),
     PositionX: $character.position().left,
     PositionY: $character.position().top,
     moveLeft: function () {
@@ -18,7 +25,7 @@ var character = {
         }
     },
     moveRight: function () {
-        if (character.PositionX < 510) {
+        if (character.PositionX < (board.width - character.width)) {
             character.PositionX += 15;
             $character.css({
                 left: character.PositionX
@@ -26,6 +33,7 @@ var character = {
         }
     }
 };
+
 $(window).keydown(function (e) {
 
     if (e.keyCode === 37) {
