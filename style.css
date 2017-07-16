@@ -32,6 +32,7 @@ body {
 
 h2 {
     font-size: 30px;
+    padding-top: 20px;
     text-shadow: 1px 2px 5px #023850;
 }
 
@@ -173,7 +174,7 @@ h1.header {
     top: 50%;
     transform: translateX(-50%);
     color: white;
-    text-shadow: 1px 2px 4px gray;
+    text-shadow: 1px 2px 5px #023850;
     z-index: 40;
     font-weight: 400;
     font-size: 60px;
@@ -190,6 +191,7 @@ h2.header {
     z-index: 40;
     font-weight: 200;
     font-size: 30px;
+    text-shadow: 1px 2px 5px #023850;
 }
 
 .button-top {
@@ -210,7 +212,7 @@ p {
     text-indent: 15px;
 }
 
-.container {
+.tapeta {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -520,7 +522,7 @@ p {
     z-index: 99;
 }
 
-.modal {
+.modal-cube {
     margin-left: 0.5%;
     margin-top: 7%;
     color: white;
@@ -544,11 +546,11 @@ p {
     display: block;
 }
 
-.modal h2 {
+.modal-cube h2 {
     margin: 10%;
 }
 
-.modal p {
+.modal-cube p {
     margin: 5% 10%;
 }
 
@@ -1008,6 +1010,10 @@ figure {
     padding-bottom: 15px;
 }
 
+.form-label {
+    display: inline;
+}
+
 /*******************************************************************************/
 /*                                                                             */
 /*                                ARROW-UP - PIOTR                             */
@@ -1255,13 +1261,14 @@ footer {
         bottom: 20%;
         font-size: 30px;
         font-weight: 200;
+        padding-top: 20px;
     }
 
     .button-top {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         position: absolute;
-        top: 50%;
+        top: 95%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1436,7 +1443,7 @@ footer {
         display: none;
         z-index: 1000;
         position: absolute;
-        margin: 58px auto;
+        margin: 59px auto;
         background: rgba(230, 238, 230, 0.7);
     }
 
@@ -1468,6 +1475,10 @@ footer {
         position: relative;
         text-align: center;
         width: 100%;
+        color: #053178;
+    }
+    .menu-item:hover {
+        color: white;
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
@@ -1523,6 +1534,7 @@ footer {
         top: 50%;
         text-align: center;
         font-weight: 300;
+        padding-top: 20px;
 
     }
 
@@ -1619,6 +1631,8 @@ footer {
     .button-parallelogram {
         width: 85%;
     }
+
+
 
     .subscribe-warning-input {
         width: 80%;
