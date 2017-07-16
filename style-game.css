@@ -22,7 +22,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
 }
 
 .board {
