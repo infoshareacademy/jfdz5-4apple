@@ -131,8 +131,8 @@ $(window).keydown(function (e) {
 });
 
 var roundOne = setInterval(function () {
-    var roundIime = 10;
-    var pixelsDistance = ((board.width - plane.width) / roundIime * 0.100);
+    var roundTime = 10;
+    var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
     cardboardBox.fall(10);
     bomb.fall(10);
