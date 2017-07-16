@@ -15,7 +15,8 @@
 }
 
 .game {
-    height: 100%;
+    height: 100vh;
+    max-height: 700px;
     width: 580px;
     background: url('img/board-backround.png');
     position: absolute;
@@ -25,10 +26,6 @@
 }
 
 .board {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     height: 560px;
     position: relative;
 }
@@ -36,10 +33,19 @@
 .character {
     height: 70px;
     width: 70px;
-    background: url('img/ludzik-z-workiem-prawo.png');
-    background-size: cover;
     position: absolute;
     bottom: 0;
+    left:255px;
+}
+
+.character-right {
+    background: url('img/ludzik-z-workiem-prawo.png');
+    background-size: cover;
+}
+
+.character-left {
+    background: url('img/ludzik-z-workiem-lewo.png');
+    background-size: cover;
 }
 
 .cardboard-box {
@@ -47,7 +53,7 @@
     width: 20px;
     background: url('img/pixel-cardboard-box.png');
     background-size: cover;
-    position: relative;
+    position: absolute;
 }
 .bomb {
     height: 25px;
@@ -56,9 +62,7 @@
     background-size: cover;
     position: absolute;
 }
-.bombs-container {
-    position: absolute;
-}
+
 .plane {
     background: url('img/plane2.png');
     height: 40px;
@@ -78,34 +82,36 @@
 .clouds {
     position: absolute;
     top: 10px;
+    height: 200px;
+    width: 580px;
 }
 
 .cloud-first {
-    left: 40px;
+    left: 320px;
     top: 100px;
 }
 
 .cloud-second {
-    left: -70px;
+    left: 210px;
     top: 50px;
 }
 
 .cloud-third {
-    left: -180px;
+    left: 100px;
     top: 90px;
 }
 
 .cloud-fourth {
-    left: 180px;
+    left: 460px;
     top: 40px;
 }
 
 .cloud-fifth {
-    left: 70px;
+    left: 350px;
     top: 20px;
 }
 
 .cloud-sixth {
-    left: -240px;
+    left: 40px;
     top: 30px;
 }
