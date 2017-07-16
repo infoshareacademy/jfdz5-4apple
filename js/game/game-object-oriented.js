@@ -5,7 +5,6 @@ var $plane = $('.plane');
 var $bomb = $('.bomb');
 
 
-
 var board = {
     height: $board.height(),
     width: $board.width(),
@@ -45,8 +44,14 @@ var character = {
     }
 };
 var boxSpawn = setInterval(function () {
-    $board.prepend($('<div>').addClass('cardboard-box'));
-    $board.prepend($('<div>').addClass('bomb'));
+    var randomNumber = Math.random() * 3;
+    
+    if (randomNumber <= 1) {
+        $board.prepend($('<div>').addClass('bomb').addClass('fallingObject'));
+    }
+    else {
+        $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject'));
+    }
 }, 2000);
 
 
@@ -56,24 +61,11 @@ var cardboardBox = {
     positionX: $cardboardBox.position().left,
     positionY: $cardboardBox.position().top,
     fall: function (fallingSpeed) {
-        // this.positionY += fallingSpeed;
-        console.log(1);
-        $('.cardboard-box').each(function (index,cardboardBoxNew) {
-            console.log(cardboardBoxNew);
-            console.log($(this).position().top + fallingSpeed);
+        $('.fallingObject').each(function (index, cardboardBoxNew) {
             $(cardboardBoxNew).css({
                 top: $(cardboardBoxNew).position().top + fallingSpeed
             })
         });
-
-        // console.log($('.cardboard-box'));
-        // $('.cardboard-box').map(function (box) {
-        //     console.log(box);
-        //     console.log($('.cardboard-box')[box]);
-        //
-        //     ($('.cardboard-box')[box])
-        // })
-
     },
     checkCatch: function () {
         var characterCenterXPosition = character.positionX + character.width / 2;
@@ -97,20 +89,11 @@ var bomb = {
     positionX: $bomb.position().left,
     positionY: $bomb.position().top,
     fall: function (fallingSpeed) {
-        $('.bomb').each(function (index,bombNew) {
+        $('.fallingObject').each(function (index, bombNew) {
             $(bombNew).css({
                 top: $(bombNew).position().top + fallingSpeed
             })
         });
-
-        // console.log($('.cardboard-box'));
-        // $('.cardboard-box').map(function (box) {
-        //     console.log(box);
-        //     console.log($('.cardboard-box')[box]);
-        //
-        //     ($('.cardboard-box')[box])
-        // })
-
     }
 };
 
@@ -143,7 +126,7 @@ $(window).keydown(function (e) {
 });
 
 var roundOne = setInterval(function () {
-    var roundIime = 60;
+    var roundIime = 10;
     var pixelsDistance = ((board.width - plane.width) / roundIime * 0.100);
 
     cardboardBox.fall(10);
