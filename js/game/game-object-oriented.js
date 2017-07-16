@@ -18,6 +18,7 @@ var board = {
     },
     roundEnd: function () {
         clearInterval(roundOne);
+        clearInterval(boxSpawn);
         console.log('Koniec rundy');
     }
 };
@@ -44,6 +45,12 @@ var character = {
         }
     }
 };
+var boxSpawn = setInterval(function () {
+    $board.prepend($('<div>').addClass('cardboard-box'))
+    clearInterval(roundOne);
+    clearInterval(boxSpawn);
+}, 2000);
+
 
 var cardboardBox = {
     height: $cardboardBox.height(),
@@ -52,9 +59,15 @@ var cardboardBox = {
     positionY: $cardboardBox.position().top,
     fall: function (fallingSpeed) {
         this.positionY += fallingSpeed;
-        $cardboardBox.css({
-            top: this.positionY
+        console.log($('.cardboard-box'));
+        $('.cardboard-box').map(function (box) {
+            console.log(box);
+            console.log($('.cardboard-box')[box]);
+            ($('.cardboard-box')[box]).css({
+                left: this.positionY
+            })
         })
+
     },
     checkCatch: function () {
         var characterCenterXPosition = character.positionX + character.width / 2;
@@ -99,10 +112,11 @@ $(window).keydown(function (e) {
         character.moveRight();
     }
 });
+
 var roundOne = setInterval(function () {
-    var roundIime = 20;
+    var roundIime = 5;
     var pixelsDistance = ((board.width - plane.width) / roundIime * 0.100);
-    
+
     cardboardBox.fall(10);
     cardboardBox.checkCatch();
     plane.fly(pixelsDistance);
