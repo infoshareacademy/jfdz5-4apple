@@ -4,21 +4,25 @@
 var $character = $('.character');
 var $board = $('.board');
 var $cardboardBox = $('.cardboard-box');
+var $plane = $('.plane');
+
 
 var board = {
-    reference: $board,
     height: $board.height(),
     width: $board.width(),
     addPoint: function () {
         console.log('Punkt +1');
     },
     subtractLife: function () {
-        console.log('Utrata życia -1');
+
+    },
+    roundEnd: function () {
+        clearInterval(roundOne);
+        console.log('Koniec rundy');
     }
 };
 
 var character = {
-    reference: $character,
     height: $character.height(),
     width: $character.width(),
     positionX: $character.position().left,
@@ -42,28 +46,46 @@ var character = {
 };
 
 var cardboardBox = {
-    reference: $cardboardBox,
     height: $cardboardBox.height(),
     width: $cardboardBox.width(),
     positionX: $cardboardBox.position().left,
     positionY: $cardboardBox.position().top,
-    fall: function () {
-        this.positionY += 10;
+    fall: function (fallingSpeed) {
+        this.positionY += fallingSpeed;
         $cardboardBox.css({
             top: this.positionY
         })
     },
     checkCatch: function () {
-        var characterCenterPosition = character.positionX + character.width / 2;
-        var boxCenterPosition = cardboardBox.positionX + cardboardBox.width / 2;
-        if (this.positionY >= 480 && this.positionY <= 540 && Math.abs(boxCenterPosition - characterCenterPosition) < 35) {
+        var characterCenterXPosition = character.positionX + character.width / 2;
+        var boxCenterXPosition = cardboardBox.positionX + cardboardBox.width / 2;
+        if (cardboardBox.positionY >= character.positionY && cardboardBox.positionY <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
             $cardboardBox.hide();
-            clearInterval(gameplay);
             board.addPoint();
         }
-        else if (this.positionY > 560) {
+        else if (cardboardBox.positionY > board.height - cardboardBox.height / 2) {
             board.subtractLife();
-            clearInterval(gameplay);
+            $cardboardBox.css({
+                top: board.height - cardboardBox.height / 2
+            })
+        }
+    }
+};
+
+var plane = {
+    height: $plane.height(),
+    width: $plane.width(),
+    positionX: $plane.position().left,
+    positionY: $plane.position().top,
+    fly: function (pixelsDistance) {
+        this.positionX -= pixelsDistance;
+        if (this.positionX > 0) {
+            $('.plane').css({
+                left: this.positionX
+            });
+        }
+        else {
+            board.roundEnd();
         }
     }
 };
@@ -77,7 +99,11 @@ $(window).keydown(function (e) {
         character.moveRight();
     }
 });
-var gameplay = setInterval(function () {
-    cardboardBox.fall();
+var roundOne = setInterval(function () {
+    var roundIime = 20;
+    var pixelsDistance = ((board.width - plane.width) / roundIime * 0.100);
+    
+    cardboardBox.fall(10);
     cardboardBox.checkCatch();
+    plane.fly(pixelsDistance);
 }, 100);
