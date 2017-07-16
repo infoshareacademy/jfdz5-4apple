@@ -45,12 +45,17 @@ var character = {
 };
 var boxSpawn = setInterval(function () {
     var randomNumber = Math.random() * 3;
-    
+    var radnomXPosition = Math.random() * (board.width - bomb.width);
+
     if (randomNumber <= 1) {
-        $board.prepend($('<div>').addClass('bomb').addClass('fallingObject'));
+        $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+            left: radnomXPosition
+        }))
     }
     else {
-        $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject'));
+        $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').css({
+            left: radnomXPosition
+        }))
     }
 }, 2000);
 
