@@ -46,9 +46,7 @@ var character = {
     }
 };
 var boxSpawn = setInterval(function () {
-    $board.prepend($('<div>').addClass('cardboard-box'))
-    clearInterval(roundOne);
-    clearInterval(boxSpawn);
+    $board.prepend($('<div>').addClass('cardboard-box'));
 }, 2000);
 
 
@@ -59,14 +57,22 @@ var cardboardBox = {
     positionY: $cardboardBox.position().top,
     fall: function (fallingSpeed) {
         this.positionY += fallingSpeed;
-        console.log($('.cardboard-box'));
-        $('.cardboard-box').map(function (box) {
-            console.log(box);
-            console.log($('.cardboard-box')[box]);
-            ($('.cardboard-box')[box]).css({
-                left: this.positionY
+        console.log(1);
+        $('.cardboard-box').each(function (index,cardboardBoxNew) {
+            console.log(cardboardBoxNew);
+            console.log($(this).position().top + fallingSpeed);
+            $(cardboardBoxNew).css({
+                top: $(this).position().top + fallingSpeed
             })
-        })
+        });
+
+        // console.log($('.cardboard-box'));
+        // $('.cardboard-box').map(function (box) {
+        //     console.log(box);
+        //     console.log($('.cardboard-box')[box]);
+        //
+        //     ($('.cardboard-box')[box])
+        // })
 
     },
     checkCatch: function () {
@@ -114,7 +120,7 @@ $(window).keydown(function (e) {
 });
 
 var roundOne = setInterval(function () {
-    var roundIime = 5;
+    var roundIime = 60;
     var pixelsDistance = ((board.width - plane.width) / roundIime * 0.100);
 
     cardboardBox.fall(10);
