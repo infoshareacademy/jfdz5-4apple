@@ -93,6 +93,7 @@ a:hover#menu-icon {
     list-style-type: none;
     flex-wrap: wrap;
     align-items: center;
+    margin-bottom: 0;
 }
 
 .menu-item {
