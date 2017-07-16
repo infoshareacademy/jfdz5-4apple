@@ -45,20 +45,28 @@ var character = {
 };
 var boxSpawn = setInterval(function () {
     var randomNumber = Math.random() * 3;
-    var radnomXPosition = Math.random() * (board.width - bomb.width);
+    var randomXPosition = Math.random() * (board.width - bomb.width);
 
     if (randomNumber <= 1) {
         $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
-            left: radnomXPosition
+            left: randomXPosition
         }))
     }
     else {
         $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').css({
-            left: radnomXPosition
+            left: randomXPosition
         }))
     }
 }, 2000);
+var roundOne = setInterval(function () {
+    var roundTime = 10;
+    var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
+    cardboardBox.fall(10);
+    bomb.fall(10);
+    cardboardBox.checkCatch();
+    plane.fly(pixelsDistance);
+}, 100);
 
 var cardboardBox = {
     height: $cardboardBox.height(),
@@ -130,12 +138,4 @@ $(window).keydown(function (e) {
     }
 });
 
-var roundOne = setInterval(function () {
-    var roundTime = 10;
-    var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
-    cardboardBox.fall(10);
-    bomb.fall(10);
-    cardboardBox.checkCatch();
-    plane.fly(pixelsDistance);
-}, 100);
