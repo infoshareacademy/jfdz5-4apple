@@ -92,6 +92,7 @@
     background: url('img/pixel-cardboard-box.png');
     background-size: cover;
     position: absolute;
+    top: -25px;
 }
 .bomb {
     height: 25px;
@@ -99,6 +100,7 @@
     background: url("img/bomb.png");
     background-size: cover;
     position: absolute;
+    top: -25px;
 }
 
 .plane {
