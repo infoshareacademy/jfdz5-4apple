@@ -35,7 +35,7 @@
     width: 70px;
     position: absolute;
     bottom: 0;
-    left:255px;
+    left: 255px;
 }
 
 .character-right {
@@ -54,13 +54,16 @@
     background: url('img/pixel-cardboard-box.png');
     background-size: cover;
     position: absolute;
+    top: -25px;
 }
+
 .bomb {
     height: 25px;
     width: 25px;
     background: url("img/bomb.png");
     background-size: cover;
     position: absolute;
+    top: -25px;
 }
 
 .plane {
@@ -114,4 +117,23 @@
 .cloud-sixth {
     left: 40px;
     top: 30px;
+}
+
+.life-item {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background-size: cover;
+}
+
+.game-over {
+    display: none;
+    font-family: 'VT323', monospace;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
