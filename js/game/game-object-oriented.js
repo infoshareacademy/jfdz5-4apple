@@ -4,7 +4,7 @@ var $cardboardBox = $('.cardboard-box');
 var $plane = $('.plane');
 var $bomb = $('.bomb');
 var $life = $('.life-item');
-
+var catchBomb = 0;
 var board = {
     height: $board.height(),
     width: $board.width(),
@@ -101,38 +101,51 @@ var cardboardBox = {
 };
 
 var bomb = {
-    height: $bomb.height(),
-    width: $bomb.width(),
-    positionX: $bomb.position().left,
-    positionY: $bomb.position().top,
-    fall: function (fallingSpeed) {
-        $('.fallingObject').each(function (index, bombNew) {
-            $(bombNew).css({
-                top: $(bombNew).position().top + fallingSpeed
-            })
-        });
-    },
-    checkExplosion: function () {
-        $('.checkBomb').each(function (index, checkBombNew) {
-            var positionXbomb = $(checkBombNew).position().left;
-            var positionYbomb = $(checkBombNew).position().top;
-            var characterCenterXPosition = character.positionX + character.width / 2;
-            var bombCenterXPosition = positionXbomb + bomb.width / 2;
-            if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                $(checkBombNew).hide();
-                // Losting chcaracter lifes.
-                $life.first().removeClass('life-item');
-                console.log('Straciłeś życie!');
-                board.subtractLife();
-                $life = $('.life-item');
+        height: $bomb.height(),
+        width: $bomb.width(),
+        positionX: $bomb.position().left,
+        positionY: $bomb.position().top,
+        fall: function (fallingSpeed) {
+            $('.fallingObject').each(function (index, bombNew) {
+                $(bombNew).css({
+                    top: $(bombNew).position().top + fallingSpeed
+                })
+            });
+        },
+        checkExplosion: function () {
+            $('.checkBomb').each(function (index, checkBombNew) {
+                var positionXbomb = $(checkBombNew).position().left;
+                var positionYbomb = $(checkBombNew).position().top;
+                var characterCenterXPosition = character.positionX + character.width / 2;
+                var bombCenterXPosition = positionXbomb + bomb.width / 2;
+                if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
+                    $(checkBombNew).hide();
 
-            }
-            else if (positionYbomb === character.positionY + character.height) {
-                clearInterval();
-            }
-        })
+                    /* Losting chcaracter lifes */
+                    $life.first().remove();
+                    $life = $('.life-item');
+                    console.log('Straciłeś życie!');
+                    board.subtractLife();
+
+                    /* Game over! */
+                    catchBomb += 1;
+                    if (catchBomb === 3) {
+                        clearInterval(roundOne);
+                        $('.game-over').css({
+                            "display": "inline"
+                        });
+                    }
+
+                }
+                else if (positionYbomb === character.positionY + character.height) {
+                    clearInterval();
+                }
+
+            })
+        }
     }
-};
+
+;
 
 var plane = {
     height: $plane.height(),
