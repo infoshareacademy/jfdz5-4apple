@@ -3,7 +3,7 @@ var $board = $('.board');
 var $cardboardBox = $('.cardboard-box');
 var $plane = $('.plane');
 var $bomb = $('.bomb');
-
+var $life = $('.life-item');
 
 var board = {
     height: $board.height(),
@@ -89,11 +89,11 @@ var cardboardBox = {
             var positionYcardboardBox = $(checkCatchObjectNew).position().top;
             var characterCenterXPosition = character.positionX + character.width / 2;
             var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
-            if (positionYcardboardBox >= character.positionY && positionYcardboardBox  <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
+            if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                 $(checkCatchObjectNew).hide();
                 board.addPoint();
             }
-            else if (positionYcardboardBox > character.positionY + character.height ){
+            else if (positionYcardboardBox > character.positionY + character.height) {
                 board.subtractLife()
             }
         })
@@ -118,12 +118,17 @@ var bomb = {
             var positionYbomb = $(checkBombNew).position().top;
             var characterCenterXPosition = character.positionX + character.width / 2;
             var bombCenterXPosition = positionXbomb + bomb.width / 2;
-            if (positionYbomb >= character.positionY && positionYbomb  <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
+            if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
                 $(checkBombNew).hide();
-                board.subtractLife()
+                // Losting chcaracter lifes.
+                $life.first().removeClass('life-item');
+                console.log('Straciłeś życie!');
+                board.subtractLife();
+                $life = $('.life-item');
+
             }
-            else if (positionYbomb === character.positionY + character.height ){
-                clearInterval()
+            else if (positionYbomb === character.positionY + character.height) {
+                clearInterval();
             }
         })
     }
