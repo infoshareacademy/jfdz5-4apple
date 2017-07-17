@@ -123,5 +123,5 @@
     width: 25px;
     height: 25px;
     background: url("img/life.png");
-    background: cover;
+    background-size: cover;
 }
