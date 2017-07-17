@@ -117,3 +117,11 @@
     left: 40px;
     top: 30px;
 }
+
+.life-item {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background: cover;
+}
