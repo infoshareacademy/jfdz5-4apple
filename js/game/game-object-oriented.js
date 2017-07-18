@@ -4,12 +4,17 @@ var $cardboardBox = $('.cardboard-box');
 var $plane = $('.plane');
 var $bomb = $('.bomb');
 var $life = $('.life-item');
+var $points = $('.points');
 var catchBomb = 0;
+var points = 0;
+
+
 var board = {
     height: $board.height(),
     width: $board.width(),
     addPoint: function () {
         console.log('Punkt +1');
+        $('.points').text("Chuju, zdobyłeś "+points);
     },
     subtractLife: function () {
         console.log('health -1');
@@ -19,6 +24,8 @@ var board = {
         clearInterval(boxSpawn);
         console.log('Koniec rundy');
     }
+
+
 };
 
 var character = {
@@ -61,6 +68,7 @@ var boxSpawn = setInterval(function () {
 
     }
 }, 2000);
+
 var roundOne = setInterval(function () {
     var roundTime = 60;
     var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
@@ -92,6 +100,10 @@ var cardboardBox = {
             if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                 $(checkCatchObjectNew).hide();
                 board.addPoint();
+
+                points ++;
+
+
             }
             else if (positionYcardboardBox > character.positionY + character.height) {
                 board.subtractLife()
@@ -99,6 +111,7 @@ var cardboardBox = {
         })
     }
 };
+
 
 var bomb = {
         height: $bomb.height(),
@@ -164,6 +177,8 @@ var plane = {
         }
     }
 };
+
+
 
 $(window).keydown(function (e) {
 

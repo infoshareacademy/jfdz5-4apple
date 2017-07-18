@@ -127,6 +127,12 @@
     background-size: cover;
 }
 
+.points {
+    position: absolute;
+    top: 150px;
+    color: darkblue;
+}
+
 .game-over {
     display: none;
     font-family: 'VT323', monospace;
