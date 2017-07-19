@@ -1,4 +1,4 @@
-var startGame = function () {
+var startGame = function() {
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
@@ -66,8 +66,8 @@ var startGame = function () {
         var roundTime = 60;
         var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
-        cardboardBox.fall(20);
-        bomb.fall(20);
+        cardboardBox.fall(10);
+        bomb.fall(10);
         cardboardBox.checkCatch();
         bomb.checkExplosion();
         plane.fly(pixelsDistance);
@@ -176,4 +176,4 @@ var startGame = function () {
         }
     });
 
-}
+};

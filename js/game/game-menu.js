@@ -1,15 +1,16 @@
 (function () {
+    var $truck = $('.truck');
 
     $('.game-menu--item:nth-child(1)').click(function () {
         $('.game-menu').animate({height: 'toggle'});
         setTimeout(function () {
             clearInterval(trackMovement);
+            $truck.hide();
             $('.game').show();
             startGame();
         }, 500);
     });
     var trackMovement = setInterval(function () {
-       var $truck = $('.truck');
         $truck.animate({
             bottom: 53 + 'px'
         }, "slow");
