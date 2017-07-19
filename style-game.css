@@ -18,7 +18,7 @@
 .game-menu--container {
     height: 700px;
     width: 580px;
-    background: url('img/background-with-clouds1.png');
+    background: url('img/board.png');
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,7 +73,7 @@
     width: 70px;
     position: absolute;
     bottom: 0;
-    left:255px;
+    left: 255px;
 }
 
 .character-right {
@@ -94,6 +94,7 @@
     position: absolute;
     top: -25px;
 }
+
 .bomb {
     height: 25px;
     width: 25px;
@@ -154,4 +155,23 @@
 .cloud-sixth {
     left: 40px;
     top: 30px;
+}
+
+.life-item {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background-size: cover;
+}
+
+.game-over {
+    display: none;
+    font-family: 'VT323', monospace;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
