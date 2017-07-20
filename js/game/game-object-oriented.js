@@ -14,7 +14,7 @@ var board = {
     width: $board.width(),
     addPoint: function () {
         console.log('Punkt +1');
-        $('.points').text("Chuju, zdobyłeś "+points);
+        $('.points').text("Zdobyłeś "+points);
     },
     subtractLife: function () {
         console.log('health -1');
@@ -99,10 +99,8 @@ var cardboardBox = {
             var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
             if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                 $(checkCatchObjectNew).hide();
+                points++;
                 board.addPoint();
-
-                points ++;
-
 
             }
             else if (positionYcardboardBox > character.positionY + character.height) {
