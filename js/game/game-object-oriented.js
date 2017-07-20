@@ -14,6 +14,7 @@ var startGame = function () {
             console.log('Punkt +1');
         },
         subtractLife: function () {
+            catchBomb += 1;
             $life.last().fadeOut(200);
             $life.last().fadeIn(200);
             $life.last().fadeOut(200);
@@ -22,6 +23,9 @@ var startGame = function () {
                 $life.last().remove();
                 $life = $('.life-item');
             }, 800);
+            if (catchBomb === 3) {
+                board.gameEnd();
+            }
         },
         roundEnd: function () {
             clearInterval(roundOne);
@@ -63,7 +67,7 @@ var startGame = function () {
         var randomXPosition = Math.random() * (board.width - bomb.width);
 
         if (randomNumber <= 1) {
-            $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').addClass('checkBomb').css({
+            $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
                 left: randomXPosition
             }))
         }
@@ -71,7 +75,6 @@ var startGame = function () {
             $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
                 left: randomXPosition
             }));
-
         }
     }, 2000);
     var roundOne = setInterval(function () {
@@ -102,12 +105,12 @@ var startGame = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
-                    $(checkCatchObjectNew).hide();
+                    $(checkCatchObjectNew).remove();
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    //Czeka na zatrzymanie paczek po dotknięciu ziemi
-                    // board.subtractLife()
+                    $(checkCatchObjectNew).remove();
+                    board.subtractLife()
                 }
             })
         }
@@ -126,21 +129,17 @@ var startGame = function () {
             });
         },
         checkExplosion: function () {
-            $('.checkBomb').each(function (index, checkBombNew) {
+            $('.fallingObject, .bomb').each(function (index, checkBombNew) {
                 var positionXbomb = $(checkBombNew).position().left;
                 var positionYbomb = $(checkBombNew).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var bombCenterXPosition = positionXbomb + bomb.width / 2;
                 if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                    $(checkBombNew).hide();
+                    $(checkBombNew).remove();
                     board.subtractLife();
-                    catchBomb += 1;
-                    if (catchBomb === 3) {
-                        board.gameEnd();
-                    }
                 }
-                else if (positionYbomb === character.positionY + character.height) {
-                    // clearInterval();
+                else if (positionYbomb > character.positionY + character.height) {
+                    $(checkBombNew).remove()
                 }
             })
         }
