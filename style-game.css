@@ -175,3 +175,13 @@
     transform: translateX(-50%);
     white-space: nowrap;
 }
+
+.try-again--button {
+    font-size: 50px;
+    text-align: center;
+}
+
+.try-again--button:hover {
+    cursor:pointer;
+    font-weight: 800;
+}
