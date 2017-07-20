@@ -6,6 +6,7 @@ var startGame = function () {
     var $bomb = $('.bomb');
     var $life = $('.life-item');
     var catchBomb = 0;
+
     var board = {
         height: $board.height(),
         width: $board.width(),
@@ -13,8 +14,6 @@ var startGame = function () {
             console.log('Punkt +1');
         },
         subtractLife: function () {
-            console.log($life);
-            console.log($life.last());
             $life.last().fadeOut(200);
             $life.last().fadeIn(200);
             $life.last().fadeOut(200);
@@ -23,13 +22,17 @@ var startGame = function () {
                 $life.last().remove();
                 $life = $('.life-item');
             }, 800);
-
-
         },
         roundEnd: function () {
             clearInterval(roundOne);
             clearInterval(boxSpawn);
             console.log('Koniec rundy');
+        },
+        gameEnd: function () {
+            clearInterval(roundOne);
+            $('.game-over').css({
+                "display": "inline"
+            });
         }
     };
 
@@ -45,7 +48,6 @@ var startGame = function () {
                     left: this.positionX
                 }).removeClass('character-right').addClass('character-left');
             }
-            console.log(character.positionX)
         },
         moveRight: function () {
             if (this.positionX < (board.width - character.width)) {
@@ -54,7 +56,6 @@ var startGame = function () {
                     left: this.positionX
                 }).removeClass('character-left').addClass('character-right');
             }
-            console.log(character.positionX);
         }
     };
     var boxSpawn = setInterval(function () {
@@ -91,7 +92,6 @@ var startGame = function () {
             $('.fallingObject').each(function (index, cardboardBoxNew) {
                 $(cardboardBoxNew).css({
                     top: $(cardboardBoxNew).position().top + fallingSpeed
-
                 })
             });
         },
@@ -114,46 +114,37 @@ var startGame = function () {
     };
 
     var bomb = {
-            height: $bomb.height(),
-            width: $bomb.width(),
-            positionX: $bomb.position().left,
-            positionY: $bomb.position().top,
-            fall: function (fallingSpeed) {
-                $('.fallingObject').each(function (index, bombNew) {
-                    $(bombNew).css({
-                        top: $(bombNew).position().top + fallingSpeed
-                    })
-                });
-            },
-            checkExplosion: function () {
-                $('.checkBomb').each(function (index, checkBombNew) {
-                    var positionXbomb = $(checkBombNew).position().left;
-                    var positionYbomb = $(checkBombNew).position().top;
-                    var characterCenterXPosition = character.positionX + character.width / 2;
-                    var bombCenterXPosition = positionXbomb + bomb.width / 2;
-                    if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                        $(checkBombNew).hide();
-                        board.subtractLife();
-
-                        /* Game over! */
-                        catchBomb += 1;
-                        if (catchBomb === 3) {
-                            clearInterval(roundOne);
-                            $('.game-over').css({
-                                "display": "inline"
-                            });
-                        }
-
-                    }
-                    else if (positionYbomb === character.positionY + character.height) {
-                        clearInterval();
-                    }
-
+        height: $bomb.height(),
+        width: $bomb.width(),
+        positionX: $bomb.position().left,
+        positionY: $bomb.position().top,
+        fall: function (fallingSpeed) {
+            $('.fallingObject').each(function (index, bombNew) {
+                $(bombNew).css({
+                    top: $(bombNew).position().top + fallingSpeed
                 })
-            }
+            });
+        },
+        checkExplosion: function () {
+            $('.checkBomb').each(function (index, checkBombNew) {
+                var positionXbomb = $(checkBombNew).position().left;
+                var positionYbomb = $(checkBombNew).position().top;
+                var characterCenterXPosition = character.positionX + character.width / 2;
+                var bombCenterXPosition = positionXbomb + bomb.width / 2;
+                if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
+                    $(checkBombNew).hide();
+                    board.subtractLife();
+                    catchBomb += 1;
+                    if (catchBomb === 3) {
+                        board.gameEnd();
+                    }
+                }
+                else if (positionYbomb === character.positionY + character.height) {
+                    // clearInterval();
+                }
+            })
         }
-
-    ;
+    };
 
     var plane = {
         height: $plane.height(),
