@@ -7,8 +7,10 @@ var startGame = function () {
     var $bomb = $('.bomb');
     var $life = $('.life-item');
     var catchBomb = 0;
+    var roundTime = 25;
 
-    var board = {
+    var board;
+    board = {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
@@ -25,13 +27,20 @@ var startGame = function () {
                 board.gameEnd();
             }
         },
-        roundEnd: function () {
+        firstRoundEnd: function () {
             clearInterval(roundOne);
+            nextRound = setInterval(nextRound, 100);
+            console.log('Koniec rundy 1');
+        },
+        secondRoundEnd: function () {
+            clearInterval(nextRound);
             clearInterval(boxSpawn);
-            console.log('Koniec rundy');
+            console.log('Koniec rundy 2');
         },
         gameEnd: function () {
             clearInterval(roundOne);
+            clearInterval(nextRound);
+            clearInterval(boxSpawn);
             $('.game-over').css({
                 "display": "inline-grid"
             });
@@ -75,8 +84,9 @@ var startGame = function () {
             }));
         }
     }, 2000);
+
+
     var roundOne = setInterval(function () {
-        var roundTime = 60;
         var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
         cardboardBox.fall(10);
@@ -85,6 +95,16 @@ var startGame = function () {
         bomb.checkExplosion();
         plane.fly(pixelsDistance);
     }, 100);
+
+    var nextRound = function nextRound() {
+        var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
+
+        planeFromNextRound.fly(pixelsDistance);
+        cardboardBox.fall(15);
+        bomb.fall(15);
+        cardboardBox.checkCatch();
+        bomb.checkExplosion();
+    };
 
     var cardboardBox = {
         height: $cardboardBox.height(),
@@ -148,6 +168,11 @@ var startGame = function () {
         width: $plane.width(),
         positionX: $plane.position().left,
         positionY: $plane.position().top,
+        startPosition: function () {
+            $plane.css({
+                right: 0
+            })
+        },
         fly: function (pixelsDistance) {
             this.positionX -= pixelsDistance;
             if (this.positionX > 0) {
@@ -156,7 +181,26 @@ var startGame = function () {
                 });
             }
             else {
-                board.roundEnd();
+                board.firstRoundEnd();
+            }
+        }
+    };
+    var planeFromNextRound = {
+        height: $plane.height(),
+        width: $plane.width(),
+        positionX: $plane.position().left,
+        positionY: $plane.position().top,
+
+
+        fly: function (pixelsDistance) {
+            this.positionX -= pixelsDistance;
+            if (this.positionX > 0) {
+                $('.plane').css({
+                    left: this.positionX
+                });
+            }
+            else {
+                board.secondRoundEnd();
             }
         }
     };
