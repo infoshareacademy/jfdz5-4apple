@@ -1,4 +1,5 @@
 var startGame = function () {
+
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
@@ -35,7 +36,7 @@ var startGame = function () {
         gameEnd: function () {
             clearInterval(roundOne);
             $('.game-over').css({
-                "display": "inline"
+                "display": "inline-grid"
             });
         }
     };
@@ -172,5 +173,9 @@ var startGame = function () {
             character.moveRight();
         }
     });
+
+    $('.try-again--button').click(function () {
+        location.reload();
+    })
 
 };
