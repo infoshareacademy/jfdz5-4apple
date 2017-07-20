@@ -16,10 +16,7 @@ var startGame = function () {
         },
         subtractLife: function () {
             catchBomb += 1;
-            $life.last().fadeOut(200);
-            $life.last().fadeIn(200);
-            $life.last().fadeOut(200);
-            $life.last().fadeIn(200);
+            $life.last().fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
             setTimeout(function () {
                 $life.last().remove();
                 $life = $('.life-item');

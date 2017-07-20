@@ -32,7 +32,6 @@
 .game-menu {
     position: absolute;
     top: 150px;
-    z-index: 1;
 }
 
 .game-menu--item {
