@@ -4,7 +4,7 @@ var $cardboardBox = $('.cardboard-box');
 var $plane = $('.plane');
 var $bomb = $('.bomb');
 var $life = $('.life-item');
-var $points = $('.points');
+// var $points = $('.points');
 var catchBomb = 0;
 var points = 0;
 
@@ -14,7 +14,7 @@ var board = {
     width: $board.width(),
     addPoint: function () {
         console.log('Punkt +1');
-        $('.points').text("Zdobyłeś "+points);
+        $('.points').text("ZDOBYŁEŚ: "+points);
     },
     subtractLife: function () {
         console.log('health -1');

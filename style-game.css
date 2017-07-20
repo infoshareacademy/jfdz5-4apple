@@ -116,7 +116,7 @@
 
 .cloud-sixth {
     left: 40px;
-    top: 30px;
+    top: 42px;
 }
 
 .life-item {
@@ -128,8 +128,10 @@
 }
 
 .points {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
     position: absolute;
-    top: 150px;
+    top: 30px;
     color: darkblue;
 }
 
