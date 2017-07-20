@@ -1,4 +1,4 @@
-var startGame = function() {
+var startGame = function () {
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
@@ -13,7 +13,18 @@ var startGame = function() {
             console.log('Punkt +1');
         },
         subtractLife: function () {
-            console.log('health -1');
+            console.log($life);
+            console.log($life.last());
+            $life.last().fadeOut(200);
+            $life.last().fadeIn(200);
+            $life.last().fadeOut(200);
+            $life.last().fadeIn(200);
+            setTimeout(function () {
+                $life.last().remove();
+                $life = $('.life-item');
+            }, 800);
+
+
         },
         roundEnd: function () {
             clearInterval(roundOne);
@@ -95,7 +106,8 @@ var startGame = function() {
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    board.subtractLife()
+                    //Czeka na zatrzymanie paczek po dotknięciu ziemi
+                    // board.subtractLife()
                 }
             })
         }
@@ -121,11 +133,6 @@ var startGame = function() {
                     var bombCenterXPosition = positionXbomb + bomb.width / 2;
                     if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
                         $(checkBombNew).hide();
-
-                        /* Losting chcaracter lifes */
-                        $life.first().remove();
-                        $life = $('.life-item');
-                        console.log('Straciłeś życie!');
                         board.subtractLife();
 
                         /* Game over! */
