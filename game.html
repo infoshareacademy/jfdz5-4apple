@@ -7,10 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link rel="stylesheet" href="style-game.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
 <div class="game-container">
+    <div class="game-menu--container">
+        <div class="game-menu">
+            <ul>
+                <li id="play" class="game-menu--item">play</li>
+                <li id="skins" class="game-menu--item">skins</li>
+                <li id="tutorial" class="game-menu--item">tutorial</li>
+                <li id="high-score" class="game-menu--item">high-score</li>
+                <li id="quit" class="game-menu--item">quit</li>
+            </ul>
+        </div>
+        <div class="truck"></div>
+    </div>
     <div class="game">
         <div class="board">
             <div class="plane"></div>
@@ -31,14 +44,18 @@
                 <div class="cloud cloud-sixth"></div>
             </div>
             <div class="character character-right"></div>
-            <div class="game-over">GAME OVER</div>
+            <div class="game-over">GAME OVER
+                <a class="try-again--button">TRY AGAIN</a>
+            </div>
         </div>
     </div>
 
 </div>
 <script src="jquery-3.2.1.min.js"></script>
+<script src="js/game/game-skins.js"></script>
+<script src="js/game/game-menu.js"></script>
 <script src="js/game/game-object-oriented.js"></script>
-<!--<script src="js/game/game.js"></script>-->
+
 
 </body>
 </html>

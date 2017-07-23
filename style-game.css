@@ -12,6 +12,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'VT323', monospace;
+}
+
+.game-menu--container {
+    height: 700px;
+    width: 580px;
+    background: url('img/board.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+}
+
+.game-menu {
+    position: absolute;
+    top: 150px;
+}
+
+.game-menu--item {
+    cursor: pointer;
+    list-style: none;
+    line-height: 1.4;
+}
+
+.game-menu--item:hover {
+    font-weight: 800;
+}
+
+.truck {
+    background: url('img/truck.png');
+    width: 200px;
+    height: 171px;
+    position: absolute;
+    bottom: 50px;
 }
 
 .game {
@@ -20,9 +58,9 @@
     width: 580px;
     background: url('img/board-backround.png');
     position: absolute;
-    display: flex;
     flex-direction: column;
     overflow: hidden;
+    display: none;
 }
 
 .board {
@@ -144,4 +182,94 @@
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap;
+}
+
+.try-again--button {
+    font-size: 50px;
+    text-align: center;
+}
+
+.try-again--button:hover {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.skins--container {
+    text-transform: uppercase;
+    font-size: 50px;
+    height: 550px;
+    width: 500px;
+    background-color: black;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+
+.skins-tile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skin--element {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 2px #000 solid;
+}
+
+.skin--element:hover {
+    cursor: pointer;
+    border: 2px #fff solid;
+}
+
+.skins--button {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: 'VT323', monospace;
+    background-color: transparent;
+    border: none;
+    margin: 0 40px;
+}
+
+.skins--button:hover {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.button__save:hover {
+    color: #32fc7d;
+}
+
+.button__cancel:hover {
+    color: #fc330e;
+}
+
+.sale {
+    font-size: 25px;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    border-radius: 100%;
+    background-color: #efff00;
+    color: #f00;
+    font-weight: 800;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    transform: rotate(-20deg);
+}
+
+.sale__price {
+    font-size: 50px;
 }
