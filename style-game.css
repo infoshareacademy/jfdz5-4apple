@@ -50,6 +50,25 @@
     height: 171px;
     position: absolute;
     bottom: 50px;
+    animation: engine-working 2s infinite;
+}
+
+@keyframes engine-working {
+    0% {
+        bottom: 50px;
+    }
+    25% {
+        bottom: 53px;
+    }
+    50% {
+        bottom: 50px;
+    }
+    75% {
+        bottom: 53px;
+    }
+    100% {
+        bottom: 50px;
+    }
 }
 
 .game {
@@ -265,7 +284,8 @@
 .sale__price {
     font-size: 50px;
 }
-.bomb-exploded{
+
+.bomb-exploded {
     height: 25px;
     width: 25px;
     background: url('img/bomba-wybuch.png');
