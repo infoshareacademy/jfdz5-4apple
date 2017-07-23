@@ -37,6 +37,7 @@ function skinChoice() {
         })
     });
     $('.button__cancel').click(function () {
+        skinSetup = localStorage.getItem('skinSetup');
         $('.skins--container').animate({
             height: 'toggle'
         })
