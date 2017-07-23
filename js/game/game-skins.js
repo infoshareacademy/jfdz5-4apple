@@ -1,4 +1,4 @@
-var skinChoice = function () {
+function skinChoice() {
     $('.game-container').append($('<div>').addClass('skins--container').text('Select skin')
         .append($('<div>').addClass('skins-tile'))
         .append($('<div>').addClass('skin-buttons-container')
@@ -21,4 +21,4 @@ var skinChoice = function () {
             height: 'toggle'
         })
     })
-}();
+};
