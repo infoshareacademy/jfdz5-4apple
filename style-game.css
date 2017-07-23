@@ -109,7 +109,7 @@
     height: 40px;
     width: 55px;
     position: absolute;
-    top: 5px;
+    top: 50%;
     right: 0;
 }
 
@@ -169,7 +169,8 @@
     font-family: 'VT323', monospace;
     font-size: 20px;
     position: absolute;
-    top: 30px;
+    top: 0;
+    right: 5px;
     color: darkblue;
 }
 

@@ -17,7 +17,7 @@ var startGame = function () {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
-            $('.points').text("Zdobyłeś "+ points);
+            $('.points').text("SCORE "+ 100* points);
             console.log('Punkt +1');
         },
         subtractLife: function () {
