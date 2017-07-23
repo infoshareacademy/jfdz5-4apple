@@ -140,16 +140,16 @@ var startGame = function () {
         },
         checkCatch: function () {
             $('.checkCatchObject').each(function (index, checkCatchObjectNew) {
-                var positionXcardboardBox = $(checkCatchObjectNew).position().left;
-                var positionYcardboardBox = $(checkCatchObjectNew).position().top;
+                var positionXcardboardBox = $(this).position().left;
+                var positionYcardboardBox = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
-                    $(checkCatchObjectNew).remove();
+                    $(this).remove();
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    $(checkCatchObjectNew).remove();
+                    $(this).remove();
                     board.subtractLife()
                 }
             })
@@ -170,16 +170,16 @@ var startGame = function () {
         },
         checkExplosion: function () {
             $('.fallingObject, .bomb').each(function (index, checkBombNew) {
-                var positionXbomb = $(checkBombNew).position().left;
-                var positionYbomb = $(checkBombNew).position().top;
+                var positionXbomb = $(this).position().left;
+                var positionYbomb = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var bombCenterXPosition = positionXbomb + bomb.width / 2;
                 if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                    $(checkBombNew).remove();
+                    $(this).remove();
                     board.subtractLife();
                 }
                 else if (positionYbomb > character.positionY + character.height) {
-                    $(checkBombNew).remove()
+                    $(this).remove()
                 }
             })
         }
