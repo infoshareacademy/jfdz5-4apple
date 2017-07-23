@@ -7,7 +7,7 @@ var startGame = function () {
     var $bomb = $('.bomb');
     var $life = $('.life-item');
     var catchBomb = 0;
-
+    var points = 0;
     if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -17,6 +17,7 @@ var startGame = function () {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
+            $('.points').text("SCORE "+ 100* points);
             console.log('Punkt +1');
         },
         subtractLife: function () {
@@ -120,6 +121,7 @@ var startGame = function () {
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                     $(this).remove();
+                    points++;
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
