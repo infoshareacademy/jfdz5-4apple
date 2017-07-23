@@ -104,20 +104,12 @@
     top: -25px;
 }
 
-.plane {
-    background: url('img/plane2.png');
-    height: 40px;
-    width: 55px;
-    position: absolute;
-    top: 5px;
-    right: 0;
-}
 .countdownTimer {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'VT323', monospace;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: bold;
 }
 

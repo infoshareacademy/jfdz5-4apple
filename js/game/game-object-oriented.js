@@ -3,12 +3,11 @@ var startGame = function () {
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
-    var $plane = $('.plane');
     var $bomb = $('.bomb');
     var $life = $('.life-item');
     var $countdownTimer = $('.countdownTimer');
     var catchBomb = 0;
-    var roundTime = 8;
+    var roundTime = 3;
     var timeInSeconds;
     var ticker;
 
@@ -31,15 +30,15 @@ var startGame = function () {
             }
         },
         firstRoundEnd: function () {
+            // nextRound = setInterval(nextRound, 100);
             clearInterval(roundOne);
-            nextRound = setInterval(nextRound, 100);
             console.log('Koniec rundy 1');
         },
-        secondRoundEnd: function () {
-            clearInterval(nextRound);
-            clearInterval(boxSpawn);
-            console.log('Koniec rundy 2');
-        },
+        // secondRoundEnd: function () {
+        //     clearInterval(nextRound);
+        //     clearInterval(boxSpawn);
+        //     console.log('Koniec rundy 2');
+        // },
         gameEnd: function () {
             clearInterval(roundOne);
             clearInterval(nextRound);
@@ -91,7 +90,7 @@ var startGame = function () {
 
     var countdownTimer = {
         startTimer: function (seconds) {
-            timeInSeconds = parseInt(seconds) - 1;
+            timeInSeconds = parseInt(seconds);
             ticker = setInterval(this.tick, 1000);
         },
         tick: function () {
@@ -102,11 +101,10 @@ var startGame = function () {
             else {
                 clearInterval(ticker);
             }
-            $countdownTimer.html(seconds);
-            if (seconds <= 5) {
+            $countdownTimer.html(timeInSeconds);
+            if (timeInSeconds <= 5) {
                 $countdownTimer.css({
-                    'font-size' : '75px',
-                    'color' : '#F00'
+                    'color': '#F00'
                 })
             }
         }
@@ -115,19 +113,17 @@ var startGame = function () {
 
 
     var roundOne = setInterval(function () {
-        var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
-
+        $countdownTimer.html(timeInSeconds);
         cardboardBox.fall(10);
         bomb.fall(10);
         cardboardBox.checkCatch();
         bomb.checkExplosion();
-        plane.fly(pixelsDistance);
+        if (timeInSeconds == 0) {
+            board.firstRoundEnd();
+        }
     }, 100);
 
     var nextRound = function nextRound() {
-        var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
-
-        planeFromNextRound.fly(pixelsDistance);
         cardboardBox.fall(15);
         bomb.fall(15);
         cardboardBox.checkCatch();
@@ -188,49 +184,6 @@ var startGame = function () {
                     $(this).remove()
                 }
             })
-        }
-    };
-
-    var plane = {
-        height: $plane.height(),
-        width: $plane.width(),
-        positionX: $plane.position().left,
-        positionY: $plane.position().top,
-        startPosition: function () {
-            $plane.css({
-                right: 0
-            });
-            this.positionX = (board.width - this.width);
-        },
-        fly: function (pixelsDistance) {
-            this.positionX -= pixelsDistance;
-            if (this.positionX > 0) {
-                $('.plane').css({
-                    left: this.positionX
-                });
-            }
-            else {
-                board.firstRoundEnd();
-            }
-        }
-    };
-    var planeFromNextRound = {
-        height: $plane.height(),
-        width: $plane.width(),
-        positionX: $plane.position().left,
-        positionY: $plane.position().top,
-
-
-        fly: function (pixelsDistance) {
-            this.positionX -= pixelsDistance;
-            if (this.positionX > 0) {
-                $('.plane').css({
-                    left: this.positionX
-                });
-            }
-            else {
-                board.secondRoundEnd();
-            }
         }
     };
 
