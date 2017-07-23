@@ -10,11 +10,12 @@ var startGame = function () {
     var catchBomb = 0;
     var roundTime = 10;
     var timeInSeconds;
-    var timeForABreak = 3;
+    var breakTime = 3;
     var ticker;
     var roundIntervalId;
     var boxSpawn;
-    var jump = 10
+    var jump = 10;
+    var timeToFallingObjects = 1500;
 
     if (skinSetup !== 0) {
         $('.character-right').css({
@@ -42,6 +43,7 @@ var startGame = function () {
         gameEnd: function () {
             clearInterval(roundIntervalId);
             clearInterval(boxSpawn);
+            clearInterval(ticker);
             $('.game-over').css({
                 "display": "inline-grid"
             });
@@ -96,7 +98,7 @@ var startGame = function () {
                     left: randomXPosition
                 }));
             }
-        }, 2000);
+        }, timeToFallingObjects);
     }
 
 
@@ -144,19 +146,13 @@ var startGame = function () {
                 $round.css({
                     "display": "inline-grid"
                 });
-                jump += 2
-                setTimeout(startRound, timeForABreak * 1000);
+                jump += 1;
+                timeToFallingObjects -= 100;
+                setTimeout(startRound, breakTime * 1000);
             }
         }, 100);
     }
 
-    function nextRound() {
-        $countdownTimer.html(timeInSeconds);
-        cardboardBox.fall(15);
-        bomb.fall(15);
-        cardboardBox.checkCatch();
-        bomb.checkExplosion();
-    }
 
     var cardboardBox = {
         height: $cardboardBox.height(),
@@ -198,6 +194,13 @@ var startGame = function () {
                 })
             });
         },
+        explode: function (position) {
+            var $bombOnGround = $(this);
+            $bombOnGround.css({top: position + 10 + 'px'}).removeClass('fallingObject').addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+            setTimeout(function () {
+                $bombOnGround.remove();
+            }, 600);
+        },
         checkExplosion: function () {
             $('.fallingObject, .bomb').each(function (index, checkBombNew) {
                 var positionXbomb = $(this).position().left;
@@ -205,11 +208,19 @@ var startGame = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var bombCenterXPosition = positionXbomb + bomb.width / 2;
                 if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                    $(this).remove();
+                    var $bombOnGround = $(this);
+                    $bombOnGround.css({top: board.height - character.height - bomb.height + 10 + 'px'}).removeClass('fallingObject').addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+                    setTimeout(function () {
+                        $bombOnGround.remove();
+                    }, 600);
                     board.subtractLife();
                 }
                 else if (positionYbomb > character.positionY + character.height) {
-                    $(this).remove()
+                    var $bombOnGround = $(this);
+                    $bombOnGround.css({top: character.positionY + character.height + 'px'}).addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+                    setTimeout(function () {
+                        $bombOnGround.remove();
+                    }, 600);
                 }
             })
         }

@@ -265,3 +265,11 @@
 .sale__price {
     font-size: 50px;
 }
+.bomb-exploded{
+    height: 25px;
+    width: 25px;
+    background: url('img/bomba-wybuch.png');
+    background-size: cover;
+    position: absolute;
+    top: -25px;
+}
