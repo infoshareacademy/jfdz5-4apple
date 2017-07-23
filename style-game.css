@@ -154,7 +154,7 @@
 
 .cloud-sixth {
     left: 40px;
-    top: 30px;
+    top: 42px;
 }
 
 .life-item {
@@ -164,6 +164,16 @@
     background: url("img/life.png");
     background-size: cover;
 }
+
+.points {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: darkblue;
+}
+
 
 .game-over, .round {
     display: none;
