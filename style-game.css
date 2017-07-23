@@ -112,6 +112,14 @@
     top: 5px;
     right: 0;
 }
+.countdownTimer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
 
 .cloud {
     background: url('img/cloud1.png');

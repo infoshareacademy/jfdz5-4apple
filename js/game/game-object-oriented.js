@@ -6,8 +6,11 @@ var startGame = function () {
     var $plane = $('.plane');
     var $bomb = $('.bomb');
     var $life = $('.life-item');
+    var $countdownTimer = $('.countdownTimer');
     var catchBomb = 0;
     var roundTime = 25;
+    var timeInSeconds;
+    var ticker;
 
     var board;
     board = {
@@ -84,6 +87,25 @@ var startGame = function () {
             }));
         }
     }, 2000);
+
+
+    var countdownTimer = {
+        startTimer: function (seconds) {
+            timeInSeconds = parseInt(seconds) - 1;
+            ticker = setInterval(this.tick, 1000);
+        },
+        tick: function () {
+            var seconds = timeInSeconds;
+            if (seconds > 0) {
+                timeInSeconds--;
+            }
+            else {
+                clearInterval(ticker);
+            }
+            $countdownTimer.html("00 : " + seconds);
+        }
+    };
+        countdownTimer.startTimer(roundTime);
 
 
     var roundOne = setInterval(function () {
@@ -171,7 +193,8 @@ var startGame = function () {
         startPosition: function () {
             $plane.css({
                 right: 0
-            })
+            });
+            this.positionX = (board.width - this.width);
         },
         fly: function (pixelsDistance) {
             this.positionX -= pixelsDistance;
