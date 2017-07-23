@@ -6,11 +6,15 @@ var startGame = function () {
     var $bomb = $('.bomb');
     var $life = $('.life-item');
     var $countdownTimer = $('.countdownTimer');
+    var $round = $('.round');
     var catchBomb = 0;
-    var roundTime = 8;
+    var roundTime = 10;
     var timeInSeconds;
     var timeForABreak = 3;
     var ticker;
+    var roundIntervalId;
+    var boxSpawn;
+    var jump = 10
 
     if (skinSetup !== 0) {
         $('.character-right').css({
@@ -34,28 +38,9 @@ var startGame = function () {
                 board.gameEnd();
             }
         },
-        pauseBetweenRounds: function () {
-            timeForABreak = 3;
-            countdownTimer.startTimer(timeForABreak);
-            console.log(timeForABreak);
-            // if (timeForABreak == 0) {
-            //     board.firstRoundEnd();
-            // }
-        },
-        firstRoundEnd: function () {
-            clearInterval(roundOne);
-            console.log('Koniec rundy 1');
-            nextRound = setInterval(nextRound, 100);
-            countdownTimer.startTimer(roundTime);
-        },
-        // secondRoundEnd: function () {
-        //     clearInterval(nextRound);
-        //     clearInterval(boxSpawn);
-        //     console.log('Koniec rundy 2');
-        // },
+
         gameEnd: function () {
-            clearInterval(roundOne);
-            clearInterval(nextRound);
+            clearInterval(roundIntervalId);
             clearInterval(boxSpawn);
             $('.game-over').css({
                 "display": "inline-grid"
@@ -95,26 +80,30 @@ var startGame = function () {
             }
         }
     };
-    var boxSpawn = setInterval(function () {
-        var randomNumber = Math.random() * 3;
-        var randomXPosition = Math.random() * (board.width - bomb.width);
 
-        if (randomNumber <= 1) {
-            $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
-                left: randomXPosition
-            }))
-        }
-        else {
-            $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
-                left: randomXPosition
-            }));
-        }
-    }, 2000);
+    function moveBoxes() {
+        boxSpawn = setInterval(function () {
+            var randomNumber = Math.random() * 3;
+            var randomXPosition = Math.random() * (board.width - bomb.width);
+
+            if (randomNumber <= 1) {
+                $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+                    left: randomXPosition
+                }))
+            }
+            else {
+                $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
+                    left: randomXPosition
+                }));
+            }
+        }, 2000);
+    }
 
 
     var countdownTimer = {
         startTimer: function (seconds) {
             timeInSeconds = parseInt(seconds);
+            clearInterval(ticker);
             ticker = setInterval(this.tick, 1000);
         },
         tick: function () {
@@ -133,28 +122,41 @@ var startGame = function () {
             }
         }
     };
-    countdownTimer.startTimer(roundTime);
 
 
-    var roundOne = setInterval(function () {
+    function startRound() {
+        countdownTimer.startTimer(roundTime);
+        $round.css({
+            'display' : 'none'
+        });
+        moveBoxes()
+
+        roundIntervalId = setInterval(function () {
+            $countdownTimer.html(timeInSeconds);
+            cardboardBox.fall(jump);
+            bomb.fall(jump);
+            cardboardBox.checkCatch();
+            bomb.checkExplosion();
+            if (timeInSeconds === 0) {
+                clearInterval(roundIntervalId)
+                clearInterval(boxSpawn);
+                $('.fallingObject').hide(300);
+                $round.css({
+                    "display": "inline-grid"
+                });
+                jump += 2
+                setTimeout(startRound, timeForABreak * 1000);
+            }
+        }, 100);
+    }
+
+    function nextRound() {
         $countdownTimer.html(timeInSeconds);
-        cardboardBox.fall(10);
-        bomb.fall(10);
-        cardboardBox.checkCatch();
-        bomb.checkExplosion();
-        if (timeInSeconds == 0) {
-            clearInterval(roundTime);
-            clearInterval(boxSpawn);
-            board.pauseBetweenRounds();
-         }
-    }, 100);
-
-    var nextRound = function nextRound() {
         cardboardBox.fall(15);
         bomb.fall(15);
         cardboardBox.checkCatch();
         bomb.checkExplosion();
-    };
+    }
 
     var cardboardBox = {
         height: $cardboardBox.height(),
@@ -214,7 +216,6 @@ var startGame = function () {
     };
 
     $(window).keydown(function (e) {
-
         if (e.keyCode === 37) {
             character.moveLeft();
         }
@@ -227,4 +228,5 @@ var startGame = function () {
         location.reload();
     })
 
+    startRound()
 };

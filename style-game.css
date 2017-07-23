@@ -165,7 +165,7 @@
     background-size: cover;
 }
 
-.game-over {
+.game-over, .round {
     display: none;
     font-family: 'VT323', monospace;
     font-size: 100px;
