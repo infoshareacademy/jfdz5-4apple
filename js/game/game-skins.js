@@ -2,9 +2,10 @@ skinSetup = localStorage.getItem('skinSetup');
 if (skinSetup === null) {
     var skinSetup = 0;
 }
-console.log(skinSetup);
 function skinChoice() {
     $('.game-container').append($('<div>').addClass('skins--container').text('Select skin')
+        .append($('<div>').addClass('sale').text('only now!')
+            .prepend($('<span>').addClass('sale__price').text('9.99€')))
         .append($('<div>').addClass('skins-tile'))
         .append($('<div>').addClass('skin-buttons-container')
             .append($('<button>').addClass('skins--button button__save').attr('id', 'skins-save').text('save'))

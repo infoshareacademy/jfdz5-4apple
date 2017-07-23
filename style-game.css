@@ -198,6 +198,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
 }
 
 .skins-tile {
@@ -240,4 +241,27 @@
 
 .button__cancel:hover {
     color: #fc330e;
+}
+
+.sale {
+    font-size: 25px;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    border-radius: 100%;
+    background-color: #efff00;
+    color: #f00;
+    font-weight: 800;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    transform: rotate(-20deg);
+}
+
+.sale__price {
+    font-size: 50px;
 }
