@@ -1,4 +1,8 @@
-var skinSetup = 0;
+skinSetup = localStorage.getItem('skinSetup');
+if (skinSetup === null) {
+    var skinSetup = 0;
+}
+console.log(skinSetup);
 function skinChoice() {
     $('.game-container').append($('<div>').addClass('skins--container').text('Select skin')
         .append($('<div>').addClass('skins-tile'))
@@ -25,6 +29,12 @@ function skinChoice() {
             border: '2px #32fc7d solid'
         });
         skinSetup = $(this).attr('data-index');
+    });
+    $('.button__save').click(function () {
+        localStorage.setItem("skinSetup", skinSetup);
+        $('.skins--container').animate({
+            height: 'toggle'
+        })
     });
     $('.button__cancel').click(function () {
         $('.skins--container').animate({
