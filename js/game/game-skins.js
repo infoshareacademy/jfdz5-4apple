@@ -16,9 +16,17 @@ function skinChoice() {
             'background': 'url(' + skin + ') no-repeat center'
         }).attr('data-index', skinIndex))
     });
+    $('.skin--element').click(function () {
+        $('.skin--element').css({
+            border: '2px #000 solid'
+        });
+        $(this).css({
+            border: '2px #32fc7d solid'
+        })
+    });
     $('.button__cancel').click(function () {
         $('.skins--container').animate({
             height: 'toggle'
         })
     })
-};
+}
