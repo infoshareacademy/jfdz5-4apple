@@ -8,7 +8,7 @@ var startGame = function () {
     var $life = $('.life-item');
     var $countdownTimer = $('.countdownTimer');
     var catchBomb = 0;
-    var roundTime = 25;
+    var roundTime = 8;
     var timeInSeconds;
     var ticker;
 
@@ -102,10 +102,16 @@ var startGame = function () {
             else {
                 clearInterval(ticker);
             }
-            $countdownTimer.html("00 : " + seconds);
+            $countdownTimer.html(seconds);
+            if (seconds <= 5) {
+                $countdownTimer.css({
+                    'font-size' : '75px',
+                    'color' : '#F00'
+                })
+            }
         }
     };
-        countdownTimer.startTimer(roundTime);
+    countdownTimer.startTimer(roundTime);
 
 
     var roundOne = setInterval(function () {
