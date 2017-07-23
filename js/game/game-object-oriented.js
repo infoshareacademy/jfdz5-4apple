@@ -7,8 +7,9 @@ var startGame = function () {
     var $life = $('.life-item');
     var $countdownTimer = $('.countdownTimer');
     var catchBomb = 0;
-    var roundTime = 3;
+    var roundTime = 8;
     var timeInSeconds;
+    var timeForABreak = 3;
     var ticker;
 
     if (skinSetup !== 0) {
@@ -33,10 +34,19 @@ var startGame = function () {
                 board.gameEnd();
             }
         },
+        pauseBetweenRounds: function () {
+            timeForABreak = 3;
+            countdownTimer.startTimer(timeForABreak);
+            console.log(timeForABreak);
+            // if (timeForABreak == 0) {
+            //     board.firstRoundEnd();
+            // }
+        },
         firstRoundEnd: function () {
-            // nextRound = setInterval(nextRound, 100);
             clearInterval(roundOne);
             console.log('Koniec rundy 1');
+            nextRound = setInterval(nextRound, 100);
+            countdownTimer.startTimer(roundTime);
         },
         // secondRoundEnd: function () {
         //     clearInterval(nextRound);
@@ -133,8 +143,10 @@ var startGame = function () {
         cardboardBox.checkCatch();
         bomb.checkExplosion();
         if (timeInSeconds == 0) {
-            board.firstRoundEnd();
-        }
+            clearInterval(roundTime);
+            clearInterval(boxSpawn);
+            board.pauseBetweenRounds();
+         }
     }, 100);
 
     var nextRound = function nextRound() {
