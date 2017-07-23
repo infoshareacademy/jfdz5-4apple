@@ -36,6 +36,7 @@ var startGame = function () {
             console.log('Koniec rundy');
         },
         gameEnd: function () {
+            clearInterval(boxSpawn);
             clearInterval(roundOne);
             $('.game-over').css({
                 "display": "inline-grid"
@@ -141,6 +142,13 @@ var startGame = function () {
                 })
             });
         },
+        explode: function (position) {
+            var $bombOnGround = $(this);
+            $bombOnGround.css({top: position + 10 + 'px'}).removeClass('fallingObject').addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+            setTimeout(function () {
+                $bombOnGround.remove();
+            }, 600);
+        },
         checkExplosion: function () {
             $('.fallingObject, .bomb').each(function (index, checkBombNew) {
                 var positionXbomb = $(this).position().left;
@@ -148,11 +156,19 @@ var startGame = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var bombCenterXPosition = positionXbomb + bomb.width / 2;
                 if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                    $(this).remove();
+                    var $bombOnGround = $(this);
+                    $bombOnGround.css({top: board.height - character.height - bomb.height + 10 + 'px'}).removeClass('fallingObject').addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+                    setTimeout(function () {
+                        $bombOnGround.remove();
+                    }, 600);
                     board.subtractLife();
                 }
                 else if (positionYbomb > character.positionY + character.height) {
-                    $(this).remove()
+                    var $bombOnGround = $(this);
+                    $bombOnGround.css({top: character.positionY + character.height + 'px'}).addClass('bomb-exploded').fadeOut(300).fadeIn(300);
+                    setTimeout(function () {
+                        $bombOnGround.remove();
+                    }, 600);
                 }
             })
         }
