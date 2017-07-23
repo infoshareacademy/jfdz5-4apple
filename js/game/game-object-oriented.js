@@ -11,8 +11,12 @@ var startGame = function () {
     var timeInSeconds;
     var ticker;
 
-    var board;
-    board = {
+    if (skinSetup !== 0) {
+        $('.character-right').css({
+            'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
+        });
+    }
+    var board = {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
@@ -60,6 +64,11 @@ var startGame = function () {
                 $character.css({
                     left: this.positionX
                 }).removeClass('character-right').addClass('character-left');
+                if (skinSetup !== 0) {
+                    $('.character-left').css({
+                        'background': 'url(img/skins/ludzik-z-workiem-lewo-' + skinSetup + '.png)'
+                    });
+                }
             }
         },
         moveRight: function () {
@@ -68,6 +77,11 @@ var startGame = function () {
                 $character.css({
                     left: this.positionX
                 }).removeClass('character-left').addClass('character-right');
+                if (skinSetup !== 0) {
+                    $('.character-right').css({
+                        'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
+                    });
+                }
             }
         }
     };
