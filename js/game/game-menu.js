@@ -17,6 +17,7 @@
             startGame();
         }, 500);
     });
+    $('#skins').click(skinChoice);
     $('#quit').click(function () {
         $('.game-container').fadeOut(1000)
     })
