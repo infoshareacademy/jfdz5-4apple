@@ -8,6 +8,24 @@ var startGame = function () {
     var $life = $('.life-item');
     var catchBomb = 0;
     var points = 0;
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var year = now.getFullYear();
+    var today = day + '/' + month + '/' + year;
+
+
+    if (highScore === null) {
+        var highScore = [
+            {name: 'Paweł', score: 1000, date: today},
+            {name: 'Dawid', score: 1000, date: today},
+            {name: 'Piotr', score: 1000, date: today},
+            {name: 'Alek', score: 1000, date: today},
+            {name: 'Noname', score: 0, date: today}
+        ];
+    }
+
+
     if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -17,8 +35,7 @@ var startGame = function () {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
-            $('.points').text("SCORE "+ 100* points);
-            console.log('Punkt +1');
+            $('.points').text("SCORE " + 100 * points);
         },
         subtractLife: function () {
             catchBomb += 1;
@@ -42,7 +59,13 @@ var startGame = function () {
             $('.game-over').css({
                 "display": "inline-grid"
             });
+            checkScore();
         }
+    };
+
+    var checkScore = function () {
+
+        console.log(highScore);
     };
 
     var character = {
@@ -93,7 +116,7 @@ var startGame = function () {
         }
     }, 2000);
     var roundOne = setInterval(function () {
-        var roundTime = 60;
+        var roundTime = 10;
         var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
 
         cardboardBox.fall(10);
