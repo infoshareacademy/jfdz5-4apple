@@ -185,3 +185,44 @@
     cursor:pointer;
     font-weight: 800;
 }
+
+.skins--container{
+    font-size: 50px;
+    height: 550px;
+    width:500px;
+    background-color: black;
+    z-index: 1;
+    color: #fff;
+}
+.skins-tile{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center ;
+}
+.skin--element{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    margin: 5px;
+}
+.skins--button{
+    color: #fff;
+    font-size:50px;
+    font-family: 'VT323', monospace;
+    background-color: transparent;
+    text-transform: uppercase;
+
+    border: none;
+    margin: 0 40px;
+}
+.skins--button:hover{
+    font-weight: 800;
+    cursor: pointer;
+}
+.button__save:hover{
+    color: #32fc7d;
+}
+.button__cancel:hover{
+    color: #fc330e;
+}
