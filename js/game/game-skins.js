@@ -1,3 +1,4 @@
+var skinSetup = 0;
 function skinChoice() {
     $('.game-container').append($('<div>').addClass('skins--container').text('Select skin')
         .append($('<div>').addClass('skins-tile'))
@@ -22,7 +23,8 @@ function skinChoice() {
         });
         $(this).css({
             border: '2px #32fc7d solid'
-        })
+        });
+        skinSetup = $(this).attr('data-index');
     });
     $('.button__cancel').click(function () {
         $('.skins--container').animate({
