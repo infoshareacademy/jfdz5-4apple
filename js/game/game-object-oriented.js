@@ -17,10 +17,10 @@ var startGame = function () {
     var highScore = localStorage.getItem('highScore');
     if (highScore === null) {
         var highScore = [
-            {name: 'Paweł', score: 1000, date: today},
-            {name: 'Dawid', score: 1000, date: today},
+            {name: 'Paweł', score: 100, date: today},
+            {name: 'Dawid', score: 400, date: today},
             {name: 'Alek', score: 1000, date: today},
-            {name: 'Piotr', score: 1000, date: today},
+            {name: 'Piotr', score: 800, date: today},
             {name: 'Noname', score: 0, date: today}
         ];
     }
@@ -65,16 +65,16 @@ var startGame = function () {
     var checkScore = function () {
         highScore = highScore.map(function (score) {
             console.log(score);
-            console.log(score.score);
             return score.score
         }).map(function (score) {
-            console.log(score);
             if (score < points) {
-                console.log(highScore);
                 highScore.splice(4, 1);
                 highScore.push({name: 'pozniej zapytac', score: points, date: today})
                 //wyswietlic napis HIGH SCORE
             }
+            highScore.sort(function (a, b) {
+                return b.score - a.score
+            });
             return highScore;
         });
     };
@@ -155,7 +155,7 @@ var startGame = function () {
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                     $(this).remove();
-                    points+=100;
+                    points += 100;
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
