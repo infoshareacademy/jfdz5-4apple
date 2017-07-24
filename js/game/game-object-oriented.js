@@ -14,7 +14,6 @@ var startGame = function () {
     var year = now.getFullYear();
     var today = day + '/' + month + '/' + year;
 
-
     highScore = JSON.parse(localStorage.getItem('highScore'));
     if (highScore === null) {
         var highScore = [
@@ -25,7 +24,6 @@ var startGame = function () {
             {name: 'Noname', score: 0, date: today}
         ];
     }
-
     if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -60,23 +58,22 @@ var startGame = function () {
                 "display": "inline-grid"
             });
             checkScore();
-          localStorage.setItem('highScore', JSON.stringify(highScore));
+            localStorage.setItem('highScore', JSON.stringify(highScore));
         }
     };
 
     var checkScore = function () {
-         highScore.map(function (score) {
+        var scores = highScore.map(function (score) {
             return score.score
-        }).map(function (score) {
-            if (score < points) {
-                highScore.splice(4, 1);
-                highScore.push({name: 'pozniej zapytac', score: points, date: today})
-            }
-            highScore = highScore.sort(function (a, b) {
-                return b.score - a.score
-            });
-            return highScore;
         });
+        if (scores[4] < points) {
+            highScore.splice(4, 1);
+            highScore.push({name: 'pozniej zapytac', score: points, date: today})
+        }
+        highScore = highScore.sort(function (a, b) {
+            return b.score - a.score
+        });
+        return highScore;
     };
 
     var character = {
