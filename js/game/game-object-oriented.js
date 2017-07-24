@@ -14,7 +14,8 @@ var startGame = function () {
     var year = now.getFullYear();
     var today = day + '/' + month + '/' + year;
 
-    var highScore = localStorage.getItem('highScore');
+
+    highScore = JSON.parse(localStorage.getItem('highScore'));
     if (highScore === null) {
         var highScore = [
             {name: 'Paweł', score: 100, date: today},
@@ -59,20 +60,19 @@ var startGame = function () {
                 "display": "inline-grid"
             });
             checkScore();
+          localStorage.setItem('highScore', JSON.stringify(highScore));
         }
     };
 
     var checkScore = function () {
-        highScore = highScore.map(function (score) {
-            console.log(score);
+         highScore.map(function (score) {
             return score.score
         }).map(function (score) {
             if (score < points) {
                 highScore.splice(4, 1);
                 highScore.push({name: 'pozniej zapytac', score: points, date: today})
-                //wyswietlic napis HIGH SCORE
             }
-            highScore.sort(function (a, b) {
+            highScore = highScore.sort(function (a, b) {
                 return b.score - a.score
             });
             return highScore;
