@@ -69,12 +69,15 @@ var startGame = function () {
         if (scores[4] < points) {
             highScore.splice(4, 1);
             $('.game').append($('<div>').addClass('add-name--container').text('high score!')
-                .append($('<form>').addClass('add-name--form')
+                .append($('<form>').addClass('add-name--form').attr('onsubmit', 'highScoreAddName')
                     .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name'))
                     .append($('<input>').addClass('skins--button button__save').attr('type', 'submit').attr('value', 'save'))));
+
             var playerName = $('.add-name--input').val();
 
-            highScore.push({name: playerName, score: points, date: today})
+            function highScoreAddName() {
+                highScore.push({name: playerName, score: points, date: today})
+}
         }
         highScore = highScore.sort(function (a, b) {
             return b.score - a.score
@@ -151,7 +154,7 @@ var startGame = function () {
             });
         },
         checkCatch: function () {
-            $('.checkCatchObject').each(function (index, checkCatchObjectNew) {
+            $('.checkCatchObject').each(function () {
                 var positionXcardboardBox = $(this).position().left;
                 var positionYcardboardBox = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
