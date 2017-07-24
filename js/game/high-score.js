@@ -23,7 +23,9 @@ var checkScore = function () {
     var scores = highScore.map(function (score) {
         return score.score
     });
-    if (scores[4] < pointsHighScore) {
+
+    if (scores[scores.length - 1] < pointsHighScore) {
+
         highScore.splice(4, 1);
         $('.game').append($('<div>').addClass('add-name--container').text('high score!')
             .append($('<form>').addClass('add-name--form').attr('onsubmit', 'highScoreAddName')
