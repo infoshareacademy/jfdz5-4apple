@@ -302,12 +302,13 @@
     position: absolute;
     top: -25px;
 }
-.add-name--container{
-    width: 300px;
-    height: 200px;
+
+.add-name--container {
+    width: 400px;
+    height: 400px;
     position: absolute;
-    top: 200px;
-    left: 150px;
+    top: 100px;
+    left: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -315,20 +316,34 @@
     font-size: 50px;
     text-transform: uppercase;
     color: white;
+    background-color: black;
 }
-.add-name-input{
+.add-name--form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-name--input {
     width: 200px;
     height: 60px;
     font-size: 50px;
     font-family: 'VT323', monospace;
     background: transparent;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
     text-transform: uppercase;
     text-align: center;
     margin: 20px;
-    color:white;
+    color: #ff4700;
 }
-.add-name-container ::-webkit-input-placeholder{
-color:yellow;
+
+.add-name-input:hover {
+    color: #ff4700;
+}
+
+.add-name-container ::-webkit-input-placeholder {
+    color: white;
+
 }

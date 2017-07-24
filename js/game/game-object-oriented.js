@@ -68,8 +68,13 @@ var startGame = function () {
         });
         if (scores[4] < points) {
             highScore.splice(4, 1);
-            $('');
-            highScore.push({name: 'pozniej zapytac', score: points, date: today})
+            $('.game').append($('<div>').addClass('add-name--container').text('high score!')
+                .append($('<form>').addClass('add-name--form')
+                    .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name'))
+                    .append($('<input>').addClass('skins--button button__save').attr('type', 'submit').attr('value', 'save'))));
+            var playerName = $('.add-name--input').val();
+
+            highScore.push({name: playerName, score: points, date: today})
         }
         highScore = highScore.sort(function (a, b) {
             return b.score - a.score
