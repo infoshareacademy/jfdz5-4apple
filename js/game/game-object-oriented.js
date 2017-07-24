@@ -7,7 +7,7 @@ var startGame = function () {
     var $life = $('.life-item');
     var $countdownTimer = $('.countdownTimer');
     var $round = $('.round');
-    var catchBomb = 0;
+    var caughtBomb = 0;
     var roundTime = 25;
     var timeInSeconds;
     var breakTime = 3;
@@ -16,10 +16,12 @@ var startGame = function () {
     var boxSpawn;
     var fallingSpeed = 10;
     var timeToFallingObjects = 1500;
-    var caughtCardbordBoxInOneRound = 0;
+    var caughtCardboardBoxInOneRound = 0;
     var bonusPoints = 100;
-    var totalPoints = 0;
+    var totalScoredGamePoints = 0;
     var totalPointsFormPreviousRounds = 0;
+    var whichRound = 2;
+
     if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -29,17 +31,17 @@ var startGame = function () {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
-            totalPoints = totalPointsFormPreviousRounds + (caughtCardbordBoxInOneRound * bonusPoints);
-            $('.points').text("SCORE: " + totalPoints);
+            totalScoredGamePoints = totalPointsFormPreviousRounds + (caughtCardboardBoxInOneRound * bonusPoints);
+            $('.points').text("SCORE: " + totalScoredGamePoints);
         },
         subtractLife: function () {
-            catchBomb += 1;
+            caughtBomb += 1;
             $life.last().fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
             setTimeout(function () {
                 $life.last().remove();
                 $life = $('.life-item');
             }, 800);
-            if (catchBomb === 3) {
+            if (caughtBomb === 3) {
                 board.gameEnd();
             }
         },
@@ -135,7 +137,7 @@ var startGame = function () {
         $round.css({
             'display': 'none'
         });
-        moveBoxes()
+        moveBoxes();
 
         roundIntervalId = setInterval(function () {
             $countdownTimer.html(timeInSeconds);
@@ -144,19 +146,19 @@ var startGame = function () {
             cardboardBox.checkCatch();
             bomb.checkExplosion();
             if (timeInSeconds === 0) {
-                clearInterval(roundIntervalId)
+                clearInterval(roundIntervalId);
                 clearInterval(boxSpawn);
                 $('.fallingObject').hide(300);
-                $round.css({
+                $round.text('ROUND ' + whichRound).css({
                     "display": "inline-grid"
                 });
                 fallingSpeed += 1;
-                timeToFallingObjects -= 100;
+                timeToFallingObjects -= 50;
                 setTimeout(startRound, breakTime * 1000);
-                totalPointsFormPreviousRounds = totalPoints;
-                console.log(totalPointsFormPreviousRounds);
-                caughtCardbordBoxInOneRound = 0;
+                totalPointsFormPreviousRounds = totalScoredGamePoints;
+                caughtCardboardBoxInOneRound = 0;
                 bonusPoints += 25;
+                whichRound++;
             }
         }, 100);
     }
@@ -180,7 +182,7 @@ var startGame = function () {
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                     $(this).remove();
-                    caughtCardbordBoxInOneRound++;
+                    caughtCardboardBoxInOneRound++;
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
@@ -239,7 +241,7 @@ var startGame = function () {
 
     $('.try-again--button').click(function () {
         location.reload();
-    })
+    });
 
-    startRound()
+    startRound();
 };
