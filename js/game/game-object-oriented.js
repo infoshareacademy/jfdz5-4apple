@@ -68,6 +68,7 @@ var startGame = function () {
         });
         if (scores[4] < points) {
             highScore.splice(4, 1);
+            $('');
             highScore.push({name: 'pozniej zapytac', score: points, date: today})
         }
         highScore = highScore.sort(function (a, b) {
