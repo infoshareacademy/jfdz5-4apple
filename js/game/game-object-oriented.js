@@ -3,11 +3,25 @@ var startGame = function () {
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
-    var $plane = $('.plane');
     var $bomb = $('.bomb');
     var $life = $('.life-item');
-    var catchBomb = 0;
-    var points = 0;
+    var $countdownTimer = $('.countdownTimer');
+    var $round = $('.round');
+    var caughtBomb = 0;
+    var roundTime = 25;
+    var timeInSeconds;
+    var breakTime = 3;
+    var ticker;
+    var roundIntervalId;
+    var boxSpawn;
+    var fallingSpeed = 10;
+    var timeToFallingObjects = 1500;
+    var caughtCardboardBoxInOneRound = 0;
+    var bonusPoints = 100;
+    var totalScoredGamePoints = 0;
+    var totalPointsFormPreviousRounds = 0;
+    var whichRound = 2;
+
     if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -17,28 +31,25 @@ var startGame = function () {
         height: $board.height(),
         width: $board.width(),
         addPoint: function () {
-            $('.points').text("SCORE "+ 100* points);
-            console.log('Punkt +1');
+            totalScoredGamePoints = totalPointsFormPreviousRounds + (caughtCardboardBoxInOneRound * bonusPoints);
+            $('.points').text("SCORE: " + totalScoredGamePoints);
         },
         subtractLife: function () {
-            catchBomb += 1;
+            caughtBomb += 1;
             $life.last().fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
             setTimeout(function () {
                 $life.last().remove();
                 $life = $('.life-item');
             }, 800);
-            if (catchBomb === 3) {
+            if (caughtBomb === 3) {
                 board.gameEnd();
             }
         },
-        roundEnd: function () {
-            clearInterval(roundOne);
-            clearInterval(boxSpawn);
-            console.log('Koniec rundy');
-        },
+
         gameEnd: function () {
+            clearInterval(roundIntervalId);
             clearInterval(boxSpawn);
-            clearInterval(roundOne);
+            clearInterval(ticker);
             $('.game-over').css({
                 "display": "inline-grid"
             });
@@ -77,31 +88,81 @@ var startGame = function () {
             }
         }
     };
-    var boxSpawn = setInterval(function () {
-        var randomNumber = Math.random() * 3;
-        var randomXPosition = Math.random() * (board.width - bomb.width);
 
-        if (randomNumber <= 1) {
-            $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
-                left: randomXPosition
-            }))
-        }
-        else {
-            $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
-                left: randomXPosition
-            }));
-        }
-    }, 2000);
-    var roundOne = setInterval(function () {
-        var roundTime = 60;
-        var pixelsDistance = ((board.width - plane.width) / roundTime * 0.100);
+    function moveBoxes() {
+        boxSpawn = setInterval(function () {
+            var randomNumber = Math.random() * 3;
+            var randomXPosition = Math.random() * (board.width - bomb.width);
 
-        cardboardBox.fall(10);
-        bomb.fall(10);
-        cardboardBox.checkCatch();
-        bomb.checkExplosion();
-        plane.fly(pixelsDistance);
-    }, 100);
+            if (randomNumber <= 1) {
+                $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+                    left: randomXPosition
+                }))
+            }
+            else {
+                $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
+                    left: randomXPosition
+                }));
+            }
+        }, timeToFallingObjects);
+    }
+
+
+    var countdownTimer = {
+        startTimer: function (seconds) {
+            timeInSeconds = parseInt(seconds);
+            clearInterval(ticker);
+            ticker = setInterval(this.tick, 1000);
+        },
+        tick: function () {
+            var seconds = timeInSeconds;
+            if (seconds > 0) {
+                timeInSeconds--;
+            }
+            else {
+                clearInterval(ticker);
+            }
+            $countdownTimer.html(timeInSeconds);
+            if (timeInSeconds <= 5) {
+                $countdownTimer.css({
+                    'color': '#F00'
+                })
+            }
+        }
+    };
+
+
+    function startRound() {
+        countdownTimer.startTimer(roundTime);
+        $round.css({
+            'display': 'none'
+        });
+        moveBoxes();
+
+        roundIntervalId = setInterval(function () {
+            $countdownTimer.html(timeInSeconds);
+            cardboardBox.fall(fallingSpeed);
+            bomb.fall(fallingSpeed);
+            cardboardBox.checkCatch();
+            bomb.checkExplosion();
+            if (timeInSeconds === 0) {
+                clearInterval(roundIntervalId);
+                clearInterval(boxSpawn);
+                $('.fallingObject').hide(300);
+                $round.text('ROUND ' + whichRound).css({
+                    "display": "inline-grid"
+                });
+                fallingSpeed += 1;
+                timeToFallingObjects -= 50;
+                setTimeout(startRound, breakTime * 1000);
+                totalPointsFormPreviousRounds = totalScoredGamePoints;
+                caughtCardboardBoxInOneRound = 0;
+                bonusPoints += 25;
+                whichRound++;
+            }
+        }, 100);
+    }
+
 
     var cardboardBox = {
         height: $cardboardBox.height(),
@@ -121,7 +182,7 @@ var startGame = function () {
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
                     $(this).remove();
-                    points++;
+                    caughtCardboardBoxInOneRound++;
                     board.addPoint();
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
@@ -169,26 +230,7 @@ var startGame = function () {
         }
     };
 
-    var plane = {
-        height: $plane.height(),
-        width: $plane.width(),
-        positionX: $plane.position().left,
-        positionY: $plane.position().top,
-        fly: function (pixelsDistance) {
-            this.positionX -= pixelsDistance;
-            if (this.positionX > 0) {
-                $('.plane').css({
-                    left: this.positionX
-                });
-            }
-            else {
-                board.roundEnd();
-            }
-        }
-    };
-
     $(window).keydown(function (e) {
-
         if (e.keyCode === 37) {
             character.moveLeft();
         }
@@ -199,6 +241,7 @@ var startGame = function () {
 
     $('.try-again--button').click(function () {
         location.reload();
-    })
+    });
 
+    startRound();
 };

@@ -123,13 +123,13 @@
     top: -25px;
 }
 
-.plane {
-    background: url('img/plane2.png');
-    height: 40px;
-    width: 55px;
+.countdownTimer {
     position: absolute;
-    top: 50%;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'VT323', monospace;
+    font-size: 45px;
+    font-weight: bold;
 }
 
 .cloud {
@@ -193,7 +193,8 @@
     color: darkblue;
 }
 
-.game-over {
+
+.game-over, .round {
     display: none;
     font-family: 'VT323', monospace;
     font-size: 100px;
