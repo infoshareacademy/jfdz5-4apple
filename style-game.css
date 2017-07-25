@@ -248,7 +248,7 @@
     border: 2px #fff solid;
 }
 
-.skins--button {
+.game--btn {
     color: #fff;
     text-transform: uppercase;
     font-size: 50px;
@@ -258,16 +258,16 @@
     margin: 0 40px;
 }
 
-.skins--button:hover {
+.game--btn:hover {
     font-weight: 800;
     cursor: pointer;
 }
 
-.button__save:hover {
+.save--btn:hover {
     color: #32fc7d;
 }
 
-.button__cancel:hover {
+.close--btn:hover {
     color: #fc330e;
 }
 
@@ -339,15 +339,20 @@
 
 .high-score--container {
     height: 500px;
-    width: 400px;
+    width: 500px;
     background-color: black;
     z-index: 1;
     color: white;
     position: absolute;
-    top: 100px;
-    left: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+.high-score--container td{
+    width:150px;
+}
+.table__headers{
+    color: #ff4700;
+    margin:20px;
 }

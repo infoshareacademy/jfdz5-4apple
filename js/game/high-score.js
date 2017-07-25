@@ -39,24 +39,28 @@ var checkScore = function () {
     if (scores[scores.length - 1] < pointsHighScore) {
         $('.game').append($('<div>').addClass('add-name--container').text('high score!')
             .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name'))
-            .append($('<button>').addClass('skins--button button__save').attr('id', 'save').text('save')));
+            .append($('<button>').addClass('game--btn save--btn').attr('id', 'save').text('save')));
     }
     addScore();
 };
 
 var openHighScore = function () {
-    $('.game-menu--container').append($('<div>').addClass('high-score--container')
-        .append($('<table>').addClass('high-score--table')
-            .append($('<tr>')
-                .append($('<th>').text('name'))
-                .append($('<th>').text('score'))
-                .append($('<th>').text('date')))
-        )
-    );
+    $('.game-menu--container')
+        .append($('<div>').addClass('high-score--container')
+            .append($('<table>').addClass('high-score--table')
+                .append($('<tr>').addClass('table__headers')
+                    .append($('<th>').text('name'))
+                    .append($('<th>').text('score'))
+                    .append($('<th>').text('date'))
+                )
+            )
+            .append($('<button>').addClass('game--btn close--btn').text('close'))
+        );
     highScore.map(function (record) {
         $('.high-score--table').append($('<tr>')
             .append($('<td>').text(record.name))
             .append($('<td>').text(record.score))
-            .append($('<td>').text(record.date)))
+            .append($('<td>').text(record.date))
+        )
     })
 };
