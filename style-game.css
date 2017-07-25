@@ -75,7 +75,12 @@
     height: 100vh;
     max-height: 700px;
     width: 580px;
-    background: url('img/board-backround.png');
+    /*background: url('img/backgrounds/background-deer.png');*/
+    /*background: url('img/backgrounds/background-sea.png');*/
+    /*background: url('img/backgrounds/background-lake.png');*/
+    /*background: url('img/backgrounds/background-turtle.png');*/
+    background: url('img/backgrounds/background-0.png');
+    /*background: url('img/backgrounds/background-city.png');*/
     position: absolute;
     flex-direction: column;
     overflow: hidden;

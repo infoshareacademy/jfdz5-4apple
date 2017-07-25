@@ -8,7 +8,7 @@ var startGame = function () {
     var $countdownTimer = $('.countdownTimer');
     var $round = $('.round');
     var caughtBomb = 0;
-    var roundTime = 25;
+    var roundTime = 10;
     var timeInSeconds;
     var breakTime = 3;
     var ticker;
@@ -162,6 +162,9 @@ var startGame = function () {
                 caughtCardboardBoxInOneRound = 0;
                 bonusPoints += 25;
                 whichRound++;
+                $('.game').css({
+                    'background':"url('img/backgrounds/background-"+(whichRound -1)+".png')"
+            })
             }
         }, 100);
     }
