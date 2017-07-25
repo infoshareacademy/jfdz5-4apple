@@ -371,13 +371,13 @@
 
 .bomb-first {
     position: absolute;
-    left: 75px;
+    left: 130px;
     bottom: 500px;
 }
 
 .bomb-second {
     position: absolute;
-    left: 400px;
+    left: 340px;
     bottom: 500px;
 }
 
@@ -387,21 +387,21 @@
         background-size: cover;
     }
     25% {
-        bottom: 50px
+        bottom: 100px
     }
     50% {
-        bottom: 50px
+        bottom: 100px
     }
     75% {
         background: url('img/bomba-wybuch.png');
         background-size: cover;
-        bottom: 50px
+        bottom: 100px
     }
     100% {
         background: url('img/bomba-wybuch.png');
         background-size: cover;
         height: 40px;
         width: 40px;
-        bottom: 50px;
+        bottom: 100px;
     }
 }

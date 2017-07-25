@@ -53,8 +53,10 @@ var openHighScore = function () {
                     .append($('<th>').text('score'))
                     .append($('<th>').text('date'))
                 )
+            ).append($('<div>')
+                .append($('<button>').addClass('game--btn save--btn').text('close'))
+                .append($('<button>').addClass('game--btn close--btn').text('reset'))
             )
-            .append($('<button>').addClass('game--btn close--btn').text('close'))
             .append($('<span>').addClass('bomb-first bomb-exploding-animation'))
             .append($('<span>').addClass('bomb-second bomb-exploding-animation'))
         );
@@ -65,8 +67,20 @@ var openHighScore = function () {
             .append($('<td>').text(record.date))
         )
     });
-    $('.close--btn').click(function () {
+    $('.save--btn').click(function () {
         $('.high-score--container').remove()
+    });
+    $('.close--btn').click(function () {
+        localStorage.clear('highScore');
+        $('.high-score--container').remove();
+        highScore = [
+            {name: 'Paweł', score: 1000, date: today},
+            {name: 'Dawid', score: 1000, date: today},
+            {name: 'Piotr', score: 1000, date: today},
+            {name: 'Noname', score: 1, date: today},
+            {name: 'Alek', score: 0, date: today}
+        ];
+        openHighScore();
     })
 
 };
