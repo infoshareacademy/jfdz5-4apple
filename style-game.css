@@ -318,12 +318,6 @@
     color: white;
     background-color: black;
 }
-.add-name--form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .add-name--input {
     width: 200px;

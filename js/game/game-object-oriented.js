@@ -42,10 +42,9 @@ var startGame = function () {
             $('.game-over').css({
                 "display": "inline-grid"
             });
-            localStorage.clear('pointsHighScore');
-            localStorage.setItem('pointsHighScore', points);
+            sessionStorage.clear('pointsHighScore');
+            sessionStorage.setItem('pointsHighScore', points);
             checkScore();
-            localStorage.setItem('highScore', JSON.stringify(highScore));
         }
     };
 
