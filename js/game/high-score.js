@@ -38,7 +38,7 @@ var checkScore = function () {
     });
     if (scores[scores.length - 1] < pointsHighScore) {
         $('.game').append($('<div>').addClass('add-name--container').text('high score!')
-            .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name'))
+            .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name').attr('maxlength', "10"))
             .append($('<button>').addClass('game--btn save--btn').attr('id', 'save').text('save')));
     }
     addScore();
