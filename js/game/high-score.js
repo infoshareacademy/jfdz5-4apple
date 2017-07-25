@@ -55,6 +55,8 @@ var openHighScore = function () {
                 )
             )
             .append($('<button>').addClass('game--btn close--btn').text('close'))
+            .append($('<span>').addClass('bomb-first bomb-exploding-animation'))
+            .append($('<span>').addClass('bomb-second bomb-exploding-animation'))
         );
     highScore.map(function (record) {
         $('.high-score--table').append($('<tr>')
@@ -62,5 +64,9 @@ var openHighScore = function () {
             .append($('<td>').text(record.score))
             .append($('<td>').text(record.date))
         )
+    });
+    $('.close--btn').click(function () {
+        $('.high-score--container').remove()
     })
+
 };
