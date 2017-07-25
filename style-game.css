@@ -337,7 +337,17 @@
     color: #ff4700;
 }
 
-.add-name-container ::-webkit-input-placeholder {
+.high-score--container {
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    z-index: 1;
     color: white;
-
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }

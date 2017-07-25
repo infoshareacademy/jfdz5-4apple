@@ -44,3 +44,19 @@ var checkScore = function () {
     addScore();
 };
 
+var openHighScore = function () {
+    $('.game-menu--container').append($('<div>').addClass('high-score--container')
+        .append($('<table>').addClass('high-score--table')
+            .append($('<tr>')
+                .append($('<th>').text('name'))
+                .append($('<th>').text('score'))
+                .append($('<th>').text('date')))
+        )
+    );
+    highScore.map(function (record) {
+        $('.high-score--table').append($('<tr>')
+            .append($('<td>').text(record.name))
+            .append($('<td>').text(record.score))
+            .append($('<td>').text(record.date)))
+    })
+};
