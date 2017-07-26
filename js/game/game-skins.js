@@ -8,8 +8,8 @@ function skinChoice() {
             .prepend($('<span>').addClass('sale__price').text('9.99€')))
         .append($('<div>').addClass('skins-tile'))
         .append($('<div>').addClass('skin-buttons-container')
-            .append($('<button>').addClass('skins--button button__save').attr('id', 'skins-save').text('save'))
-            .append($('<button>').addClass('skins--button button__cancel').attr('id', 'skins-cancel').text('cancel'))));
+            .append($('<button>').addClass('game--btn save--btn').attr('id', 'skins-save').text('save'))
+            .append($('<button>').addClass('game--btn close--btn').attr('id', 'skins-cancel').text('cancel'))));
 
     skins = [];
     var skinIndex = 0;
@@ -31,13 +31,13 @@ function skinChoice() {
         });
         skinSetup = $(this).attr('data-index');
     });
-    $('.button__save').click(function () {
+    $('.save--btn').click(function () {
         localStorage.setItem("skinSetup", skinSetup);
         $('.skins--container').animate({
             height: 'toggle'
         }).remove()
     });
-    $('.button__cancel').click(function () {
+    $('.close--btn').click(function () {
         skinSetup = localStorage.getItem('skinSetup');
         $('.skins--container').animate({
             height: 'toggle'

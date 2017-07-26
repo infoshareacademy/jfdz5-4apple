@@ -8,6 +8,7 @@
         }, 500);
     });
     $('#skins').click(skinChoice);
+    $('#high-score').click(openHighScore);
     $('#quit').click(function () {
         $('.game-container').fadeOut(1000)
     })

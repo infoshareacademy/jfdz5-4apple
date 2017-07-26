@@ -193,7 +193,6 @@
     color: darkblue;
 }
 
-
 .game-over, .round {
     display: none;
     font-family: 'VT323', monospace;
@@ -249,26 +248,26 @@
     border: 2px #fff solid;
 }
 
-.skins--button {
+.game--btn {
     color: #fff;
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 55px;
     font-family: 'VT323', monospace;
     background-color: transparent;
     border: none;
-    margin: 0 40px;
+    margin: 10px 40px;
 }
 
-.skins--button:hover {
+.game--btn:hover {
     font-weight: 800;
     cursor: pointer;
 }
 
-.button__save:hover {
+.save--btn:hover {
     color: #32fc7d;
 }
 
-.button__cancel:hover {
+.close--btn:hover {
     color: #fc330e;
 }
 
@@ -302,4 +301,107 @@
     background-size: cover;
     position: absolute;
     top: -25px;
+}
+
+.add-name--container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+}
+
+.add-name--input {
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    font-family: 'VT323', monospace;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+    color: #ff4700;
+}
+
+.required--text{
+    font-size:40px;
+    color: red;
+}
+.high-score--container {
+    height: 550px;
+    width: 500px;
+    background-color: black;
+    z-index: 1;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 42px;
+}
+
+.high-score--container td {
+    width: 150px;
+    height: 60px;
+}
+
+.table__headers {
+    color: #ff4700;
+    margin: 20px;
+}
+
+.bomb-exploding-animation {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    animation: bomb-exploding 3s infinite;
+}
+
+.bomb-first {
+    position: absolute;
+    left: 130px;
+    bottom: 500px;
+}
+
+.bomb-second {
+    position: absolute;
+    left: 340px;
+    bottom: 500px;
+}
+
+@keyframes bomb-exploding {
+    0% {
+        background: url("img/bomb.png");
+        background-size: cover;
+    }
+    25% {
+        bottom: 100px
+    }
+    50% {
+        bottom: 100px
+    }
+    75% {
+        background: url('img/bomba-wybuch.png');
+        background-size: cover;
+        bottom: 100px
+    }
+    100% {
+        background: url('img/bomba-wybuch.png');
+        background-size: cover;
+        height: 40px;
+        width: 40px;
+        bottom: 100px;
+    }
 }
