@@ -53,6 +53,9 @@ var startGame = function () {
             $('.game-over').css({
                 "display": "inline-grid"
             });
+            sessionStorage.clear('pointsHighScore');
+            sessionStorage.setItem('pointsHighScore', totalScoredGamePoints);
+            checkScore();
         }
     };
 
@@ -176,7 +179,7 @@ var startGame = function () {
             });
         },
         checkCatch: function () {
-            $('.checkCatchObject').each(function (index, checkCatchObjectNew) {
+            $('.checkCatchObject').each(function () {
                 var positionXcardboardBox = $(this).position().left;
                 var positionYcardboardBox = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
