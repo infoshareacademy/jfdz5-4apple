@@ -23,22 +23,17 @@ function skinChoice() {
         }).attr('data-index', skinIndex))
     });
     $('.skin--element').click(function () {
-        $('.skin--element').css({
-            border: '2px #000 solid'
-        });
-        $(this).css({
-            border: '2px #32fc7d solid'
-        });
-        skinSetup = $(this).attr('data-index');
+        $('.skin--element').removeClass('skin--element__clicked');
+        $(this).addClass('skin--element__clicked');
     });
     $('.save--btn').click(function () {
+        skinSetup = $('.skin--element__clicked').attr('data-index');
         localStorage.setItem("skinSetup", skinSetup);
         $('.skins--container').animate({
             height: 'toggle'
         }).remove()
     });
     $('.close--btn').click(function () {
-        skinSetup = localStorage.getItem('skinSetup');
         $('.skins--container').animate({
             height: 'toggle'
         }).remove()

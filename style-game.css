@@ -51,21 +51,15 @@
     height: 171px;
     position: absolute;
     bottom: 10px;
-    animation: engine-working 2s infinite;
+    animation: engine-working 0.2s infinite;
 }
 
 @keyframes engine-working {
     0% {
         bottom: 10px;
     }
-    25% {
-        bottom: 13px;
-    }
     50% {
-        bottom: 10px;
-    }
-    75% {
-        bottom: 13px;
+        bottom: 11px;
     }
     100% {
         bottom: 10px;
@@ -252,6 +246,14 @@
 .skin--element:hover {
     cursor: pointer;
     border: 2px #fff solid;
+}
+
+.skin--element__clicked {
+    border: 2px #32fc7d solid;
+}
+
+.skin--element__clicked:hover {
+    border: 2px #32fc7d solid;
 }
 
 .game--btn {
