@@ -31,7 +31,8 @@ var addScore = function () {
             return b.score - a.score
         });
         localStorage.setItem('highScore', JSON.stringify(highScore));
-        $('.add-name--container').remove()
+        $('.add-name--container').remove();
+        openHighScore();
     });
 };
 

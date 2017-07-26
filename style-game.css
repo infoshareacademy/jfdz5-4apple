@@ -255,7 +255,7 @@
     font-family: 'VT323', monospace;
     background-color: transparent;
     border: none;
-    margin: 0 40px;
+    margin: 10px 40px;
 }
 
 .game--btn:hover {
@@ -329,14 +329,14 @@
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
     color: #ff4700;
 }
 
-.add-name-input:hover {
-    color: #ff4700;
+.required--text{
+    font-size:40px;
+    color: red;
 }
-
 .high-score--container {
     height: 550px;
     width: 500px;

@@ -8,7 +8,7 @@ var startGame = function () {
     var $countdownTimer = $('.countdownTimer');
     var $round = $('.round');
     var caughtBomb = 0;
-    var roundTime = 10;
+    var roundTime = 25;
     var timeInSeconds;
     var breakTime = 3;
     var ticker;
