@@ -333,10 +333,11 @@
     color: #ff4700;
 }
 
-.required--text{
-    font-size:40px;
+.required--text {
+    font-size: 40px;
     color: red;
 }
+
 .high-score--container {
     height: 550px;
     width: 500px;
@@ -359,6 +360,12 @@
 .table__headers {
     color: #ff4700;
     margin: 20px;
+}
+
+.record__highlighted {
+    background-color: yellow;
+    color: black;
+    animation: record-highlight 2s;
 }
 
 .bomb-exploding-animation {
@@ -404,4 +411,52 @@
         width: 40px;
         bottom: 100px;
     }
+}
+
+@keyframes record-highlight {
+    0% {
+        background-color: yellow;
+        color: black;
+    }
+    10% {
+        background-color: black;
+        color: white;
+    }
+    20% {
+        background-color: yellow;
+        color: black;
+    }
+    30% {
+        background-color: black;
+        color: white;
+    }
+    40% {
+        background-color: yellow;
+        color: black;
+    }
+    50% {
+        background-color: black;
+        color: white;
+    }
+    60% {
+        background-color: yellow;
+        color: black;
+    }
+    70% {
+        background-color: black;
+        color: white;
+    }
+    80% {
+        background-color: yellow;
+        color: black;
+    }
+    90% {
+        background-color: black;
+        color: white;
+    }
+    100% {
+        background-color: yellow;
+        color: black;
+    }
+
 }

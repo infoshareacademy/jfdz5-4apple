@@ -3,36 +3,42 @@ var day = now.getDate();
 var month = now.getMonth() + 1;
 var year = now.getFullYear();
 var today = day + '/' + month + '/' + year;
-
+var highScoreDefault = [
+    {name: 'Paweł', score: 1000, date: today, index: 1},
+    {name: 'Dawid', score: 1000, date: today, index: 2},
+    {name: 'Piotr', score: 1000, date: today, index: 3},
+    {name: 'Noname', score: 1, date: today, index: 4},
+    {name: 'Alek', score: 0, date: today, index: 5}
+];
 
 highScore = JSON.parse(localStorage.getItem('highScore'));
 
 if (highScore === null) {
-    var highScore = [
-        {name: 'Paweł', score: 1000, date: today},
-        {name: 'Dawid', score: 1000, date: today},
-        {name: 'Piotr', score: 1000, date: today},
-        {name: 'Noname', score: 1, date: today},
-        {name: 'Alek', score: 0, date: today}
-    ];
+    var highScore = highScoreDefault
 }
 var addScore = function () {
     $('#save').click(function () {
+        var $nameInput = $('.add-name--input');
         var pointsHighScore = parseInt(sessionStorage.getItem('pointsHighScore'));
-        var playerName = $('.add-name--input').val();
+        var playerName = $nameInput.val();
         if (playerName === "") {
             $('.required--text').remove();
-            $('.add-name--input').after($('<span>').addClass('required--text').text('name required'));
+            $nameInput.after($('<span>').addClass('required--text').text('name required'));
             return
         }
+        var scoreIndex = 1 + highScore.map(function (score) {
+                return score.index
+            }).reduce(function (previous, next) {
+                return previous > next ? previous : next
+            });
         highScore.splice(4, 1);
-        highScore.push({name: playerName, score: pointsHighScore, date: today});
+        highScore.push({name: playerName, score: pointsHighScore, date: today, index: scoreIndex});
         highScore = highScore.sort(function (a, b) {
             return b.score - a.score
         });
         localStorage.setItem('highScore', JSON.stringify(highScore));
         $('.add-name--container').remove();
-        openHighScore();
+        openHighScore(scoreIndex);
     });
 };
 
@@ -47,10 +53,13 @@ var checkScore = function () {
             .append($('<input>').addClass('add-name--input').attr('placeholder', 'your name').attr('maxlength', "10"))
             .append($('<button>').addClass('game--btn save--btn').attr('id', 'save').text('save')));
     }
+    scoreIndex = highScore.map(function (score) {
+        return score.score
+    });
     addScore();
 };
 
-var openHighScore = function () {
+var openHighScore = function (scoreIndex) {
     $('.game-menu--container')
         .append($('<div>').addClass('high-score--container')
             .append($('<table>').addClass('high-score--table')
@@ -67,11 +76,19 @@ var openHighScore = function () {
             .append($('<span>').addClass('bomb-second bomb-exploding-animation'))
         );
     highScore.map(function (record) {
-        $('.high-score--table').append($('<tr>')
-            .append($('<td>').text(record.name))
-            .append($('<td>').text(record.score))
-            .append($('<td>').text(record.date))
-        )
+        var $highScoreTable = $('.high-score--table');
+        if (record.index === scoreIndex) {
+            $highScoreTable.append($('<tr>').addClass('record__highlighted')
+                .append($('<td>').text(record.name))
+                .append($('<td>').text(record.score))
+                .append($('<td>').text(record.date)));
+        }
+        else {
+            $highScoreTable.append($('<tr>')
+                .append($('<td>').text(record.name))
+                .append($('<td>').text(record.score))
+                .append($('<td>').text(record.date)));
+        }
     });
     $('.save--btn').click(function () {
         $('.high-score--container').remove()
@@ -79,14 +96,7 @@ var openHighScore = function () {
     $('.close--btn').click(function () {
         localStorage.clear('highScore');
         $('.high-score--container').remove();
-        highScore = [
-            {name: 'Paweł', score: 1000, date: today},
-            {name: 'Dawid', score: 1000, date: today},
-            {name: 'Piotr', score: 1000, date: today},
-            {name: 'Noname', score: 1, date: today},
-            {name: 'Alek', score: 0, date: today}
-        ];
+        highScore = highScoreDefault;
         openHighScore();
     })
-
 };
