@@ -356,6 +356,8 @@
     align-items: center;
     justify-content: space-around;
     font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .high-score--container td {
@@ -366,6 +368,12 @@
 .table__headers {
     color: #ff5919;
     margin: 20px;
+}
+
+.record__highlighted {
+    background-color: yellow;
+    color: black;
+    animation: record-highlight 2s;
 }
 
 .bomb-exploding-animation {
@@ -425,4 +433,52 @@
         left: 590px;
         bottom: 50px
     }
+}
+
+@keyframes record-highlight {
+    0% {
+        background-color: yellow;
+        color: black;
+    }
+    10% {
+        background-color: black;
+        color: white;
+    }
+    20% {
+        background-color: yellow;
+        color: black;
+    }
+    30% {
+        background-color: black;
+        color: white;
+    }
+    40% {
+        background-color: yellow;
+        color: black;
+    }
+    50% {
+        background-color: black;
+        color: white;
+    }
+    60% {
+        background-color: yellow;
+        color: black;
+    }
+    70% {
+        background-color: black;
+        color: white;
+    }
+    80% {
+        background-color: yellow;
+        color: black;
+    }
+    90% {
+        background-color: black;
+        color: white;
+    }
+    100% {
+        background-color: yellow;
+        color: black;
+    }
+
 }

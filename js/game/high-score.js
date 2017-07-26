@@ -60,7 +60,7 @@ var checkScore = function () {
 };
 
 var openHighScore = function (scoreIndex) {
-    $('.game-menu--container')
+    $('.game-container')
         .append($('<div>').addClass('high-score--container')
             .append($('<table>').addClass('high-score--table')
                 .append($('<tr>').addClass('table__headers')
