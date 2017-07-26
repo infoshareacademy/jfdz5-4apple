@@ -330,12 +330,11 @@
     text-transform: uppercase;
     text-align: center;
     margin: 10px;
-    color: #ff4700;
+    color: #ff5919;
 }
-
-.required--text {
-    font-size: 40px;
-    color: red;
+.required--text{
+    font-size:40px;
+    color:red;
 }
 
 .high-score--container {
@@ -358,7 +357,7 @@
 }
 
 .table__headers {
-    color: #ff4700;
+    color: #ff5919;
     margin: 20px;
 }
 
