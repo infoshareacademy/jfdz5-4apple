@@ -20,6 +20,11 @@ var addScore = function () {
     $('#save').click(function () {
         var pointsHighScore = parseInt(sessionStorage.getItem('pointsHighScore'));
         var playerName = $('.add-name--input').val();
+        if (playerName === "") {
+            $('.required--text').remove();
+            $('.add-name--input').after($('<span>').addClass('required--text').text('name required'));
+            return
+        }
         highScore.splice(4, 1);
         highScore.push({name: playerName, score: pointsHighScore, date: today});
         highScore = highScore.sort(function (a, b) {

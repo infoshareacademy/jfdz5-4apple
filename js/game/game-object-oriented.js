@@ -164,9 +164,6 @@ var startGame = function () {
                 caughtCardboardBoxInOneRound = 0;
                 bonusPoints += 25;
                 whichRound++;
-                $('.game').css({
-                    'background':"url('img/backgrounds/background-"+(whichRound -1)+".png')"
-            })
             }
         }, 100);
     }
