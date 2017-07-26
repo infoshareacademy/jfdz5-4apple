@@ -8,7 +8,7 @@ var startGame = function () {
     var $countdownTimer = $('.countdownTimer');
     var $round = $('.round');
     var caughtBomb = 0;
-    var roundTime = 25;
+    var roundTime = 10;
     var timeInSeconds;
     var breakTime = 3;
     var ticker;
@@ -110,7 +110,6 @@ var startGame = function () {
         }, timeToFallingObjects);
     }
 
-
     var countdownTimer = {
         startTimer: function (seconds) {
             timeInSeconds = parseInt(seconds);
@@ -119,6 +118,7 @@ var startGame = function () {
         },
         tick: function () {
             var seconds = timeInSeconds;
+
             if (seconds > 0) {
                 timeInSeconds--;
             }
@@ -134,8 +134,10 @@ var startGame = function () {
         }
     };
 
-
     function startRound() {
+        $countdownTimer.css({
+            'color': '#000',
+        });
         countdownTimer.startTimer(roundTime);
         $round.css({
             'display': 'none'
@@ -165,7 +167,6 @@ var startGame = function () {
             }
         }, 100);
     }
-
 
     var cardboardBox = {
         height: $cardboardBox.height(),

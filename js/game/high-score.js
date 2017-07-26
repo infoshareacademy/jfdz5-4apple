@@ -20,7 +20,7 @@ var addScore = function () {
     $('#save').click(function () {
         var pointsHighScore = parseInt(sessionStorage.getItem('pointsHighScore'));
         var playerName = $('.add-name--input').val();
-        if(playerName === ""){
+        if (playerName === "") {
             $('.required--text').remove();
             $('.add-name--input').after($('<span>').addClass('required--text').text('name required'));
             return
