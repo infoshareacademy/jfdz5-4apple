@@ -22,11 +22,10 @@ var startGame = function () {
     var totalPointsFormPreviousRounds = 0;
     var whichRound = 2;
 
-    if (skinSetup !== 0) {
         $('.character-right').css({
             'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
         });
-    }
+
     var board = {
         height: $board.height(),
         width: $board.width(),

@@ -11,7 +11,7 @@
             startGame();
         }, 1000);
     });
-    $('#skins').click(skinChoice);
+    $('#skins').click(skinChoiceDraw);
     $('#high-score').click(openHighScore);
     $('#quit').click(function () {
         $('.game-container').fadeOut(1000)
