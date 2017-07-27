@@ -193,6 +193,23 @@
     display: none;
 }
 
+.bonus-points {
+    position: absolute;
+    font-size: 30px;
+    animation: bonus-points 0.6s;
+    transform: translateY(-50px);
+}
+
+@keyframes bonus-points {
+    0% {
+
+    }
+    100% {
+        transform: translateY(-100px);
+        color: transparent;
+    }
+}
+
 .game-over, .round {
     display: none;
     font-family: 'VT323', monospace;

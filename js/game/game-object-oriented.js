@@ -22,9 +22,9 @@ var startGame = function () {
     var totalPointsFormPreviousRounds = 0;
     var whichRound = 2;
 
-        $('.character-right').css({
-            'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
-        });
+    $('.character-right').css({
+        'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
+    });
 
     var board = {
         height: $board.height(),
@@ -184,9 +184,14 @@ var startGame = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
-                    $(this).remove();
+
                     caughtCardboardBoxInOneRound++;
                     board.addPoint();
+                    $(this).removeClass('fallingObject').removeClass('cardboard-box').addClass('bonus-points').text(bonusPoints);
+                    setTimeout(function () {
+                        $('.bonus-points').remove()
+                    }, 600);
+
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
                     $(this).remove();
