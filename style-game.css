@@ -109,6 +109,14 @@
     top: -25px;
 }
 
+.cardboard-box-destroyed {
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box-destroyed.png');
+    background-size: cover;
+    position: absolute;
+}
+
 .bomb {
     height: 25px;
     width: 25px;

@@ -116,9 +116,8 @@ var startGame = function () {
             ticker = setInterval(this.tick, 1000);
         },
         tick: function () {
-            var seconds = timeInSeconds;
 
-            if (seconds > 0) {
+            if (timeInSeconds > 0) {
                 timeInSeconds--;
             }
             else {
@@ -135,7 +134,7 @@ var startGame = function () {
 
     function startRound() {
         $countdownTimer.css({
-            'color': '#000',
+            'color': '#000'
         });
         countdownTimer.startTimer(roundTime);
         $round.css({
@@ -194,7 +193,10 @@ var startGame = function () {
 
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    $(this).remove();
+                    $(this).removeClass('checkCatchObject').removeClass('cardboard-box').removeClass('fallingObject').addClass('cardboard-box-destroyed');
+                    setTimeout(function () {
+                        $('.cardboard-box-destroyed').fadeOut();
+                    }, 1200);
                     board.subtractLife()
                 }
             })
