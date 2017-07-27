@@ -1,16 +1,19 @@
 (function () {
 
     $('#play').click(function () {
-        $('.game-menu').animate({height: 'toggle'});
+        $('.game-menu').animate({height: 'toggle'}, 500);
+        $('.truck').addClass('truck-move');
         setTimeout(function () {
-            $('.game').show();
+            $('.game-menu--container').hide();
+            $('.character').show();
+            $('.lifes').show();
+            $('.points').show();
             startGame();
-        }, 500);
+        }, 1000);
     });
-    $('#skins').click(skinChoice);
+    $('#skins').click(skinChoiceDraw);
     $('#high-score').click(openHighScore);
     $('#quit').click(function () {
         $('.game-container').fadeOut(1000)
     })
 }());
-

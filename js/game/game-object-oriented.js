@@ -22,11 +22,10 @@ var startGame = function () {
     var totalPointsFormPreviousRounds = 0;
     var whichRound = 2;
 
-    if (skinSetup !== 0) {
-        $('.character-right').css({
-            'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
-        });
-    }
+    $('.character-right').css({
+        'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
+    });
+
     var board = {
         height: $board.height(),
         width: $board.width(),
@@ -117,9 +116,8 @@ var startGame = function () {
             ticker = setInterval(this.tick, 1000);
         },
         tick: function () {
-            var seconds = timeInSeconds;
 
-            if (seconds > 0) {
+            if (timeInSeconds > 0) {
                 timeInSeconds--;
             }
             else {
@@ -136,7 +134,7 @@ var startGame = function () {
 
     function startRound() {
         $countdownTimer.css({
-            'color': '#000',
+            'color': '#000'
         });
         countdownTimer.startTimer(roundTime);
         $round.css({
@@ -185,12 +183,20 @@ var startGame = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
-                    $(this).remove();
+
                     caughtCardboardBoxInOneRound++;
                     board.addPoint();
+                    $(this).removeClass('fallingObject').removeClass('cardboard-box').addClass('bonus-points').text(bonusPoints);
+                    setTimeout(function () {
+                        $('.bonus-points').remove()
+                    }, 600);
+
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    $(this).remove();
+                    $(this).removeClass('checkCatchObject').removeClass('cardboard-box').removeClass('fallingObject').addClass('cardboard-box-destroyed');
+                    setTimeout(function () {
+                        $('.cardboard-box-destroyed').fadeOut();
+                    }, 1200);
                     board.subtractLife()
                 }
             })
