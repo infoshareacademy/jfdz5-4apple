@@ -390,6 +390,7 @@
 .high-score--container td {
     width: 150px;
     height: 60px;
+    white-space: nowrap;
 }
 
 .table__headers {
