@@ -240,18 +240,76 @@ var startGame = function () {
         }
     };
 
-    $(window).keydown(function (e) {
-        if (e.keyCode === 37) {
-            character.moveLeft();
+    // $(window).keydown(function (e) {
+    //     if (e.keyCode === 37) {
+    //         character.moveLeft();
+    //     }
+    //     else if (e.keyCode === 39) {
+    //         character.moveRight();
+    //     }
+    // })
+
+    // function controlCharacter() {
+    //     $(window).keydown(function (event) {
+    //         if (event.keyCode === 37) {
+    //             character.moveLeft();
+    //         }
+    //         else if (event.keyCode === 39) {
+    //             character.moveRight();
+    //         }
+    //         })
+    // };
+
+    function controlCharacter() {
+        function updateCharacterPosition() {
+            var dTime = 0.010;
+            if (gasPressed === true) {
+                characterSpeed = characterSpeed + acceleration * dTime;
+            } else {
+                characterSpeed = Math.max(0, characterSpeed + characterSpeed * deceleration * dTime);
+            }
+
+            characterDistanceLeft = characterDistanceLeft - characterSpeed * dTime;
+
+            characterDistanceRight = characterDistance + characterSpeed * dTime;
         }
-        else if (e.keyCode === 39) {
-            character.moveRight();
-        }
-    });
+
+        var characterSpeed = 0;
+        var characterDistanceLeft = 0;
+        var characterDistanceRight = 0;
+        var characterDistance = (board.width - character.width) / 2;
+        var gasPressed = false;
+        var acceleration = 200;
+        var deceleration = -1;
+        var gameLoopId;
+
+        gameLoopId = setInterval(updateCharacterPosition, 10);
+        $(window).on('keydown', function (event) {
+            console.log('keydown');
+            if (event.keyCode === 37) {
+                gasPressed = true;
+                $character.css('left', characterDistanceLeft);
+                console.log(true);
+            }
+            else if (event.keyCode === 39) {
+                gasPressed = true;
+                $character.css('left', characterDistanceRight);
+
+            }
+        }).on('keyup', function (event) {
+            if (event.keyCode === 37 || event.keyCode === 39) {
+                gasPressed = false;
+                console.log(false);
+            }
+        })
+    }
+
 
     $('.try-again--button').click(function () {
         location.reload();
     });
 
     startRound();
+    controlCharacter();
+    // var controlInterval = setInterval(controlCharacter, 000);
 };
