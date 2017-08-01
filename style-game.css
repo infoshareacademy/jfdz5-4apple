@@ -88,6 +88,7 @@
     bottom: 0;
     left: 255px;
     display: none;
+    z-index: 2;
 }
 
 .character-right {
@@ -423,7 +424,16 @@
     left: 340px;
     bottom: 500px;
 }
-
+.Tutorial-game-container{
+    height: 100vh;
+    max-height: 700px;
+    width: 580px;
+    background: url('img/board-backround.png');
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
 @keyframes bomb-exploding {
     0% {
         background: url("img/bomb.png");
