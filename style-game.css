@@ -434,6 +434,44 @@
     overflow: hidden;
     z-index: 1;
 }
+.clavier{
+    background: url("img/clavier.png");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top:200px;
+    left: 29%;
+
+}
+.left{
+    background: url("img/left.png")no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:560px;
+    left: 20%;
+    z-index: 2;
+}
+.right{
+    background: url("img/right.png")no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:560px;
+    left: 65%;
+    z-index: 1;
+}
+.tutorial-example{
+    position: absolute;
+    top:250px;
+    left:10%;
+    width: 450px;
+    height: 10px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+}
 @keyframes bomb-exploding {
     0% {
         background: url("img/bomb.png");

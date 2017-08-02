@@ -1,25 +1,30 @@
-function openTutorial() {
+var openTutorial = function () {
 
-    $('.game-container').append($('<div>').addClass('Tutorial-game-container'));
-    tutorial()
-}
-
-function tutorial() {
     var $character = $('.character');
     var $board = $('.board');
     var $cardboardBox = $('.cardboard-box');
     var $bomb = $('.bomb');
     var $life = $('.life-item');
+    var $countdownTimer = $('.countdownTimer');
+    var $round = $('.round');
+    var caughtBomb = 0;
+    var roundTime = 25;
+    var timeInSeconds;
+    var breakTime = 3;
+    var ticker;
+    var roundIntervalId;
+    var boxSpawn;
     var fallingSpeed = 10;
     var timeToFallingObjects = 1500;
     var caughtCardboardBoxInOneRound = 0;
     var bonusPoints = 100;
     var totalScoredGamePoints = 0;
     var totalPointsFormPreviousRounds = 0;
+    var whichRound = 2;
+
     $('.character-right').css({
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
     });
-
 
     var board = {
         height: $board.height(),
@@ -38,9 +43,20 @@ function tutorial() {
             if (caughtBomb === 3) {
                 board.gameEnd();
             }
+        },
+
+        gameEnd: function () {
+            clearInterval(roundIntervalId);
+            clearInterval(boxSpawn);
+            clearInterval(ticker);
+            $('.game-over').css({
+                "display": "inline-grid"
+            });
+            sessionStorage.clear('pointsHighScore');
+            sessionStorage.setItem('pointsHighScore', totalScoredGamePoints);
+            checkScore();
         }
     };
-
 
     var character = {
         height: $character.height(),
@@ -75,6 +91,80 @@ function tutorial() {
         }
     };
 
+    function moveBoxes() {
+        boxSpawn = setInterval(function () {
+            var randomNumber = Math.random() * 3;
+            var randomXPosition = Math.random() * (board.width - bomb.width);
+
+            if (randomNumber <= 1) {
+                $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+                    left: randomXPosition
+                }))
+            }
+            else {
+                $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
+                    left: randomXPosition
+                }));
+            }
+        }, timeToFallingObjects);
+    }
+
+    var countdownTimer = {
+        startTimer: function (seconds) {
+            timeInSeconds = parseInt(seconds);
+            clearInterval(ticker);
+            ticker = setInterval(this.tick, 1000);
+        },
+        tick: function () {
+
+            if (timeInSeconds > 0) {
+                timeInSeconds--;
+            }
+            else {
+                clearInterval(ticker);
+            }
+            $countdownTimer.html(timeInSeconds);
+            if (timeInSeconds <= 5) {
+                $countdownTimer.css({
+                    'color': '#F00'
+                })
+            }
+        }
+    };
+
+    function startRound() {
+        $countdownTimer.css({
+            'color': '#000'
+        });
+        countdownTimer.startTimer(roundTime);
+        $round.css({
+            'display': 'none'
+        });
+        moveBoxes();
+
+        roundIntervalId = setInterval(function () {
+            $countdownTimer.html(timeInSeconds);
+            cardboardBox.fall(fallingSpeed);
+            bomb.fall(fallingSpeed);
+            cardboardBox.checkCatch();
+            bomb.checkExplosion();
+            if (timeInSeconds === 0) {
+                clearInterval(roundIntervalId);
+                clearInterval(boxSpawn);
+                $('.fallingObject').hide(300);
+                $round.text('ROUND ' + whichRound).css({
+                    "display": "inline-grid"
+                });
+                fallingSpeed += 1;
+                timeToFallingObjects -= 50;
+                setTimeout(startRound, breakTime * 1000);
+                totalPointsFormPreviousRounds = totalScoredGamePoints;
+                caughtCardboardBoxInOneRound = 0;
+                bonusPoints += 25;
+                whichRound++;
+            }
+        }, 100);
+    }
 
     var cardboardBox = {
         height: $cardboardBox.height(),
@@ -149,6 +239,49 @@ function tutorial() {
             })
         }
     };
+
+    var startTutorial = {
+        time:4000,
+        addTime: 1000,
+        instruction: function () {
+            $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
+            $board.append($("<div>").addClass("left").fadeOut(0).fadeIn(500));
+            $board.append($("<div>").addClass("right").fadeOut(0).fadeIn(500));
+            setTimeout(function () {
+                $("div.tutorial-example").remove();
+                $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
+                $(window).keydown(function (e) {
+                    if (e.keyCode === 37) {
+                        $("div.right").remove();
+                        $board.append($("<div>").addClass("right"));
+                        $("div.left").fadeOut(100).fadeIn(100);
+                    }
+                    else if (e.keyCode === 39) {
+                        $("div.left").remove();
+                        $board.append($("<div>").addClass("left"));
+                        $("div.right").fadeOut(100).fadeIn(100);
+                    }
+                });
+                $(window).keyup(function (e) {
+                    if (e.keyCode === 37) {
+                        $("div.left").remove();
+                        $board.append($("<div>").addClass("left"));
+                    }
+                    else if (e.keyCode === 39) {
+                        $("div.right").remove();
+                        $board.append($("<div>").addClass("right"));
+
+                    }
+                });
+
+            }, this.time);
+        }
+
+
+};
+
+
+
     $(window).keydown(function (e) {
         if (e.keyCode === 37) {
             character.moveLeft();
@@ -157,4 +290,10 @@ function tutorial() {
             character.moveRight();
         }
     });
-}
+
+    $('.try-again--button').click(function () {
+        location.reload();
+    });
+    startTutorial.instruction()
+  // startRound();
+};
