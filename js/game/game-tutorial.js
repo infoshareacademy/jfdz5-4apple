@@ -26,6 +26,7 @@ var openTutorial = function () {
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
     });
 
+
     var board = {
         height: $board.height(),
         width: $board.width(),
@@ -241,14 +242,34 @@ var openTutorial = function () {
     };
 
     var startTutorial = {
-        time:4000,
+        time: 1000,
         addTime: 1000,
         instruction: function () {
+            $(".lifes").hide();
+            $(".points").hide();
+            var moveleft = [];
+            var moveright = [];
+            var lvlTutorial = 0;
+            function checkReadyMove() {
+                if (moveright.length>0 && moveleft.length>0 && lvlTutorial ===1){
+                    lvlTutorial = 2;
+                    $(".tutorial-example").text("BRAWO :)").fadeIn(500);
+                }
+                showHealty()
+            }
+            function showHealty() {
+                if (lvlTutorial === 2){
+                    $(".lifes").show();
+                    $board.append($("<div>").addClass("health-example").text("Masz 3 życia").fadeOut(0).fadeIn(1000));
+                    $(".points").show(1000);
+                    $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(3000));
+                }
+            }
             $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
             $board.append($("<div>").addClass("left").fadeOut(0).fadeIn(500));
             $board.append($("<div>").addClass("right").fadeOut(0).fadeIn(500));
             setTimeout(function () {
-                $("div.tutorial-example").remove();
+                $("div.tutorial-example").hide();
                 $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
                 $(window).keydown(function (e) {
                     if (e.keyCode === 37) {
@@ -266,20 +287,31 @@ var openTutorial = function () {
                     if (e.keyCode === 37) {
                         $("div.left").remove();
                         $board.append($("<div>").addClass("left"));
+                        moveleft.push(1);
+                        checkReadyMove()
                     }
                     else if (e.keyCode === 39) {
                         $("div.right").remove();
                         $board.append($("<div>").addClass("right"));
-
+                        moveright.push(1);
+                        checkReadyMove()
                     }
                 });
 
             }, this.time);
+            //tutorial fill things
+            setTimeout(function () {
+                lvlTutorial+=1;
+                $(".tutorial-example").text("Spróbuj poruszyc sie w lewo i prawo !!!").fadeIn(500);
+
+            }, this.time + startTutorial.addTime)
+
+
+
+
+
         }
-
-
-};
-
+    };
 
 
     $(window).keydown(function (e) {
@@ -295,5 +327,5 @@ var openTutorial = function () {
         location.reload();
     });
     startTutorial.instruction()
-  // startRound();
+    // startRound();
 };

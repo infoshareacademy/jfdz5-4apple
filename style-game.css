@@ -472,6 +472,29 @@
     font-weight: 600;
     text-align: center;
 }
+
+.health-example{
+    position: absolute;
+    top:50px;
+    left:10px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.point-example{
+    position: absolute;
+    top:50px;
+    right:30px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
 @keyframes bomb-exploding {
     0% {
         background: url("img/bomb.png");
@@ -500,6 +523,7 @@
 .truck-move {
     animation: truck-moving 1s;
 }
+
 
 @keyframes truck-moving {
     0% {
