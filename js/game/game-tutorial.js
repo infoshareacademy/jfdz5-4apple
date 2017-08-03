@@ -144,7 +144,7 @@ var openTutorial = function () {
     };
 
     var startTutorial = {
-        time: 2000,
+        time: 2200,
         addTime: 1000,
         instruction: function () {
             $(".lifes").hide();
@@ -218,7 +218,7 @@ var openTutorial = function () {
             function checkReadyMove() {
                 if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
                     lvlTutorial = 2;
-                    $(".tutorial-example").text("BRAWO :)").fadeIn(500);
+                    $(".tutorial-example").text("BRAWO :)").css({left:200,width:200,height:50}).fadeIn(500);
                 }
                 showHealty()
             }
