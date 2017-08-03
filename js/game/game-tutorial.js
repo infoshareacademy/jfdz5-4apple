@@ -69,7 +69,6 @@ var openTutorial = function () {
     };
 
 
-
     var cardboardBox = {
         height: $cardboardBox.height(),
         width: $cardboardBox.width(),
@@ -154,30 +153,6 @@ var openTutorial = function () {
             var moveright = [];
             var lvlTutorial = 0;
 
-            function checkReadyMove() {
-                if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
-                    lvlTutorial = 2;
-                    $(".tutorial-example").text("BRAWO :)").fadeIn(500);
-                }
-                showHealty()
-            }
-
-            function showHealty() {
-                if (lvlTutorial === 2) {
-                    $(".lifes").show();
-                    $board.append($("<div>").addClass("health-example").text("Masz 3 życia").fadeOut(0).fadeIn(1000));
-                    $(".points").show(1000);
-                    $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(1000));
-                    playTutorial()
-                }
-                setTimeout(function () {
-                    lvlTutorial = 3;
-                    $(".health-example").remove();
-                    $(".point-example").remove();
-                    $(".tutorial-example").remove();
-                }, startTutorial.time);
-
-            }
 
             $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
             $board.append($("<div>").addClass("left").fadeOut(300).fadeIn(300));
@@ -202,13 +177,15 @@ var openTutorial = function () {
                         $("div.left").remove();
                         $board.append($("<div>").addClass("left"));
                         moveleft.push(1);
-                        checkReadyMove()
+                        checkReadyMove();
+                        chceckPositionXMario()
                     }
                     else if (e.keyCode === 39) {
                         $("div.right").remove();
                         $board.append($("<div>").addClass("right"));
                         moveright.push(1);
-                        checkReadyMove()
+                        checkReadyMove();
+                        chceckPositionXMario()
                     }
                 });
 
@@ -229,16 +206,79 @@ var openTutorial = function () {
                 }, 150)
 
             }
+
             function StartMoveBoxes() {
                 var randomXPosition = Math.random() * (board.width - bomb.width);
-
-
                 $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
                     left: randomXPosition
                 }));
 
             }
 
+            function checkReadyMove() {
+                if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
+                    lvlTutorial = 2;
+                    $(".tutorial-example").text("BRAWO :)").fadeIn(500);
+                }
+                showHealty()
+            }
+
+            function showHealty() {
+                if (lvlTutorial === 2) {
+                    $(".lifes").show();
+                    $board.append($("<div>").addClass("health-example").text("Masz 3 życia").fadeOut(0).fadeIn(1000));
+                    $(".points").show(1000);
+                    $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(1000));
+                    playTutorial();
+                    autoMoveharacter();
+
+
+                }
+                setTimeout(function () {
+                    lvlTutorial = 3;
+                    $(".health-example").remove();
+                    $(".point-example").remove();
+                    $(".tutorial-example").remove();
+                }, startTutorial.time);
+            }
+
+            function autoMoveharacter() {
+                calculMove()
+
+
+            }
+
+            function calculMove() {
+                var positionActualyCardboard = $(".cardboard-box").position().left;
+                var characterPostion =  $(".character").position().left;
+                var y = characterPostion - positionActualyCardboard;
+                console.log(y);
+                if ( y > 0 ){
+                var numbermoveleft= Math.round(y/15);
+                    console.log(numbermoveleft);
+                    for(var i=0;i<numbermoveleft;i++){
+                        setTimeout(function () {
+                            character.moveLeft();
+                        },500)
+
+                    }
+
+                }
+                else if ( y < 0 ){
+                    var numbermoveRight = Math.round(y/15+((y/15)*-2));
+                    console.log(numbermoveRight);
+                    for(var j=0;j<numbermoveRight;j++){
+                        setTimeout(function () {
+                            character.moveRight();
+                        },500)
+                    }
+                }
+
+            }
+
+            function chceckPositionXMario() {
+                return $(".character").position().left;
+            }
         }
     };
 
