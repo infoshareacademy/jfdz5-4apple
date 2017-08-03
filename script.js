@@ -36,16 +36,21 @@ $("a, .button-top").on('click', function(event) {
     } // End if
 });
 
-////////////////////////////////////////////
-// $( "form" ).submit(function( event ) {
-//    {    alert("wywolana");
-//     }
-//
-//
-// });
+
+// KOD NA WYWOLANIE GRY PRZEZ FORMULARZ
+
+$( "form" ).submit(function( event ) {
+   {    alert("wywolana");
+    }
+
+
+});
+
+
+// KOD NA WPISANIE SLOWA "GAME"
 
 var helper = {
-    allowed: [111, 102, 110, 105],
+    allowed: [101, 109, 97, 103],
     stored: [],
     checker: function(first, second) {
         return first.toString() === second.toString() ? true : false;
@@ -55,7 +60,7 @@ var helper = {
         console.log(helper.stored)
     },
     action: function() {
-        console.log("test");
+        alert("wpisales GAME");
     }
 };
 
