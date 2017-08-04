@@ -22,7 +22,8 @@ var openTutorial = function () {
         width: $board.width(),
         addPoint: function () {
             totalScoredGamePoints = totalPointsFormPreviousRounds + (caughtCardboardBoxInOneRound * bonusPoints);
-            $('.points').text("SCORE: " + totalScoredGamePoints);
+            $('.points').text("SCORE: " + totalScoredGamePoints).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+            $(".point-example-arow").hide(500);
         },
         subtractLife: function () {
             caughtBomb += 1;
@@ -203,8 +204,8 @@ var openTutorial = function () {
                     bomb.checkExplosion();
                     cardboardBox.fall(10);
                     bomb.fall(10)
-                }, 150)
 
+                }, 150);
             }
 
             function StartMoveBoxes() {
@@ -213,22 +214,26 @@ var openTutorial = function () {
                     left: randomXPosition
                 }));
 
+
+
             }
 
             function checkReadyMove() {
                 if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
                     lvlTutorial = 2;
-                    $(".tutorial-example").text("BRAWO :)").css({left:200,width:200,height:50}).fadeIn(500);
+                    $(".tutorial-example").text("łapiąc paczke, zdobywasz punkty").css({left:150,width:300,height:100}).fadeIn(500);
                 }
                 showHealty()
             }
 
             function showHealty() {
                 if (lvlTutorial === 2) {
-                    $(".lifes").show();
+                    $(".lifes").show().fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
                     $board.append($("<div>").addClass("health-example").text("Masz 3 życia").fadeOut(0).fadeIn(1000));
-                    $(".points").show(1000);
+                    $board.append($("<div>").addClass("health-example-arow").fadeOut(0).fadeIn(1000));
+                    $(".points").show().fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
                     $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(1000));
+                    $board.append($("<div>").addClass("point-example-arow").fadeOut(0).fadeIn(1000));
                     playTutorial();
                     autoMoveharacter();
 
@@ -236,10 +241,11 @@ var openTutorial = function () {
                 }
                 setTimeout(function () {
                     lvlTutorial = 3;
+                    $(".health-example-arow").hide();
                     $(".health-example").remove();
                     $(".point-example").remove();
                     $(".tutorial-example").remove();
-                }, startTutorial.time);
+                }, startTutorial.time + 2*startTutorial.addTime);
             }
 
             function autoMoveharacter() {
@@ -252,6 +258,12 @@ var openTutorial = function () {
                 var positionActualyCardboard = $(".cardboard-box").position().left;
                 var characterPostion =  $(".character").position().left;
                 var y = characterPostion - positionActualyCardboard;
+                if (positionActualyCardboard > 255){
+                    $(".cardboard-box").addClass("arrows-left");
+                }
+                else if (positionActualyCardboard < 255){
+                    $(".cardboard-box").addClass("arrows-right");
+                }
                 console.log(y);
                 if ( y > 0 ){
                 var numbermoveleft= Math.round(y/15);
@@ -279,6 +291,7 @@ var openTutorial = function () {
             function chceckPositionXMario() {
                 return $(".character").position().left;
             }
+
         }
     };
 

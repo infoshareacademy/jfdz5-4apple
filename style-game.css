@@ -107,7 +107,7 @@
     background: url('img/pixel-cardboard-box.png');
     background-size: cover;
     position: absolute;
-    top: -25px;
+    top: -50px;
 }
 
 .cardboard-box-destroyed {
@@ -467,16 +467,18 @@
     top:250px;
     left:10%;
     width: 450px;
-    height: 10px;
+    height: 100px;
     font-size: 45px;
     font-weight: 600;
     text-align: center;
+    border-radius: 10px;
+    background: white;
 }
 
 .health-example{
     position: absolute;
     top:50px;
-    left:10px;
+    left:30px;
     width: 200px;
     height: 10px;
     font-size: 30px;
@@ -486,13 +488,59 @@
 .point-example{
     position: absolute;
     top:50px;
-    right:30px;
+    right:20px;
     width: 200px;
     height: 10px;
     font-size: 30px;
     font-weight: 600;
     text-align: center;
 
+}
+.health-example-arow{
+    background: url("img/arow-left.png")no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:40px;
+    left:10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.point-example-arow{
+    background: url("img/arow-right.png")no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:40px;
+    right:10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.arrows-left:after{
+    content: "";
+    background: url("img/paluch-left.png")no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left:-100px;
+    top:-10px;
+}
+.arrows-right:after{
+    content: "";
+    background: url("img/paluch-right.png")no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left:20px;
+    top:-35px;
 }
 
 @keyframes bomb-exploding {
