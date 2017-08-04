@@ -24,6 +24,12 @@ var openTutorial = function () {
             totalScoredGamePoints = totalPointsFormPreviousRounds + (caughtCardboardBoxInOneRound * bonusPoints);
             $('.points').text("SCORE: " + totalScoredGamePoints).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
             $(".point-example-arow").hide(500);
+            function showInstructionBomb() {
+                $(".tutorial-example").text("łapiąc bombe, tracisz życie").fadeOut(3000)
+            }
+
+            showInstructionBomb();
+
         },
         subtractLife: function () {
             caughtBomb += 1;
@@ -87,21 +93,61 @@ var openTutorial = function () {
                 var characterCenterXPosition = character.positionX + character.width / 2;
                 var boxCenterXPosition = positionXcardboardBox + cardboardBox.width / 2;
                 if (positionYcardboardBox >= character.positionY && positionYcardboardBox <= character.positionY + character.height && Math.abs(characterCenterXPosition - boxCenterXPosition) < 35) {
-
+                    var randomXPosition = Math.random() * (board.width - bomb.width);
                     caughtCardboardBoxInOneRound++;
                     board.addPoint();
+                    $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+                        left: randomXPosition
+                    }));
                     $(this).removeClass('fallingObject').removeClass('cardboard-box').addClass('bonus-points').text(bonusPoints);
                     setTimeout(function () {
                         $('.bonus-points').remove()
                     }, 600);
-
+                    setTimeout(function () {
+                        var positionActualyBomb = $(".bomb").position().left;
+                        var characterPostion = $(".character").position().left;
+                        var y = characterPostion - positionActualyBomb;
+                        if (positionActualyBomb > 255) {
+                            $(".cardboard-box").addClass("arrows-left");
+                        }
+                        else if (positionActualyBomb < 255) {
+                            $(".cardboard-box").addClass("arrows-right");
+                        }
+                        console.log(y);
+                        if (y > 0) {
+                            var numbermoveleft = Math.round(y / 15);
+                            console.log(numbermoveleft);
+                            for (var i = 0; i < numbermoveleft; i++) {
+                                setTimeout(function () {
+                                    character.moveLeft();
+                                }, 500)
+                            }
+                        }
+                        else if (y < 0) {
+                            var numbermoveRight = Math.round(y / 15 + ((y / 15) * -2));
+                            console.log(numbermoveRight);
+                            for (var j = 0; j < numbermoveRight; j++) {
+                                setTimeout(function () {
+                                    character.moveRight();
+                                }, 500)
+                            }
+                        }
+                    }, 500);
+                    setTimeout(function () {
+                        $(".tutorial-example").text("Spróbuj sam!").fadeIn(0)
+                    },4000);
+                    setTimeout(function () {
+                        $(".tutorial-example").hide();
+                        startGame()
+                    },5000)
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
                     $(this).removeClass('checkCatchObject').removeClass('cardboard-box').removeClass('fallingObject').addClass('cardboard-box-destroyed');
                     setTimeout(function () {
                         $('.cardboard-box-destroyed').fadeOut();
                     }, 1200);
-                    board.subtractLife()
+                    board.subtractLife();
+
                 }
             })
         }
@@ -133,6 +179,7 @@ var openTutorial = function () {
                         $bombOnGround.remove();
                     }, 800);
                     board.subtractLife();
+                    $board.append($("<div>").addClass("health-example-arow").fadeIn(0).fadeOut(300).fadeIn(300).fadeOut(300));
                 }
                 else if (positionYbomb > character.positionY + character.height) {
                     $bombOnGround.css({top: character.positionY + character.height + 'px'}).addClass('bomb-exploded').fadeOut().fadeIn();
@@ -199,7 +246,7 @@ var openTutorial = function () {
 
             function playTutorial() {
                 StartMoveBoxes();
-                setInterval(function () {
+           setInterval(function () {
                     cardboardBox.checkCatch();
                     bomb.checkExplosion();
                     cardboardBox.fall(10);
@@ -215,13 +262,16 @@ var openTutorial = function () {
                 }));
 
 
-
             }
 
             function checkReadyMove() {
                 if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
                     lvlTutorial = 2;
-                    $(".tutorial-example").text("łapiąc paczke, zdobywasz punkty").css({left:150,width:300,height:100}).fadeIn(500);
+                    $(".tutorial-example").text("łapiąc paczke, zdobywasz punkty").css({
+                        left: 150,
+                        width: 300,
+                        height: 100
+                    }).fadeIn(500);
                 }
                 showHealty()
             }
@@ -244,8 +294,8 @@ var openTutorial = function () {
                     $(".health-example-arow").hide();
                     $(".health-example").remove();
                     $(".point-example").remove();
-                    $(".tutorial-example").remove();
-                }, startTutorial.time + 2*startTutorial.addTime);
+                    //    $(".tutorial-example").hide();
+                }, startTutorial.time + 2 * startTutorial.addTime);
             }
 
             function autoMoveharacter() {
@@ -256,33 +306,33 @@ var openTutorial = function () {
 
             function calculMove() {
                 var positionActualyCardboard = $(".cardboard-box").position().left;
-                var characterPostion =  $(".character").position().left;
+                var characterPostion = $(".character").position().left;
                 var y = characterPostion - positionActualyCardboard;
-                if (positionActualyCardboard > 255){
+                if (positionActualyCardboard > 255) {
                     $(".cardboard-box").addClass("arrows-left");
                 }
-                else if (positionActualyCardboard < 255){
+                else if (positionActualyCardboard < 255) {
                     $(".cardboard-box").addClass("arrows-right");
                 }
                 console.log(y);
-                if ( y > 0 ){
-                var numbermoveleft= Math.round(y/15);
+                if (y > 0) {
+                    var numbermoveleft = Math.round(y / 15);
                     console.log(numbermoveleft);
-                    for(var i=0;i<numbermoveleft;i++){
+                    for (var i = 0; i < numbermoveleft; i++) {
                         setTimeout(function () {
                             character.moveLeft();
-                        },500)
+                        }, 500)
 
                     }
 
                 }
-                else if ( y < 0 ){
-                    var numbermoveRight = Math.round(y/15+((y/15)*-2));
+                else if (y < 0) {
+                    var numbermoveRight = Math.round(y / 15 + ((y / 15) * -2));
                     console.log(numbermoveRight);
-                    for(var j=0;j<numbermoveRight;j++){
+                    for (var j = 0; j < numbermoveRight; j++) {
                         setTimeout(function () {
                             character.moveRight();
-                        },500)
+                        }, 500)
                     }
                 }
 
@@ -291,6 +341,7 @@ var openTutorial = function () {
             function chceckPositionXMario() {
                 return $(".character").position().left;
             }
+
 
         }
     };

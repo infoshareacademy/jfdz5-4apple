@@ -8,7 +8,7 @@ var highScoreDefault = [
     {name: 'Dawid', score: 1000, date: today, index: 2},
     {name: 'Piotr', score: 1000, date: today, index: 3},
     {name: 'Noname', score: 1, date: today, index: 4},
-    {name: 'Alek', score: 0, date: today, index: 5}
+    {name: 'Alek', score: 2000, date: today, index: 5}
 ];
 
 highScore = JSON.parse(localStorage.getItem('highScore'));
@@ -101,7 +101,7 @@ var openHighScore = function (scoreIndex) {
             {name: 'Dawid', score: 1000, date: today, index: 2},
             {name: 'Piotr', score: 1000, date: today, index: 3},
             {name: 'Noname', score: 1, date: today, index: 4},
-            {name: 'Alek', score: 0, date: today, index: 5}
+            {name: 'Alek', score: 2000, date: today, index: 5}
         ];
         openHighScore();
     })
