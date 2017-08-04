@@ -9,10 +9,11 @@
     right: 0;
     background-color: black;
     height: 100vh;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     justify-content: center;
     font-family: 'VT323', monospace;
+    display: none;
 }
 
 .game-menu--container {
