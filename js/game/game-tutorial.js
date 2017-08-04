@@ -135,6 +135,7 @@ var openTutorial = function () {
                     }, 500);
                     setTimeout(function () {
                         $(".tutorial-example").text("Spróbuj sam!").fadeIn(0)
+                        stopinterwal()
                     },4000);
                     setTimeout(function () {
                         $(".tutorial-example").hide();
@@ -246,13 +247,17 @@ var openTutorial = function () {
 
             function playTutorial() {
                 StartMoveBoxes();
-           setInterval(function () {
+          var dupa= setInterval(function () {
                     cardboardBox.checkCatch();
                     bomb.checkExplosion();
                     cardboardBox.fall(10);
                     bomb.fall(10)
 
+
                 }, 150);
+            }
+            function stopinterwal() {
+                clearInterval(dupa)
             }
 
             function StartMoveBoxes() {
