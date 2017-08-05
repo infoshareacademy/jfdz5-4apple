@@ -28,6 +28,10 @@ var startGame = function () {
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
     });
 
+    $character.css({
+        left: 255 + 'px'
+    });
+
     $('.lifes')
         .append($('<div>').addClass('life-item'))
         .append($('<div>').addClass('life-item'))
@@ -260,17 +264,6 @@ var startGame = function () {
         }
     });
 
-    function menuDisplay() {
-        $('.game-menu--container').show();
-        $('.character').hide();
-        $('.lifes').hide();
-        $('.points').hide();
-        $('.game-menu').show();
-        $('.countdownTimer').hide();
-        $('.game-over').hide();
-        $('.fallingObject').remove();
-        $('.truck').removeClass('truck-move');
-    }
 
     $('.try-again--button').click(function () {
         menuDisplay();
@@ -278,3 +271,15 @@ var startGame = function () {
 
     startRound();
 };
+
+function menuDisplay() {
+    $('.game-menu--container').show();
+    $('.character').hide();
+    $('.lifes').hide();
+    $('.points').hide();
+    $('.game-menu').show();
+    $('.countdownTimer').hide();
+    $('.game-over').hide();
+    $('.fallingObject').remove();
+    $('.truck').removeClass('truck-move');
+}
