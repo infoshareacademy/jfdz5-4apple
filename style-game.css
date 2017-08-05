@@ -88,6 +88,7 @@
     bottom: 0;
     left: 255px;
     display: none;
+    z-index: 2;
 }
 
 .character-right {
@@ -106,7 +107,7 @@
     background: url('img/pixel-cardboard-box.png');
     background-size: cover;
     position: absolute;
-    top: -25px;
+    top: -50px;
 }
 
 .cardboard-box-destroyed {
@@ -147,6 +148,35 @@
     top: 10px;
     height: 200px;
     width: 580px;
+    animation: clouds-movement 15s infinite;
+    transform: translateY(-20px);
+}
+
+@keyframes clouds-movement {
+    0% {
+        top: 10px;
+        transform: translateX(20px);
+
+    }
+
+    30% {
+        top: 15px;
+
+    }
+
+    50% {
+        top: 10px;
+        transform: translateX(-20px);
+    }
+
+    60% {
+        top: 5px;
+    }
+
+    100% {
+        top: 10px;
+        transform: translateX(20px);
+    }
 }
 
 .cloud-first {
@@ -422,6 +452,133 @@
     position: absolute;
     left: 340px;
     bottom: 500px;
+}
+
+.Tutorial-game-container {
+    height: 100vh;
+    max-height: 700px;
+    width: 580px;
+    background: url('img/board-backround.png');
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.clavier {
+    background: url("img/clavier.png");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 29%;
+
+}
+
+.left {
+    background: url("img/left.png") no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 560px;
+    left: 20%;
+    z-index: 2;
+}
+
+.right {
+    background: url("img/right.png") no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 560px;
+    left: 65%;
+    z-index: 1;
+}
+
+.tutorial-example {
+    position: absolute;
+    top: 250px;
+    left: 10%;
+    width: 450px;
+    height: 100px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    background: white;
+}
+
+.health-example {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.point-example {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.health-example-arow {
+    background: url("img/arow-left.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.point-example-arow {
+    background: url("img/arow-right.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.arrows-left:after {
+    content: "";
+    background: url("img/paluch-left.png") no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left: -100px;
+    top: -10px;
+}
+
+.arrows-right:after {
+    content: "";
+    background: url("img/paluch-right.png") no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left: 20px;
+    top: -35px;
 }
 
 @keyframes bomb-exploding {
