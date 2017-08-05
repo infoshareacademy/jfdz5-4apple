@@ -1,7 +1,7 @@
 var openTutorial = function () {
 
     var $character = $('.character');
-    var $board = $('.board');
+    var $board = $('.board-game');
     var $cardboardBox = $('.cardboard-box');
     var $bomb = $('.bomb');
     var $life = $('.life-item');
