@@ -322,6 +322,7 @@
     text-transform: uppercase;
     color: white;
     background-color: black;
+    z-index: 5;
 }
 
 .add-name--input {
