@@ -2,9 +2,9 @@ var openTutorial = function () {
 
     var $character = $('.character');
     var $board = $('.board-game');
-    var $cardboardBox = $('.cardboard-box');
-    var $bomb = $('.bomb');
-    var $life = $('.life-item');
+    var $cardboardBox = $('.cardboard-box-tutorial');
+    var $bomb = $('.bomb-tutorial');
+    var $life = $('.life-item-tutorial');
     var caughtBomb = 0;
     var caughtCardboardBoxInOneRound = 0;
     var bonusPoints = 100;
@@ -16,10 +16,10 @@ var openTutorial = function () {
         left: 255 + 'px'
     });
 
-    $('.lifes')
-        .append($('<div>').addClass('life-item'))
-        .append($('<div>').addClass('life-item'))
-        .append($('<div>').addClass('life-item'));
+    $('.lifes-tutorial')
+        .append($('<div>').addClass('life-item-tutorial'))
+        .append($('<div>').addClass('life-item-tutorial'))
+        .append($('<div>').addClass('life-item-tutorial'));
 
 
     $('.character-right').css({
@@ -27,14 +27,14 @@ var openTutorial = function () {
     });
 
     function calculMove() {
-        var positionActualyCardboard = $(".cardboard-box").position().left;
+        var positionActualyCardboard = $(".cardboard-box-tutorial").position().left;
         var characterPostion = $(".character").position().left;
         var y = characterPostion - positionActualyCardboard;
         if (positionActualyCardboard > 255) {
-            $(".cardboard-box").addClass("arrows-left");
+            $(".cardboard-box-tutorial").addClass("arrows-left");
         }
         else if (positionActualyCardboard < 255) {
-            $(".cardboard-box").addClass("arrows-right");
+            $(".cardboard-box-tutorial").addClass("arrows-right");
         }
         console.log(y);
         if (y > 0) {
@@ -120,7 +120,7 @@ var openTutorial = function () {
         height: $cardboardBox.height(),
         width: $cardboardBox.width(),
         fall: function (fallingSpeed) {
-            $('.fallingObject').each(function (index, cardboardBoxNew) {
+            $('.fallingObject-tutorial').each(function (index, cardboardBoxNew) {
                 $(cardboardBoxNew).css({
                     top: $(cardboardBoxNew).position().top + fallingSpeed
                 })
@@ -136,22 +136,22 @@ var openTutorial = function () {
                     var randomXPosition = Math.random() * (board.width - bomb.width);
                     caughtCardboardBoxInOneRound++;
                     board.addPoint();
-                    $board.prepend($('<div>').addClass('bomb').addClass('fallingObject').css({
+                    $board.prepend($('<div>').addClass('bomb-tutorial').addClass('fallingObject-tutorial').css({
                         left: randomXPosition
                     }));
-                    $(this).removeClass('fallingObject').removeClass('cardboard-box').addClass('bonus-points').text(bonusPoints);
+                    $(this).removeClass('fallingObject-tutorial').removeClass('cardboard-box-tutorial').addClass('bonus-points').text(bonusPoints);
                     setTimeout(function () {
                         $('.bonus-points').remove()
                     }, 600);
                     setTimeout(function () {
-                        var positionActualyBomb = $(".bomb").position().left;
+                        var positionActualyBomb = $(".bomb-tutorial").position().left;
                         var characterPostion = $(".character").position().left;
                         var y = characterPostion - positionActualyBomb;
                         if (positionActualyBomb > 255) {
-                            $(".bomb").addClass("arrows-left");
+                            $(".bomb-tutorial").addClass("arrows-left");
                         }
                         else if (positionActualyBomb < 255) {
-                            $(".bomb").addClass("arrows-right");
+                            $(".bomb-tutorial").addClass("arrows-right");
                         }
                         console.log(y);
                         if (y > 0) {
@@ -183,12 +183,12 @@ var openTutorial = function () {
                         $(".tutorial-example").hide();
                         $('.game-menu--container').show();
                         $('.character').hide();
-                        $('.lifes').hide();
+                        $('.lifes-tutorial').hide();
                         $('.points').hide();
                         $('.game-menu').show();
                         $('.countdownTimer').hide();
                         $('.game-over').hide();
-                        $('.fallingObject').remove();
+                        $('.fallingObject-tutorial').remove();
                         $('.truck').removeClass('truck-move');
                         $(".arrow-left").remove();
                         $(".arrow-right").remove();
@@ -196,7 +196,7 @@ var openTutorial = function () {
                     }, 5000)
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    $(this).removeClass('checkCatchObject').removeClass('cardboard-box').removeClass('fallingObject').addClass('cardboard-box-destroyed');
+                    $(this).removeClass('checkCatchObject').removeClass('cardboard-box-tutorial').removeClass('fallingObject-tutorial').addClass('cardboard-box-destroyed');
                     setTimeout(function () {
                         $('.cardboard-box-destroyed').fadeOut();
                     }, 1200);
@@ -212,14 +212,14 @@ var openTutorial = function () {
         positionX: $bomb.position().left,
         positionY: $bomb.position().top,
         fall: function (fallingSpeed) {
-            $('.fallingObject').each(function (index, bombNew) {
+            $('.fallingObject-tutorial').each(function (index, bombNew) {
                 $(bombNew).css({
                     top: $(bombNew).position().top + fallingSpeed
                 })
             });
         },
         checkExplosion: function () {
-            $('.fallingObject, .bomb').each(function () {
+            $('.fallingObject-tutorial, .bomb-tutorial').each(function () {
                 var positionXbomb = $(this).position().left;
                 var positionYbomb = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
@@ -227,7 +227,7 @@ var openTutorial = function () {
                 var $bombOnGround = $(this);
 
                 if (positionYbomb >= character.positionY && positionYbomb <= character.positionY + character.height && Math.abs(characterCenterXPosition - bombCenterXPosition) < 35) {
-                    $bombOnGround.css({top: board.height - character.height - bomb.height + 'px'}).removeClass('fallingObject').addClass('bomb-exploded').fadeOut().fadeIn();
+                    $bombOnGround.css({top: board.height - character.height - bomb.height + 'px'}).removeClass('fallingObject-tutorial').addClass('bomb-exploded').fadeOut().fadeIn();
                     setTimeout(function () {
                         $bombOnGround.remove();
                     }, 800);
@@ -248,7 +248,7 @@ var openTutorial = function () {
         time: 1000,
         addTime: 1000,
         instruction: function () {
-            $(".lifes").hide();
+            $(".lifes-tutorial").hide();
             $(".points").hide();
             var moveleft = [];
             var moveright = [];
@@ -310,7 +310,7 @@ var openTutorial = function () {
 
             function StartMoveBoxes() {
                 var randomXPosition = Math.random() * (board.width - bomb.width);
-                $board.prepend($('<div>').addClass('cardboard-box').addClass('fallingObject').addClass("checkCatchObject").css({
+                $board.prepend($('<div>').addClass('cardboard-box-tutorial').addClass('fallingObject-tutorial').addClass("checkCatchObject").css({
                     left: randomXPosition
                 }));
 
@@ -333,7 +333,7 @@ var openTutorial = function () {
 
             function showHealty() {
                 if (lvlTutorial === 2) {
-                    $(".lifes").show().fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+                    $(".lifes-tutorial").show().fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
                     $board.append($("<div>").addClass("health-example").text("Masz 3 życia").fadeOut(0).fadeIn(1000));
                     $board.append($("<div>").addClass("health-example-arow").fadeOut(0).fadeIn(1000));
                     $(".points").show().fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);

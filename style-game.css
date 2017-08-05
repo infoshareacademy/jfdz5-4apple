@@ -112,6 +112,14 @@
     position: absolute;
     top: -50px;
 }
+.cardboard-box-tutorial{
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box.png');
+    background-size: cover;
+    position: absolute;
+    top: -50px;
+}
 
 .cardboard-box-destroyed {
     height: 20px;
@@ -131,6 +139,15 @@
     position: absolute;
     top: -25px;
 }
+.bomb-tutorial {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    position: absolute;
+    top: -55px;
+}
+
 
 .countdownTimer {
     position: absolute;
@@ -222,8 +239,19 @@
     background: url("img/life.png");
     background-size: cover;
 }
+.life-item-tutorial {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background-size: cover;
+}
+
 
 .lifes {
+    display: none;
+}
+.lifes-tutorial {
     display: none;
 }
 
