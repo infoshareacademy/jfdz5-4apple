@@ -14,40 +14,6 @@ $(function () {
     });
 });
 
-
-// SMOOTH ANIMATED SCROLL ON SNEEK PEAK BUTTON //
-$("a, .button-top").on('click', function (event) {
-
-
-    if (this.hash !== "") {
-
-        event.preventDefault();
-
-
-        var hash = this.hash;
-
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 1400, function () {
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-        });
-    } // End if
-});
-
-
-// KOD NA WYWOLANIE GRY PRZEZ FORMULARZ
-
-$("form").submit(function (event) {
-    {
-        alert("wywolana");
-    }
-
-
-});
-
-
 // KOD NA WPISANIE SLOWA "GAME"
 
 var helper = {
