@@ -250,10 +250,14 @@ var startGame = function () {
     });
 
     $('.try-again--button').click(function () {
-        location.reload();
-        $('.game-container').show().css({
-            display: 'flex'
-        })
+        $('.game-menu--container').show();
+        $('.character').hide();
+        $('.lifes').hide();
+        $('.points').hide();
+        $('.game-menu').show();
+        $('.countdownTimer').hide();
+        $('.game-over').hide();
+        $('.fallingObject').remove()
     });
 
     startRound();

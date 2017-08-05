@@ -28,7 +28,7 @@ var helper = {
     action: function () {
         $('.game-container').show().css({
             display: 'flex'
-        })
+        });
     }
 };
 
