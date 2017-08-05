@@ -1,11 +1,11 @@
 var startGame = function () {
 
+    sessionStorage.clear('pointsHighScore');
+
     var $character = $('.character');
     var $board = $('.board-game');
     var $cardboardBox = $('.cardboard-box');
     var $bomb = $('.bomb');
-    var $life = $('.life-item');
-    var $countdownTimer = $('.countdownTimer');
     var $round = $('.round');
     var caughtBomb = 0;
     var roundTime = 25;
@@ -22,9 +22,21 @@ var startGame = function () {
     var totalPointsFormPreviousRounds = 0;
     var whichRound = 2;
 
+    $('.points').text("SCORE: " + totalScoredGamePoints);
+
     $('.character-right').css({
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
     });
+
+    $('.lifes')
+        .append($('<div>').addClass('life-item'))
+        .append($('<div>').addClass('life-item'))
+        .append($('<div>').addClass('life-item'));
+
+    var $life = $('.life-item');
+
+    $('.board-game').append($('<div>').addClass('countdownTimer'));
+    var $countdownTimer = $('.countdownTimer');
 
     var board = {
         height: $board.height(),
@@ -52,7 +64,6 @@ var startGame = function () {
             $('.game-over').css({
                 "display": "inline-grid"
             });
-            sessionStorage.clear('pointsHighScore');
             sessionStorage.setItem('pointsHighScore', totalScoredGamePoints);
             checkScore();
         }
@@ -249,7 +260,7 @@ var startGame = function () {
         }
     });
 
-    $('.try-again--button').click(function () {
+    function menuDisplay() {
         $('.game-menu--container').show();
         $('.character').hide();
         $('.lifes').hide();
@@ -257,7 +268,12 @@ var startGame = function () {
         $('.game-menu').show();
         $('.countdownTimer').hide();
         $('.game-over').hide();
-        $('.fallingObject').remove()
+        $('.fallingObject').remove();
+        $('.truck').removeClass('truck-move');
+    }
+
+    $('.try-again--button').click(function () {
+        menuDisplay();
     });
 
     startRound();
