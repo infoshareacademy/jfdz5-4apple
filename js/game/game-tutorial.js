@@ -169,7 +169,14 @@ var openTutorial = function () {
                     }, 4000);
                     setTimeout(function () {
                         $(".tutorial-example").hide();
+
+
+
                         startGame()
+
+
+
+
                     }, 5000)
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
@@ -178,7 +185,6 @@ var openTutorial = function () {
                         $('.cardboard-box-destroyed').fadeOut();
                     }, 1200);
                     board.subtractLife();
-
                 }
             })
         }
@@ -232,7 +238,6 @@ var openTutorial = function () {
             var moveright = [];
             var lvlTutorial = 0;
 
-
             $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
             $board.append($("<div>").addClass("left").fadeOut(300).fadeIn(300));
             $board.append($("<div>").addClass("right").fadeOut(300).fadeIn(300));
@@ -240,7 +245,6 @@ var openTutorial = function () {
                 $("div.tutorial-example").hide();
                 $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
                 $(window).keydown(function (e) {
-                    console.log('keydown')
                     if (e.keyCode === 37) {
                         $("div.right").remove();
                         $board.append($("<div>").addClass("right"));
@@ -321,9 +325,7 @@ var openTutorial = function () {
                     $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(1000));
                     $board.append($("<div>").addClass("point-example-arow").fadeOut(0).fadeIn(1000));
                     playTutorial();
-
                     calculMove();
-
                 }
                 setTimeout(function () {
                     console.log('test1');
