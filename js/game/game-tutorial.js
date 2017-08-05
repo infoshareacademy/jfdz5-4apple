@@ -10,6 +10,17 @@ var openTutorial = function () {
     var bonusPoints = 100;
     var totalScoredGamePoints = 0;
     var totalPointsFormPreviousRounds = 0;
+    $('.points').text("SCORE: " + totalScoredGamePoints);
+
+    $character.css({
+        left: 255 + 'px'
+    });
+
+    $('.lifes')
+        .append($('<div>').addClass('life-item'))
+        .append($('<div>').addClass('life-item'))
+        .append($('<div>').addClass('life-item'));
+
 
     $('.character-right').css({
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -171,9 +182,15 @@ var openTutorial = function () {
                         $(".tutorial-example").hide();
 
 
-
-                        startGame()
-
+                        $('.game-menu--container').show();
+                        $('.character').hide();
+                        $('.lifes').hide();
+                        $('.points').hide();
+                        $('.game-menu').show();
+                        $('.countdownTimer').hide();
+                        $('.game-over').hide();
+                        $('.fallingObject').remove();
+                        $('.truck').removeClass('truck-move');
 
 
 
