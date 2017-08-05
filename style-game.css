@@ -148,7 +148,37 @@
     top: 10px;
     height: 200px;
     width: 580px;
+    animation: clouds-movement 15s infinite;
+    transform: translateY(-20px);
 }
+
+@keyframes clouds-movement {
+    0% {
+        top: 10px;
+        transform: translateX(20px);
+
+    }
+
+    30% {
+        top: 15px;
+
+    }
+
+    50% {
+        top: 10px;
+        transform: translateX(-20px);
+    }
+
+    60% {
+        top: 5px;
+    }
+
+    100% {
+        top: 10px;
+        transform: translateX(20px);
+    }
+}
+
 
 .cloud-first {
     left: 320px;
