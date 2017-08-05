@@ -39,7 +39,7 @@ var startGame = function () {
 
     var $life = $('.life-item');
 
-    $('.board-game').append($('<div>').addClass('countdownTimer'));
+    $board.append($('<div>').addClass('countdownTimer'));
     var $countdownTimer = $('.countdownTimer');
 
     var board = {
@@ -270,6 +270,7 @@ var startGame = function () {
     });
 
     startRound();
+
 };
 
 function menuDisplay() {
