@@ -176,11 +176,10 @@ var openTutorial = function () {
                         }
                     }, 500);
                     setTimeout(function () {
-                        $(".tutorial-example").text("Spróbuj sam!").fadeIn(0)
+                        $(".tutorial-example").text("Click Play!").fadeIn(0)
                     }, 4000);
                     setTimeout(function () {
                         $(".tutorial-example").hide();
-
 
                         $('.game-menu--container').show();
                         $('.character').hide();
@@ -263,11 +262,13 @@ var openTutorial = function () {
                 $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
                 $(window).keydown(function (e) {
                     if (e.keyCode === 37) {
+                        $board.append($("<div>").addClass("left"));
                         $("div.arrow-right").remove();
                         $board.append($("<div>").addClass("right"));
                         $("div.arrow-left").fadeOut(100).fadeIn(100);
                     }
                     else if (e.keyCode === 39) {
+                        $board.append($("<div>").addClass("right"));
                         $("div.arrow-left").remove();
                         $board.append($("<div>").addClass("left"));
                         $("div.arrow-right").fadeOut(100).fadeIn(100);
@@ -277,13 +278,13 @@ var openTutorial = function () {
                     console.log('keyup');
                     if (e.keyCode === 37) {
                         $("div.arrow-left").remove();
-                        $board.append($("<div>").addClass("left"));
+                        $board.append($("<div>").addClass("arrow-left"));
                         moveleft.push(1);
                         checkReadyMove();
                     }
                     else if (e.keyCode === 39) {
                         $("div.arrow-right").remove();
-                        $board.append($("<div>").addClass("right"));
+                        $board.append($("<div>").addClass("arrow-right"));
                         moveright.push(1);
                         checkReadyMove();
                     }
@@ -301,7 +302,6 @@ var openTutorial = function () {
             function playTutorial() {
                 StartMoveBoxes();
                 setInterval(function () {
-                    console.log('x')
                     cardboardBox.checkCatch();
                     bomb.checkExplosion();
                     cardboardBox.fall(10);
