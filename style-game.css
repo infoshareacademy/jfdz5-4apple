@@ -481,7 +481,7 @@
     left: 29%;
 
 }
-.left{
+.arrow-left{
     background: url("img/left.png")no-repeat;
     width: 100px;
     height: 100px;
@@ -490,7 +490,7 @@
     left: 20%;
     z-index: 2;
 }
-.right{
+.arrow-right{
     background: url("img/right.png")no-repeat;
     width: 100px;
     height: 100px;

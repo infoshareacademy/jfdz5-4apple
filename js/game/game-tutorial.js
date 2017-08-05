@@ -203,33 +203,33 @@ var openTutorial = function () {
 
 
             $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
-            $board.append($("<div>").addClass("left").fadeOut(300).fadeIn(300));
-            $board.append($("<div>").addClass("right").fadeOut(300).fadeIn(300));
+            $board.append($("<div>").addClass("arrow-left").fadeOut(300).fadeIn(300));
+            $board.append($("<div>").addClass("arrow-right").fadeOut(300).fadeIn(300));
             setTimeout(function () {
                 $("div.tutorial-example").hide();
                 $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
                 $(window).keydown(function (e) {
                     if (e.keyCode === 37) {
-                        $("div.right").remove();
+                        $("div.arrow-right").remove();
                         $board.append($("<div>").addClass("right"));
-                        $("div.left").fadeOut(100).fadeIn(100);
+                        $("div.arrow-left").fadeOut(100).fadeIn(100);
                     }
                     else if (e.keyCode === 39) {
-                        $("div.left").remove();
+                        $("div.arrow-left").remove();
                         $board.append($("<div>").addClass("left"));
-                        $("div.right").fadeOut(100).fadeIn(100);
+                        $("div.arrow-right").fadeOut(100).fadeIn(100);
                     }
                 });
                 $(window).keyup(function (e) {
                     if (e.keyCode === 37) {
-                        $("div.left").remove();
+                        $("div.arrow-left").remove();
                         $board.append($("<div>").addClass("left"));
                         moveleft.push(1);
                         checkReadyMove();
                         chceckPositionXMario()
                     }
                     else if (e.keyCode === 39) {
-                        $("div.right").remove();
+                        $("div.arrow-right").remove();
                         $board.append($("<div>").addClass("right"));
                         moveright.push(1);
                         checkReadyMove();
