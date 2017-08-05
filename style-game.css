@@ -13,7 +13,9 @@
     align-items: center;
     justify-content: center;
     font-family: 'VT323', monospace;
-    display: flex;
+    display: none;
+    position: fixed;
+    z-index: 999999999999;
 
 }
 
@@ -78,7 +80,7 @@
     max-height: 700px;
     width: 580px;
     background: url('img/board-backround.png');
-    position:absolute;
+    position: absolute;
     flex-direction: column;
     overflow: hidden;
     display: none;

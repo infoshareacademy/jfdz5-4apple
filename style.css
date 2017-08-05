@@ -7,21 +7,33 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #272727;
     color: #000;
     font-family: Raleway, 'Audiowide', cursive;
     font-size: 18px;
     line-height: 1.2;
     width: 100%;
-    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)
-    ), url("img/t5.jpg");
+    background: linear-gradient(rgba(120, 120, 120, 0.4), rgba(0, 0, 0, 0.5)), url("img/taps/tt1.jpg");
     background-attachment: fixed;
     background-size: cover;
     overflow-x:hidden;
 }
 
+.img-fluid {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.layout {
+    filter: brightness(50%);
+}
+
+
 h2 {
     font-size: 30px;
+    padding-top: 20px;
+    text-shadow: 1px 2px 5px #023850;
 }
 
 .board {
@@ -53,10 +65,12 @@ header {
     position: fixed;
     width: 100%;
     z-index: 99999;
+    padding: 14px 0;
+    transition: all 1s;
 }
 
 .logo img {
-    width: 230px;
+    width: 190px;
 }
 
 .menu-input-checkbox, .menu-input-label {
@@ -79,6 +93,8 @@ a:hover#menu-icon {
     flex-direction: row;
     list-style-type: none;
     flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 0;
 }
 
 .menu-item {
@@ -86,7 +102,7 @@ a:hover#menu-icon {
     padding: 0 15px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
 .menu-item a {
@@ -100,7 +116,7 @@ a:hover#menu-icon {
 .menu-item a:hover {
     border-color: #053178;
     background-color: rgba(5, 49, 120, 0.79);
-    color: #000;
+    color: #fff;
 }
 
 .menu-list--language {
@@ -109,12 +125,13 @@ a:hover#menu-icon {
 }
 
 .language {
-    min-width: 24px;
-    height: 15px;
-    margin: 0 1%;
+    max-width: 24px;
+    height: 17px;
+    margin: 0 10px;
     cursor: pointer;
 }
-.flag{
+
+.flag {
     width: 16px;
     height: 10px;
     display: inline-block;
@@ -128,6 +145,20 @@ a:hover#menu-icon {
 .flag-pl {
     background: url('img/pl.png');
     background-size: cover;
+
+}
+
+.menu-list li.active a {
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+}
+
+.menu-list li.active a:hover {
+    border-color: #053178;
+}
+
+.shrinked {
+    padding: 0;
 }
 
 /*******************************************************************************/
@@ -143,8 +174,9 @@ h1.header {
     top: 50%;
     transform: translateX(-50%);
     color: white;
+    text-shadow: 1px 2px 5px #023850;
     z-index: 40;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 60px;
     white-space: nowrap;
 }
@@ -157,13 +189,14 @@ h2.header {
     transform: translateX(-50%);
     color: white;
     z-index: 40;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 30px;
+    text-shadow: 1px 2px 5px #023850;
 }
 
-.button-top{
-    width: 100px;
-    height: 100px;
+.button-top {
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 160%;
     left: 50%;
@@ -179,7 +212,7 @@ p {
     text-indent: 15px;
 }
 
-.container {
+.tapeta {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -189,18 +222,6 @@ p {
     justify-content: space-between;
     text-align: center;
 }
-
-.theme {
-    margin: 0;
-    background-size: cover;
-    height: calc(100vh - 70px);
-    padding-top: 70px;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
-
 
 /*******************************************************************************/
 /*                                                                             */
@@ -501,7 +522,7 @@ p {
     z-index: 99;
 }
 
-.modal {
+.modal-cube {
     margin-left: 0.5%;
     margin-top: 7%;
     color: white;
@@ -525,11 +546,11 @@ p {
     display: block;
 }
 
-.modal h2 {
+.modal-cube h2 {
     margin: 10%;
 }
 
-.modal p {
+.modal-cube p {
     margin: 5% 10%;
 }
 
@@ -906,6 +927,8 @@ figure {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
 }
 
 .subscribe-info {
@@ -978,12 +1001,17 @@ figure {
     cursor: pointer;
 }
 
-.subscribe-warning-text {
+.subscribe-warning-input {
     width: 45%;
+    padding-top: 10px;
     margin: 0 auto;
     font-size: 10px;
     font-style: italic;
     padding-bottom: 15px;
+}
+
+.form-label {
+    display: inline;
 }
 
 /*******************************************************************************/
@@ -1004,7 +1032,8 @@ figure {
     transform: translate(0, 0);
     transition: all 0.3s ease-in;
 }
-button-invisible {
+
+.button-invisible {
     display: none;
 }
 
@@ -1106,10 +1135,9 @@ footer {
         display: none;
     }
 
-    .contact-container {
-        height: calc(90vh - 70px);
-    }
-
+    /*.contact-container {*/
+    /*height: calc(90vh - 70px);*/
+    /*}*/
     .container-about-function__blok-screen {
         display: flex;
         flex-direction: column;
@@ -1150,7 +1178,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 
     /*------ ABOUT PRODUCT --------*/
     .container-cube__cube-show-media {
@@ -1165,16 +1193,11 @@ footer {
 @media (min-width: 768px) and (max-width: 1023px) {
 
     /*------ NAVIGATION --------*/
-    .logo {
-        width: 30%;
-    }
-
     .logo img {
-        width: 90%;
+        width: 150px;
     }
 
     .main-menu {
-        width: 70%;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -1189,24 +1212,31 @@ footer {
     }
 
     .menu-item a {
-        padding: 0;
+        padding: 4px 0;
+
         border: none;
     }
 
     .menu-item a:hover {
         border: none;
-        padding: 0;
+        padding: 4px 0;
         background-color: transparent;
         color: #fff;
     }
 
     .menu-item {
-        font-size: 83%;
+        font-size: 75%;
+        letter-spacing: 0;
+    }
+
+    .menu-list li.active a {
+        border-top: solid 2px;
+        border-bottom: solid 2px;
+        border-radius: 4px;
     }
 
     .language {
-        min-width: 16px;
-        height: 10px;
+        max-width: 16px;
     }
 
     /*------ SNEAK PEEK  --------*/
@@ -1231,12 +1261,14 @@ footer {
         bottom: 20%;
         font-size: 30px;
         font-weight: 200;
+        padding-top: 20px;
     }
-    .button-top{
-        width: 60px;
-        height: 60px;
+
+    .button-top {
+        width: 50px;
+        height: 50px;
         position: absolute;
-        top: 50%;
+        top: 95%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1376,6 +1408,7 @@ footer {
     /*------ NAVIGATION --------*/
     .main-menu-container {
         height: 63px;
+        padding: 3px 0;
     }
 
     .logo {
@@ -1410,7 +1443,7 @@ footer {
         display: none;
         z-index: 1000;
         position: absolute;
-        margin: 55px auto;
+        margin: 59px auto;
         background: rgba(230, 238, 230, 0.7);
     }
 
@@ -1442,6 +1475,10 @@ footer {
         position: relative;
         text-align: center;
         width: 100%;
+        color: #053178;
+    }
+    .menu-item:hover {
+        color: white;
     }
 
     .menu-item:first-child, .menu-item:nth-child(2) {
@@ -1454,7 +1491,7 @@ footer {
         animation-duration: 2.5s;
     }
 
-    .menu-item:nth-child(5), .menu-item:nth-child(6) {
+    .menu-item:nth-child(5), .menu-item:nth-child(7) {
         -webkit-animation-duration: 3s;
         animation-duration: 3s;
     }
@@ -1497,10 +1534,11 @@ footer {
         top: 50%;
         text-align: center;
         font-weight: 300;
+        padding-top: 20px;
 
     }
 
-    .button-top{
+    .button-top {
         width: 40px;
         height: 40px;
         position: absolute;
@@ -1569,6 +1607,10 @@ footer {
 
     /*------ CONTACT/NEWSLETTER --------*/
     /*section contact*/
+    .contact-container {
+        border-radius: 0;
+    }
+
     .subscribe-info {
         flex-direction: column;
         width: 90%;
@@ -1590,7 +1632,9 @@ footer {
         width: 85%;
     }
 
-    .subscribe-warning-text {
+
+
+    .subscribe-warning-input {
         width: 80%;
     }
 
@@ -1624,20 +1668,27 @@ footer {
         flex-direction: column;
     }
 }
-.animation-second{
-    display:flex;
-}
-.animation-first{
-    display:none;
-}
-.animation {
-    display:none;
-}
-.animation-team{
-    animation-duration: 1.7s;
-    animation-name: slidein;
-    animation-direction: alternate;
-    display:flex;
+
+@media all and (min-width: 961px) {
+
+    .animation-second {
+        display: flex;
+    }
+
+    .animation-first {
+        display: none;
+    }
+
+    .animation {
+        display: none;
+    }
+
+    .animation-team {
+        animation-duration: 1.7s;
+        animation-name: slidein;
+        animation-direction: alternate;
+        display: flex;
+    }
 }
 
 @keyframes slidein {

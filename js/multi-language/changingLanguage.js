@@ -22,7 +22,7 @@
         });
 
         if (isPolish === false) {
-            elLanguage.setAttribute('class', 'language flag-en');
+            elLanguage.setAttribute('class', 'menu-item language flag-en');
             elFlagMenu.setAttribute('class', 'flag flag-en');
             elNamePlaceholder.setAttribute('placeholder', 'Imię');
             elButton.setAttribute('value', 'zapisz się!');
@@ -32,7 +32,7 @@
 
         }
         else {
-            elLanguage.setAttribute('class', 'language flag-pl');
+            elLanguage.setAttribute('class', 'menu-item language flag-pl');
             elFlagMenu.setAttribute('class', 'flag flag-pl');
             elNamePlaceholder.setAttribute('placeholder', 'Name');
             elButton.setAttribute('value', 'sign up!');
