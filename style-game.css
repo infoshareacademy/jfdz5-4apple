@@ -148,6 +148,35 @@
     top: 10px;
     height: 200px;
     width: 580px;
+    animation: clouds-movement 15s infinite;
+    transform: translateY(-20px);
+}
+
+@keyframes clouds-movement {
+    0% {
+        top: 10px;
+        transform: translateX(20px);
+
+    }
+
+    30% {
+        top: 15px;
+
+    }
+
+    50% {
+        top: 10px;
+        transform: translateX(-20px);
+    }
+
+    60% {
+        top: 5px;
+    }
+
+    100% {
+        top: 10px;
+        transform: translateX(20px);
+    }
 }
 
 .cloud-first {
@@ -424,7 +453,8 @@
     left: 340px;
     bottom: 500px;
 }
-.Tutorial-game-container{
+
+.Tutorial-game-container {
     height: 100vh;
     max-height: 700px;
     width: 580px;
@@ -434,38 +464,42 @@
     overflow: hidden;
     z-index: 1;
 }
-.clavier{
+
+.clavier {
     background: url("img/clavier.png");
     background-repeat: no-repeat;
     width: 250px;
     height: 200px;
     position: absolute;
-    top:200px;
+    top: 200px;
     left: 29%;
 
 }
-.left{
-    background: url("img/left.png")no-repeat;
+
+.left {
+    background: url("img/left.png") no-repeat;
     width: 100px;
     height: 100px;
     position: absolute;
-    top:560px;
+    top: 560px;
     left: 20%;
     z-index: 2;
 }
-.right{
-    background: url("img/right.png")no-repeat;
+
+.right {
+    background: url("img/right.png") no-repeat;
     width: 100px;
     height: 100px;
     position: absolute;
-    top:560px;
+    top: 560px;
     left: 65%;
     z-index: 1;
 }
-.tutorial-example{
+
+.tutorial-example {
     position: absolute;
-    top:250px;
-    left:10%;
+    top: 250px;
+    left: 10%;
     width: 450px;
     height: 100px;
     font-size: 45px;
@@ -475,20 +509,21 @@
     background: white;
 }
 
-.health-example{
+.health-example {
     position: absolute;
-    top:50px;
-    left:30px;
+    top: 50px;
+    left: 30px;
     width: 200px;
     height: 10px;
     font-size: 30px;
     font-weight: 600;
     text-align: center;
 }
-.point-example{
+
+.point-example {
     position: absolute;
-    top:50px;
-    right:20px;
+    top: 50px;
+    right: 20px;
     width: 200px;
     height: 10px;
     font-size: 30px;
@@ -496,24 +531,26 @@
     text-align: center;
 
 }
-.health-example-arow{
-    background: url("img/arow-left.png")no-repeat;
+
+.health-example-arow {
+    background: url("img/arow-left.png") no-repeat;
     background-size: cover;
     position: absolute;
-    top:40px;
-    left:10px;
+    top: 40px;
+    left: 10px;
     width: 40px;
     height: 40px;
     font-size: 30px;
     font-weight: 600;
     text-align: center;
 }
-.point-example-arow{
-    background: url("img/arow-right.png")no-repeat;
+
+.point-example-arow {
+    background: url("img/arow-right.png") no-repeat;
     background-size: cover;
     position: absolute;
-    top:40px;
-    right:10px;
+    top: 40px;
+    right: 10px;
     width: 40px;
     height: 40px;
     font-size: 30px;
@@ -522,25 +559,26 @@
 
 }
 
-.arrows-left:after{
+.arrows-left:after {
     content: "";
-    background: url("img/paluch-left.png")no-repeat;
+    background: url("img/paluch-left.png") no-repeat;
     background-size: cover;
     width: 100px;
     height: 70px;
     position: absolute;
-    left:-100px;
-    top:-10px;
+    left: -100px;
+    top: -10px;
 }
-.arrows-right:after{
+
+.arrows-right:after {
     content: "";
-    background: url("img/paluch-right.png")no-repeat;
+    background: url("img/paluch-right.png") no-repeat;
     background-size: cover;
     width: 100px;
     height: 70px;
     position: absolute;
-    left:20px;
-    top:-35px;
+    left: 20px;
+    top: -35px;
 }
 
 @keyframes bomb-exploding {
@@ -571,7 +609,6 @@
 .truck-move {
     animation: truck-moving 1s;
 }
-
 
 @keyframes truck-moving {
     0% {
