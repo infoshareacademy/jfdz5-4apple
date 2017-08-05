@@ -24,7 +24,6 @@ var helper = {
     },
     push: function (letter) {
         helper.stored.unshift(letter);
-        console.log(helper.stored)
     },
     action: function () {
         $('.game-container').show().css({

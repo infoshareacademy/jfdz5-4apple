@@ -251,6 +251,9 @@ var startGame = function () {
 
     $('.try-again--button').click(function () {
         location.reload();
+        $('.game-container').show().css({
+            display: 'flex'
+        })
     });
 
     startRound();
