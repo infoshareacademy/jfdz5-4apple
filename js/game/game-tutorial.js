@@ -11,11 +11,42 @@ var openTutorial = function () {
     var totalScoredGamePoints = 0;
     var totalPointsFormPreviousRounds = 0;
 
-
     $('.character-right').css({
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
     });
 
+    function calculMove() {
+        var positionActualyCardboard = $(".cardboard-box").position().left;
+        var characterPostion = $(".character").position().left;
+        var y = characterPostion - positionActualyCardboard;
+        if (positionActualyCardboard > 255) {
+            $(".cardboard-box").addClass("arrows-left");
+        }
+        else if (positionActualyCardboard < 255) {
+            $(".cardboard-box").addClass("arrows-right");
+        }
+        console.log(y);
+        if (y > 0) {
+            var numbermoveleft = Math.round(y / 15);
+            console.log(numbermoveleft);
+            setInterval(function () {
+                if (numbermoveleft > 0) {
+                    character.moveLeft();
+                    numbermoveleft--;
+                }
+            }, 100);
+        }
+        else if (y < 0) {
+            var numbermoveRight = Math.round(y / 15 + ((y / 15) * -2));
+            console.log(numbermoveRight);
+            setInterval(function () {
+                if (numbermoveRight > 0) {
+                    character.moveRight();
+                    numbermoveRight--;
+                }
+            }, 100);
+        }
+    }
 
     var board = {
         height: $board.height(),
@@ -24,11 +55,9 @@ var openTutorial = function () {
             totalScoredGamePoints = totalPointsFormPreviousRounds + (caughtCardboardBoxInOneRound * bonusPoints);
             $('.points').text("SCORE: " + totalScoredGamePoints).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
             $(".point-example-arow").hide(500);
-            function showInstructionBomb() {
-                $(".tutorial-example").text("łapiąc bombe, tracisz życie").fadeOut(3000)
-            }
 
-            showInstructionBomb();
+            $(".tutorial-example").text("łapiąc bombe, tracisz życie").fadeOut(3000)
+            calculMove();
 
         },
         subtractLife: function () {
@@ -117,29 +146,38 @@ var openTutorial = function () {
                         if (y > 0) {
                             var numbermoveleft = Math.round(y / 15);
                             console.log(numbermoveleft);
-                            for (var i = 0; i < numbermoveleft; i++) {
-                                setTimeout(function () {
+                            setInterval(function () {
+                                if (numbermoveleft > 0) {
                                     character.moveLeft();
-                                }, 500)
-                            }
+                                    numbermoveleft--;
+                                }
+                            }, 100)
                         }
                         else if (y < 0) {
                             var numbermoveRight = Math.round(y / 15 + ((y / 15) * -2));
                             console.log(numbermoveRight);
-                            for (var j = 0; j < numbermoveRight; j++) {
-                                setTimeout(function () {
+                            setInterval(function () {
+                                if (numbermoveRight > 0) {
                                     character.moveRight();
-                                }, 500)
-                            }
+                                    numbermoveRight--;
+                                }
+                            }, 100)
                         }
                     }, 500);
                     setTimeout(function () {
                         $(".tutorial-example").text("Spróbuj sam!").fadeIn(0)
-                    },4000);
+                    }, 4000);
                     setTimeout(function () {
                         $(".tutorial-example").hide();
+
+
+
                         startGame()
-                    },5000)
+
+
+
+
+                    }, 5000)
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
                     $(this).removeClass('checkCatchObject').removeClass('cardboard-box').removeClass('fallingObject').addClass('cardboard-box-destroyed');
@@ -147,7 +185,6 @@ var openTutorial = function () {
                         $('.cardboard-box-destroyed').fadeOut();
                     }, 1200);
                     board.subtractLife();
-
                 }
             })
         }
@@ -192,7 +229,7 @@ var openTutorial = function () {
     };
 
     var startTutorial = {
-        time: 2200,
+        time: 1000,
         addTime: 1000,
         instruction: function () {
             $(".lifes").hide();
@@ -200,7 +237,6 @@ var openTutorial = function () {
             var moveleft = [];
             var moveright = [];
             var lvlTutorial = 0;
-
 
             $board.append($("<div>").text("Poruszaj sie za pomocą strzałek w lewo i prawo").addClass("tutorial-example"));
             $board.append($("<div>").addClass("arrow-left").fadeOut(300).fadeIn(300));
@@ -221,24 +257,25 @@ var openTutorial = function () {
                     }
                 });
                 $(window).keyup(function (e) {
+                    console.log('keyup');
                     if (e.keyCode === 37) {
                         $("div.arrow-left").remove();
                         $board.append($("<div>").addClass("left"));
                         moveleft.push(1);
                         checkReadyMove();
-                        chceckPositionXMario()
                     }
                     else if (e.keyCode === 39) {
                         $("div.arrow-right").remove();
                         $board.append($("<div>").addClass("right"));
                         moveright.push(1);
                         checkReadyMove();
-                        chceckPositionXMario()
                     }
                 });
 
             }, this.time);
-            //tutorial fill things
+            //tutorial fall things
+
+
             setTimeout(function () {
                 lvlTutorial = 1;
                 $(".tutorial-example").text("Spróbuj poruszyc sie w lewo i prawo !!!").fadeIn(500);
@@ -246,7 +283,8 @@ var openTutorial = function () {
 
             function playTutorial() {
                 StartMoveBoxes();
-           setInterval(function () {
+                setInterval(function () {
+                    console.log('x')
                     cardboardBox.checkCatch();
                     bomb.checkExplosion();
                     cardboardBox.fall(10);
@@ -272,8 +310,10 @@ var openTutorial = function () {
                         width: 300,
                         height: 100
                     }).fadeIn(500);
+
+                    showHealty();
                 }
-                showHealty()
+
             }
 
             function showHealty() {
@@ -285,69 +325,22 @@ var openTutorial = function () {
                     $board.append($("<div>").addClass("point-example").text("To sa Twoje punkty").fadeOut(0).fadeIn(1000));
                     $board.append($("<div>").addClass("point-example-arow").fadeOut(0).fadeIn(1000));
                     playTutorial();
-                    autoMoveharacter();
-
-
+                    calculMove();
                 }
                 setTimeout(function () {
+                    console.log('test1');
                     lvlTutorial = 3;
                     $(".health-example-arow").hide();
                     $(".health-example").remove();
                     $(".point-example").remove();
-                    //    $(".tutorial-example").hide();
                 }, startTutorial.time + 2 * startTutorial.addTime);
             }
-
-            function autoMoveharacter() {
-                calculMove()
-
-
-            }
-
-            function calculMove() {
-                var positionActualyCardboard = $(".cardboard-box").position().left;
-                var characterPostion = $(".character").position().left;
-                var y = characterPostion - positionActualyCardboard;
-                if (positionActualyCardboard > 255) {
-                    $(".cardboard-box").addClass("arrows-left");
-                }
-                else if (positionActualyCardboard < 255) {
-                    $(".cardboard-box").addClass("arrows-right");
-                }
-                console.log(y);
-                if (y > 0) {
-                    var numbermoveleft = Math.round(y / 15);
-                    console.log(numbermoveleft);
-                    for (var i = 0; i < numbermoveleft; i++) {
-                        setTimeout(function () {
-                            character.moveLeft();
-                        }, 500)
-
-                    }
-
-                }
-                else if (y < 0) {
-                    var numbermoveRight = Math.round(y / 15 + ((y / 15) * -2));
-                    console.log(numbermoveRight);
-                    for (var j = 0; j < numbermoveRight; j++) {
-                        setTimeout(function () {
-                            character.moveRight();
-                        }, 500)
-                    }
-                }
-
-            }
-
-            function chceckPositionXMario() {
-                return $(".character").position().left;
-            }
-
-
         }
     };
 
 
     $(window).keydown(function (e) {
+        console.log('keydown-main');
         if (e.keyCode === 37) {
             character.moveLeft();
         }
@@ -357,5 +350,4 @@ var openTutorial = function () {
     });
 
     startTutorial.instruction()
-    // startRound();
 };
