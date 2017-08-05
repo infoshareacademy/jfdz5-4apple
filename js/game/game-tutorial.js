@@ -148,10 +148,10 @@ var openTutorial = function () {
                         var characterPostion = $(".character").position().left;
                         var y = characterPostion - positionActualyBomb;
                         if (positionActualyBomb > 255) {
-                            $(".cardboard-box").addClass("arrows-left");
+                            $(".bomb").addClass("arrows-left");
                         }
                         else if (positionActualyBomb < 255) {
-                            $(".cardboard-box").addClass("arrows-right");
+                            $(".bomb").addClass("arrows-right");
                         }
                         console.log(y);
                         if (y > 0) {
@@ -179,8 +179,8 @@ var openTutorial = function () {
                         $(".tutorial-example").text("Click Play!").fadeIn(0)
                     }, 4000);
                     setTimeout(function () {
-                        $(".tutorial-example").hide();
 
+                        $(".tutorial-example").hide();
                         $('.game-menu--container').show();
                         $('.character').hide();
                         $('.lifes').hide();
@@ -190,8 +190,8 @@ var openTutorial = function () {
                         $('.game-over').hide();
                         $('.fallingObject').remove();
                         $('.truck').removeClass('truck-move');
-
-
+                        $(".arrow-left").remove();
+                        $(".arrow-right").remove();
 
                     }, 5000)
                 }
@@ -262,15 +262,13 @@ var openTutorial = function () {
                 $board.append($("<div>").addClass("clavier").fadeOut(0).fadeIn(500).fadeOut(1000));
                 $(window).keydown(function (e) {
                     if (e.keyCode === 37) {
-                        $board.append($("<div>").addClass("left"));
                         $("div.arrow-right").remove();
-                        $board.append($("<div>").addClass("right"));
+                        $board.append($("<div>").addClass("arrow-right"));
                         $("div.arrow-left").fadeOut(100).fadeIn(100);
                     }
                     else if (e.keyCode === 39) {
-                        $board.append($("<div>").addClass("right"));
                         $("div.arrow-left").remove();
-                        $board.append($("<div>").addClass("left"));
+                        $board.append($("<div>").addClass("arrow-left"));
                         $("div.arrow-right").fadeOut(100).fadeIn(100);
                     }
                 });
