@@ -182,12 +182,11 @@ var openTutorial = function () {
 
                         $(".tutorial-example").remove();
                         $('.game-menu--container').show();
-                        $('.character').remove();
                         $('.lifes-tutorial').remove();
-                        $('.points').remove();
+                        $('.points').hide();
                         $('.game-menu').show();
                         $('.countdownTimer').remove();
-                        $('.game-over').remove();
+                        $('.game-over').hide();
                         $('.fallingObject-tutorial').remove();
                         $('.truck').removeClass('truck-move');
                         $(".arrow-left").remove();
@@ -195,7 +194,7 @@ var openTutorial = function () {
                         $(".bomb-tutorial").remove();
                         $(".cardboard-box-tutorial").remove();
                         $('.checkCatchObject-tutorial').remove();
-                        stop.stopPropagation()
+                       stop.stopPropagation()
 
                     }, 5000)
                 }

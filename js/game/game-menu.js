@@ -1,5 +1,6 @@
 (function () {
-
+    $(".arrow-left").remove();
+    $(".arrow-right").remove();
     $('#play').click(function () {
         $('.game-menu').animate({height: 'toggle'}, 500);
         $('.truck').addClass('truck-move');
