@@ -1,6 +1,7 @@
 var startGame = function () {
 
     sessionStorage.clear('pointsHighScore');
+    $(window).off('keydown keyup ');
 
     var $character = $('.character');
     var $board = $('.board-game');

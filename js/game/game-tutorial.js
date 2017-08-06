@@ -361,7 +361,6 @@ var openTutorial = function () {
 
 
     $(window).keydown(function (e) {
-        console.log('keydown-main');
         if (e.keyCode === 37) {
             character.moveLeft();
         }
