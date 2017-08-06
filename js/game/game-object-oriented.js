@@ -22,6 +22,7 @@ var startGame = function () {
     var totalPointsFormPreviousRounds = 0;
     var whichRound = 2;
 
+    $('.lifes-tutorial').remove();
     $('.points').text("SCORE: " + totalScoredGamePoints);
 
     $('.character-right').css({

@@ -127,7 +127,7 @@ var openTutorial = function () {
             });
         },
         checkCatch: function () {
-            $('.checkCatchObject').each(function () {
+            $('.checkCatchObject-tutorial').each(function () {
                 var positionXcardboardBox = $(this).position().left;
                 var positionYcardboardBox = $(this).position().top;
                 var characterCenterXPosition = character.positionX + character.width / 2;
@@ -180,23 +180,27 @@ var openTutorial = function () {
                     }, 4000);
                     setTimeout(function () {
 
-                        $(".tutorial-example").hide();
+                        $(".tutorial-example").remove();
                         $('.game-menu--container').show();
-                        $('.character').hide();
-                        $('.lifes-tutorial').hide();
-                        $('.points').hide();
+                        $('.character').remove();
+                        $('.lifes-tutorial').remove();
+                        $('.points').remove();
                         $('.game-menu').show();
-                        $('.countdownTimer').hide();
-                        $('.game-over').hide();
+                        $('.countdownTimer').remove();
+                        $('.game-over').remove();
                         $('.fallingObject-tutorial').remove();
                         $('.truck').removeClass('truck-move');
                         $(".arrow-left").remove();
                         $(".arrow-right").remove();
+                        $(".bomb-tutorial").remove();
+                        $(".cardboard-box-tutorial").remove();
+                        $('.checkCatchObject-tutorial').remove();
+                        stop.stopPropagation()
 
                     }, 5000)
                 }
                 else if (positionYcardboardBox > character.positionY + character.height) {
-                    $(this).removeClass('checkCatchObject').removeClass('cardboard-box-tutorial').removeClass('fallingObject-tutorial').addClass('cardboard-box-destroyed');
+                    $(this).removeClass('checkCatchObject-tutorial').removeClass('cardboard-box-tutorial').removeClass('fallingObject-tutorial').addClass('cardboard-box-destroyed');
                     setTimeout(function () {
                         $('.cardboard-box-destroyed').fadeOut();
                     }, 1200);
@@ -310,7 +314,7 @@ var openTutorial = function () {
 
             function StartMoveBoxes() {
                 var randomXPosition = Math.random() * (board.width - bomb.width);
-                $board.prepend($('<div>').addClass('cardboard-box-tutorial').addClass('fallingObject-tutorial').addClass("checkCatchObject").css({
+                $board.prepend($('<div>').addClass('cardboard-box-tutorial').addClass('fallingObject-tutorial').addClass("checkCatchObject-tutorial").css({
                     left: randomXPosition
                 }));
 
@@ -320,6 +324,8 @@ var openTutorial = function () {
             function checkReadyMove() {
                 if (moveright.length > 0 && moveleft.length > 0 && lvlTutorial === 1) {
                     lvlTutorial = 2;
+                    $(".tutorial-example").remove();
+                    $board.append($("<div>").addClass("tutorial-example"));
                     $(".tutorial-example").text("łapiąc paczke, zdobywasz punkty").css({
                         left: 150,
                         width: 300,
@@ -343,7 +349,6 @@ var openTutorial = function () {
                     calculMove();
                 }
                 setTimeout(function () {
-                    console.log('test1');
                     lvlTutorial = 3;
                     $(".health-example-arow").hide();
                     $(".health-example").remove();
