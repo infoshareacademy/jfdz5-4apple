@@ -26,7 +26,7 @@
             elFlagMenu.setAttribute('class', 'flag flag-en');
             elNamePlaceholder.setAttribute('placeholder', 'Imię');
             elButton.setAttribute('value', 'zapisz się!');
-            elSubmitAlert[0].setAttribute('onsubmit', "alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu.')");
+            elSubmitAlert[0].setAttribute('onsubmit', "alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu. Jeśli masz ochotę zagrać w naszą grę, po prostu wpisz 'game' będąc na naszej stronie, po zamknięciu tego komunikatu. Pamiętaj, żeby sprawdzić, czy Caps Lock jest wyłączony! Miłego grania!!)");
             elCookiesInfoAccept[0].setAttribute('value', 'Akceptuję');
             isPolish = true;
 
@@ -36,7 +36,7 @@
             elFlagMenu.setAttribute('class', 'flag flag-pl');
             elNamePlaceholder.setAttribute('placeholder', 'Name');
             elButton.setAttribute('value', 'sign up!');
-            elSubmitAlert[0].setAttribute('onsubmit', "alert('Carefully watch your email. In the near future you will receive message about opening our service.')");
+            elSubmitAlert[0].setAttribute('onsubmit', "alert('Carefully watch your email. In the near future you will receive message about opening our service. If you want to try out our game, just type in 'game' after closing this alert. Remember to check if your Caps Lock is off! Enjoy playing!!')");
             elCookiesInfoAccept[0].setAttribute('value', 'I agree');
             isPolish = false;
         }

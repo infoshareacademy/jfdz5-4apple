@@ -10,6 +10,8 @@
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="stylesheet" href="style-game.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
     <link rel="icon" type="image/png" href="img/mini-icon1.png">
@@ -18,8 +20,8 @@
 <body>
 <div class="header">
     <h1 class="header"><span data-lang="Welcome to our page...">Zapraszamy do naszego serwisu...</span></h1>
-    <h2 class="header"><em><span data-lang="If you want to be up to date, click below">Chcesz być na bieżąco, kliknij niżej </span></em><a
-            href="#contact"><img class="button-top" src="img/click.svg"></a></h2>
+    <h2 class="header"><em><span data-lang="If you want to be up to date, click below">Chcesz być na bieżąco, kliknij niżej </span></em>
+        <a id="button-top" href="#contact"><img class="button-top" src="img/click.svg"></a></h2>
 
 </div>
 
@@ -75,6 +77,7 @@
     <div class="header">
         <h1 class="header"><span data-lang="Welcome to our page...">Zapraszamy do naszego serwisu...</span></h1>
         <h2 class="header"><em><span data-lang="If you want to be up to date, click below">Chcesz być na bieżąco, kliknij niżej </span></em><a
+                id="link-to-form"
                 href="#contact"><img class="button-top" src="img/click.svg"></a></h2>
 
     </div>
@@ -492,7 +495,7 @@
                                 </div>
                                 <div class="subscribe-form">
                                     <form method="post" class="newsletter-form"
-                                          onsubmit="alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu.')">
+                                          onsubmit="alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu. Jeśli masz ochotę zagrać w naszą grę, po prostu wpisz \'game\' będąc na naszej stronie, po zamknięciu tego komunikatu. Pamiętaj, żeby sprawdzić, czy Caps Lock jest wyłączony! Miłego grania!!')">
                                         <input id="form-name" type="text" name="firstName" placeholder="Imię"
                                                class="text-input">
                                         <input type="email" name="mail" placeholder="Email" class="text-input" required>
@@ -520,6 +523,42 @@
                 </div>
             </div>
         </main>
+        <div class="game-container">
+            <div class="game-menu--container">
+                <div class="game-menu">
+                    <ul>
+                        <li id="play" class="game-menu--item">play</li>
+                        <li id="skins" class="game-menu--item">skins</li>
+                        <li id="tutorial" class="game-menu--item">tutorial</li>
+                        <li id="high-score" class="game-menu--item">high-score</li>
+                        <li id="quit" class="game-menu--item">quit</li>
+                    </ul>
+                </div>
+                <div class="truck"></div>
+            </div>
+            <div class="game">
+                <div class="board-game">
+                    <div class="lifes"></div>
+                    <div class="points">SCORE: 0</div>
+                    <div class="cardboard-box"></div>
+                    <div class="bomb"></div>
+                    <div class="clouds">
+                        <div class="cloud cloud-first"></div>
+                        <div class="cloud cloud-second"></div>
+                        <div class="cloud cloud-third"></div>
+                        <div class="cloud cloud-fourth"></div>
+                        <div class="cloud cloud-fifth"></div>
+                        <div class="cloud cloud-sixth"></div>
+                    </div>
+                    <div class="character character-right"></div>
+                    <div class="round">ROUND</div>
+                    <div class="game-over">GAME OVER
+                        <a class="try-again--button">TRY AGAIN</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <footer>
             <div class="footer">
                 <div> 2017 4Apple &copy; All rights reserved</div>
@@ -533,11 +572,8 @@
             </div>
             <div class="accept-cookies"><input class="accept-cookies__button" type="submit" value="Akceptuję"></div>
         </div>
-
-
     </div>
 </div>
-<!--</div>-->
 <!-- SCRIPTS -->
 
 <script src="js/jquery-3.2.1.min.js"></script>
@@ -555,5 +591,11 @@
 <script src="js/scrolling_menu.js"></script>
 <script src="js/shrinked-menu.js"></script>
 <script src="script.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/game/game-skins.js"></script>
+<script src="js/game/high-score.js"></script>
+<script src="js/game/game-menu.js"></script>
+<script src="js/game/game-tutorial.js"></script>
+<script src="js/game/game-object-oriented.js"></script>
 </body>
 </html>
