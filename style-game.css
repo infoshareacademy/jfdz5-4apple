@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+}
+
+.game-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    height: 100%;
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+    display: none;
+    position: fixed;
+    z-index: 999999999999;
+
+}
+
+.game-menu--container {
+    height: 700px;
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-menu {
+    position: absolute;
+    top: 150px;
+}
+
+.game-menu--item {
+    cursor: pointer;
+    list-style: none;
+    line-height: 1.4;
+}
+
+.game-menu--item:hover {
+    font-weight: 800;
+}
+
+.truck {
+    background: url('img/truck.png');
+    width: 200px;
+    height: 171px;
+    position: absolute;
+    bottom: 10px;
+    animation: engine-working 0.2s infinite;
+}
+
+@keyframes engine-working {
+    0% {
+        bottom: 10px;
+    }
+    50% {
+        bottom: 11px;
+    }
+    100% {
+        bottom: 10px;
+    }
+}
+
+.game {
+    height: 100vh;
+    max-height: 700px;
+    width: 580px;
+    background: url('img/board-backround.png');
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.board-game {
+    height: 560px;
+    position: relative;
+}
+
+.character {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    z-index: 2;
+}
+
+.character-right {
+    background: url('img/ludzik-z-workiem-prawo.png');
+    background-size: cover;
+}
+
+.character-left {
+    background: url('img/ludzik-z-workiem-lewo.png');
+    background-size: cover;
+}
+
+.cardboard-box {
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box.png');
+    background-size: cover;
+    position: absolute;
+    top: -50px;
+}
+.cardboard-box-tutorial{
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box.png');
+    background-size: cover;
+    position: absolute;
+    top: -50px;
+}
+
+.cardboard-box-destroyed {
+    height: 20px;
+    width: 20px;
+    background: url('img/pixel-cardboard-box-destroyed.png');
+    background-size: cover;
+    position: absolute;
+    top: -25px;
+    z-index: 3;
+}
+
+.bomb {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    position: absolute;
+    top: -25px;
+}
+.bomb-tutorial {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    position: absolute;
+    top: -55px;
+}
+
+
+.countdownTimer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'VT323', monospace;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.cloud {
+    background: url('img/cloud1.png');
+    position: absolute;
+    height: 53px;
+    width: 100px;
+}
+
+.clouds {
+    position: absolute;
+    top: 10px;
+    height: 200px;
+    width: 580px;
+    animation: clouds-movement 15s infinite;
+    transform: translateY(-20px);
+}
+
+@keyframes clouds-movement {
+    0% {
+        top: 10px;
+        transform: translateX(20px);
+
+    }
+
+    30% {
+        top: 15px;
+
+    }
+
+    50% {
+        top: 10px;
+        transform: translateX(-20px);
+    }
+
+    60% {
+        top: 5px;
+    }
+
+    100% {
+        top: 10px;
+        transform: translateX(20px);
+    }
+}
+
+
+.cloud-first {
+    left: 320px;
+    top: 100px;
+}
+
+.cloud-second {
+    left: 210px;
+    top: 50px;
+}
+
+.cloud-third {
+    left: 100px;
+    top: 90px;
+}
+
+.cloud-fourth {
+    left: 460px;
+    top: 40px;
+}
+
+.cloud-fifth {
+    left: 350px;
+    top: 20px;
+}
+
+.cloud-sixth {
+    left: 40px;
+    top: 42px;
+}
+
+.life-item {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background-size: cover;
+}
+.life-item-tutorial {
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url("img/life.png");
+    background-size: cover;
+}
+
+
+.lifes {
+    display: none;
+}
+.lifes-tutorial {
+    display: none;
+}
+
+.points {
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: darkblue;
+    display: none;
+}
+
+.bonus-points {
+    position: absolute;
+    font-size: 30px;
+    animation: bonus-points 0.6s;
+    transform: translateY(-50px);
+}
+
+@keyframes bonus-points {
+    0% {
+
+    }
+    100% {
+        transform: translateY(-100px);
+        color: transparent;
+    }
+}
+
+.game-over, .round {
+    display: none;
+    font-family: 'VT323', monospace;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.try-again--button {
+    font-size: 50px;
+    text-align: center;
+}
+
+.try-again--button:hover {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.skins--container {
+    text-transform: uppercase;
+    font-size: 50px;
+    height: 550px;
+    width: 500px;
+    background-color: black;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+
+.skins-tile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skin--element {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border: 2px #000 solid;
+}
+
+.skin--element:hover {
+    cursor: pointer;
+    border: 2px #fff solid;
+}
+
+.skin--element__clicked {
+    border: 2px #32fc7d solid;
+}
+
+.skin--element__clicked:hover {
+    border: 2px #32fc7d solid;
+}
+
+.game--btn {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 55px;
+    font-family: 'VT323', monospace;
+    background-color: transparent;
+    border: none;
+    margin: 10px 40px;
+}
+
+.game--btn:hover {
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.save--btn:hover {
+    color: #32fc7d;
+}
+
+.close--btn:hover {
+    color: #fc330e;
+}
+
+.sale {
+    font-size: 25px;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    border-radius: 100%;
+    background-color: #efff00;
+    color: #f00;
+    font-weight: 800;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    transform: rotate(-20deg);
+}
+
+.sale__price {
+    font-size: 50px;
+}
+
+.bomb-exploded {
+    height: 25px;
+    width: 25px;
+    background: url('img/bomba-wybuch.png');
+    background-size: cover;
+    position: absolute;
+    top: -25px;
+}
+
+.add-name--container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    z-index: 5;
+}
+
+.add-name--input {
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    font-family: 'VT323', monospace;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px;
+    color: #ff5919;
+}
+
+.required--text {
+    font-size: 40px;
+    color: red;
+}
+
+.high-score--container {
+    height: 550px;
+    width: 500px;
+    background-color: black;
+    z-index: 10;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 42px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.high-score--container td {
+    width: 150px;
+    height: 60px;
+    white-space: nowrap;
+}
+
+.table__headers {
+    color: #ff5919;
+    margin: 20px;
+}
+
+.record__highlighted {
+    background-color: yellow;
+    color: black;
+    animation: record-highlight 2s;
+}
+
+.bomb-exploding-animation {
+    height: 25px;
+    width: 25px;
+    background: url("img/bomb.png");
+    background-size: cover;
+    animation: bomb-exploding 3s infinite;
+}
+
+.bomb-first {
+    position: absolute;
+    left: 130px;
+    bottom: 500px;
+}
+
+.bomb-second {
+    position: absolute;
+    left: 340px;
+    bottom: 500px;
+}
+.Tutorial-game-container{
+    height: 100vh;
+    max-height: 700px;
+    width: 580px;
+    background: url('img/board-backround.png');
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+}
+.clavier{
+    background: url("img/clavier.png");
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top:200px;
+    left: 29%;
+
+}
+.arrow-left{
+    background: url("img/left.png")no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:560px;
+    left: 20%;
+    z-index: 2;
+}
+.arrow-right{
+    background: url("img/right.png")no-repeat;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:560px;
+    left: 65%;
+    z-index: 1;
+}
+.tutorial-example{
+    position: absolute;
+    top:250px;
+    left:10%;
+    width: 450px;
+    height: 100px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 10px;
+    background: white;
+}
+
+.health-example{
+    position: absolute;
+    top:50px;
+    left:30px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.point-example{
+    position: absolute;
+    top:50px;
+    right:20px;
+    width: 200px;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+.health-example-arow{
+    background: url("img/arow-left.png")no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:40px;
+    left:10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+.point-example-arow{
+    background: url("img/arow-right.png")no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:40px;
+    right:10px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.arrows-left:after{
+    content: "";
+    background: url("img/paluch-left.png")no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left:-100px;
+    top:-10px;
+}
+.arrows-right:after{
+    content: "";
+    background: url("img/paluch-right.png")no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    left:20px;
+    top:-35px;
+}
+
+@keyframes bomb-exploding {
+    0% {
+        background: url("img/bomb.png");
+        background-size: cover;
+    }
+    25% {
+        bottom: 100px
+    }
+    50% {
+        bottom: 100px
+    }
+    75% {
+        background: url('img/bomba-wybuch.png');
+        background-size: cover;
+        bottom: 100px
+    }
+    100% {
+        background: url('img/bomba-wybuch.png');
+        background-size: cover;
+        height: 40px;
+        width: 40px;
+        bottom: 100px;
+    }
+}
+
+.truck-move {
+    animation: truck-moving 1s;
+}
+
+
+@keyframes truck-moving {
+    0% {
+        left: 250px;
+    }
+    100% {
+        left: 590px;
+        bottom: 50px
+    }
+}
+
+@keyframes record-highlight {
+    0% {
+        background-color: yellow;
+        color: black;
+    }
+    10% {
+        background-color: black;
+        color: white;
+    }
+    20% {
+        background-color: yellow;
+        color: black;
+    }
+    30% {
+        background-color: black;
+        color: white;
+    }
+    40% {
+        background-color: yellow;
+        color: black;
+    }
+    50% {
+        background-color: black;
+        color: white;
+    }
+    60% {
+        background-color: yellow;
+        color: black;
+    }
+    70% {
+        background-color: black;
+        color: white;
+    }
+    80% {
+        background-color: yellow;
+        color: black;
+    }
+    90% {
+        background-color: black;
+        color: white;
+    }
+    100% {
+        background-color: yellow;
+        color: black;
+    }
+
+}
