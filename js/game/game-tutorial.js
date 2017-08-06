@@ -194,6 +194,7 @@ var openTutorial = function () {
                         $(".bomb-tutorial").remove();
                         $(".cardboard-box-tutorial").remove();
                         $('.checkCatchObject-tutorial').remove();
+                        $('.character').hide();
                        stop.stopPropagation()
 
                     }, 5000)
@@ -369,4 +370,5 @@ var openTutorial = function () {
     });
 
     startTutorial.instruction()
+
 };
