@@ -4,7 +4,7 @@ var openTutorial = function () {
     var $board = $('.board-game');
     var $cardboardBox = $('.cardboard-box-tutorial');
     var $bomb = $('.bomb-tutorial');
-    var $life = $('.life-item-tutorial');
+
     var caughtBomb = 0;
     var caughtCardboardBoxInOneRound = 0;
     var bonusPoints = 100;
@@ -20,7 +20,7 @@ var openTutorial = function () {
         .append($('<div>').addClass('life-item-tutorial'))
         .append($('<div>').addClass('life-item-tutorial'))
         .append($('<div>').addClass('life-item-tutorial'));
-
+    var $life = $('.life-item-tutorial');
 
     $('.character-right').css({
         'background': 'url(img/skins/ludzik-z-workiem-prawo-' + skinSetup + '.png)'
@@ -195,7 +195,8 @@ var openTutorial = function () {
                         $(".cardboard-box-tutorial").remove();
                         $('.checkCatchObject-tutorial').remove();
                         $('.character').hide();
-                       stop.stopPropagation()
+                       stop.stopPropagation();
+
 
                     }, 5000)
                 }
