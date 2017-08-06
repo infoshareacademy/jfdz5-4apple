@@ -48,11 +48,11 @@ function openTutorial() {
 
 
     setTimeout(function () {
-        $('.tutorial-example').css({top:50}).text('Purpose of the game is to get as many points you can. There are rounds, which last 25 sec each. Every consecutive round is harder. Game ends when you got no lives left');
+        $('.tutorial-example').css({top: 50}).text('Purpose of the game is to get as many points you can. There are rounds, which lasts 25 sec each. Every consecutive round is harder. Game ends when you got no lives left');
 
     }, 25000);
     setTimeout(function () {
-        $('.tutorial-example').css({top:150}).text('Now try to play yourself. Press PLAY button in menu. GOOD LUCK!');
+        $('.tutorial-example').css({top: 150}).text('Now try to play yourself. Press PLAY button in menu. GOOD LUCK!');
 
     }, 34000);
 
