@@ -150,6 +150,8 @@ var startGame = function () {
     };
 
     function startRound() {
+        $(".arrow-left").remove();
+        $(".arrow-right").remove();
         $countdownTimer.css({
             'color': '#000'
         });

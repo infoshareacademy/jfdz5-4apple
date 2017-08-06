@@ -76,7 +76,7 @@ var openTutorial = function () {
             $life.last().fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
             setTimeout(function () {
                 $life.last().remove();
-                $life = $('.life-item');
+                $life = $('.life-item-tutorial');
             }, 800);
         }
 
