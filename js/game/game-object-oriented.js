@@ -1,4 +1,4 @@
-var startGame = function (isTutorial) {
+var startGame = function () {
 
     sessionStorage.clear('pointsHighScore');
     $(window).off('keydown keyup ');
@@ -275,12 +275,6 @@ var startGame = function (isTutorial) {
     });
 
     startRound();
-
-    if (isTutorial === true) {
-        clearInterval(roundIntervalId);
-        clearInterval(boxSpawn);
-        clearInterval(ticker);
-    }
 
 };
 
