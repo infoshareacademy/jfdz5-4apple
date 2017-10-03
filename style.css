@@ -325,6 +325,7 @@ p {
     display: block;
     width: 300px;
     height: 300px;
+    margin: 0;
 }
 
 .media-label__text {
