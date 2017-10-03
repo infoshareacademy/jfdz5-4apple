@@ -26,7 +26,7 @@ var helper = {
         helper.stored.unshift(letter);
     },
     action: function () {
-        $('.game-container').show().css({
+        $('.game-container').fadeIn(1000).css({
             display: 'flex'
         });
     }
