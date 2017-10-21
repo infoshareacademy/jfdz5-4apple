@@ -20,13 +20,13 @@ var helper = {
     allowed: [101, 109, 97, 103],
     stored: [],
     checker: function (first, second) {
-        return first.toString() === second.toString() ? true : false;
+        return first.toString() === second.toString();
     },
     push: function (letter) {
         helper.stored.unshift(letter);
     },
     action: function () {
-        $('.game-container').show().css({
+        $('.game-container').fadeIn(1000).css({
             display: 'flex'
         });
     }
