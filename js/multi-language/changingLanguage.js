@@ -26,7 +26,7 @@
       elFlagMenu.setAttribute('class', 'flag flag-en');
       elNamePlaceholder.setAttribute('placeholder', 'Imię');
       elButton.setAttribute('value', 'zapisz się!');
-      elSubmitAlert[0].setAttribute('onsubmit', "alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu. Jeśli masz ochotę zagrać w naszą grę, po prostu wpisz `game` będąc na naszej stronie, po zamknięciu tego komunikatu. Pamiętaj, żeby sprawdzić, czy Caps Lock jest wyłączony! Miłego grania!!)");
+      elSubmitAlert[0].setAttribute('onsubmit', "alert('Uważnie obserwuj swoją pocztę. W nieodległej przyszłości otrzyamasz wiadomość o otwarciu naszego serwisu. Jeśli masz ochotę zagrać w naszą grę, po prostu wpisz `game` będąc na naszej stronie, po zamknięciu tego komunikatu. Pamiętaj, żeby sprawdzić, czy Caps Lock jest wyłączony! Miłego grania!!')");
       elCookiesInfoAccept[0].setAttribute('value', 'Akceptuję');
       isPolish = true;
 
